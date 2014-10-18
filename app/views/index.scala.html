@@ -1,7 +1,20 @@
-@(message: String)
+@(message: String, categories: List[Category])
 
 @main("Welcome to Play") {
 
-    @play20.welcome(message, style = "Java")
+    <h1>Zarest Application is going to be here soon!</h1>
+
+    <div class="shape" id="shape1"></div>
+    <div class="shape" id="shape2"></div>
+    <div class="shape" id="shape3"></div>
+
+    <ul>
+    @for(p <- categories) {
+        <li>@p.name : @if(p.parentCategory != null) {
+            @p.parentCategory.name
+        }</li>
+    }
+    </ul>
+
 
 }

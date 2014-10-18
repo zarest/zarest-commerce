@@ -1,0 +1,78 @@
+
+# Categories
+
+categories:
+    #1
+    - !!models.Category
+        name:       clothing
+    #2
+    - !!models.Category
+        name:       healthAndBeauty
+    #3
+    - !!models.Category
+        name:       electric
+    #4
+    - !!models.Category
+        name:       sport
+    #5
+    - !!models.Category
+        name:       software
+    #6
+    - !!models.Category
+        name:       toy
+    #7
+    - !!models.Category
+        name:       Carpet
+    #8
+    - !!models.Category
+        name:       buildingSupplies
+    #9
+    - !!models.Category
+        name:       furniture
+    #10
+    - !!models.Category
+        name:       musicalInstrument
+    #11
+    - !!models.Category
+        name:       book
+    #12
+    - !!models.Category
+        name:       movieMusicTvSeries
+
+
+    - !!models.Category
+        name:       electric
+    - !!models.Category
+        name:       men
+        parentCategory:
+             !!models.Category
+                 id: 1
+
+    - !!models.Category
+        name:       women
+        parentCategory:
+             !!models.Category
+                 id: 1
+
+
+    - !!models.Category
+        name:       girls
+        parentCategory:
+             !!models.Category
+                  id: 1
+
+
+    - !!models.Category
+        name:    boys
+        parentCategory:
+             !!models.Category
+                  id: 1
+
+
+
+    - !!models.Category
+        name:    babies
+        parentCategory:
+            !!models.Category
+                 id: 1
+
