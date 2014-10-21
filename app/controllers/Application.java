@@ -36,9 +36,4 @@ public class Application extends Controller {
         }
 
     }
-
-
-    public static Result productPage() {
-        return redirect("/products");
-    }
 }
