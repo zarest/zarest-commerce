@@ -1,4 +1,5 @@
 @()
+@import play.i18n._
 @main("products", Application.getCurrentLang) {
-    <h1>This is going to be our product page</h1>
+    <h1>@Messages.get("products")</h1>
 }

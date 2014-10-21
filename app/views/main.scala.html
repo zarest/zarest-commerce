@@ -1,6 +1,5 @@
 @(title: String, l: Lang)(content: Html)
     @import play.i18n._
-
 <!DOCTYPE html>
 
     <html>
@@ -26,23 +25,26 @@
             </header>
             <nav>
                 <div id="nav">
-                    <a href="/index">@Messages.get("home")</a>
-                    <a href="/products">@Messages.get("products")</a>
-                    <a href="/aboutUs">@Messages.get("aboutUs")</a>
+                    <a href="@routes.Application.index()">@Messages.get("home")</a>
+                    <a href="@routes.Products.productPage()">@Messages.get("products")</a>
+                    <a href="@routes.Application.aboutUsPage()">@Messages.get("aboutUs")</a>
                     <a href="/app">@Messages.get("admin")</a>
                 </div>
             </nav>
-            <section id="leftSide">
+            <div id="zarest-content">
+                <section id="leftSide">
             This is left side
-            </section>
-            <main>
-                <div id="main">
-                @content
-                </div>
-            </main>
-            <aside>
+                </section>
+                <main>
+                    <div id="main">
+                    @content
+                    </div>
+                </main>
+                <aside>
             this is aside
-            </aside>
+                </aside>
+
+            </div>
             <footer>
             @Messages.get("footer")
             </footer>

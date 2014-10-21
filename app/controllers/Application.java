@@ -36,4 +36,8 @@ public class Application extends Controller {
         }
 
     }
+
+    public static Result aboutUsPage() {
+        return ok(aboutUs.render());
+    }
 }
