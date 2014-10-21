@@ -22,7 +22,7 @@ categories:
         name:       toy
     #7
     - !!models.Category
-        name:       Carpet
+        name:       carpet
     #8
     - !!models.Category
         name:       buildingSupplies

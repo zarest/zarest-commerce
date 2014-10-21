@@ -1,17 +1,24 @@
-@lightRed:   #fdd;
+@lightRed: #fdd;
 @lightGreen: #dfd;
-@lightBlue:  #ddf;
+@lightBlue: #ddf;
+@zaresetBg: #fbf7e4;
+@headerBg: #424242;
+@defaultFontSize: 13px;
 
-@defaultThemeColor:spin(@lightBlue, 35) - #555;
-@mainColor:             #2a3a48;
+.FontSize(@fontSize: @defaultFontSize) {
+  font-size: @fontSize;
+}
 
-@defaultFont:           13px "Lucida Grande","Helvetica Neue", sans-serif;
+@defaultThemeColor: @zaresetBg;
+@mainColor: #2a3a48;
 
-@links:                 #4794c4;
-@linksHover:            #2a5e88;
+@defaultFont: @defaultFontSize  "Lucida Grande", "Helvetica Neue", sans-serif;
 
-@defaultShapesWidth:200px;
-@defaultRadius:30px;
-@borderSize:@defaultShapesWidth * 0.1;
-@borderColor:darken(desaturate(@defaultThemeColor, 50%), 20%);
-@border:@borderSize solid @borderColor;
+@links: #4794c4;
+@linksHover: #2a5e88;
+
+@defaultShapesWidth: 200px;
+@defaultRadius: 30px;
+@borderSize: @defaultShapesWidth * 0.1;
+@borderColor: darken(desaturate(@defaultThemeColor, 50%), 20%);
+@border: @borderSize solid @borderColor;

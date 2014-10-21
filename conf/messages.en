@@ -11,6 +11,24 @@ furniture=Furniture
 musicalInstrument=Musical Instrument
 book=Book
 movieMusicTvSeries=Movie, Music & Tv Series
+# Sub-categories
+men=Men
+women=Women
+girls=Girls
+boys=Boys
+babies=Babies
+# Statics
+footer=©Copyright, All the Contents and rights of this site belnogs to Zarest Ltd.
+zarest=Zarest
+admin=Admin Panel
+home=Home
+products=Products
+aboutUs=About Us
+contactUs=Contact Us
 
 
+# Languages
+lang.en=English
+lang.fa=Farsi
+language=Language
 

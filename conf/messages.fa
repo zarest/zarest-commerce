@@ -1,0 +1,32 @@
+# category names
+clothing=پوشاک
+healthAndBeauty=آرایشی و بهداشتی
+electric=الکتریکی
+sport=ورزشی
+software=نرم افزار
+toy=اسباب بازی
+carpet=فرش
+buildingSupplies=لوازم ساختمانی
+furniture=مبلمان و میز
+musicalInstrument=لوازم موسیقی
+book=کتاب
+movieMusicTvSeries=فیلم موسیقی سریال
+# Sub-categories
+men=مردانه
+women=زنانه
+girls=دخترانه
+boys=پسرانه
+babies=نوزاد
+# Statics
+footer=حقوق و محتوای سایت متعلق به فروشگاه اینترنتی زارست میباشد © ١٣٩٣
+zarest=زارست
+admin=پنل ادمین
+home=خانه
+products=محصولات
+aboutUs=درباره ما
+contactUs=تماس با ما
+
+# Languages
+lang.en=انگلیسی
+lang.fa=فارسی
+language=زبان

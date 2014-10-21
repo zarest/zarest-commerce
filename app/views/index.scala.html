@@ -1,18 +1,14 @@
 @(message: String, categories: List[Category])
-
-@main("Welcome to Play") {
-
-    <h1>Zarest Application is going to be here soon!</h1>
-
-    <div class="shape" id="shape1"></div>
-    <div class="shape" id="shape2"></div>
-    <div class="shape" id="shape3"></div>
-
+@import play.i18n._
+@main("Welcome to Play", Application.getCurrentLang) {
+    <h2>@Messages.get("zarest")</h2>
     <ul>
     @for(p <- categories) {
-        <li>@p.name : @if(p.parentCategory != null) {
-            @p.parentCategory.name
-        }</li>
+        <li>@Messages.get(p.name) :
+            @if(p.parentCategory != null) {
+                @Messages.get(p.parentCategory.name)
+            }
+        </li>
     }
     </ul>
 
