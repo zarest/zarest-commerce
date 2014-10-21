@@ -24,14 +24,14 @@ public class Application extends Controller {
     public static Result changeLocale() {
         DynamicForm requestData = Form.form().bindFromRequest();
         String locale = requestData.get("locale");
-        Logger.info("My Locale: " + locale);
+        //Logger.info("My Locale: " + locale);
         changeLang(locale);
         if (request().hasHeader(REFERER)) {
             String refererURL = request().getHeader(REFERER);
-            Logger.info("My URL: " + refererURL);
+            //Logger.info("My URL: " + refererURL);
             return redirect(refererURL);
         } else {
-            Logger.info("GOING BACK HOME: " + routes.Application.index().absoluteURL(request()));
+            //Logger.info("GOING BACK HOME: " + routes.Application.index().absoluteURL(request()));
             return redirect(routes.Application.index().absoluteURL(request()));
         }
 
