@@ -1,0 +1,24 @@
+@()
+@import play.i18n.Messages
+    <html>
+        <head>
+            <title>@Messages.get("adminPanel")</title>
+            <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/adminPanel.css")">
+            <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+            <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+        </head>
+        <body>
+            <heade>
+               <h3>@Messages.get("welcomeAdminPanel")</h3>
+            </heade>
+            <nav>
+                <div class="adminTopMenu">
+                    <ul>
+                        <li></li>
+                    </ul>
+                </div>
+            </nav>
+        </body>
+    </html>

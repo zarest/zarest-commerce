@@ -92,6 +92,8 @@ products=Products
 aboutUs=About Us
 contactUs=Contact Us
 settings=Settings
+shoppingCart=Shopping Cart
+welcomeAdminPanel=Welcome To Admin Panel
 
 # Languages
 lang.en=English
