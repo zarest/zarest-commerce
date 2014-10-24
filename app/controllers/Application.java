@@ -37,11 +37,15 @@ public class Application extends Controller {
 
     }
 
+    public static Result login() {
+        return Results.TODO;
+    }
+
     public static Result aboutUsPage() {
         return ok(aboutUs.render("aboutUs"));
     }
 
-    public static Result contactUs()  {
+    public static Result contactUs() {
         return ok(contactUs.render("contactUs"));
     }
 

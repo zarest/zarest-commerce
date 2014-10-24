@@ -5,6 +5,7 @@
     <head>
         <title>@title</title>
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
@@ -53,7 +54,13 @@
             </div>
         </aside>
         <footer>
-        @Messages.get("footer")
+            <div class="list-group">
+                <a class="list-group-item"  href="@routes.Application.index()"><i class="fa fa-home fa-fw"></i>&nbsp; @Messages.get("home")</a>
+                <a class="list-group-item"  href="@routes.Application.productPage()"><i class="fa fa-gift fa-fw"></i>&nbsp; @Messages.get("products")</a>
+                <a class="list-group-item"  href="@routes.Administration.adminPage()"><i class="fa fa-pencil fa-fw"></i>&nbsp; @Messages.get("adminPanel")</a>
+                <a class="list-group-item"  href="#"><i class="fa fa-cog fa-fw"></i>&nbsp; @Messages.get("settings")</a>
+            </div>
+            @Messages.get("footer")
         </footer>
 
     </body>

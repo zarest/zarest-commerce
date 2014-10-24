@@ -8,7 +8,7 @@ main, section, aside, header, footer figure, figcaption {
 
 body {
   background: @defaultThemeColor;
-  color: @mainColor;
+  color: @darkPurple;
   font: @defaultFont;
   width: 100%;
   margin-left: auto;
@@ -24,11 +24,13 @@ header {
   border-bottom: solid 2px @zaresetBg;
   background: @headerBg;
   color: @zaresetBg;
+  z-index: 200;
   h2 {
     display: inline-block;
     margin: 0 20% 0 20%;
     line-height: 35px;
     a {
+      color: @zaresetBg;
       &:hover {
         color: @linksHover;
         .TextShadow(1px,1px,1px, @zaresetBg);
@@ -46,6 +48,7 @@ header {
 }
 
 nav {
+  z-index: 200;
   height: auto;
   width: 100%;
   background: @headerBg;
@@ -88,6 +91,17 @@ footer {
   clear: both;
   text-align: center;
   padding: 5px;
+  div {
+    margin:0 0 2% 0;
+    font-size: 16px;
+    a {
+      color: #000000;
+      margin: 2%;
+      &:hover {
+        color: @links;
+      }
+    }
+  }
 }
 
 a {
