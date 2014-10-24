@@ -12,7 +12,7 @@
     </head>
     <body>
         <header class="sticky">
-            <h2>@Messages.get("zarest")</h2>
+            <h2><a href="@routes.Application.index()" >@Messages.get("zarest")</a></h2>
             @helper.form(action = routes.Application.changeLocale(), 'class -> "change-locale") {
                 <label>@Messages.get("language")
                     <select name="locale" id="language">
@@ -27,7 +27,7 @@
             <div class='top_menu'>
                 <ul>
                     <li><a href="@routes.Application.index()"><span>@Messages.get("home")</span></a></li>
-                    <li class='active has-sub'><a href="@routes.Products.productPage()"><span>@Messages.get("products")</span></a>
+                    <li class='active has-sub'><a href="@routes.Application.productPage()"><span>@Messages.get("products")</span></a>
                         @categoryList()
                     </li>
                     <li> <a href="@routes.Application.aboutUsPage()"><span>@Messages.get("aboutUs")</span></a></li>
@@ -35,14 +35,16 @@
                 </ul>
             </div>
         </nav>
-        <section>
+        <section id="leftside">
             <div id="left_side">
             @sidebar()
             </div>
         </section>
         <main>
             <div id="main">
-            @content
+                <h2>@title</h2>
+                <hr >
+                @content
             </div>
         </main>
         <aside>

@@ -1,5 +1,4 @@
-@()
+@(bodyHeader : String)
 @import play.i18n._
-@main(Messages.get("products"), Application.getCurrentLang) {
-    <h2>@Messages.get("products")</h2>
+@main(Messages.get(bodyHeader), Application.getCurrentLang) {
 }

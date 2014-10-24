@@ -31,7 +31,7 @@ categories:
         name:       furniture
     #10
     - !!models.Category
-        name:       musicalInstrument
+        name:       musicTools
     #11
     - !!models.Category
         name:       book
@@ -252,3 +252,243 @@ categories:
                  id: 4
 
        #Sport ------------------------------------
+
+       #Software ---------------------------------
+
+    - !!models.Category
+         name:       trade
+         parentCategory:
+              !!models.Category
+                  id: 5
+
+    - !!models.Category
+         name:       videoAndAudio
+         parentCategory:
+              !!models.Category
+                  id: 5
+
+
+    - !!models.Category
+         name:       accounting
+         parentCategory:
+              !!models.Category
+                   id: 5
+
+
+    - !!models.Category
+         name:    interiorDesign
+         parentCategory:
+              !!models.Category
+                   id: 5
+
+
+    - !!models.Category
+         name:    programming
+         parentCategory:
+             !!models.Category
+                  id: 5
+
+    - !!models.Category
+         name:    designAndCreativity
+         parentCategory:
+              !!models.Category
+                  id: 5
+
+    - !!models.Category
+         name:       security
+         parentCategory:
+              !!models.Category
+                  id: 5
+
+
+    - !!models.Category
+         name:      operatingSystem
+         parentCategory:
+              !!models.Category
+                   id: 5
+
+
+    - !!models.Category
+         name:    educational
+         parentCategory:
+              !!models.Category
+                   id: 5
+
+    # -----------------------------------
+
+    #Toys------------------------------------
+
+    - !!models.Category
+         name:       dollsForBoys
+         parentCategory:
+              !!models.Category
+                  id: 6
+
+    - !!models.Category
+         name:       dollsForGirls
+         parentCategory:
+              !!models.Category
+                  id: 6
+
+
+    - !!models.Category
+         name:       educational
+         parentCategory:
+              !!models.Category
+                   id: 6
+
+
+    - !!models.Category
+         name:    paintingSupplies
+         parentCategory:
+              !!models.Category
+                   id: 6
+
+
+    - !!models.Category
+         name:    remoteControlCar
+         parentCategory:
+             !!models.Category
+                  id: 6
+
+    - !!models.Category
+         name:    toysYard
+         parentCategory:
+              !!models.Category
+                  id: 6
+
+    - !!models.Category
+         name:     lego
+         parentCategory:
+              !!models.Category
+                  id: 6
+
+
+    - !!models.Category
+         name:      babyAndChild
+         parentCategory:
+              !!models.Category
+                   id: 6
+
+
+    - !!models.Category
+         name:    carsAndMotors
+         parentCategory:
+              !!models.Category
+                   id: 6
+
+
+    #-------------------------------------
+
+    #Carpet-------------------------------
+
+    - !!models.Category
+         name:       handmade
+         parentCategory:
+              !!models.Category
+                  id: 7
+
+    - !!models.Category
+         name:       silk
+         parentCategory:
+              !!models.Category
+                  id: 7
+
+
+    - !!models.Category
+         name:       machineMade
+         parentCategory:
+              !!models.Category
+                   id: 7
+
+
+    - !!models.Category
+         name:    tablou
+         parentCategory:
+              !!models.Category
+                   id: 7
+
+     # Building Supplies---------------------
+
+     # building sub-catories goes here
+
+     #---------------------------------------
+
+     # Furniture ----------------------------
+
+    - !!models.Category
+         name:       kitchen
+         parentCategory:
+              !!models.Category
+                  id: 9
+
+    - !!models.Category
+         name:       bedroom
+         parentCategory:
+              !!models.Category
+                  id: 9
+
+
+    - !!models.Category
+         name:       babyRoom
+         parentCategory:
+              !!models.Category
+                   id: 9
+
+
+    - !!models.Category
+         name:    livingRoom
+         parentCategory:
+              !!models.Category
+                   id: 9
+
+    #--------------------------------------
+
+    # Music Tools --------------------------
+    - !!models.Category
+         name:       instruments
+         parentCategory:
+              !!models.Category
+                  id: 10
+
+
+    - !!models.Category
+         name:       recordingAndProduction
+         parentCategory:
+              !!models.Category
+                   id: 10
+
+
+    - !!models.Category
+         name:    stageTools
+         parentCategory:
+              !!models.Category
+                   id: 10
+
+    # Books-------------------------------
+
+    #books sub-categories goes here
+
+    # ------------------------------------
+
+    # Movie Music Tv Series------------------
+
+    - !!models.Category
+             name:       movie
+             parentCategory:
+                  !!models.Category
+                      id: 12
+
+
+    - !!models.Category
+         name:       music
+         parentCategory:
+              !!models.Category
+                   id: 12
+
+
+    - !!models.Category
+         name:    series
+         parentCategory:
+              !!models.Category
+                   id: 12

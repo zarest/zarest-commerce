@@ -14,7 +14,7 @@ public class Application extends Controller {
 
 
     public static Result index() {
-        return ok(index.render("Your new application is ready."));
+        return ok(index.render("home"));
     }
 
     public static Lang getCurrentLang() {
@@ -38,10 +38,14 @@ public class Application extends Controller {
     }
 
     public static Result aboutUsPage() {
-        return ok(aboutUs.render());
+        return ok(aboutUs.render("aboutUs"));
     }
 
     public static Result contactUs()  {
-        return ok(contactUs.render());
+        return ok(contactUs.render("contactUs"));
+    }
+
+    public static Result productPage() {
+        return ok(product.render("products"));
     }
 }

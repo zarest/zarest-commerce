@@ -8,7 +8,7 @@ toy=Toy
 carpet=Carpet
 buildingSupplies=Building Supplies
 furniture=Furniture
-musicalInstrument=Musical Instrument
+musicTools=Music Tools
 book=Book
 movieMusicTvSeries=Movie Music Series
 # Sub-categories------------------------
@@ -43,9 +43,45 @@ skateboard=Skateboard
 badminton=Badminton
 golf=Golf
 fish=Fish
+#Software-------------------------------
+trade=Trade
+videoAndAudio=Video & Audio
+accounting=Accounting
+interiorDesign=Interior Design
+programming=Programming
+designAndCreativity=Design & Creativity
+security=Security
+operatingSystem=Operating System
+educational=Educational
+#Toys -------------------------
+dollsForBoys=Dolls for Boys
+dollsForGirls=Dolls for Girls
+paintingSupplies=Painting Supplies
+remoteControlCar=Remote Control Car
+toysYard=Toys Yard
+lego=Lego
+babyAndChild=Baby & Child
+carsAndMotors=Cars & Motors
+#Carpet ------------------------
+handmade=Handmade
+silk=Silk
+machineMade=Machine-Made
+tablou=Tablou
 
+#Furniture---------------------
+bedroom=Bedroom
+babyRoom=Baby Room
+livingRoom=Living Room
 
+#Music Tools------------------------
+instruments=Instruments
+recordingAndProduction=Recording & Production
+stageTools=Stage Tools
 
+#Movie Music Series------------------------
+movie=Movie
+music=Music
+series=TV Series
 
 # website
 footer=©Copyright, All the Contents and rights of this site belnogs to Zarest Ltd.

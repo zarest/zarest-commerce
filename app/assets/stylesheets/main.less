@@ -28,6 +28,12 @@ header {
     display: inline-block;
     margin: 0 20% 0 20%;
     line-height: 35px;
+    a {
+      &:hover {
+        color: @linksHover;
+        .TextShadow(1px,1px,1px, @zaresetBg);
+      }
+    }
   }
   form {
     display: inline-block;
@@ -46,7 +52,7 @@ nav {
 
 }
 
-section {
+#leftside {
   float: left;
   padding: 1%;
   height: 900px;
@@ -63,6 +69,9 @@ main {
     //.TextShadow(-2px,1px,0px, black);
     //text-decoration-style: wavy;
   }
+  hr { display: block; height: 1px;
+    border: 0; border-top: 1px solid @h2Color;
+    margin: 1em 0; padding: 0; }
 }
 
 aside {
@@ -86,6 +95,7 @@ a {
   text-decoration: none;
   &:hover {
     color: @linksHover;
+    //.TextShadow(1px,1px,1px, @zaresetBg);
   }
 }
 

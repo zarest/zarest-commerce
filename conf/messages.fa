@@ -8,7 +8,7 @@ toy=اسباب بازی
 carpet=فرش
 buildingSupplies=لوازم ساختمانی
 furniture=مبلمان و میز
-musicalInstrument=لوازم موسیقی
+musicTools=لوازم موسیقی
 book=کتاب
 movieMusicTvSeries=فیلم موسیقی سریال
 
@@ -46,7 +46,44 @@ skateboard=اسکیت برد
 badminton=بدمینتون
 golf=گلف
 fish=ماهیگیری
+#Software-------------------------------
+trade=تجارت
+videoAndAudio=صدا و تصویر
+accounting=حسابداری
+interiorDesign=طراحی داخلی
+programming=برنامه نویسی
+designAndCreativity=طراحی و خلاقیت
+security=امنیت
+operatingSystem=سیستم عامل
+educational=آموزشی
+#Toys----------------------------------
+dollsForBoys=عروسک پسرانه
+dollsForGirls=عروسک دخترانه
+paintingSupplies=لوازم نقاشی
+remoteControlCar=ماشین کنترلی
+toysYard=اسباب بازی حیاط
+lego=لگو
+babyAndChild=نوزاد و کودک
+carsAndMotors=ماشین و موتور
+#Carpet ------------------------
+handmade=دستباف
+silk=ابریشم
+machineMade=ماشینی
+tablou=تابلو
+#Furniture---------------------
+bedroom=اتاق خواب
+babyRoom=اتاق کودک
+livingRoom=سالن نشیمن
 
+#Music Tools------------------------
+instruments=سازها
+recordingAndProduction=ضبط و تهیه
+stageTools=لوازم استیج
+
+#Movie Music Series------------------------
+movie=فیلم
+music=موسیقی
+series=سریال
 
 # website -------------------------------
 footer=حقوق و محتوای سایت متعلق به فروشگاه اینترنتی زارست میباشد © ١٣٩٣
