@@ -39,9 +39,7 @@ categories:
     - !!models.Category
         name:       movieMusicTvSeries
 
-
-    - !!models.Category
-        name:       electric
+    #clothing ---------------------------------
     - !!models.Category
         name:       men
         parentCategory:
@@ -69,10 +67,188 @@ categories:
                   id: 1
 
 
-
     - !!models.Category
         name:    babies
         parentCategory:
             !!models.Category
                  id: 1
+    #clothing ---------------------------------
 
+    #health&Beauty ---------------------------------
+
+    - !!models.Category
+        name:       men
+        parentCategory:
+             !!models.Category
+                 id: 2
+
+    - !!models.Category
+        name:       women
+        parentCategory:
+             !!models.Category
+                 id: 2
+
+    - !!models.Category
+        name:    babies
+        parentCategory:
+            !!models.Category
+                 id: 2
+
+    #health&Beauty ---------------------------------
+
+    #Electricity ---------------------------------
+
+    - !!models.Category
+            name:       phoneAndTablet
+            parentCategory:
+                 !!models.Category
+                     id: 3
+
+    - !!models.Category
+        name:       desktopAndLaptop
+        parentCategory:
+             !!models.Category
+                 id: 3
+
+
+    - !!models.Category
+        name:       tvAndHomeCinema
+        parentCategory:
+             !!models.Category
+                  id: 3
+
+
+    - !!models.Category
+        name:    filmingAndPhotography
+        parentCategory:
+             !!models.Category
+                  id: 3
+
+
+    - !!models.Category
+        name:    mouseKeyboardAndHeadset
+        parentCategory:
+            !!models.Category
+                 id: 3
+
+    - !!models.Category
+        name:       mp3Player
+        parentCategory:
+             !!models.Category
+                 id: 3
+
+    - !!models.Category
+        name:       carElectricity
+        parentCategory:
+             !!models.Category
+                 id: 3
+
+
+    - !!models.Category
+        name:       screenAndProjector
+        parentCategory:
+             !!models.Category
+                  id: 3
+
+
+    - !!models.Category
+        name:    kitchen
+        parentCategory:
+             !!models.Category
+                  id: 3
+
+
+    - !!models.Category
+        name:    hardAndFlash
+        parentCategory:
+            !!models.Category
+                 id: 3
+
+    - !!models.Category
+        name:    hardware
+        parentCategory:
+            !!models.Category
+                 id: 3
+
+    #Electricity ---------------------------------
+
+    #Sport ------------------------------------
+    - !!models.Category
+        name:       bodybuilding
+        parentCategory:
+             !!models.Category
+                 id: 4
+
+    - !!models.Category
+        name:       ski
+        parentCategory:
+             !!models.Category
+                 id: 4
+
+
+    - !!models.Category
+        name:       tennis
+        parentCategory:
+             !!models.Category
+                  id: 4
+
+
+    - !!models.Category
+        name:    volleyball
+        parentCategory:
+             !!models.Category
+                  id: 4
+
+
+    - !!models.Category
+        name:    basketball
+        parentCategory:
+            !!models.Category
+                 id: 4
+
+    - !!models.Category
+        name:    football
+        parentCategory:
+             !!models.Category
+                 id: 4
+
+    - !!models.Category
+        name:       swim
+        parentCategory:
+             !!models.Category
+                 id: 4
+
+
+    - !!models.Category
+        name:      cycle
+        parentCategory:
+             !!models.Category
+                  id: 4
+
+
+    - !!models.Category
+        name:    skateboard
+        parentCategory:
+             !!models.Category
+                  id: 4
+
+
+    - !!models.Category
+        name:    badminton
+        parentCategory:
+            !!models.Category
+                 id: 4
+
+    - !!models.Category
+        name:    golf
+        parentCategory:
+            !!models.Category
+                 id: 4
+
+    - !!models.Category
+        name:    fish
+        parentCategory:
+            !!models.Category
+                 id: 4
+
+       #Sport ------------------------------------

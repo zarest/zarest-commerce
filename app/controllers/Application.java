@@ -9,12 +9,12 @@ import play.mvc.*;
 
 import views.html.*;
 
-//@With(Language.class)
+@With(CategoryMenu.class)
 public class Application extends Controller {
 
 
     public static Result index() {
-        return ok(index.render("Your new application is ready.", Category.find.all()));
+        return ok(index.render("Your new application is ready."));
     }
 
     public static Lang getCurrentLang() {
@@ -39,5 +39,9 @@ public class Application extends Controller {
 
     public static Result aboutUsPage() {
         return ok(aboutUs.render());
+    }
+
+    public static Result contactUs()  {
+        return ok(contactUs.render());
     }
 }

@@ -11,22 +11,53 @@ furniture=مبلمان و میز
 musicalInstrument=لوازم موسیقی
 book=کتاب
 movieMusicTvSeries=فیلم موسیقی سریال
-# Sub-categories
+
+# Sub-categories --------------------
+# Clothing & healthBeauty ------------
 men=مردانه
 women=زنانه
 girls=دخترانه
 boys=پسرانه
 babies=نوزاد
-# Statics
+
+#Electricity --------------------
+phoneAndTablet=تلفن و تبلت
+desktopAndLaptop=دسکتاپ و لپ تاپ
+tvAndHomeCinema=تلویزیون و سینمای خانگی
+filmingAndPhotography=فیلمبرداری و عکسبرداری
+mouseKeyboardAndHeadset=موس کیبورد و هدست
+mp3Player=پخش MP3
+carElectricity=الکتریکی اتومبیل
+screenAndProjector=صفحه و پروژکتور
+kitchen=آشپزخانه
+hardAndFlash=فلش و هارد
+hardware=سخت افزار
+
+#Sports---------------------------------
+bodybuilding=بدنسازی
+ski=اسکی
+tennis=تنیس
+volleyball=والیبال
+basketball=بسکتبال
+football=فوتبال
+swim=شنا
+cycle=دوچرخه سواری
+skateboard=اسکیت برد
+badminton=بدمینتون
+golf=گلف
+fish=ماهیگیری
+
+
+# website -------------------------------
 footer=حقوق و محتوای سایت متعلق به فروشگاه اینترنتی زارست میباشد © ١٣٩٣
 zarest=زارست
-admin=پنل ادمین
+adminPanel=پنل ادمین
 home=خانه
 products=محصولات
 aboutUs=درباره ما
 contactUs=تماس با ما
 
-# Languages
+# Languages --------------------
 lang.en=انگلیسی
 lang.fa=فارسی
 language=زبان

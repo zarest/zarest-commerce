@@ -10,17 +10,47 @@ buildingSupplies=Building Supplies
 furniture=Furniture
 musicalInstrument=Musical Instrument
 book=Book
-movieMusicTvSeries=Movie, Music & Tv Series
-# Sub-categories
+movieMusicTvSeries=Movie Music Series
+# Sub-categories------------------------
+#Clothing & HealthBeauty---------------
 men=Men
 women=Women
 girls=Girls
 boys=Boys
 babies=Babies
-# Statics
+#Electricity-----------------------------
+phoneAndTablet=Phone & Tablet
+desktopAndLaptop=Desktop & Laptop
+tvAndHomeCinema=TV & Home Cinema
+filmingAndPhotography=Filming & photography
+mouseKeyboardAndHeadset=Mouse Keyboard & Headset
+mp3Player=MP3 Player
+carElectricity=Car Electrical System
+screenAndProjector=Screen & Projector
+kitchen=Kitchen
+hardAndFlash=Hard Disk & Flash Memory
+hardware=Hardware
+#Sports---------------------------------
+bodybuilding=Bodybuilding
+ski=Ski
+tennis=Tennis
+volleyball=Volleyball
+basketball=Basketball
+football=Football
+swim=Swim
+cycle=Cycle
+skateboard=Skateboard
+badminton=Badminton
+golf=Golf
+fish=Fish
+
+
+
+
+# website
 footer=©Copyright, All the Contents and rights of this site belnogs to Zarest Ltd.
 zarest=Zarest
-admin=Admin Panel
+adminPanel=Admin Panel
 home=Home
 products=Products
 aboutUs=About Us

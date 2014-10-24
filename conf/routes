@@ -8,6 +8,7 @@ POST        /locale              controllers.Application.changeLocale()
 
 GET         /products            controllers.Products.productPage()
 GET         /aboutUs             controllers.Application.aboutUsPage()
+GET         /contactUs           controllers.Application.contactUs()
 
 
 # Map static resources from the /public folder to the /assets URL path

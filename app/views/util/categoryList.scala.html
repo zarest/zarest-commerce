@@ -1,0 +1,29 @@
+@()
+@import play.i18n.Messages
+<ul>
+    @for(category <- CategoryMenu.getCategories) {
+        @if(category.parentCategory == null) {
+            <li><a href="#" target="_top" title="@Messages.get(category.name)">@Messages.get(category.name)</a>
+                @if(category.subCategories != null && !category.subCategories.isEmpty) {
+                    <ul>
+                    @for(subCate <- category.subCategories) {
+                        <li>
+                            <a href="#" target="_top" title="@Messages.get(subCate.name)">@Messages.get(subCate.name)</a>
+                            @if(subCate.subCategories != null && !subCate.subCategories.isEmpty) {
+                                <ul class="sub_menu">
+                                @for(sub2 <- subCate.subCategories) {
+                                    <li>
+                                        <a href="#" target="_top" title="@Messages.get(sub2.name)">@Messages.get(sub2.name)</a>
+                                    </li>
+                                }
+                                </ul>
+                            }
+
+                        </li>
+                    }
+                    </ul>
+                }
+            </li>
+        }
+    }
+</ul>

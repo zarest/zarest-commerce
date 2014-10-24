@@ -1,16 +1,9 @@
-@(message: String, categories: List[Category])
+@(message: String)
 @import play.i18n._
-@main("Welcome to Play", Application.getCurrentLang) {
-    <h2>@Messages.get("zarest")</h2>
-    <ul>
-    @for(p <- categories) {
-        <li>@Messages.get(p.name) :
-            @if(p.parentCategory != null) {
-                @Messages.get(p.parentCategory.name)
-            }
-        </li>
-    }
-    </ul>
+@main(Messages.get("home"), Application.getCurrentLang) {
+    <h2>@Messages.get("home")</h2>
+    <hr >
+
 
 
 }
