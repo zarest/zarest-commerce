@@ -5,25 +5,15 @@
 main, section, aside, header, footer figure, figcaption {
   display: block;
 }
-//--------------------temp-------------
-.list-group-item:first-child {
-  border-top-right-radius: 4px;
-  border-top-left-radius: 4px;
+@media screen and (max-width : 1000px){
+  .menu {
+    display: none;
+  }
+  .change-locale, header h2 {
+    margin: 0 5% 0 20%;
+  }
 }
 
-a.list-group-item {
-  color: #555555;
-}
-
-.list-group-item {
-  position: relative;
-  display: block;
-  padding: 10px 15px;
-  margin-bottom: -1px;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
-}
-//--------------------temp-------------
 body {
   background: @defaultThemeColor;
   color: @darkPurple;
@@ -39,7 +29,7 @@ body {
 header {
   height: auto;
   width: 100%;
-  border-bottom: solid 2px @zaresetBg;
+  border-bottom: solid 1px @zaresetBg;
   background: @headerBg;
   color: @zaresetBg;
   z-index: 200;
@@ -129,30 +119,6 @@ a {
     color: @linksHover;
     //.TextShadow(1px,1px,1px, @zaresetBg);
   }
-}
-
-.RoundedShape(@radius:@defaultRadius) {
-  -webkit-border-radius: @radius;
-  -moz-border-radius: @radius;
-  border-radius: @radius;
-}
-
-.Round {
-  .RoundedShape(9999px);
-}
-
-.RoundedSquare(@radius:@defaultRadius) {
-  .RoundedShape(@radius);
-}
-
-.Shadow(@horOffset: 3px, @verOffset: 3px, @blurRad: 5px, @spreadRad: 6px, @color: #ccc) {
-  -moz-box-shadow: @horOffset @verOffset @blurRad @spreadRad @color;
-  -webkit-box-shadow: @horOffset @verOffset @blurRad @spreadRad @color;
-  box-shadow: @horOffset @verOffset @blurRad @spreadRad @color;
-}
-
-.TextShadow(@horOffset: 1px, @verOffset: 1px, @blurRad: 1px, @color: #000) {
-  text-shadow: @horOffset @verOffset @blurRad @color;
 }
 
 

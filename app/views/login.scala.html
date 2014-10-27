@@ -1,0 +1,50 @@
+@(form : Form[Application.Login])
+@import play.i18n.Messages
+
+<htm>
+    <head>
+        <title>@Messages.get("login")</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/login.css")">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    </head>
+    <body>
+        <heade>
+
+        </heade>
+        @helper.form(routes.Application.authenticate) {
+
+            <h1>@Messages.get("login")</h1>
+
+            @if(form.hasGlobalErrors) {
+                <p class="error">
+                @form.globalError.message
+                </p>
+            }
+
+            @if(flash.contains("success")) {
+                <p class="success">
+                @flash.get("success")
+                </p>
+            }
+            <div class="input-group margin-bottom-sm">
+                <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                <input class="form-control" type="email" name="email" placeholder="Email" value="@form("email").value">
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                <input class="form-control" name="password" type="password" placeholder="Password">
+            </div>
+            <p>
+                <button type="submit">Login</button>
+            </p>
+
+        }
+
+
+    </body>
+</htm>

@@ -3,15 +3,23 @@
 # ~~~~
 
 # Home page
-GET         /                    controllers.Application.index()
-POST        /locale              controllers.Application.changeLocale()
+GET         /                      controllers.Application.index()
+POST        /locale                controllers.Application.changeLocale()
 
-GET         /products            controllers.Application.productPage()
-GET         /aboutUs             controllers.Application.aboutUsPage()
-GET         /contactUs           controllers.Application.contactUs()
-GET         /adminPanel          controllers.Administration.adminPage()
-GET         /login               controllers.Application.login()
+GET         /products              controllers.Application.productPage()
+GET         /aboutUs               controllers.Application.aboutUsPage()
+GET         /contactUs             controllers.Application.contactUs()
+GET         /login                 controllers.Application.login()
+POST        /login                 controllers.Application.authenticate()
+GET         /logout                controllers.Application.logout()
+
+GET         /adminPanel            controllers.Administration.adminPage()
+GET         /createUser            controllers.Administration.createUserPage()
+POST        /createUser            controllers.Administration.createUser()
+GET         /createCategory        controllers.Administration.createCategoryPage()
+POST        /createCategory        controllers.Administration.createCategory()
+
 
 
 # Map static resources from the /public folder to the /assets URL path
-GET         /assets/*file        controllers.Assets.at(path="/public", file)
+GET         /assets/*file          controllers.Assets.at(path="/public", file)

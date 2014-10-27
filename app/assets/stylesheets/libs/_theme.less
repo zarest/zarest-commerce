@@ -25,3 +25,27 @@
 @borderSize: @defaultShapesWidth * 0.1;
 @borderColor: darken(desaturate(@defaultThemeColor, 50%), 20%);
 @border: 1px solid @borderColor;
+
+.RoundedShape(@radius:@defaultRadius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.Round {
+  .RoundedShape(9999px);
+}
+
+.RoundedSquare(@radius:@defaultRadius) {
+  .RoundedShape(@radius);
+}
+
+.Shadow(@horOffset: 3px, @verOffset: 3px, @blurRad: 5px, @spreadRad: 6px, @color: #ccc) {
+  -moz-box-shadow: @horOffset @verOffset @blurRad @spreadRad @color;
+  -webkit-box-shadow: @horOffset @verOffset @blurRad @spreadRad @color;
+  box-shadow: @horOffset @verOffset @blurRad @spreadRad @color;
+}
+
+.TextShadow(@horOffset: 1px, @verOffset: 1px, @blurRad: 1px, @color: #000) {
+  text-shadow: @horOffset @verOffset @blurRad @color;
+}

@@ -94,9 +94,37 @@ contactUs=Contact Us
 settings=Settings
 shoppingCart=Shopping Cart
 welcomeAdminPanel=Welcome To Admin Panel
+login=Login
+logout=Logout
+createUser=Create User
+createCategory=Create Category
+createProduct=Create Product
 
 # Languages
 lang.en=English
 lang.fa=Farsi
 language=Language
 
+
+#Validations
+login.invalid=Invalid Username or Password
+login.unauthorized=User is not an Authorized Admin
+email.required=Email is required
+password.required=Password is Required
+password.validation=Please enter a Valid Password
+password.notMatched=Passwords do not Match
+
+#forms labels
+name=Name
+email=Email
+password=Password
+retypePassword=Retype Password
+adminRole=Admin Role
+parentCategory=Parent Category
+submit=Submit
+required=Required
+
+#Info Messages
+user.create=User was successfully created
+category.create=Category was successfully created
+product.create=Product was successfully created

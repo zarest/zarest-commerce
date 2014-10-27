@@ -1,0 +1,52 @@
+@(user: User)(content: Html)
+    @import play.i18n.Messages
+    <html>
+        <head>
+            <title>@Messages.get("mainPanel")</title>
+            <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/login.css")">
+            <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+                <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+                <!-- Optional theme -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+                <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+            <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+        </head>
+        <body>
+            <header>
+                <a href="@routes.Application.index" id="logo">@Messages.get("zarest")</a>
+                <dl id="user">
+                    <dt>@user.name <span>(@user.email)</span></dt>
+                    <dd>
+                        <a href="@routes.Application.logout()">Logout</a>
+                    </dd>
+                </dl>
+            </header>
+            <nav>
+                <h3>@Messages.get("welcomeAdminPanel")</h3>
+            </nav>
+            <section>
+                <div class="list-group">
+                    <a class="list-group-item" href="@routes.Administration.adminPage()"><i class="fa fa-home fa-fw"></i> &nbsp; @Messages.get("home")</a>
+                    <a class="list-group-item" href="@routes.Administration.createUserPage()"><i class="fa fa-users fa-fw"></i> &nbsp; @Messages.get("createUser")</a>
+                    <a class="list-group-item" href="@routes.Administration.createCategoryPage()"><i class="fa fa-folder fa-fw"></i> &nbsp; @Messages.get("createCategory")</a>
+                    <a class="list-group-item" href="#"><i class="fa fa-shopping-cart fa-fw"></i> &nbsp; @Messages.get("createProduct")</a>
+                </div>
+            </section>
+            <main>
+                <article id="main">
+                    @if(flash.contains("success")) {
+                        <p class="success">
+                        @flash.get("success")
+                        </p>
+                    }
+                    @content
+                </article>
+            </main>
+        </body>
+    </html>

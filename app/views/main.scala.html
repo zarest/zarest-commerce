@@ -4,6 +4,7 @@
 <html>
     <head>
         <title>@title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
@@ -26,7 +27,9 @@
         </header>
         <nav class="sticky">
             <div class='top_menu'>
-                <ul>
+                <label for="show-menu" class="show-menu">Show Menu</label>
+                <input type="checkbox" id="show-menu" role="button">
+                <ul id="menuTop">
                     <li><a href="@routes.Application.index()"><span>@Messages.get("home")</span></a></li>
                     <li class='active has-sub'><a href="@routes.Application.productPage()"><span>@Messages.get("products")</span></a>
                         @categoryList()

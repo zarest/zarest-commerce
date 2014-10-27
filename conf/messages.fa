@@ -96,8 +96,38 @@ contactUs=تماس با ما
 settings=تنظیمات
 shoppingCart=سبد خرید
 welcomeAdminPanel=به پنل ادمین خوش آمدید
+login=ورود به سیستم
+logout=خروج از سیستم
+createUser=ایجاد کاربر
+createCategory=ایجاد کتگوری
+createProduct=ایجاد محصول
 
 # Languages --------------------
 lang.en=انگلیسی
 lang.fa=فارسی
 language=زبان
+
+
+
+#Validations
+login.invalid=نام کاربری یا رمز شما صحیح نمی باشد
+login.unauthorized=کاربر، ادمین مجاز نمی باشد
+email.required=وارد کردن ایمیل الزامی می باشد
+password.required=وارد کردن پسورد الزامی می باشد
+password.validation=لطفا پسورد مجاز وارد کنید
+password.notMatched=پسوردها یکسان نمی باشند
+
+#forms labels
+name=نام
+email=ایمیل
+password=پسورد
+retypePassword=تکرار پسورد
+adminRole=ادمین رل
+parentCategory=کتگوری منشاء
+submit=ارسال
+required=الزامی
+
+#Info Messages
+user.create=کاربر با موفقیت ایجاد شد
+category.create=کتگوری با موفقیت ایجاد شد
+product.create=محصول با موفقیت ایجاد شد

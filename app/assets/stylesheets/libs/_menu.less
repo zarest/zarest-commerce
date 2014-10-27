@@ -9,7 +9,59 @@
   width: auto;
   margin: 0 20% 0 20%;
 
+  //--------------temp--------------------------------------
+  /*Style 'show menu' label button and hide it by default*/
+  .show-menu {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    color: @zaresetBg;
+    background: #19c589;
+    text-align: center;
+    padding: 10px 0;
+    display: none;
+  }
+
+  /*Hide checkbox*/
+  input[type=checkbox]{
+    display: none;
+  }
+
+  /*Show menu when invisible checkbox is checked*/
+  input[type=checkbox]:checked ~ #menuTop{
+    display: block;
+  }
+
+  /*Responsive Styles*/
+
+  @media screen and (max-width : 1000px){
+    /*Make dropdown links appear inline*/
+    ul {
+      position: static;
+      display: none;
+    }
+    /*Create vertical spacing*/
+    li {
+      //margin-bottom: 1px;
+      border-bottom: @border;
+      z-index: 100;
+    }
+    /*Make all menu links full width*/
+    ul li, li a {
+      width: 100%;
+    }
+
+    li ul li {
+      display: none;
+    }
+    /*Display 'show menu' link*/
+    .show-menu {
+      display:block;
+    }
+  }
+  //--------------temp--------------------------------------
+
 }
+
 .top_menu ul {
   background: @headerBg;
   height: 35px;
