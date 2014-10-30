@@ -1,20 +1,11 @@
 @(userForm: Form[User])
+@import views.html.util.signupTemplate
 @import play.i18n.Messages
 @import admin.mainPanel
 @mainPanel(Secured.getCurrentUser) {
     <h1>@Messages.get("createUser")</h1>
     @helper.form(routes.Administration.createUser(), 'class -> "clearfix") {
-        @if(userForm.hasErrors) {
-            @for(error <- userForm("passwordNotMatch").errors) {
-                <p class="error">@Messages.get(error.message)</p>
-            }
-
-        }
-        @helper.input(userForm("email"), '_help -> Messages.get("required"), 'placeholder -> Messages.get("email")) { (id, name, value, args) =>
-            <input type="email" name="@name" id="@id" value="@value" @toHtmlArgs(args)>
-        }
-        @helper.inputPassword(userForm("password"), '_help -> Messages.get("required"), '_label -> Messages.get("password"), 'placeholder -> Messages.get("password"))
-        @helper.inputPassword(userForm("retypePassword"), '_label -> Messages.get("retypePassword"), 'placeholder -> Messages.get("retypePassword"))
+        @signupTemplate(userForm)
         @helper.checkbox(userForm("isAdmin"), '_label -> Messages.get("adminRole"))
         <div>
             <input type="submit" value="@Messages.get("submit")">

@@ -27,16 +27,30 @@ public class ModelsTest extends WithApplication {
     }
 
     @Test
-    @Ignore
+    //@Ignore
     public void createAndRetrieveUser() {
         User user = new User("bob@gmail.com", "Bob", "secret");
-        Address address = new Address();
-        address.country = Country.getListOfCountries(Locale.CANADA).get(0);
-        user.addressList.add(address);
         user.save();
         User bob = User.find.where().eq("email", "bob@gmail.com").findUnique();
         assertNotNull(bob);
-        assertNotNull(bob.addressList.get(0));
+        //assertEquals("03", bob.addressList.get(0).addressType);
         assertEquals("Bob", bob.name);
+    }
+
+    @Test
+    public void createAndRetrieveCustomer() {
+        Customer customer = new Customer("meysam@gmail.com", "meysam", "secret");
+        Address address = new Address();
+        address.country = Country.getListOfCountries(Locale.CANADA).get(0);
+        customer.addressList.add(address);
+        CreditCard creditCard = new CreditCard();
+        creditCard.creditCardNumber = "49158006189134";
+        customer.creditCards.add(creditCard);
+        customer.save();
+        Customer meysam = Customer.find.where().eq("email", "meysam@gmail.com").findUnique();
+        assertNotNull(meysam);
+        assertNotNull(meysam.creditCards.get(0));
+        assertEquals("03", meysam.addressList.get(0).addressType);
+        assertEquals("meysam", meysam.name);
     }
 }

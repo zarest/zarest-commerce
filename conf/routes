@@ -16,6 +16,8 @@ GET         /logout                controllers.Application.logout()
 GET         /adminPanel            controllers.Administration.adminPage()
 GET         /createUser            controllers.Administration.createUserPage()
 POST        /createUser            controllers.Administration.createUser()
+GET         /createCustomer        controllers.Administration.createCustomerPage()
+POST        /createCustomer        controllers.Administration.createCustomer()
 GET         /createCategory        controllers.Administration.createCategoryPage()
 POST        /createCategory        controllers.Administration.createCategory()
 

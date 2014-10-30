@@ -1,6 +1,37 @@
-@(user: User)
-@import play.i18n._
-@import admin.mainPanel
-@mainPanel(user) {
-    <h1>HOME</h1>
-}
+@(customers: List[Customer])
+    @import play.i18n._
+    @import admin.mainPanel
+    @mainPanel(Secured.getCurrentUser) {
+        <h1>@Messages.get("home")</h1>
+        @if(!customers.isEmpty) {
+            <table data-toggle="table" border="solid">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Address1</th>
+                        <th>Credit Card Number</th>
+                    </tr>
+                </thead>
+                @for(cust <- customers) {
+                    <tr>
+                        <td>
+                        @cust.name
+                        </td>
+                        <td>
+                        @cust.email
+                        </td>
+                        <td>
+                        @cust.addressList.get(0).address1
+                        </td>
+                        <td>
+                        @cust.creditCards.get(0).creditCardNumber
+                        </td>
+
+                    </tr>
+                }
+            </table>
+        }
+    }
+
+

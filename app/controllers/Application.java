@@ -86,6 +86,7 @@ public class Application extends Controller {
     public static Result authenticate() {
 
         Form<Login> loginForm = form(Login.class).bindFromRequest();
+        Logger.info("We are here");
         if (loginForm.hasErrors()) {
             return badRequest(login.render(loginForm));
         } else {

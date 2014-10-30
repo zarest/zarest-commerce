@@ -13,31 +13,20 @@ import java.util.List;
  * Created by meysamabl on 10/25/14.
  */
 @Entity
-public class User extends Model {
+@DiscriminatorValue("0")
+public class User extends GenericUser {
 
-    @Id
-    @Email
-    @Required(message = "email.required")
-    public String email;
-    @Required(message = "password.required")
-    @Pattern(value = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})", message = "password.validation")
-    public String password;
-    public String name;
-    @Valid
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
-    public List<Address> addressList = new ArrayList<>();
-    public String phone;
     public boolean isAdmin;
+
 
     public User() {
 
     }
 
 
-
     public User(String email, String name, String password) {
         this.email = email;
-        this.name= name;
+        this.name = name;
         this.password = password;
     }
 
@@ -73,6 +62,7 @@ public class User extends Model {
         User user = authenticate(email, password);
         return user != null && user.isAdmin ? true : false;
     }
+
 
     // --
 

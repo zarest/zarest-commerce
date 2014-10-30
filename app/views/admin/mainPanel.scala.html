@@ -1,4 +1,4 @@
-@(user: User)(content: Html)
+@(user: Option[User])(content: Html)
     @import play.i18n.Messages
     <html>
         <head>
@@ -21,7 +21,7 @@
             <header>
                 <a href="@routes.Application.index" id="logo">@Messages.get("zarest")</a>
                 <dl id="user">
-                    <dt>@user.name <span>(@user.email)</span></dt>
+                    <dt>@user.get.name <span>(@user.get.email)</span></dt>
                     <dd>
                         <a href="@routes.Application.logout()">Logout</a>
                     </dd>
@@ -33,7 +33,8 @@
             <section>
                 <div class="list-group">
                     <a class="list-group-item" href="@routes.Administration.adminPage()"><i class="fa fa-home fa-fw"></i> &nbsp; @Messages.get("home")</a>
-                    <a class="list-group-item" href="@routes.Administration.createUserPage()"><i class="fa fa-users fa-fw"></i> &nbsp; @Messages.get("createUser")</a>
+                    <a class="list-group-item" href="@routes.Administration.createUserPage()"><i class="fa fa-user fa-fw"></i> &nbsp; @Messages.get("createUser")</a>
+                    <a class="list-group-item" href="@routes.Administration.createCustomerPage()"><i class="fa fa-users fa-fw"></i> &nbsp; @Messages.get("createCustomer")</a>
                     <a class="list-group-item" href="@routes.Administration.createCategoryPage()"><i class="fa fa-folder fa-fw"></i> &nbsp; @Messages.get("createCategory")</a>
                     <a class="list-group-item" href="#"><i class="fa fa-shopping-cart fa-fw"></i> &nbsp; @Messages.get("createProduct")</a>
                 </div>

@@ -99,6 +99,7 @@ welcomeAdminPanel=به پنل ادمین خوش آمدید
 login=ورود به سیستم
 logout=خروج از سیستم
 createUser=ایجاد کاربر
+createCustomer=ایجاد مشتری
 createCategory=ایجاد کتگوری
 createProduct=ایجاد محصول
 
@@ -112,10 +113,19 @@ language=زبان
 #Validations
 login.invalid=نام کاربری یا رمز شما صحیح نمی باشد
 login.unauthorized=کاربر، ادمین مجاز نمی باشد
-email.required=وارد کردن ایمیل الزامی می باشد
-password.required=وارد کردن پسورد الزامی می باشد
+#Generic User
+email.required=ایمیل اجباری می باشد
+name.required=نام اجباری می باشد
+password.required=پسورد اجباری می باشد
 password.validation=لطفا پسورد مجاز وارد کنید
 password.notMatched=پسوردها یکسان نمی باشند
+
+#Address
+address1.required=آدرس اجباری می باشد
+city.required=شهر اجباری می باشد
+state.required=استان اجباری می باشد
+country.required=کشور اجباری می باشد
+postalCode.required=کد پستی اجباری می باشد
 
 #forms labels
 name=نام

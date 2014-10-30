@@ -1,26 +1,25 @@
 package controllers;
 
-import models.Address;
 import models.Category;
+import models.Country;
+import models.Customer;
 import models.User;
 import play.Logger;
-import play.data.DynamicForm;
 import play.data.Form;
-import play.data.validation.Validation;
-import play.data.validation.ValidationError;
+import play.data.format.Formatters;
 import play.db.ebean.Transactional;
 import play.i18n.Messages;
 import play.mvc.Controller;
 import play.mvc.Result;
-import play.mvc.Results;
 import play.mvc.Security;
-import play.twirl.api.Html;
 import views.html.admin.adminPanel;
 import views.html.admin.createCategory;
+import views.html.admin.createCustomerPage;
 import views.html.admin.createUserPage;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.text.ParseException;
+import java.util.Iterator;
+import java.util.Locale;
 import java.util.Map;
 
 import static play.data.Form.form;
@@ -31,8 +30,27 @@ import static play.data.Form.form;
 @Security.Authenticated(Secured.class)
 public class Administration extends Controller {
 
+    static {
+        // add a formater which takes you field and convert it to the proper object
+        // this will be called autmaticaly when you call bindFromRequest()
+
+        Formatters.register(Country.class, new Formatters.SimpleFormatter<Country>() {
+            @Override
+            public Country parse(String input, Locale arg1) throws ParseException {
+                // here I extaract It from the DB
+                Country country = Secured.findByCountryCode(input);
+                return country;
+            }
+
+            @Override
+            public String print(Country country, Locale arg1) {
+                return country.getCountryCode();
+            }
+        });
+    }
+
     public static Result adminPage() {
-        return ok(adminPanel.render(User.findByEmail(request().username())));
+        return ok(adminPanel.render(Customer.find.all()));
     }
 
     public static Result createUserPage() {
@@ -43,23 +61,13 @@ public class Administration extends Controller {
     public static Result createUser() {
         //DynamicForm requestData = form().bindFromRequest();
         Form<User> userForm = form(User.class).bindFromRequest();
-        String retypePassword = userForm.data().get("retypePassword");
-        String password = userForm.data().get("password");
         if (userForm.hasErrors()) {
             return badRequest(createUserPage.render(userForm));
         } else {
-            if (!retypePassword.isEmpty() && password.compareTo(retypePassword) == 0) {
-                User user = userForm.get();
-                user.save();
-                flash("success", Messages.get("user.create"));
-                return redirect(routes.Administration.adminPage());
-            } else {
-                List<ValidationError> error = new ArrayList<>();
-                error.add(new ValidationError("passwordNotMatch", "password.notMatched"));
-                userForm.errors().put("passwordNotMatch", error);
-                return badRequest(createUserPage.render(userForm));
-            }
-
+            User user = userForm.get();
+            user.save();
+            flash("success", Messages.get("user.create"));
+            return redirect(routes.Administration.adminPage());
         }
     }
 
@@ -74,6 +82,23 @@ public class Administration extends Controller {
         } else {
             categoryForm.get().save();
             flash("success", Messages.get("category.create"));
+            return redirect(routes.Administration.adminPage());
+        }
+    }
+
+    public static Result createCustomerPage() {
+        return ok(createCustomerPage.render(form(Customer.class)));
+    }
+
+    @Transactional
+    public static Result createCustomer() {
+
+        Form<Customer> customerForm = form(Customer.class).bindFromRequest();
+        if (customerForm.hasErrors()) {
+            return badRequest(createCustomerPage.render(customerForm));
+        } else {
+            customerForm.get().save();
+            flash("success", Messages.get("customer.create"));
             return redirect(routes.Administration.adminPage());
         }
     }

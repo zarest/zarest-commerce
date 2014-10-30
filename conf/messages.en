@@ -97,6 +97,7 @@ welcomeAdminPanel=Welcome To Admin Panel
 login=Login
 logout=Logout
 createUser=Create User
+createCustomer=Create Customer
 createCategory=Create Category
 createProduct=Create Product
 
@@ -109,10 +110,19 @@ language=Language
 #Validations
 login.invalid=Invalid Username or Password
 login.unauthorized=User is not an Authorized Admin
+#GenericUser
 email.required=Email is required
+name.required=Name is Required
 password.required=Password is Required
 password.validation=Please enter a Valid Password
 password.notMatched=Passwords do not Match
+
+#Address
+address1.required=Address is required
+city.required=City is required
+state.required=State is required
+country.required=Country is required
+postalCode.required=Postal Code is required
 
 #forms labels
 name=Name

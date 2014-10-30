@@ -1,17 +1,42 @@
 package models;
 
+import play.data.validation.Constraints.*;
 import play.db.ebean.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by meysamabl on 10/18/14.
  */
 @Entity
-public class Customer extends Model {
+@DiscriminatorValue("1")
+public class Customer extends GenericUser {
 
-    @Id
-    public Long id;
+    @Valid
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "customer")
+    public List<Address> addressList = new ArrayList<>();
+    @Required(message = "phone.required")
+    @Pattern(value = "^\\+(?:[0-9] ?){6,14}[0-9]$",
+            message = "phone.validation")
+    public String phone;
+
+    @Valid
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "customer")
+    public List<CreditCard> creditCards = new ArrayList<>();
+
+    public boolean isShippingAddress;
+
+    public Customer() {
+        super();
+    }
+
+    public Customer(String email, String name, String password) {
+        super(email, name, password);
+    }
+
+    public static Finder<String, Customer> find = new Finder<String, Customer>(String.class, Customer.class);
 
 }

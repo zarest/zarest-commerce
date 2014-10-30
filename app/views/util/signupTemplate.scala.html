@@ -1,0 +1,11 @@
+@(form: Form[_ <: GenericUser])
+@import play.i18n.Messages
+@if(form.hasGlobalErrors) {
+    <p class="error">@Messages.get(form.globalError.message)</p>
+}
+@helper.inputText(form("name"), 'placeholder -> Messages.get("name"), '_help -> Messages.get("required"))
+@helper.input(form("email"), '_help -> Messages.get("required"), 'placeholder -> Messages.get("email")) { (id, name, value, args) =>
+    <input type="email" name="@name" id="@id" value="@value" @toHtmlArgs(args)>
+}
+@helper.inputPassword(form("password"), '_help -> Messages.get("required"), '_label -> Messages.get("password"), 'placeholder -> Messages.get("password"))
+@helper.inputPassword(form("confirmedPassword"), '_help -> Messages.get("required"), '_label -> Messages.get("retypePassword"), 'placeholder -> Messages.get("retypePassword"))

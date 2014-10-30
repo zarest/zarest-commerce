@@ -2,6 +2,7 @@ import com.avaje.ebean.Ebean;
 import models.Category;
 import play.Application;
 import play.GlobalSettings;
+import play.Logger;
 import play.api.mvc.Handler;
 import play.libs.F;
 import play.libs.Yaml;
@@ -20,10 +21,10 @@ public class Global extends GlobalSettings {
 
     @Override
     public void onStart(Application app) {
-        if(Category.find.findRowCount() == 0) {
+        if (Category.find.findRowCount() == 0) {
 
             @SuppressWarnings("unchecked")
-            Map<String,List<Object>> all = (Map<String,List<Object>>) Yaml.load("initial-data.yml");
+            Map<String, List<Object>> all = (Map<String, List<Object>>) Yaml.load("initial-data.yml");
 
             // Insert users first
             Ebean.save(all.get("users"));
@@ -56,8 +57,19 @@ public class Global extends GlobalSettings {
                 }
             };
 
-        } else {
-            return super.onRequest(request, actionMethod);
         }
+//        if (request.username() == null && !request.path().startsWith("/login")) {
+//
+//            return new Action.Simple() {
+//                @Override
+//                public F.Promise<Result> call(Http.Context ctx) throws Throwable {
+//                    temporaryRedirect("/login");
+//                    Logger.info("Inside the user request");
+//                    return delegate.call(ctx);
+//                }
+//            };
+//        }
+        return super.onRequest(request, actionMethod);
+
     }
 }
