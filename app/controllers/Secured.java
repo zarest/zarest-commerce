@@ -1,6 +1,7 @@
 package controllers;
 
 import play.Logger;
+import play.i18n.Messages;
 import play.mvc.*;
 import play.mvc.Http.*;
 
@@ -49,6 +50,22 @@ public class Secured extends Security.Authenticator {
 
     public static Country findByCountryCode(String code) {
         return COUNTRY_LIST.stream().filter(c -> c.getCountryCode().equals(code)).findFirst().get();
+    }
+
+    public static Map<String, String> getSuperParentCategories() {
+        Map<String, String> categories = new LinkedHashMap<>();
+        Category.findSuperParentCategories().forEach(category -> categories.put(category.id.toString(), Messages.get(category.name)));
+        return categories;
+    }
+
+    public static Map<String, String> getSubCategories(String id) {
+        Map<String, String> categories = new LinkedHashMap<>();
+        if (id != null && !id.isEmpty()) {
+            Category cat = Category.find.byId(Long.parseLong(id));
+            cat.subCategories.forEach(category -> categories.put(category.id.toString(), Messages.get(category.name)));
+            return categories;
+        }
+        return categories;
     }
 
 

@@ -1,9 +1,13 @@
 import com.avaje.ebean.Ebean;
+import controllers.Secured;
 import models.Category;
+import models.Country;
 import play.Application;
 import play.GlobalSettings;
 import play.Logger;
 import play.api.mvc.Handler;
+import play.data.format.Formatters;
+import play.db.ebean.Transactional;
 import play.libs.F;
 import play.libs.Yaml;
 import play.mvc.Action;
@@ -11,7 +15,9 @@ import play.mvc.Http;
 import play.mvc.Result;
 
 import java.lang.reflect.Method;
+import java.text.ParseException;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -19,7 +25,39 @@ import java.util.Map;
  */
 public class Global extends GlobalSettings {
 
+    static {
+        // add a formater which takes you field and convert it to the proper object
+        // this will be called autmaticaly when you call bindFromRequest()
+        Formatters.register(Country.class, new Formatters.SimpleFormatter<Country>() {
+            @Override
+            public Country parse(String input, Locale arg1) throws ParseException {
+                // here I extaract It from the DB
+                Country country = Secured.findByCountryCode(input);
+                return country;
+            }
+
+            @Override
+            public String print(Country country, Locale arg1) {
+                return country.getCountryCode();
+            }
+        });
+
+        Formatters.register(Category.class, new Formatters.SimpleFormatter<Category>() {
+
+            @Override
+            public Category parse(String input, Locale locale) throws ParseException {
+                return Category.find.byId(Long.parseLong(input));
+            }
+
+            @Override
+            public String print(Category category, Locale locale) {
+                return category.id.toString();
+            }
+        });
+    }
+
     @Override
+    @Transactional
     public void onStart(Application app) {
         if (Category.find.findRowCount() == 0) {
 

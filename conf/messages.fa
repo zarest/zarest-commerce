@@ -46,6 +46,7 @@ skateboard=اسکیت برد
 badminton=بدمینتون
 golf=گلف
 fish=ماهیگیری
+
 #Software-------------------------------
 trade=تجارت
 videoAndAudio=صدا و تصویر
@@ -56,6 +57,7 @@ designAndCreativity=طراحی و خلاقیت
 security=امنیت
 operatingSystem=سیستم عامل
 educational=آموزشی
+
 #Toys----------------------------------
 dollsForBoys=عروسک پسرانه
 dollsForGirls=عروسک دخترانه
@@ -65,11 +67,13 @@ toysYard=اسباب بازی حیاط
 lego=لگو
 babyAndChild=نوزاد و کودک
 carsAndMotors=ماشین و موتور
+
 #Carpet ------------------------
 handmade=دستباف
 silk=ابریشم
 machineMade=ماشینی
 tablou=تابلو
+
 #Furniture---------------------
 bedroom=اتاق خواب
 babyRoom=اتاق کودک
@@ -85,7 +89,7 @@ movie=فیلم
 music=موسیقی
 series=سریال
 
-# website -------------------------------
+# website---------------------------------------
 footer=حقوق و محتوای سایت متعلق به فروشگاه اینترنتی زارست میباشد © ١٣٩٣
 zarest=زارست
 adminPanel=پنل ادمین
@@ -110,22 +114,24 @@ language=زبان
 
 
 
-#Validations
+#Validations------------------------------
 login.invalid=نام کاربری یا رمز شما صحیح نمی باشد
 login.unauthorized=کاربر، ادمین مجاز نمی باشد
-#Generic User
+#Generic User------------------------------
 email.required=ایمیل اجباری می باشد
 name.required=نام اجباری می باشد
 password.required=پسورد اجباری می باشد
 password.validation=لطفا پسورد مجاز وارد کنید
 password.notMatched=پسوردها یکسان نمی باشند
-
-#Address
+#Address----------------------------------
 address1.required=آدرس اجباری می باشد
 city.required=شهر اجباری می باشد
 state.required=استان اجباری می باشد
 country.required=کشور اجباری می باشد
 postalCode.required=کد پستی اجباری می باشد
+#Category
+
+#End of Validation------------------------
 
 #forms labels
 name=نام
@@ -133,11 +139,33 @@ email=ایمیل
 password=پسورد
 retypePassword=تکرار پسورد
 adminRole=ادمین رل
-parentCategory=کتگوری منشاء
+categoryLevel=کتگوری سطح {0}
 submit=ارسال
 required=الزامی
+chooseCategory=- انتخاب کتگوری -
+#Adrress-------------------
+address=آدرس
+address1=آدرس 1
+address2=آدرس 2
+city=شهر
+state=استان
+postalCode=کد پستی
+phone=تلفن
+country=کشور
+chooseCountry=- انتخاب کشور -
+paymentInfo=اطلاعات پرداخت
+cardType=نوع کارت
+creditCardNumber=شماره کارت اعتباری
+expiryDate=تاریخ انقضاء
+#Category---------------------
+description=شرح
+picture=تصویر
+active=فعال
+
+# End of forms labels -----------------------------------------
 
 #Info Messages
 user.create=کاربر با موفقیت ایجاد شد
 category.create=کتگوری با موفقیت ایجاد شد
 product.create=محصول با موفقیت ایجاد شد
+customer.create=مشتری با موفقیت ایجاد شد

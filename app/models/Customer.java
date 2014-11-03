@@ -16,7 +16,8 @@ import java.util.List;
 public class Customer extends GenericUser {
 
     @Valid
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "customer")
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name="customer_address")
     public List<Address> addressList = new ArrayList<>();
     @Required(message = "phone.required")
     @Pattern(value = "^\\+(?:[0-9] ?){6,14}[0-9]$",

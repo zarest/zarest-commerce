@@ -11,6 +11,7 @@ furniture=Furniture
 musicTools=Music Tools
 book=Book
 movieMusicTvSeries=Movie Music Series
+
 # Sub-categories------------------------
 #Clothing & HealthBeauty---------------
 men=Men
@@ -18,6 +19,7 @@ women=Women
 girls=Girls
 boys=Boys
 babies=Babies
+
 #Electricity-----------------------------
 phoneAndTablet=Phone & Tablet
 desktopAndLaptop=Desktop & Laptop
@@ -30,6 +32,7 @@ screenAndProjector=Screen & Projector
 kitchen=Kitchen
 hardAndFlash=Hard Disk & Flash Memory
 hardware=Hardware
+
 #Sports---------------------------------
 bodybuilding=Bodybuilding
 ski=Ski
@@ -43,6 +46,7 @@ skateboard=Skateboard
 badminton=Badminton
 golf=Golf
 fish=Fish
+
 #Software-------------------------------
 trade=Trade
 videoAndAudio=Video & Audio
@@ -53,6 +57,7 @@ designAndCreativity=Design & Creativity
 security=Security
 operatingSystem=Operating System
 educational=Educational
+
 #Toys -------------------------
 dollsForBoys=Dolls for Boys
 dollsForGirls=Dolls for Girls
@@ -62,6 +67,7 @@ toysYard=Toys Yard
 lego=Lego
 babyAndChild=Baby & Child
 carsAndMotors=Cars & Motors
+
 #Carpet ------------------------
 handmade=Handmade
 silk=Silk
@@ -83,7 +89,7 @@ movie=Movie
 music=Music
 series=TV Series
 
-# website
+# website---------------------------------------
 footer=©Copyright, All the Contents and rights of this site belnogs to Zarest Ltd.
 zarest=Zarest
 adminPanel=Admin Panel
@@ -107,34 +113,59 @@ lang.fa=Farsi
 language=Language
 
 
-#Validations
+#Validations---------------------------------------
 login.invalid=Invalid Username or Password
 login.unauthorized=User is not an Authorized Admin
-#GenericUser
+#---GenericUser
 email.required=Email is required
 name.required=Name is Required
 password.required=Password is Required
 password.validation=Please enter a Valid Password
 password.notMatched=Passwords do not Match
-
-#Address
+#---Address
 address1.required=Address is required
 city.required=City is required
 state.required=State is required
 country.required=Country is required
 postalCode.required=Postal Code is required
+#Category
 
-#forms labels
+
+# End of Validation ----------------------------------
+
+#forms labels -----------------------------------------
 name=Name
 email=Email
 password=Password
 retypePassword=Retype Password
 adminRole=Admin Role
-parentCategory=Parent Category
+categoryLevel=Category Level {0}
 submit=Submit
 required=Required
+chooseCategory=- Choose a Category -
+#Address----------------------
+address=Address
+address1=Address 1
+address2=Address 2
+city=City
+state=State
+postalCode=Postal Code
+phone=Phone
+country=Country
+chooseCountry=- Choose a Country -
+paymentInfo=Payment Info
+cardType=Card Type
+creditCardNumber=Credit Card Number
+expiryDate=Expiry Date
+#Category---------------------
+description=Description
+picture=Picture
+active=Active
+
+# End of forms labels -----------------------------------------
 
 #Info Messages
 user.create=User was successfully created
 category.create=Category was successfully created
 product.create=Product was successfully created
+customer.create=Customer was successfully created

@@ -1,0 +1,17 @@
+@(form: Form[Product])
+
+@import play.i18n._;
+
+@admin.mainPanel(Secured.getCurrentUser) {
+    <h1>@Messages.get("createProduct")</h1>
+
+    @helper.form(routes.Administration.upload(), 'enctype -> "multipart/form-data", 'id -> "myForm") {
+        @helper.inputFile(form("picture"), 'id -> "picture")
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+        <div id="image_view">
+
+        </div>
+    }
+}

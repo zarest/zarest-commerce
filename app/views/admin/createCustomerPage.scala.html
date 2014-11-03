@@ -5,6 +5,7 @@
 @import views.html.util.signupTemplate
 @import play.i18n._
 @mainPanel(Secured.getCurrentUser) {
+
     <h1>@Messages.get("createCustomer")</h1>
     @helper.form(routes.Administration.createCustomer(), 'class -> "clearfix form-inline") {
         <div class="control-group">
@@ -19,7 +20,7 @@
                     @inputText(customerForm(address.name.toString + ".city"), '_help -> Messages.get("required"), '_label -> Messages.get("city"), 'placeholder -> Messages.get("city"))
                     @inputText(customerForm(address.name.toString + ".state"), '_help -> Messages.get("required"), '_label -> Messages.get("state"), 'placeholder -> Messages.get("state"))
                     @inputText(customerForm(address.name.toString + ".postalCode"), '_help -> Messages.get("required"), '_label -> Messages.get("postalCode"), 'placeholder -> Messages.get("postalCode"))
-                    @select(customerForm(address.name.toString + ".country"), helper.options(Secured.getListOfCountries), '_showConstraints -> false, '_label -> Messages.get("country"), 'style -> "width: 180px;", '_default -> "-- Choose a Country --")
+                    @select(customerForm(address.name.toString + ".country"), helper.options(Secured.getListOfCountries), '_showConstraints -> false, '_label -> Messages.get("country"), 'style -> "width: 180px;", '_default -> Messages.get("chooseCountry"))
 
                 }
 
@@ -27,7 +28,7 @@
             <fieldset>
                 <legend>@Messages.get("paymentInfo")</legend>
                 @repeat(customerForm("creditCards"), min = 1) { creditCard =>
-                    @helper.inputRadioGroup(customerForm(creditCard.name.toString + ".creditCardType"), helper.options(Secured.getCreditCardTypes), '_label -> Messages.get("Type"), '_class -> "radioGroup")
+                    @helper.inputRadioGroup(customerForm(creditCard.name.toString + ".creditCardType"), helper.options(Secured.getCreditCardTypes), '_label -> Messages.get("cardType"), '_class -> "radioGroup")
                     @helper.input(customerForm(creditCard.name.toString + ".creditCardNumber"), '_help -> Messages.get("required"), '_label -> Messages.get("creditCardNumber"), 'placeholder -> Messages.get("creditCardNumber")) { (id, name, value, args) =>
                         <input type="number" name="@name" id="@id" value="@value" @toHtmlArgs(args)>
                     }

@@ -28,9 +28,7 @@ public class Address extends Model {
     public String postalCode;
     @Required
     public String addressType = AddressType.SHIPPING.code;
-    @Valid
-    @OneToOne
-    public Customer customer;
+
 
     public enum AddressType {
         NORMAL("01"), BILLING("02"), SHIPPING("03");

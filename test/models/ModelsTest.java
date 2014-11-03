@@ -6,8 +6,10 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 import play.Logger;
+import play.core.Router;
 import play.test.WithApplication;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Locale;
 
@@ -53,4 +55,29 @@ public class ModelsTest extends WithApplication {
         assertEquals("03", meysam.addressList.get(0).addressType);
         assertEquals("meysam", meysam.name);
     }
+
+    @Test
+    public void createProduct() {
+        Product p = new Product();
+        Category cat = Category.find.byId(1l);
+        p.productName = "Test Product";
+        p.category = cat;
+        Image image = new Image();
+        image.caption = "This is Caption";
+        image.filePath = "/public/images/favicon.png";
+        p.pictures.add(image);
+        Supplier supplier = new Supplier();
+        supplier.companyName = "TestSupplier";
+        supplier.save();
+        Supplier sup = Supplier.find.byId(1l);
+        p.supplier = sup;
+        p.unitPrice = BigDecimal.valueOf(200l);
+        p.save();
+        Product prod = Product.find.byId(1l);
+        assertNotNull(prod);
+        assertEquals(prod.productName, "Test Product");
+        assertEquals(cat.name, prod.category.name);
+    }
+
+
 }

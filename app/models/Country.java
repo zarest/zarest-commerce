@@ -4,6 +4,7 @@ import play.libs.Scala;
 import scala.Option;
 
 import javax.persistence.Embeddable;
+import java.io.Serializable;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -13,7 +14,7 @@ import static play.mvc.Http.Context.current;
  * Created by meysamabl on 10/25/14.
  */
 @Embeddable
-public class Country implements Comparable<Country> {
+public class Country implements Comparable<Country>, Serializable {
 
     private String countryCode;
     private String countryName;

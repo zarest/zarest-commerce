@@ -1,0 +1,32 @@
+@(form: Form[Category])
+@import play.i18n._
+@import admin.mainPanel
+
+@mainPanel(Secured.getCurrentUser) {
+    <h1>@Messages.get("createCategory")</h1>
+    @helper.form(routes.Administration.createCategory(), 'id -> "catForm",  'class -> "clearfix form-inline", 'enctype -> "multipart/form-data") {
+        @if(form.hasGlobalErrors) {
+            <p class="error">@Messages.get(form.globalError.message)</p>
+        }
+        @helper.inputText(form("name"), '_help -> Messages.get("required"))
+        <dl>
+            <dt><label for="description">@Messages.get("description")</label></dt>
+            <dd><textarea name="description">@form("description").value</textarea></dd>
+
+        </dl>
+        @helper.inputFile(form("picture"), 'id -> "picture")
+        <div id="image_view"></div>
+        @helper.select(form("parentCategory"), helper.options(Secured.getSuperParentCategories),
+            '_showConstraints -> false, '_label -> Messages.get("categoryLevel", "1"), 'style -> "width: 180px;",
+            '_default -> Messages.get("chooseCategory"), 'id -> "level1")
+
+        @helper.select(form("parentCategory"), helper.options(Secured.getSubCategories(form("parentCategory").value)),
+            '_showConstraints -> false, '_label -> Messages.get("categoryLevel", "2"), 'style -> "width: 180px;",
+            '_default -> Messages.get("chooseCategory"), 'onchange -> "catLevel2()", '_id -> "level2Parent", 'id -> "level2")
+
+        @helper.checkbox(form("active"))
+        <div>
+            <input type="submit" value="@Messages.get("submit")">
+        </div>
+    }
+}
