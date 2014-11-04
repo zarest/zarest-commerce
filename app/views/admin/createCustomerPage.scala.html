@@ -28,7 +28,7 @@
             <fieldset>
                 <legend>@Messages.get("paymentInfo")</legend>
                 @repeat(customerForm("creditCards"), min = 1) { creditCard =>
-                    @helper.inputRadioGroup(customerForm(creditCard.name.toString + ".creditCardType"), helper.options(Secured.getCreditCardTypes), '_label -> Messages.get("cardType"), '_class -> "radioGroup")
+                    @helper.inputRadioGroup(customerForm(creditCard.name.toString + ".creditCardType"), helper.options(CreditCard.creditCardTypeOptions), '_label -> Messages.get("cardType"), '_class -> "radioGroup")
                     @helper.input(customerForm(creditCard.name.toString + ".creditCardNumber"), '_help -> Messages.get("required"), '_label -> Messages.get("creditCardNumber"), 'placeholder -> Messages.get("creditCardNumber")) { (id, name, value, args) =>
                         <input type="number" name="@name" id="@id" value="@value" @toHtmlArgs(args)>
                     }

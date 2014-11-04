@@ -1,5 +1,6 @@
 package controllers;
 
+import jsmessages.JsMessages;
 import models.Category;
 import models.User;
 import play.*;
@@ -16,6 +17,11 @@ import static play.data.Form.form;
 @With(CategoryMenu.class)
 public class Application extends Controller {
 
+    final static JsMessages messages = JsMessages.create(Play.application());
+
+    public static Result jsMessages() {
+        return ok(messages.generate("window.Messages"));
+    }
 
     public static Result index() {
         return ok(index.render("home"));
@@ -51,6 +57,19 @@ public class Application extends Controller {
 
     public static Result productPage() {
         return ok(product.render("products"));
+    }
+
+    public static Result javascriptRoutes() {
+        response().setContentType("text/javascript");
+        return ok(
+                Routes.javascriptRouter("jsRoutes",
+                        routes.javascript.Administration.getSubCategories()
+//                        controllers.routes.javascript.Projects.add(),
+//                        controllers.routes.javascript.Projects.delete(),
+//                        controllers.routes.javascript.Projects.rename(),
+//                        controllers.routes.javascript.Projects.addGroup()
+                )
+        );
     }
 
     // -- Authentication

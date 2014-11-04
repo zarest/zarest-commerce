@@ -3,13 +3,11 @@ package models;
 import org.apache.commons.codec.binary.Base64;
 import play.data.validation.Constraints.Required;
 import play.db.ebean.Model;
+import play.i18n.Messages;
 
 import javax.persistence.*;
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 @Entity
 public class Category extends Model implements Comparable<Category> {
@@ -51,6 +49,25 @@ public class Category extends Model implements Comparable<Category> {
 
     public static List<Category> findSuperParentCategories() {
         return find.where().eq("parentCategory", null).orderBy().asc("id").findList();
+    }
+
+    public static Map<String, String> parentCategoryOptions() {
+        Map<String, String> categories = new LinkedHashMap<>();
+        for (Category category : findSuperParentCategories()) {
+            categories.put(category.id.toString(), Messages.get(category.name));
+        }
+        //Category.findSuperParentCategories().forEach(category -> categories.put(category.id.toString(), Messages.get(category.name)));
+        return categories;
+    }
+
+    public static Map<String, String> subCategoryOptions(Long id) {
+        Map<String, String> categories = new LinkedHashMap<>();
+        Category cat = Category.find.byId(id);
+        for (Category category : cat.subCategories) {
+            categories.put(category.id.toString(), Messages.get(category.name));
+        }
+        //cat.subCategories.forEach(category -> categories.put(category.id.toString(), Messages.get(category.name)));
+        return categories;
     }
 
     @Override

@@ -8,9 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by meysamabl on 10/27/14.
@@ -41,8 +39,13 @@ public class CreditCard extends Model {
 
     }
 
-    public static List<CreditCardType> getCreditCardTypes() {
 
-        return Arrays.asList(CreditCardType.values());
+    public static Map<String, String> creditCardTypeOptions() {
+        Map<String, String> creditCardTypes = new LinkedHashMap<>();
+        for (CreditCardType type : CreditCardType.values()) {
+            creditCardTypes.put(type.name(), type.name());
+        }
+        //CreditCard.getCreditCardTypes().stream().forEach(credit -> creditCardTypes.put(credit.name(), credit.name()));
+        return creditCardTypes;
     }
 }

@@ -11,7 +11,9 @@ libraryDependencies ++= Seq(
   javaEbean,
   cache,
   javaWs,
-  "mysql" % "mysql-connector-java" % "5.1.33"
+  "mysql" % "mysql-connector-java" % "5.1.33",
+  "commons-io" % "commons-io" % "2.3", // for Files.Utils
+  "org.julienrf" %% "play-jsmessages" % "1.6.2" // for javaScriptMessage properties JsMessages
 )
 
 includeFilter in (Assets, LessKeys.less) := "*.less"

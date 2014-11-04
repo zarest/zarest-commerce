@@ -3,31 +3,35 @@
 # ~~~~
 
 # Home page
-GET         /                                controllers.Application.index()
-POST        /locale                          controllers.Application.changeLocale()
+GET         /                                 controllers.Application.index()
+POST        /locale                           controllers.Application.changeLocale()
 
-GET         /products                        controllers.Application.productPage()
-GET         /aboutUs                         controllers.Application.aboutUsPage()
-GET         /contactUs                       controllers.Application.contactUs()
-GET         /login                           controllers.Application.login()
-POST        /login                           controllers.Application.authenticate()
-GET         /logout                          controllers.Application.logout()
-
-
-GET         /adminPanel                      controllers.Administration.adminPage()
-GET         /createUser                      controllers.Administration.createUserPage()
-POST        /createUser                      controllers.Administration.createUser()
-GET         /createCustomer                  controllers.Administration.createCustomerPage()
-POST        /createCustomer                  controllers.Administration.createCustomer()
-GET         /createCategory                  controllers.Administration.createCategoryPage()
-POST        /createCategory                  controllers.Administration.createCategory()
-POST        /createImage                    controllers.Administration.upload()
-GET         /createCategory/Image/:id        controllers.Administration.getImage(id:Long)
-GET         /createProduct                   controllers.Administration.createProductPage()
-POST        /createProduct                   controllers.Administration.createProduct()
+GET         /products                         controllers.Application.productPage()
+GET         /aboutUs                          controllers.Application.aboutUsPage()
+GET         /contactUs                        controllers.Application.contactUs()
+GET         /login                            controllers.Application.login()
+POST        /login                            controllers.Application.authenticate()
+GET         /logout                           controllers.Application.logout()
 
 
+GET         /adminPanel                       controllers.Administration.adminPage()
+GET         /createUser                       controllers.Administration.createUserPage()
+POST        /createUser                       controllers.Administration.createUser()
+GET         /createCustomer                   controllers.Administration.createCustomerPage()
+POST        /createCustomer                   controllers.Administration.createCustomer()
+GET         /createCategory                   controllers.Administration.createCategoryPage()
+POST        /createCategory                   controllers.Administration.createCategory()
+POST        /createImage                      controllers.Administration.upload()
+GET         /createCategory/Image/:id         controllers.Administration.getImage(id:Long)
+GET         /createProduct                    controllers.Administration.createProductPage()
+POST        /createProduct                    controllers.Administration.createProduct()
 
+
+# Javascript routing
+GET         /assets/javascripts/routes        controllers.Application.javascriptRoutes()
+GET         /messages.js                        controllers.Application.jsMessages()
+
+GET         /testJavaScript                   controllers.Administration.getSubCategories(id: Long)
 
 # Map static resources from the /public folder to the /assets URL path
-GET         /assets/*file                    controllers.Assets.at(path="/public", file)
+GET         /assets/*file                     controllers.Assets.at(path="/public", file)

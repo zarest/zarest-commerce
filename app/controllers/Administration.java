@@ -1,24 +1,31 @@
 package controllers;
 
-import models.*;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import models.Category;
+import models.Customer;
+import models.Product;
+import models.User;
+import org.apache.commons.io.FileUtils;
 import play.Logger;
 import play.data.Form;
-import play.data.format.Formatters;
 import play.data.validation.ValidationError;
 import play.db.ebean.Transactional;
 import play.i18n.Messages;
-import play.mvc.*;
+import play.libs.Json;
+import play.mvc.Controller;
+import play.mvc.Http;
+import play.mvc.Http.MultipartFormData;
+import play.mvc.Http.MultipartFormData.FilePart;
+import play.mvc.Result;
+import play.mvc.Security;
 import views.html.admin.*;
 
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.Path;
-
-
 import java.io.File;
-import java.text.ParseException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 import static play.data.Form.form;
@@ -28,6 +35,7 @@ import static play.data.Form.form;
  */
 @Security.Authenticated(Secured.class)
 public class Administration extends Controller {
+
 
     //----------PAGES--------------------//
 
@@ -45,6 +53,58 @@ public class Administration extends Controller {
 
     public static Result createCustomerPage() {
         return ok(createCustomerPage.render(form(Customer.class)));
+    }
+
+    public static Result createProductPage() {
+        return ok(createProductPage.render(form(Product.class)));
+    }
+
+    public static Result getImage(Long id) {
+        Category cat = Category.find.byId(id);
+        try {
+            return ok(cat.picture).as("text/image");
+        } catch (Exception f) {
+            return badRequest("Bad File...");
+        }
+    }
+
+    public static Result getSubCategories(Long id) {
+        return ok(Json.toJson(Category.subCategoryOptions(id)));
+    }
+
+
+    // For Uploading the Pictures ------------------------------------
+    public static Result upload() {
+        MultipartFormData body = request().body().asMultipartFormData();
+
+        FilePart picture = body.getFile("picture");
+        play.Logger.debug("File: " + body);
+        if (picture != null) {
+            String fileName = picture.getFilename();
+            String extension = fileName.substring(fileName.indexOf("."));
+            String uuid = uuid = java.util.UUID.randomUUID().toString();
+            fileName = uuid + extension;
+            play.Logger.debug("Image: " + fileName);
+
+            String contentType = picture.getContentType();
+            File file = picture.getFile();
+            try {
+                File newFile = new File("public/images", fileName);
+                FileUtils.moveFile(file, newFile);
+                play.Logger.debug("File moved");
+            } catch (IOException ioe) {
+                System.out.println("Problem operating on filesystem");
+            }
+            play.Logger.debug("File uploaded");
+            ObjectNode result = Json.newObject();
+            result.put("src", "images/" + fileName);
+            return ok(result);
+        } else {
+            play.Logger.debug("File not uploaded");
+
+            flash("error", "Missing file");
+            return badRequest("Fehler");
+        }
     }
 
     //-----------FORM SAVE---------------//
@@ -67,16 +127,6 @@ public class Administration extends Controller {
         }
     }
 
-    public static Result getImage(Long id) {
-        Category cat = Category.find.byId(id);
-        try {
-            return ok(cat.picture).as("text/image");
-        } catch (Exception f) {
-            return badRequest("Bad File...");
-        }
-    }
-
-
     @Transactional
     public static Result createCustomer() {
 
@@ -96,7 +146,6 @@ public class Administration extends Controller {
     }
 
     @Transactional
-    @BodyParser.Of(BodyParser.MultipartFormData.class)
     public static Result createCategory() {
         Form<Category> categoryForm = form(Category.class).bindFromRequest();
         if (categoryForm.hasErrors()) {
@@ -133,26 +182,18 @@ public class Administration extends Controller {
         }
     }
 
-    public static Result upload() {
-        Http.MultipartFormData body = request().body().asMultipartFormData();
-        Http.MultipartFormData.FilePart picture = body.getFile("picture");
-        if (picture != null) {
-            String fileName = picture.getFilename();
-            String contentType = picture.getContentType();
-            File file = picture.getFile();
-            Logger.info("File Path: " + file.getAbsolutePath() + " " + file.toPath().toString());
-            return ok("File uploaded");
+    @Transactional
+    public static Result createProduct() {
+
+        Form<Product> productForm = form(Product.class).bindFromRequest();
+        if (productForm.hasErrors()) {
+            return badRequest(createProductPage.render(productForm));
         } else {
-            flash("error", "Missing file");
-            return redirect(routes.Application.index());
+            productForm.get().save();
+            flash("success", Messages.get("category.create"));
+            return redirect(routes.Administration.adminPage());
         }
     }
 
-    public static Result createProductPage() {
-        return ok(createProductPage.render(form(Product.class)));
-    }
 
-    public static Result createProduct() {
-        return Results.TODO;
-    }
 }

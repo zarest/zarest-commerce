@@ -16,13 +16,13 @@
         </dl>
         @helper.inputFile(form("picture"), 'id -> "picture")
         <div id="image_view"></div>
-        @helper.select(form("parentCategory"), helper.options(Secured.getSuperParentCategories),
+        @helper.select(form("parentCategory"), helper.options(Category.parentCategoryOptions),
             '_showConstraints -> false, '_label -> Messages.get("categoryLevel", "1"), 'style -> "width: 180px;",
             '_default -> Messages.get("chooseCategory"), 'id -> "level1")
 
-        @helper.select(form("parentCategory"), helper.options(Secured.getSubCategories(form("parentCategory").value)),
+        @helper.select(form("parentCategory"), helper.options(),
             '_showConstraints -> false, '_label -> Messages.get("categoryLevel", "2"), 'style -> "width: 180px;",
-            '_default -> Messages.get("chooseCategory"), 'onchange -> "catLevel2()", '_id -> "level2Parent", 'id -> "level2")
+            '_default -> Messages.get("chooseCategory"), '_id -> "level2Parent", 'id -> "level2")
 
         @helper.checkbox(form("active"))
         <div>

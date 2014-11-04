@@ -13,12 +13,24 @@ $(document).ready(function () {
         e.preventDefault();
         var form = $(this).closest('form');
         var url = form.attr("action");
+        var id = $("#level1").val();
         if ($("#level1").val() != "") {
             $("#level2Parent").show();
-//            form.submit();
-//            return false;
-//            form.ajaxForm({ target: "#level2" }).submit();
-//            return false;
+            jsRoutes.controllers.Administration.getSubCategories(id).ajax({
+                dataType: 'json',
+                success: function (data) {
+                    $('#level2').empty();
+                    $('#level2').append($('<option>').text(Messages('chooseCategory')).attr('value', null));
+                    console.info(data);
+                    $.each(data, function(i, value) {
+                        $('#level2').append($('<option>').text(value).attr('value', value));
+                    });
+
+                },
+                error: function () {
+                    alert("Error!")
+                }
+            })
 
         } else {
             $("#level2Parent").hide();
