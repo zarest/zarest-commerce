@@ -117,6 +117,7 @@ language=زبان
 #Validations------------------------------
 login.invalid=نام کاربری یا رمز شما صحیح نمی باشد
 login.unauthorized=کاربر، ادمین مجاز نمی باشد
+error.invalid=مقدار نامعتبر
 #Generic User------------------------------
 email.required=ایمیل اجباری می باشد
 name.required=نام اجباری می باشد

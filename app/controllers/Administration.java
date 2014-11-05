@@ -8,7 +8,6 @@ import models.User;
 import org.apache.commons.io.FileUtils;
 import play.Logger;
 import play.data.Form;
-import play.data.validation.ValidationError;
 import play.db.ebean.Transactional;
 import play.i18n.Messages;
 import play.libs.Json;
@@ -25,8 +24,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.List;
-import java.util.Map;
 
 import static play.data.Form.form;
 
@@ -149,9 +146,6 @@ public class Administration extends Controller {
     public static Result createCategory() {
         Form<Category> categoryForm = form(Category.class).bindFromRequest();
         if (categoryForm.hasErrors()) {
-            for (Map.Entry<String, List<ValidationError>> err : categoryForm.errors().entrySet()) {
-                Logger.info("Error: " + err);
-            }
             return badRequest(createCategoryPage.render(categoryForm));
         } else {
             try {
@@ -160,13 +154,13 @@ public class Administration extends Controller {
                 Http.MultipartFormData.FilePart picture = body.getFile("picture");
                 if (picture != null) {
                     String fileName = picture.getFilename();
-                    Logger.info("filename: " + fileName);
+                    Logger.debug("filename: " + fileName);
                     String contentType = picture.getContentType();
-                    Logger.info("contentType: " + contentType);
+                    Logger.debug("contentType: " + contentType);
                     File file = picture.getFile();
 
                     Path path = Paths.get(file.getPath());
-                    Logger.info("Path: " + file.getPath());
+                    Logger.debug("Path: " + file.getPath());
                     byte[] data = Files.readAllBytes(path);
                     cat.picture = data;
 
@@ -176,7 +170,7 @@ public class Administration extends Controller {
                 return redirect(routes.Administration.adminPage());
 
             } catch (Exception ex) {
-                Logger.error(ex.getMessage());
+                Logger.debug(ex.getMessage());
                 return badRequest(createCategoryPage.render(categoryForm));
             }
         }

@@ -116,6 +116,7 @@ language=Language
 #Validations---------------------------------------
 login.invalid=Invalid Username or Password
 login.unauthorized=User is not an Authorized Admin
+error.invalid=Invalid Value
 #---GenericUser
 email.required=Email is required
 name.required=Name is Required
