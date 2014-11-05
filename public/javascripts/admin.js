@@ -11,19 +11,16 @@ $(document).ready(function () {
     $("#level2Parent").hide();
     $("#level1").change(function (e) {
         e.preventDefault();
-        var form = $(this).closest('form');
-        var url = form.attr("action");
         var id = $("#level1").val();
-        if ($("#level1").val() != "") {
+        if (id != "") {
             $("#level2Parent").show();
             jsRoutes.controllers.Administration.getSubCategories(id).ajax({
                 dataType: 'json',
                 success: function (data) {
                     $('#level2').empty();
-                    $('#level2').append($('<option>').text(Messages('chooseCategory')).attr('value', null));
-                    console.info(data);
+                    $('#level2').append($('<option>').text(Messages('chooseCategory')).attr('value', ""));
                     $.each(data, function(i, value) {
-                        $('#level2').append($('<option>').text(value).attr('value', value));
+                        $('#level2').append($('<option>').text(value).attr('value', i));
                     });
 
                 },
@@ -35,6 +32,14 @@ $(document).ready(function () {
         } else {
             $("#level2Parent").hide();
             $("#level2").val("");
+        }
+    })
+    $("#level2").change(function() {
+        var id = $("#level2").val();
+        if(id != "") {
+            $("#level1").removeAttr("name");
+        } else {
+            $("#level1").attr('name', 'parentCategory');
         }
     })
 });
