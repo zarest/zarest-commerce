@@ -6,26 +6,55 @@
         <title>@title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+            <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+            <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+            <!-- Font Awesome for ICONS -->
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.2.0-rc2/css/bootstrap-rtl.min.css">
+
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-        <script src="@routes.Assets.at("javascripts/main.js")"></script>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
     </head>
     <body>
-        <header class="sticky">
-            <h2><a href="@routes.Application.index()" >@Messages.get("zarest")</a></h2>
-            @helper.form(action = routes.Application.changeLocale(), 'class -> "change-locale") {
-                <label>@Messages.get("language")
-                    <select name="locale" id="language">
-                    @play.api.i18n.Lang.availables(play.api.Play.current).map { lang =>
-                        <option value="@lang.code" @(if(l.code == lang.code) "selected")>@Messages.get("lang." + lang.code)</option>
-                    }
-                    </select>
-                </label>
-            }
-        </header>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="@routes.Application.index()" >@Messages.get("zarest")</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="@routes.Application.index()"><span>@Messages.get("home")</span></a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="@routes.Application.productPage()"><span>@Messages.get("products")</span> <span class="caret"></span></a>
+                            @categoryList()
+                        </li>
+                        <li><a href="@routes.Application.aboutUsPage()"><span>@Messages.get("aboutUs")</span></a></li>
+                        <li><a href="@routes.Application.contactUs()"><span>@Messages.get("contactUs")</span></a></li>
+                    </ul>
+                    <form class="navbar-form navbar-right" action="@routes.Application.changeLocale()" method="post">
+                        <div class="form-group">
+                            <label for="language" class="control-label">@Messages.get("language")</label>
+                            <select name="locale" id="language" class="form-control input-sm">
+                            @play.api.i18n.Lang.availables(play.api.Play.current).map { lang =>
+                                <option value="@lang.code" @(if(l.code == lang.code) "selected")>@Messages.get("lang." + lang.code)</option>
+                            }
+                            </select>
+                        </div>
+                    </form>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+
         <nav class="sticky">
             <div class='top_menu'>
                 <label for="show-menu" class="show-menu">Show Menu</label>
@@ -49,6 +78,10 @@
             <div id="main">
                 <h2>@title</h2>
                 <hr >
+                <div data-ng-app="">
+                    <p>Name: <input type="text" data-ng-model="name"></p>
+                    <p ng-bind="name"></p>
+                </div>
                 @content
             </div>
         </main>
@@ -67,6 +100,9 @@
             </div>
             @Messages.get("footer")
         </footer>
-
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="@routes.Assets.at("javascripts/main.js")"></script>
     </body>
 </html>

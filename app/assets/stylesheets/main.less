@@ -5,14 +5,6 @@
 main, section, aside, header, footer figure, figcaption {
   display: block;
 }
-@media screen and (max-width : 1000px){
-  .menu {
-    display: none;
-  }
-  .change-locale, header h2 {
-    margin: 0 5% 0 20%;
-  }
-}
 
 body {
   background: @defaultThemeColor;
@@ -24,43 +16,6 @@ body {
   padding: 0px;
   -webkit-font-smoothing: antialised;
   -webkit-user-select: none;
-}
-
-header {
-  height: auto;
-  width: 100%;
-  border-bottom: solid 1px @zaresetBg;
-  background: @headerBg;
-  color: @zaresetBg;
-  z-index: 200;
-  h2 {
-    display: inline-block;
-    margin: 0 20% 0 20%;
-    line-height: 35px;
-    a {
-      color: @zaresetBg;
-      &:hover {
-        color: @linksHover;
-        .TextShadow(1px,1px,1px, @zaresetBg);
-      }
-    }
-  }
-  form {
-    display: inline-block;
-    margin: 0 20% 0 20%;
-  }
-
-  .change-locale {
-    line-height: 35px;
-  }
-}
-
-nav {
-  z-index: 200;
-  height: auto;
-  width: 100%;
-  background: @headerBg;
-
 }
 
 #leftside {

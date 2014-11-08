@@ -1,29 +1,40 @@
-@()
-@import play.i18n.Messages
-<ul>
+@(showsubMenu: Boolean = true)
+    @import play.i18n.Messages
+
+    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
     @for(category <- CategoryMenu.getCategories) {
         @if(category.parentCategory == null) {
-            <li><a href="#" target="_top" title="@Messages.get(category.name)">@Messages.get(category.name)</a>
-                @if(category.subCategories != null && !category.subCategories.isEmpty) {
-                    <ul>
-                    @for(subCate <- category.subCategories) {
-                        <li>
-                            <a href="#" target="_top" title="@Messages.get(subCate.name)">@Messages.get(subCate.name)</a>
-                            @if(subCate.subCategories != null && !subCate.subCategories.isEmpty) {
-                                <ul class="sub_menu">
-                                @for(sub2 <- subCate.subCategories) {
-                                    <li>
-                                        <a href="#" target="_top" title="@Messages.get(sub2.name)">@Messages.get(sub2.name)</a>
-                                    </li>
-                                }
-                                </ul>
-                            }
-
-                        </li>
-                    }
-                    </ul>
+            @if(category.subCategories == null || category.subCategories.isEmpty) {
+                <li>
+                } else {
+                <li class="dropdown-submenu ">
                 }
-            </li>
+            <a href="#" target="_top" title="@Messages.get(category.name)">@Messages.get(category.name)</a>
+            @if(category.subCategories != null && !category.subCategories.isEmpty && showsubMenu) {
+                <ul class="dropdown-menu">
+                @for(subCate <- category.subCategories) {
+                    @if(subCate.subCategories == null || subCate.subCategories.isEmpty) {
+                        <li>
+                        } else {
+                        <li class="dropdown-submenu ">
+                        }
+
+                    <a href="#" target="_top" title="@Messages.get(subCate.name)">@Messages.get(subCate.name)</a>
+                    @if(subCate.subCategories != null && !subCate.subCategories.isEmpty) {
+                        <ul>
+                        @for(sub2 <- subCate.subCategories) {
+                            <li>
+                                <a href="#" target="_top" title="@Messages.get(sub2.name)">@Messages.get(sub2.name)</a>
+                            </li>
+                        }
+                        </ul>
+                    }
+
+                </li>
+                }
+                </ul>
+            }
+        </li>
         }
     }
-</ul>
+    </ul>

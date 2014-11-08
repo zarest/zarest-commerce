@@ -5,24 +5,25 @@ if (window.console) {
 // selectors from DOM or css style. Actions are like click mouse movement, ...
 
 $(document).ready(function () {
+
+    $('.nav').find('a[href="' + location.pathname + '"]').parents('li').addClass('active');
+
     $("#language").change(function () {
         $(this).closest('form').trigger('submit');
-
     });
     var lang = $("#language").val();
     if (lang == "fa") {
-        $(document.body).attr('style', 'direction: rtl');
-        $(".change-locale").attr('style', 'float: left');
-        $('.menu').toggleClass('right');
-        $('.top_menu').toggleClass('top_right');
-        $('#left_side').hide();
-        //$("#leftSide").css({float: 'right'});
+        $('link[href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.2.0-rc2/css/bootstrap-rtl.min.css"]')
+            .prop("disabled", false);
+        $('form').removeClass('navbar-right').addClass('navbar-left');
+        $('.nav').attr('style', 'padding-right: 100px');
+        $('.dropdown-submenu').toggleClass('rightSub');
+
     } else {
-        $(document.body).attr('style', 'direction: ltr');
-        $(".change-locale").attr('style', 'float: right');
-        $('.menu').toggleClass('left');
-        $('.top_menu').toggleClass('top_left');
-        $('#right_side').hide();
+        $('link[href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.2.0-rc2/css/bootstrap-rtl.min.css"]')
+            .prop("disabled", true);
+        $('.dropdown-submenu').toggleClass('leftSub');
+        $('.nav').attr('style', 'padding-left: 100px');
     }
 
 });
@@ -38,7 +39,7 @@ $(function () { // document ready
             var top = 0;
             if (stickyTop < windowTop) {
                 $('.sticky').each(function () {
-                    $(this).css({ position: 'fixed', top:  top});
+                    $(this).css({ position: 'fixed', top: top});
                     top = top + 36;
                 });
             }
