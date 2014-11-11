@@ -55,7 +55,16 @@
                         <li><a href="@routes.Application.aboutUsPage()"><span>@Messages.get("aboutUs")</span></a></li>
                         <li><a href="@routes.Application.contactUs()"><span>@Messages.get("contactUs")</span></a></li>
                     </ul>
-                    <form class="navbar-form navbar-right" action="@routes.Application.changeLocale()" method="post">
+                    <form role="form" class="navbar-form navbar-right">
+                        <div class="form-group has-feedback has-feedback-left">
+                            <label class="control-label sr-only">@Messages.get("search")</label>
+                            <div class="inline-feedback">
+                                <input type="text" class="form-control input-sm" placeholder="@Messages.get("search")"/>
+                                <i class="form-control-feedback glyphicon glyphicon-search"></i>
+                            </div>
+                        </div>
+                    </form>
+                    @*<form class="navbar-form navbar-right" >
                         <div class="form-group">
                             <label for="language" class="control-label">@Messages.get("language")</label>
                             <select name="locale" id="language" class="form-control input-sm">
@@ -64,7 +73,7 @@
                             }
                             </select>
                         </div>
-                    </form>
+                    </form>*@
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
@@ -109,24 +118,16 @@
         </main>
         <footer class="container">
             <div class="row">
-                <div class="col-md-2 col-md-offset-1">
-                    <a href="@routes.Application.index()"><i class="fa fa-home fa-fw"></i>&nbsp; @Messages.get("home")</a>
-                </div>
-                <div class="col-md-2 ">
-                    <a href="@routes.Application.productPage()"><i class="fa fa-shopping-cart fa-fw"></i>&nbsp; @Messages.get("products")</a>
-                </div>
-                <div class="col-md-2 ">
-                    <a href="@routes.Application.aboutUsPage()"><i class="fa fa-envelope fa-fw"></i>&nbsp; @Messages.get("aboutUs")</a>
-                </div>
-                <div class="col-md-2 ">
-                    <a href="@routes.Application.contactUs()"><i class="fa fa-phone fa-fw"></i>&nbsp; @Messages.get("contactUs")</a>
-                </div>
-                <div class="col-md-2">
-                    <a href="@routes.Administration.adminPage()"><i class="fa fa-user fa-fw"></i>&nbsp; @Messages.get("adminPanel")</a>
+                <div class="col-xs-12">
+                    <a href="@routes.Application.index()"><i class="fa fa-home fa-fw"></i><span class="hidden-xs">&nbsp; @Messages.get("home")</span></a>
+                    <a href="@routes.Application.productPage()"><i class="fa fa-shopping-cart fa-fw"></i><span class="hidden-xs">&nbsp; @Messages.get("products")</span></a>
+                    <a href="@routes.Application.aboutUsPage()"><i class="fa fa-envelope fa-fw"></i><span class="hidden-xs">&nbsp; @Messages.get("aboutUs")</span></a>
+                    <a href="@routes.Application.contactUs()"><i class="fa fa-phone fa-fw"></i><span class="hidden-xs">&nbsp; @Messages.get("contactUs")</span></a>
+                    <a href="@routes.Administration.adminPage()"><i class="fa fa-user fa-fw"></i><span class="hidden-xs">&nbsp; @Messages.get("adminPanel")</span></a>
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-10 col-xs-offset-1">
+                <div class="col-xs-12">
                 @Messages.get("footer")
                 </div>
             </div>
