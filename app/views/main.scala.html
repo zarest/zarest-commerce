@@ -20,7 +20,21 @@
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
     </head>
     <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <header class="header-top">
+            <div class="container language">
+                <form class="navbar-right" action="@routes.Application.changeLocale()" method="post">
+                    <div>
+                        <label for="language">@Messages.get("language")</label>
+                        <select name="locale" id="language">
+                        @play.api.i18n.Lang.availables(play.api.Play.current).map { lang =>
+                            <option value="@lang.code" @(if(l.code == lang.code) "selected")>@Messages.get("lang." + lang.code)</option>
+                        }
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </header>
+        <nav class="navbar navbar-inverse navbar-fixed-top sticky" role="navigation">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -32,7 +46,7 @@
                     <a class="navbar-brand" href="@routes.Application.index()" >@Messages.get("zarest")</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav" id="myNavbar">
                         <li><a href="@routes.Application.index()"><span>@Messages.get("home")</span></a></li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="@routes.Application.productPage()"><span>@Messages.get("products")</span> <span class="caret"></span></a>
@@ -54,55 +68,74 @@
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
+        <main class="container">
+            <section class="row row-offcanvas">
 
-        <nav class="sticky">
-            <div class='top_menu'>
-                <label for="show-menu" class="show-menu">Show Menu</label>
-                <input type="checkbox" id="show-menu" role="button">
-                <ul id="menuTop">
-                    <li><a href="@routes.Application.index()"><span>@Messages.get("home")</span></a></li>
-                    <li class='active has-sub'><a href="@routes.Application.productPage()"><span>@Messages.get("products")</span></a>
-                        @categoryList()
-                    </li>
-                    <li> <a href="@routes.Application.aboutUsPage()"><span>@Messages.get("aboutUs")</span></a></li>
-                    <li class='last'><a href="@routes.Application.contactUs()"><span>@Messages.get("contactUs")</span></a></li>
-                </ul>
-            </div>
-        </nav>
-        <section id="leftside">
-            <div id="left_side">
-            @sidebar()
-            </div>
-        </section>
-        <main>
-            <div id="main">
-                <h2>@title</h2>
-                <hr >
-                <div data-ng-app="">
-                    <p>Name: <input type="text" data-ng-model="name"></p>
-                    <p ng-bind="name"></p>
-                </div>
-                @content
-            </div>
+                <section class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+                    <nav class="list-group">
+                        <a href="#" class="list-group-item active">Link</a>
+                        <a href="#" class="list-group-item">Link</a>
+                        <a href="#" class="list-group-item">Link</a>
+                        <a href="#" class="list-group-item">Link</a>
+                        <a href="#" class="list-group-item">Link</a>
+                        <a href="#" class="list-group-item">Link</a>
+                        <a href="#" class="list-group-item">Link</a>
+                        <a href="#" class="list-group-item">Link</a>
+                        <a href="#" class="list-group-item">Link</a>
+                        <a href="#" class="list-group-item">Link</a>
+                    </nav>
+                </section><!--/.sidebar-offcanvas-->
+
+                <section class="col-xs-12 col-sm-9">
+
+                    <ol class="breadcrumb">
+
+                    </ol>
+                    <p class="pull-left visible-xs">
+                        <button type="button" class="navbar-toggle" id="sideToggle" data-toggle="offcanvas">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </p>
+
+
+                </section><!--/.col-xs-12.col-sm-9-->
+
+
+            </section>
+
         </main>
-        <aside>
-            <div id="right_side">
-            @sidebar()
+        <footer class="container">
+            <div class="row">
+                <div class="col-md-2 col-md-offset-1">
+                    <a href="@routes.Application.index()"><i class="fa fa-home fa-fw"></i>&nbsp; @Messages.get("home")</a>
+                </div>
+                <div class="col-md-2 ">
+                    <a href="@routes.Application.productPage()"><i class="fa fa-shopping-cart fa-fw"></i>&nbsp; @Messages.get("products")</a>
+                </div>
+                <div class="col-md-2 ">
+                    <a href="@routes.Application.aboutUsPage()"><i class="fa fa-envelope fa-fw"></i>&nbsp; @Messages.get("aboutUs")</a>
+                </div>
+                <div class="col-md-2 ">
+                    <a href="@routes.Application.contactUs()"><i class="fa fa-phone fa-fw"></i>&nbsp; @Messages.get("contactUs")</a>
+                </div>
+                <div class="col-md-2">
+                    <a href="@routes.Administration.adminPage()"><i class="fa fa-user fa-fw"></i>&nbsp; @Messages.get("adminPanel")</a>
+                </div>
             </div>
-        </aside>
-        <footer>
-            <div>
-                <a href="@routes.Application.index()"><i class="fa fa-home fa-fw"></i>&nbsp; @Messages.get("home")</a>
-                <a href="@routes.Application.productPage()"><i class="fa fa-shopping-cart fa-fw"></i>&nbsp; @Messages.get("products")</a>
-                <a href="@routes.Application.aboutUsPage()"><i class="fa fa-envelope fa-fw"></i>&nbsp; @Messages.get("aboutUs")</a>
-                <a href="@routes.Application.contactUs()"><i class="fa fa-phone fa-fw"></i>&nbsp; @Messages.get("contactUs")</a>
-                <a href="@routes.Administration.adminPage()"><i class="fa fa-user fa-fw"></i>&nbsp; @Messages.get("adminPanel")</a>
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1">
+                @Messages.get("footer")
+                </div>
             </div>
-            @Messages.get("footer")
+
         </footer>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
             <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
         <script src="@routes.Assets.at("javascripts/main.js")"></script>
+        <script type="text/javascript" src="@routes.Application.jsMessages()"></script>
     </body>
 </html>

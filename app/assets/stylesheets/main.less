@@ -16,35 +16,55 @@ body {
   padding: 0px;
   -webkit-font-smoothing: antialised;
   -webkit-user-select: none;
-}
-
-#leftside {
-  float: left;
-  padding: 1%;
-  height: 900px;
-  width: 20%;
+  padding-top: 90px;
+  -webkit-transition: all .5s ease-out;
+  -moz-transition: all .5s ease-out;
+  -ms-transition: all .5s ease-out;
+  -o-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+  -webkit-transition-delay: 1s;
+  -moz-transition-delay: 1s;
+  -ms-transition-delay: 1s;
+  -o-transition-delay: 1s;
+  transition-delay: 1s;
 }
 
 main {
-  float: left;
-  padding: 1%;
-  height: 900px;
-  width: 60%;
-  h2 {
-    color: @h2Color;
-    //.TextShadow(-2px,1px,0px, black);
-    //text-decoration-style: wavy;
-  }
-  hr { display: block; height: 1px;
-    border: 0; border-top: 1px solid @h2Color;
-    margin: 1em 0; padding: 0; }
+  height: 1000px;
 }
 
-aside {
-  float: left;
-  padding: 1%;
-  height: 900px;
-  width: 20%;
+.header-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 25px;
+  background-color: #cccccc;
+  z-index: 200;
+  select {
+    width: 100px;
+    .RoundedShape(5px);
+    background: transparent;
+    color: darkolivegreen;
+  }
+  .language {
+    line-height: 25px;
+    padding: 0 50;
+  }
+}
+
+.navbar-fixed-top {
+  top: 25;
+  -webkit-transition: all .5s ease-out;
+  -moz-transition: all .5s ease-out;
+  -ms-transition: all .5s ease-out;
+  -o-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+  -webkit-transition-delay: 1s;
+  -moz-transition-delay: 1s;
+  -ms-transition-delay: 1s;
+  -o-transition-delay: 1s;
+  transition-delay: 1s;
 }
 
 footer {
@@ -64,15 +84,6 @@ footer {
         color: @links;
       }
     }
-  }
-}
-
-a {
-  color: @links;
-  text-decoration: none;
-  &:hover {
-    color: @linksHover;
-    //.TextShadow(1px,1px,1px, @zaresetBg);
   }
 }
 
