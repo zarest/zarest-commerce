@@ -55,13 +55,19 @@
                         <li><a href="@routes.Application.aboutUsPage()"><span>@Messages.get("aboutUs")</span></a></li>
                         <li><a href="@routes.Application.contactUs()"><span>@Messages.get("contactUs")</span></a></li>
                     </ul>
-                    <form role="form" class="navbar-form navbar-right">
-                        <div class="form-group has-feedback has-feedback-left">
+                    <form role="form" class="navbar-form navbar-right" role="search">
+                        <div class="form-group has-feedback">
                             <label class="control-label sr-only">@Messages.get("search")</label>
-                            <div class="inline-feedback">
-                                <input type="text" class="form-control input-sm" placeholder="@Messages.get("search")"/>
-                                <i class="form-control-feedback glyphicon glyphicon-search"></i>
+                            <div class="input-group">
+                                <div class="inline-feedback">
+                                    <input type="text" class="form-control input-sm" id="search" placeholder="@Messages.get("search")" />
+                                    <i class="form-control-feedback glyphicon glyphicon-search"></i>
+                                </div>
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default btn" type="submit"><i class="glyphicon glyphicon-search" style="font-size: 16px"></i></button>
+                                </div>
                             </div>
+
                         </div>
                     </form>
                     @*<form class="navbar-form navbar-right" >

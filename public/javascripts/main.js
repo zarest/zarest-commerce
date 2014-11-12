@@ -43,12 +43,14 @@ $(document).ready(function () {
         $('.dropdown-submenu').toggleClass('rightSub');
         $('#sideToggle').parent().removeClass('pull-left').addClass('pull-right');
         $('.row-offcanvas').toggleClass('row-offcanvas-right');
+        $('.has-feedback').toggleClass('has-feedback-right');
 
     } else {
         $('link[href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.2.0-rc2/css/bootstrap-rtl.min.css"]')
             .prop("disabled", true);
         $('.dropdown-submenu').toggleClass('leftSub');
         //$('#myNavbar').attr('style', 'padding-left: 100px');
+        $('.has-feedback').toggleClass('has-feedback-left');
         $('.row-offcanvas').toggleClass('row-offcanvas-left');
     }
 
