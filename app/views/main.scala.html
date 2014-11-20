@@ -1,13 +1,14 @@
 @(title: String, l: Lang)(content: Html)
 @import views.html.util.categoryList
 @import play.i18n.Messages
-<html>
+<html ng-app="zarestApp">
     <head>
         <title>@title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+        <script src="@routes.Assets.at("javascripts/angular.js")"></script>
             <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
             <!-- Optional theme -->
@@ -43,7 +44,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="@routes.Application.index()" >@Messages.get("zarest")</a>
+                    <a class="navbar-brand" href="@routes.Application.index()" ><i class="fa fa-pagelines"></i> @Messages.get("zarest")</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav" id="myNavbar">
@@ -64,62 +65,17 @@
                                     <i class="form-control-feedback glyphicon glyphicon-search"></i>
                                 </div>
                                 <div class="input-group-btn">
-                                    <button class="btn btn-default btn" type="submit"><i class="glyphicon glyphicon-search" style="font-size: 16px"></i></button>
+                                    <button class="btn btn-default btn" type="submit"><i class="glyphicon glyphicon-search" style="font-size : 16px ;"></i></button>
                                 </div>
                             </div>
 
                         </div>
                     </form>
-                    @*<form class="navbar-form navbar-right" >
-                        <div class="form-group">
-                            <label for="language" class="control-label">@Messages.get("language")</label>
-                            <select name="locale" id="language" class="form-control input-sm">
-                            @play.api.i18n.Lang.availables(play.api.Play.current).map { lang =>
-                                <option value="@lang.code" @(if(l.code == lang.code) "selected")>@Messages.get("lang." + lang.code)</option>
-                            }
-                            </select>
-                        </div>
-                    </form>*@
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
-        <main class="container">
-            <section class="row row-offcanvas">
-
-                <section class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-                    <nav class="list-group">
-                        <a href="#" class="list-group-item active">Link</a>
-                        <a href="#" class="list-group-item">Link</a>
-                        <a href="#" class="list-group-item">Link</a>
-                        <a href="#" class="list-group-item">Link</a>
-                        <a href="#" class="list-group-item">Link</a>
-                        <a href="#" class="list-group-item">Link</a>
-                        <a href="#" class="list-group-item">Link</a>
-                        <a href="#" class="list-group-item">Link</a>
-                        <a href="#" class="list-group-item">Link</a>
-                        <a href="#" class="list-group-item">Link</a>
-                    </nav>
-                </section><!--/.sidebar-offcanvas-->
-
-                <section class="col-xs-12 col-sm-9">
-
-                    <ol class="breadcrumb">
-
-                    </ol>
-                    <p class="pull-left visible-xs">
-                        <button type="button" class="navbar-toggle" id="sideToggle" data-toggle="offcanvas">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </p>
-
-
-                </section><!--/.col-xs-12.col-sm-9-->
-
-
-            </section>
+        <main>
+        @content
 
         </main>
         <footer class="container">
@@ -131,8 +87,6 @@
                     <a href="@routes.Application.contactUs()"><i class="fa fa-phone fa-fw"></i><span class="hidden-xs">&nbsp; @Messages.get("contactUs")</span></a>
                     <a href="@routes.Administration.adminPage()"><i class="fa fa-user fa-fw"></i><span class="hidden-xs">&nbsp; @Messages.get("adminPanel")</span></a>
                 </div>
-            </div>
-            <div class="row">
                 <div class="col-xs-12">
                 @Messages.get("footer")
                 </div>

@@ -108,6 +108,21 @@ createCustomer=ایجاد مشتری
 createCategory=ایجاد کتگوری
 createProduct=ایجاد محصول
 
+
+#Index.html----------------
+
+accessories=لوازم جانبی
+
+
+#Carousel-------------------
+shopNow=الان خرید کن
+latestProducts=آخرین محصولات
+bestSeller=پرفروش ترین ها
+featuredProducts=محصولات برجسته
+recommended=پیشنهاد شده
+viewAll=مشاهده همه
+learnMore=اطلاعات بیشتر
+
 # Languages --------------------
 lang.en=انگلیسی
 lang.fa=فارسی

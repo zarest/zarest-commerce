@@ -1,6 +1,1176 @@
 @(bodyHeader: String)
-@import play.i18n._
+
+@import play.i18n.Messages
 @main(Messages.get(bodyHeader), Application.getCurrentLang) {
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/carousel.css")">
+    <div class="container">
+            <!-- Carousel
+    ================================================== -->
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+
+                    <div class="container">
+                        <img src="@routes.Assets.at("images/carousel/collection_18_large.png")" alt="First slide">
+                        <div class="carousel-caption">
+                            <h1>@Messages.get("latestProducts")</h1>
+                            @*<p>@Messages.get("carousel1Message")</p>*@
+                            <p>
+                                <a class="btn btn-lg btn-primary" href="#" role="button">@Messages.get("shopNow")</a>
+                                <a class="btn btn-lg btn-primary" href="#" role="button">@Messages.get("viewAll")</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+
+                    <div class="container">
+                        <img src="@routes.Assets.at("images/carousel/market_single_01.png")" alt="Second slide">
+                        <div class="carousel-caption">
+                            <h1>@Messages.get("bestSeller")</h1>
+                            @*<p>@Messages.get("carousel2Message")</p>*@
+                            <p>
+                                <a class="btn btn-lg btn-primary" href="#" role="button">@Messages.get("shopNow")</a>
+                                <a class="btn btn-lg btn-primary" href="#" role="button">@Messages.get("viewAll")</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+
+                    <div class="container">
+                        <img src="@routes.Assets.at("images/carousel/powerful_large.png")" alt="Third slide">
+                        <div class="carousel-caption">
+                            <h1>@Messages.get("featuredProducts")</h1>
+                            @*<p>@Messages.get("carousel3Message")</p>*@
+                            <p>
+                                <a class="btn btn-lg btn-primary" href="#" role="button">@Messages.get("shopNow")</a>
+                                <a class="btn btn-lg btn-primary" href="#" role="button">@Messages.get("viewAll")</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div> <!-- /.carousel -->
+    </div>
 
 
+
+    <div class="container marketing">
+
+            <!-- Three columns of text below the carousel -->
+        <div class="row">
+            <div class="col-lg-4">
+                <img class="img-circle" src="@routes.Assets.at("images/zarest/accesoris-2-2.jpg")" alt="Generic placeholder image" style="width : 140px ; height : 140px ;">
+                <h2>@Messages.get("accessories")</h2>
+                <p>@Messages.get("accessoriesMessage")</p>
+                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="img-circle" src="@routes.Assets.at("images/zarest/3-2-2.jpg")" alt="Generic placeholder image" style="width : 140px ; height : 140px ;">
+                <h2>@Messages.get("healthAndBeauty")</h2>
+                <p>@Messages.get("healthAndBeautyMessage")</p>
+                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="img-circle" src="@routes.Assets.at("images/zarest/akkasi-2-2.jpg")" alt="Generic placeholder image" style="width : 140px ; height : 140px ;">
+                <h2>@Messages.get("filmingAndPhotography")</h2>
+                <p>@Messages.get("filmingAndPhotographyMessage")</p>
+                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+
+        {{ 2+2 }}
+        <!-- START THE FEATURETTES -->
+
+        @*<hr class="featurette-divider">*@
+
+        <div class="best-sales-pro" >
+            <div class="new_title center">
+                <h2>Best Seller</h2>
+            </div> <!--new_title center-->
+            <a id="product_slider_prev_2" class="jcarousel-prev-horizontal2" href="#"></a>
+            <a id="product_slider_next_2" class="jcarousel-next-horizontal2" href="#"></a>
+
+            <div class="jcarousel-skin-tango4" dir="ltr">
+                <div class="jcarousel-container jcarousel-container-horizontal" style="position: relative; display: block;">
+                    <div class="jcarousel-clip jcarousel-clip-horizontal" style="overflow: hidden; position: relative;">
+                        <ul id="product_slider_2" class="products-grid jcarousel-list jcarousel-list-horizontal" style="overflow: hidden; position: relative; top: 0px; margin: 0px; padding: 0px; left: 0px; width: 2524px;">
+
+
+                            <li class="item  jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal" jcarouselindex="1" style="float: left; list-style: none;">
+                                <div class="item-inner">
+                                    <div class="product-wrapper">
+                                        <div class="thumb-wrapper">
+                                            <div class="new-label new-top-left"> New </div>                  <a class="thumb flip" data-fancybox-type="ajax" onclick="callQuickView('http://demo.magikthemes.com/index.php/lambylavender/lambysettings/index/view/id/55/');">
+                                            <span class="face"><img alt="Women's Single T-Shirt" src="http://demo.magikthemes.com/media/catalog/product/cache/72/small_image/258x313/9df78eab33525d08d6e5fb8d27136e95/p/1/p191.jpg"></span><span class="face back"><img alt="Women's Single T-Shirt" title="Women's Single T-Shirt" src="http://demo.magikthemes.com/media/catalog/product/cache/72/thumbnail/258x313/9df78eab33525d08d6e5fb8d27136e95/p/1/p191.jpg">
+                                            <span class="quick-view"><span><i>&nbsp;</i>Quick View</span></span>
+                                        </span></a>
+                                        </div> <!--thumb-wrapper-->
+                                        <div class="actions">
+                                            <span class="add-to-links">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/wishlist/index/add/product/55/form_key/1b9gBPV7riNbZ8JK/" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a>
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product_compare/add/product/55/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/form_key/1b9gBPV7riNbZ8JK/" class="link-compare" title="Add to Compare"><span>Add to Compare</span></a>
+                                            </span> <!--add-to-links-->
+                                        </div> <!--actions-->
+                                    </div> <!--product-wrapper-->
+                                    <div class="item-info">
+                                        <div class="info-inner">
+                                            <div class="item-title">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product/view/id/55/s/women-s-single-t-shirt/" title="Women's Single T-Shirt">
+                                                    Women's Single T-Shirt             </a>
+                                            </div> <!--item-title-->
+                                            <div class="item-content">
+                                                <div class="ratings">
+                                                    <div class="rating-box">
+                                                        <div class="rating" style="width: 53%"></div>
+                                                    </div> <!--rating-box-->
+                                                </div> <!--ratings-->
+                                                <div class="item-price">
+
+
+                                                    <div class="price-box">
+                                                        <p class="old-price">
+                                                            <span class="price-label">Regular Price:</span>
+                                                            <span itemprop="price" class="price" id="old-price-57">
+                                                                $99.00                </span>
+                                                        </p>
+
+                                                        <p class="special-price">
+                                                            <span class="price-label">Special Price:</span>
+                                                            <span class="price" id="product-price-57">
+                                                                $79.00                </span>
+                                                        </p>
+
+
+                                                    </div>
+
+                                                </div>
+                                            </div> <!--item-content-->
+                                        </div> <!--info-inner-->
+                                        <div class="actions">
+                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://demo.magikthemes.com/index.php/lambylavender/checkout/cart/add/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/product/55/form_key/1b9gBPV7riNbZ8JK/')"><span>Add to Cart</span></button>
+
+                                        </div> <!--actions-->
+                                    </div> <!--item-info-->
+                                </div> <!--item-inner-->
+                            </li> <!--item jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal-->
+
+
+                            <li class="item  jcarousel-item jcarousel-item-horizontal jcarousel-item-2 jcarousel-item-2-horizontal" jcarouselindex="2" style="float: left; list-style: none;">
+                                <div class="item-inner">
+                                    <div class="product-wrapper">
+                                        <div class="thumb-wrapper">
+                                            <div class="sale-label sale-top-right"> Sale </div>
+                                            <a class="thumb flip" data-fancybox-type="ajax" onclick="callQuickView('http://demo.magikthemes.com/index.php/lambylavender/lambysettings/index/view/id/39/');"><span class="face"><img alt="Softwear Women's Designer" src="http://demo.magikthemes.com/media/catalog/product/cache/72/small_image/258x313/9df78eab33525d08d6e5fb8d27136e95/p/3/p31.jpg"></span><span class="face back"><img alt="Softwear Women's Designer" title="Softwear Women's Designer" src="http://demo.magikthemes.com/media/catalog/product/cache/72/thumbnail/258x313/9df78eab33525d08d6e5fb8d27136e95/p/3/p31.jpg">
+                                                <span class="quick-view"><span><i>&nbsp;</i>Quick View</span></span>
+                                            </span></a>
+                                        </div> <!--thumb-wrapper-->
+                                        <div class="actions">
+                                            <span class="add-to-links">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/wishlist/index/add/product/39/form_key/1b9gBPV7riNbZ8JK/" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a>
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product_compare/add/product/39/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/form_key/1b9gBPV7riNbZ8JK/" class="link-compare" title="Add to Compare"><span>Add to Compare</span></a>
+                                            </span> <!--add-to-links-->
+                                        </div> <!--actions-->
+                                    </div> <!--product-wrapper-->
+                                    <div class="item-info">
+                                        <div class="info-inner">
+                                            <div class="item-title">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product/view/id/39/s/softwear-women-s-designer/" title="Softwear Women's Designer">
+                                                    Softwear Women's Designer             </a>
+                                            </div> <!--item-title-->
+                                            <div class="item-content">
+
+                                                <div class="ratings"><div class="rating-box"><div style="width:0%" class="rating"></div></div></div>
+                                                <div class="item-price">
+
+
+                                                    <div class="price-box">
+                                                        <span class="regular-price" id="product-price-39">
+                                                            <span class="price">$99.00</span>                                    </span>
+
+                                                    </div>
+
+                                                </div>
+                                            </div> <!--item-content-->
+                                        </div> <!--info-inner-->
+                                        <div class="actions">
+                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://demo.magikthemes.com/index.php/lambylavender/checkout/cart/add/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/product/39/form_key/1b9gBPV7riNbZ8JK/')"><span>Add to Cart</span></button>
+
+                                        </div> <!--actions-->
+                                    </div> <!--item-info-->
+                                </div> <!--item-inner-->
+                            </li> <!--item jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal-->
+
+
+                            <li class="item jcarousel-item jcarousel-item-horizontal jcarousel-item-3 jcarousel-item-3-horizontal" jcarouselindex="3" style="float: left; list-style: none;">
+                                <div class="item-inner">
+                                    <div class="product-wrapper">
+                                        <div class="thumb-wrapper">
+                                            <a class="thumb flip" data-fancybox-type="ajax" onclick="callQuickView('http://demo.magikthemes.com/index.php/lambylavender/lambysettings/index/view/id/46/');"><span class="face"><img alt="Ladies Brown Leopard Print " src="http://demo.magikthemes.com/media/catalog/product/cache/72/small_image/258x313/9df78eab33525d08d6e5fb8d27136e95/p/1/p101.jpg"></span><span class="face back"><img alt="Ladies Brown Leopard Print " title="Ladies Brown Leopard Print " src="http://demo.magikthemes.com/media/catalog/product/cache/72/thumbnail/258x313/9df78eab33525d08d6e5fb8d27136e95/p/1/p101.jpg">
+                                                <span class="quick-view"><span><i>&nbsp;</i>Quick View</span></span>
+                                            </span></a>
+                                        </div> <!--thumb-wrapper-->
+                                        <div class="actions">
+                                            <span class="add-to-links">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/wishlist/index/add/product/46/form_key/1b9gBPV7riNbZ8JK/" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a>
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product_compare/add/product/46/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/form_key/1b9gBPV7riNbZ8JK/" class="link-compare" title="Add to Compare"><span>Add to Compare</span></a>
+                                            </span> <!--add-to-links-->
+                                        </div> <!--actions-->
+                                    </div> <!--product-wrapper-->
+                                    <div class="item-info">
+                                        <div class="info-inner">
+                                            <div class="item-title">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product/view/id/46/s/ladies-brown-leopard-print/" title="Ladies Brown Leopard Print ">
+                                                    Ladies Brown Leopard Print              </a>
+                                            </div> <!--item-title-->
+                                            <div class="item-content">
+
+                                                <div class="ratings"><div class="rating-box"><div style="width:0%" class="rating"></div></div></div>
+                                                <div class="item-price">
+
+
+                                                    <div class="price-box">
+                                                        <span class="regular-price" id="product-price-46">
+                                                            <span class="price">$13.99</span>                                    </span>
+
+                                                    </div>
+
+                                                </div>
+                                            </div> <!--item-content-->
+                                        </div> <!--info-inner-->
+                                        <div class="actions">
+                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://demo.magikthemes.com/index.php/lambylavender/checkout/cart/add/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/product/46/form_key/1b9gBPV7riNbZ8JK/')"><span>Add to Cart</span></button>
+
+                                        </div> <!--actions-->
+                                    </div> <!--item-info-->
+                                </div> <!--item-inner-->
+                            </li> <!--item jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal-->
+
+
+                            <li class="item  jcarousel-item jcarousel-item-horizontal jcarousel-item-4 jcarousel-item-4-horizontal" jcarouselindex="4" style="float: left; list-style: none;">
+                                <div class="item-inner">
+                                    <div class="product-wrapper">
+                                        <div class="thumb-wrapper">
+                                            <a class="thumb flip" data-fancybox-type="ajax" onclick="callQuickView('http://demo.magikthemes.com/index.php/lambylavender/lambysettings/index/view/id/62/');"><span class="face"><img alt="Women's U Tank Top" src="http://demo.magikthemes.com/media/catalog/product/cache/72/small_image/258x313/9df78eab33525d08d6e5fb8d27136e95/p/2/p261.jpg"></span><span class="face back"><img alt="Women's U Tank Top" title="Women's U Tank Top" src="http://demo.magikthemes.com/media/catalog/product/cache/72/thumbnail/258x313/9df78eab33525d08d6e5fb8d27136e95/p/2/p261.jpg">
+                                                <span class="quick-view"><span><i>&nbsp;</i>Quick View</span></span>
+                                            </span></a>
+                                        </div> <!--thumb-wrapper-->
+                                        <div class="actions">
+                                            <span class="add-to-links">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/wishlist/index/add/product/62/form_key/1b9gBPV7riNbZ8JK/" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a>
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product_compare/add/product/62/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/form_key/1b9gBPV7riNbZ8JK/" class="link-compare" title="Add to Compare"><span>Add to Compare</span></a>
+                                            </span> <!--add-to-links-->
+                                        </div> <!--actions-->
+                                    </div> <!--product-wrapper-->
+                                    <div class="item-info">
+                                        <div class="info-inner">
+                                            <div class="item-title">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product/view/id/62/s/women-s-u-tank-top/" title="Women's U Tank Top">
+                                                    Women's U Tank Top             </a>
+                                            </div> <!--item-title-->
+                                            <div class="item-content">
+
+                                                <div class="ratings"><div class="rating-box"><div style="width:0%" class="rating"></div></div></div>
+                                                <div class="item-price">
+
+
+                                                    <div class="price-box">
+                                                        <span class="regular-price" id="product-price-62">
+                                                            <span class="price">$7.38</span>                                    </span>
+
+                                                    </div>
+
+                                                </div>
+                                            </div> <!--item-content-->
+                                        </div> <!--info-inner-->
+                                        <div class="actions">
+                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://demo.magikthemes.com/index.php/lambylavender/checkout/cart/add/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/product/62/form_key/1b9gBPV7riNbZ8JK/')"><span>Add to Cart</span></button>
+
+                                        </div> <!--actions-->
+                                    </div> <!--item-info-->
+                                </div> <!--item-inner-->
+                            </li> <!--item jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal-->
+
+
+
+
+                            <li class="item jcarousel-item jcarousel-item-horizontal jcarousel-item-5 jcarousel-item-5-horizontal" jcarouselindex="5" style="float: left; list-style: none;">
+                                <div class="item-inner">
+                                    <div class="product-wrapper">
+                                        <div class="thumb-wrapper">
+                                            <a class="thumb flip" data-fancybox-type="ajax" onclick="callQuickView('http://demo.magikthemes.com/index.php/lambylavender/lambysettings/index/view/id/54/');"><span class="face"><img alt="Women's Crepe Printed Black" src="http://demo.magikthemes.com/media/catalog/product/cache/72/small_image/258x313/9df78eab33525d08d6e5fb8d27136e95/p/1/p181.jpg"></span><span class="face back"><img alt="Women's Crepe Printed Black" title="Women's Crepe Printed Black" src="http://demo.magikthemes.com/media/catalog/product/cache/72/thumbnail/258x313/9df78eab33525d08d6e5fb8d27136e95/p/1/p181.jpg">
+                                                <span class="quick-view"><span><i>&nbsp;</i>Quick View</span></span>
+                                            </span></a>
+                                        </div> <!--thumb-wrapper-->
+                                        <div class="actions">
+                                            <span class="add-to-links">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/wishlist/index/add/product/54/form_key/1b9gBPV7riNbZ8JK/" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a>
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product_compare/add/product/54/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/form_key/1b9gBPV7riNbZ8JK/" class="link-compare" title="Add to Compare"><span>Add to Compare</span></a>
+                                            </span> <!--add-to-links-->
+                                        </div> <!--actions-->
+                                    </div> <!--product-wrapper-->
+                                    <div class="item-info">
+                                        <div class="info-inner">
+                                            <div class="item-title">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product/view/id/54/s/women-s-crepe-printed-black/" title="Women's Crepe Printed Black">
+                                                    Women's Crepe Printed Black             </a>
+                                            </div> <!--item-title-->
+                                            <div class="item-content">
+
+                                                <div class="ratings"><div class="rating-box"><div style="width:0%" class="rating"></div></div></div>
+                                                <div class="item-price">
+
+
+                                                    <div class="price-box">
+                                                        <span class="regular-price" id="product-price-54">
+                                                            <span class="price">$70.00</span>                                    </span>
+
+                                                    </div>
+
+                                                </div>
+                                            </div> <!--item-content-->
+                                        </div> <!--info-inner-->
+                                        <div class="actions">
+                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://demo.magikthemes.com/index.php/lambylavender/checkout/cart/add/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/product/54/form_key/1b9gBPV7riNbZ8JK/')"><span>Add to Cart</span></button>
+
+                                        </div> <!--actions-->
+                                    </div> <!--item-info-->
+                                </div> <!--item-inner-->
+                            </li> <!--item jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal-->
+
+
+                            <li class="item  odd1 jcarousel-item jcarousel-item-horizontal jcarousel-item-6 jcarousel-item-6-horizontal" jcarouselindex="6" style="float: left; list-style: none;">
+                                <div class="item-inner">
+                                    <div class="product-wrapper">
+                                        <div class="thumb-wrapper">
+                                            <div class="sale-label sale-top-right"> Sale </div>                  <a class="thumb flip" data-fancybox-type="ajax" onclick="callQuickView('http://demo.magikthemes.com/index.php/lambylavender/lambysettings/index/view/id/57/');"><span class="face"><img alt="KOMFORTEE SOFA " src="http://demo.magikthemes.com/media/catalog/product/cache/72/small_image/258x313/9df78eab33525d08d6e5fb8d27136e95/p/2/p211.jpg"></span><span class="face back"><img alt="KOMFORTEE SOFA " title="KOMFORTEE SOFA " src="http://demo.magikthemes.com/media/catalog/product/cache/72/thumbnail/258x313/9df78eab33525d08d6e5fb8d27136e95/p/2/p211.jpg">
+                                            <span class="quick-view"><span><i>&nbsp;</i>Quick View</span></span>
+                                        </span></a>
+                                        </div> <!--thumb-wrapper-->
+                                        <div class="actions">
+                                            <span class="add-to-links">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/wishlist/index/add/product/57/form_key/1b9gBPV7riNbZ8JK/" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a>
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product_compare/add/product/57/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/form_key/1b9gBPV7riNbZ8JK/" class="link-compare" title="Add to Compare"><span>Add to Compare</span></a>
+                                            </span> <!--add-to-links-->
+                                        </div> <!--actions-->
+                                    </div> <!--product-wrapper-->
+                                    <div class="item-info">
+                                        <div class="info-inner">
+                                            <div class="item-title">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product/view/id/57/s/komfortee-sofa/" title="KOMFORTEE SOFA ">
+                                                    KOMFORTEE SOFA              </a>
+                                            </div> <!--item-title-->
+                                            <div class="item-content">
+
+                                                <div class="ratings"><div class="rating-box"><div style="width:0%" class="rating"></div></div></div>
+                                                <div class="item-price">
+
+
+                                                    <div class="price-box">
+
+                                                        <p class="old-price">
+                                                            <span class="price-label">Regular Price:</span>
+                                                            <span itemprop="price" class="price" id="old-price-57">
+                                                                $99.00                </span>
+                                                        </p>
+
+                                                        <p class="special-price">
+                                                            <span class="price-label">Special Price:</span>
+                                                            <span class="price" id="product-price-57">
+                                                                $79.00                </span>
+                                                        </p>
+
+
+                                                    </div>
+
+                                                </div>
+                                            </div> <!--item-content-->
+                                        </div> <!--info-inner-->
+                                        <div class="actions">
+                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://demo.magikthemes.com/index.php/lambylavender/checkout/cart/add/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/product/57/form_key/1b9gBPV7riNbZ8JK/')"><span>Add to Cart</span></button>
+
+                                        </div> <!--actions-->
+                                    </div> <!--item-info-->
+                                </div> <!--item-inner-->
+                            </li> <!--item jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal-->
+
+
+                            <li class="item  odd1 jcarousel-item jcarousel-item-horizontal jcarousel-item-7 jcarousel-item-7-horizontal" jcarouselindex="7" style="float: left; list-style: none;">
+                                <div class="item-inner">
+                                    <div class="product-wrapper">
+                                        <div class="thumb-wrapper">
+                                            <div class="new-label new-top-left"> New </div>                  <a class="thumb flip" data-fancybox-type="ajax" onclick="callQuickView('http://demo.magikthemes.com/index.php/lambylavender/lambysettings/index/view/id/56/');"><span class="face"><img alt="Sanctuary Clothing Women's Top" src="http://demo.magikthemes.com/media/catalog/product/cache/72/small_image/258x313/9df78eab33525d08d6e5fb8d27136e95/p/2/p201.jpg"></span><span class="face back"><img alt="Sanctuary Clothing Women's Top" title="Sanctuary Clothing Women's Top" src="http://demo.magikthemes.com/media/catalog/product/cache/72/thumbnail/258x313/9df78eab33525d08d6e5fb8d27136e95/p/2/p201.jpg">
+                                            <span class="quick-view"><span><i>&nbsp;</i>Quick View</span></span>
+                                        </span></a>
+                                        </div> <!--thumb-wrapper-->
+                                        <div class="actions">
+                                            <span class="add-to-links">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/wishlist/index/add/product/56/form_key/1b9gBPV7riNbZ8JK/" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a>
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product_compare/add/product/56/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/form_key/1b9gBPV7riNbZ8JK/" class="link-compare" title="Add to Compare"><span>Add to Compare</span></a>
+                                            </span> <!--add-to-links-->
+                                        </div> <!--actions-->
+                                    </div> <!--product-wrapper-->
+                                    <div class="item-info">
+                                        <div class="info-inner">
+                                            <div class="item-title">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product/view/id/56/s/sanctuary-clothing-women-s-top/" title="Sanctuary Clothing Women's Top">
+                                                    Sanctuary Clothing Women's Top             </a>
+                                            </div> <!--item-title-->
+                                            <div class="item-content">
+
+                                                <div class="ratings"><div class="rating-box"><div style="width:0%" class="rating"></div></div></div>
+                                                <div class="item-price">
+
+
+                                                    <div class="price-box">
+                                                        <span class="regular-price" id="product-price-56">
+                                                            <span class="price">$129.00</span>                                    </span>
+
+                                                    </div>
+
+                                                </div>
+                                            </div> <!--item-content-->
+                                        </div> <!--info-inner-->
+                                        <div class="actions">
+                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://demo.magikthemes.com/index.php/lambylavender/checkout/cart/add/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/product/56/form_key/1b9gBPV7riNbZ8JK/')"><span>Add to Cart</span></button>
+
+                                        </div> <!--actions-->
+                                    </div> <!--item-info-->
+                                </div> <!--item-inner-->
+                            </li> <!--item jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal-->
+
+
+                            <li class="item  last1 jcarousel-item jcarousel-item-horizontal jcarousel-item-8 jcarousel-item-8-horizontal" jcarouselindex="8" style="float: left; list-style: none;">
+                                <div class="item-inner">
+                                    <div class="product-wrapper">
+                                        <div class="thumb-wrapper">
+                                            <a class="thumb flip" data-fancybox-type="ajax" onclick="callQuickView('http://demo.magikthemes.com/index.php/lambylavender/lambysettings/index/view/id/43/');"><span class="face"><img alt="Rigo Men's Round Neck" src="http://demo.magikthemes.com/media/catalog/product/cache/72/small_image/258x313/9df78eab33525d08d6e5fb8d27136e95/p/7/p71.jpg"></span><span class="face back"><img alt="Rigo Men's Round Neck" title="Rigo Men's Round Neck" src="http://demo.magikthemes.com/media/catalog/product/cache/72/thumbnail/258x313/9df78eab33525d08d6e5fb8d27136e95/p/7/p71.jpg">
+                                                <span class="quick-view"><span><i>&nbsp;</i>Quick View</span></span>
+                                            </span></a>
+                                        </div> <!--thumb-wrapper-->
+                                        <div class="actions">
+                                            <span class="add-to-links">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/wishlist/index/add/product/43/form_key/1b9gBPV7riNbZ8JK/" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a>
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product_compare/add/product/43/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/form_key/1b9gBPV7riNbZ8JK/" class="link-compare" title="Add to Compare"><span>Add to Compare</span></a>
+                                            </span> <!--add-to-links-->
+                                        </div> <!--actions-->
+                                    </div> <!--product-wrapper-->
+                                    <div class="item-info">
+                                        <div class="info-inner">
+                                            <div class="item-title">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product/view/id/43/s/rigo-men-s-round-neck/" title="Rigo Men's Round Neck">
+                                                    Rigo Men's Round Neck             </a>
+                                            </div> <!--item-title-->
+                                            <div class="item-content">
+
+                                                <div class="ratings"><div class="rating-box"><div style="width:0%" class="rating"></div></div></div>
+                                                <div class="item-price">
+
+
+                                                    <div class="price-box">
+                                                        <span class="regular-price" id="product-price-43">
+                                                            <span class="price">$39.00</span>                                    </span>
+
+                                                    </div>
+
+                                                </div>
+                                            </div> <!--item-content-->
+                                        </div> <!--info-inner-->
+                                        <div class="actions">
+                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://demo.magikthemes.com/index.php/lambylavender/checkout/cart/add/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/product/43/form_key/1b9gBPV7riNbZ8JK/')"><span>Add to Cart</span></button>
+
+                                        </div> <!--actions-->
+                                    </div> <!--item-info-->
+                                </div> <!--item-inner-->
+                            </li> <!--item jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal-->
+
+
+
+                        </ul>
+                    </div> <!--jcarousel-clip jcarousel-clip-horizontal-->
+                </div> <!--jcarousel-container jcarousel-container-horizontal-->
+            </div> <!--jcarousel-skin-tango4-->
+        </div>
+
+
+
+        <div class="recommend-pro" dir="ltr"><div>
+            <div class="new_title center">
+                <h2>Recommended</h2>
+            </div> <!--new_title center-->
+
+
+            <a id="product_slider_prev" class="jcarousel-prev-horizontal2" href="#"></a> <a id="product_slider_next" class="jcarousel-next-horizontal2" href="#"></a>
+            <div class="jcarousel-skin-tango5">
+                <div class="jcarousel-container jcarousel-container-horizontal" style="position: relative; display: block;">
+                    <div class="jcarousel-clip jcarousel-clip-horizontal" style="overflow: hidden; position: relative;">
+                        <ul class="products-grid jcarousel-list jcarousel-list-horizontal" id="product_slider" style="overflow: hidden; position: relative; top: 0px; margin: 0px; padding: 0px; left: 0px; width: 2488px;">
+
+
+
+                            <li class="item jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal" jcarouselindex="1" style="float: left; list-style: none;">
+                                <div class="item-inner">
+                                    <div class="product-wrapper">
+                                        <div class="thumb-wrapper">
+                                            <div class="sale-label sale-top-right"> Sale </div>
+                                            <a class="thumb flip" data-fancybox-type="ajax" onclick="callQuickView('http://demo.magikthemes.com/index.php/lambylavender/lambysettings/index/view/id/2/');"><span class="face"><img alt="Slim Fit Casual Shirt" src="http://demo.magikthemes.com/media/catalog/product/cache/72/small_image/180x219/9df78eab33525d08d6e5fb8d27136e95/p/2/p29.jpg"></span><span class="face back"><img alt="Slim Fit Casual Shirt" title="Slim Fit Casual Shirt" src="http://demo.magikthemes.com/media/catalog/product/cache/72/thumbnail/180x219/9df78eab33525d08d6e5fb8d27136e95/p/3/p30.jpg">
+                                                <span class="quick-view"><span><i>&nbsp;</i>Quick View</span></span>
+                                            </span></a>
+                                        </div> <!--thumb-wrapper-->
+                                        <div class="actions">
+                                            <span class="add-to-links">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/wishlist/index/add/product/2/form_key/TfkG0156OdNQFaNV/" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a>
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product_compare/add/product/2/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/form_key/TfkG0156OdNQFaNV/" class="link-compare" title="Add to Compare"><span>Add to Compare</span></a>
+                                            </span> <!--add-to-links-->
+                                        </div> <!--actions-->
+                                    </div> <!--product-wrapper-->
+                                    <div class="item-info">
+                                        <div class="info-inner">
+                                            <div class="item-title">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product/view/id/2/s/slim-fit-casual-shirt/" title="Slim Fit Casual Shirt">
+                                                    Slim Fit Casual Shirt             </a>
+                                            </div> <!--item-title-->
+                                            <div class="item-content">
+
+                                                <div class="ratings"><div class="rating-box"><div style="width:0%" class="rating"></div></div></div>
+                                                <div class="item-price">
+
+
+                                                    <div class="price-box">
+                                                        <span class="regular-price" id="product-price-2">
+                                                            <span class="price">$55.00</span>                                    </span>
+
+                                                    </div>
+
+                                                </div>
+                                            </div> <!--item-content-->
+                                        </div> <!--info-inner-->
+                                        <div class="actions">
+                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://demo.magikthemes.com/index.php/lambylavender/checkout/cart/add/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/product/2/form_key/TfkG0156OdNQFaNV/')"><span>Add to Cart</span></button>
+
+                                        </div> <!--actions-->
+                                    </div> <!--item-info-->
+                                </div> <!--item-inner-->
+                            </li> <!--item jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal-->
+
+
+
+                            <li class="item jcarousel-item jcarousel-item-horizontal jcarousel-item-2 jcarousel-item-2-horizontal" jcarouselindex="2" style="float: left; list-style: none;">
+                                <div class="item-inner">
+                                    <div class="product-wrapper">
+                                        <div class="thumb-wrapper">
+                                            <a class="thumb flip" data-fancybox-type="ajax" onclick="callQuickView('http://demo.magikthemes.com/index.php/lambylavender/lambysettings/index/view/id/25/');"><span class="face"><img alt="LANGO T-shirt" src="http://demo.magikthemes.com/media/catalog/product/cache/72/small_image/180x219/9df78eab33525d08d6e5fb8d27136e95/p/2/p24.jpg"></span><span class="face back"><img alt="LANGO T-shirt" title="LANGO T-shirt" src="http://demo.magikthemes.com/media/catalog/product/cache/72/thumbnail/180x219/9df78eab33525d08d6e5fb8d27136e95/p/2/p20.jpg">
+                                                <span class="quick-view"><span><i>&nbsp;</i>Quick View</span></span>
+                                            </span></a>
+                                        </div> <!--thumb-wrapper-->
+                                        <div class="actions">
+                                            <span class="add-to-links">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/wishlist/index/add/product/25/form_key/TfkG0156OdNQFaNV/" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a>
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product_compare/add/product/25/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/form_key/TfkG0156OdNQFaNV/" class="link-compare" title="Add to Compare"><span>Add to Compare</span></a>
+                                            </span> <!--add-to-links-->
+                                        </div> <!--actions-->
+                                    </div> <!--product-wrapper-->
+                                    <div class="item-info">
+                                        <div class="info-inner">
+                                            <div class="item-title">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product/view/id/25/s/lango-t-shirt/" title="LANGO T-shirt">
+                                                    LANGO T-shirt             </a>
+                                            </div> <!--item-title-->
+                                            <div class="item-content">
+
+                                                <div class="ratings"><div class="rating-box"><div style="width:0%" class="rating"></div></div></div>
+                                                <div class="item-price">
+
+
+                                                    <div class="price-box">
+                                                        <span class="regular-price" id="product-price-25">
+                                                            <span class="price">$12.54</span>                                    </span>
+
+                                                    </div>
+
+                                                </div>
+                                            </div> <!--item-content-->
+                                        </div> <!--info-inner-->
+                                        <div class="actions">
+                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://demo.magikthemes.com/index.php/lambylavender/checkout/cart/add/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/product/25/form_key/TfkG0156OdNQFaNV/')"><span>Add to Cart</span></button>
+
+                                        </div> <!--actions-->
+                                    </div> <!--item-info-->
+                                </div> <!--item-inner-->
+                            </li> <!--item jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal-->
+
+
+
+                            <li class="item jcarousel-item jcarousel-item-horizontal jcarousel-item-3 jcarousel-item-3-horizontal" jcarouselindex="3" style="float: left; list-style: none;">
+                                <div class="item-inner">
+                                    <div class="product-wrapper">
+                                        <div class="thumb-wrapper">
+                                            <a class="thumb flip" data-fancybox-type="ajax" onclick="callQuickView('http://demo.magikthemes.com/index.php/lambylavender/lambysettings/index/view/id/8/');"><span class="face"><img alt="Women Casual Wear" src="http://demo.magikthemes.com/media/catalog/product/cache/72/small_image/180x219/9df78eab33525d08d6e5fb8d27136e95/p/5/p5.jpg"></span><span class="face back"><img alt="Women Casual Wear" title="Women Casual Wear" src="http://demo.magikthemes.com/media/catalog/product/cache/72/thumbnail/180x219/9df78eab33525d08d6e5fb8d27136e95/p/6/p6.jpg">
+                                                <span class="quick-view"><span><i>&nbsp;</i>Quick View</span></span>
+                                            </span></a>
+                                        </div> <!--thumb-wrapper-->
+                                        <div class="actions">
+                                            <span class="add-to-links">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/wishlist/index/add/product/8/form_key/TfkG0156OdNQFaNV/" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a>
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product_compare/add/product/8/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/form_key/TfkG0156OdNQFaNV/" class="link-compare" title="Add to Compare"><span>Add to Compare</span></a>
+                                            </span> <!--add-to-links-->
+                                        </div> <!--actions-->
+                                    </div> <!--product-wrapper-->
+                                    <div class="item-info">
+                                        <div class="info-inner">
+                                            <div class="item-title">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product/view/id/8/s/women-casual-wear/" title="Women Casual Wear">
+                                                    Women Casual Wear             </a>
+                                            </div> <!--item-title-->
+                                            <div class="item-content">
+
+                                                <div class="ratings"><div class="rating-box"><div style="width:0%" class="rating"></div></div></div>
+                                                <div class="item-price">
+
+
+                                                    <div class="price-box">
+                                                        <span class="regular-price" id="product-price-8">
+                                                            <span class="price">$99.00</span>                                    </span>
+
+                                                    </div>
+
+                                                </div>
+                                            </div> <!--item-content-->
+                                        </div> <!--info-inner-->
+                                        <div class="actions">
+                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://demo.magikthemes.com/index.php/lambylavender/checkout/cart/add/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/product/8/form_key/TfkG0156OdNQFaNV/')"><span>Add to Cart</span></button>
+
+                                        </div> <!--actions-->
+                                    </div> <!--item-info-->
+                                </div> <!--item-inner-->
+                            </li> <!--item jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal-->
+
+
+
+                            <li class="item jcarousel-item jcarousel-item-horizontal jcarousel-item-4 jcarousel-item-4-horizontal" jcarouselindex="4" style="float: left; list-style: none;">
+                                <div class="item-inner">
+                                    <div class="product-wrapper">
+                                        <div class="thumb-wrapper">
+                                            <a class="thumb flip" data-fancybox-type="ajax" onclick="callQuickView('http://demo.magikthemes.com/index.php/lambylavender/lambysettings/index/view/id/29/');"><span class="face"><img alt="Voodoo Machine Shirt" src="http://demo.magikthemes.com/media/catalog/product/cache/72/small_image/180x219/9df78eab33525d08d6e5fb8d27136e95/p/2/p2.jpg"></span><span class="face back"><img alt="Voodoo Machine Shirt" title="Voodoo Machine Shirt" src="http://demo.magikthemes.com/media/catalog/product/cache/72/thumbnail/180x219/9df78eab33525d08d6e5fb8d27136e95/p/2/p28.jpg">
+                                                <span class="quick-view"><span><i>&nbsp;</i>Quick View</span></span>
+                                            </span></a>
+                                        </div> <!--thumb-wrapper-->
+                                        <div class="actions">
+                                            <span class="add-to-links">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/wishlist/index/add/product/29/form_key/TfkG0156OdNQFaNV/" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a>
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product_compare/add/product/29/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/form_key/TfkG0156OdNQFaNV/" class="link-compare" title="Add to Compare"><span>Add to Compare</span></a>
+                                            </span> <!--add-to-links-->
+                                        </div> <!--actions-->
+                                    </div> <!--product-wrapper-->
+                                    <div class="item-info">
+                                        <div class="info-inner">
+                                            <div class="item-title">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product/view/id/29/s/voodoo-machine-shirt/" title="Voodoo Machine Shirt">
+                                                    Voodoo Machine Shirt             </a>
+                                            </div> <!--item-title-->
+                                            <div class="item-content">
+
+                                                <div class="ratings"><div class="rating-box"><div style="width:0%" class="rating"></div></div></div>
+                                                <div class="item-price">
+
+
+                                                    <div class="price-box">
+                                                        <span class="regular-price" id="product-price-29">
+                                                            <span class="price">$99.00</span>                                    </span>
+
+                                                    </div>
+
+                                                </div>
+                                            </div> <!--item-content-->
+                                        </div> <!--info-inner-->
+                                        <div class="actions">
+                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://demo.magikthemes.com/index.php/lambylavender/checkout/cart/add/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/product/29/form_key/TfkG0156OdNQFaNV/')"><span>Add to Cart</span></button>
+
+                                        </div> <!--actions-->
+                                    </div> <!--item-info-->
+                                </div> <!--item-inner-->
+                            </li> <!--item jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal-->
+
+
+
+                            <li class="item jcarousel-item jcarousel-item-horizontal jcarousel-item-5 jcarousel-item-5-horizontal" jcarouselindex="5" style="float: left; list-style: none;">
+                                <div class="item-inner">
+                                    <div class="product-wrapper">
+                                        <div class="thumb-wrapper">
+                                            <a class="thumb flip" data-fancybox-type="ajax" onclick="callQuickView('http://demo.magikthemes.com/index.php/lambylavender/lambysettings/index/view/id/4/');"><span class="face"><img alt="Rajrang Cotton Multi Color" src="http://demo.magikthemes.com/media/catalog/product/cache/72/small_image/180x219/9df78eab33525d08d6e5fb8d27136e95/p/9/p9.jpg"></span><span class="face back"><img alt="Rajrang Cotton Multi Color" title="Rajrang Cotton Multi Color" src="http://demo.magikthemes.com/media/catalog/product/cache/72/thumbnail/180x219/9df78eab33525d08d6e5fb8d27136e95/p/8/p8.jpg">
+                                                <span class="quick-view"><span><i>&nbsp;</i>Quick View</span></span>
+                                            </span></a>
+                                        </div> <!--thumb-wrapper-->
+                                        <div class="actions">
+                                            <span class="add-to-links">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/wishlist/index/add/product/4/form_key/TfkG0156OdNQFaNV/" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a>
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product_compare/add/product/4/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/form_key/TfkG0156OdNQFaNV/" class="link-compare" title="Add to Compare"><span>Add to Compare</span></a>
+                                            </span> <!--add-to-links-->
+                                        </div> <!--actions-->
+                                    </div> <!--product-wrapper-->
+                                    <div class="item-info">
+                                        <div class="info-inner">
+                                            <div class="item-title">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product/view/id/4/s/rajrang-cotton-multi-color/" title="Rajrang Cotton Multi Color">
+                                                    Rajrang Cotton Multi Color             </a>
+                                            </div> <!--item-title-->
+                                            <div class="item-content">
+
+                                                <div class="ratings"><div class="rating-box"><div style="width:0%" class="rating"></div></div></div>
+                                                <div class="item-price">
+
+
+                                                    <div class="price-box">
+                                                        <span class="regular-price" id="product-price-4">
+                                                            <span class="price">$99.00</span>                                    </span>
+
+                                                    </div>
+
+                                                </div>
+                                            </div> <!--item-content-->
+                                        </div> <!--info-inner-->
+                                        <div class="actions">
+                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://demo.magikthemes.com/index.php/lambylavender/checkout/cart/add/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/product/4/form_key/TfkG0156OdNQFaNV/')"><span>Add to Cart</span></button>
+
+                                        </div> <!--actions-->
+                                    </div> <!--item-info-->
+                                </div> <!--item-inner-->
+                            </li> <!--item jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal-->
+
+
+
+                            <li class="item jcarousel-item jcarousel-item-horizontal jcarousel-item-6 jcarousel-item-6-horizontal" jcarouselindex="6" style="float: left; list-style: none;">
+                                <div class="item-inner">
+                                    <div class="product-wrapper">
+                                        <div class="thumb-wrapper">
+                                            <a class="thumb flip" data-fancybox-type="ajax" onclick="callQuickView('http://demo.magikthemes.com/index.php/lambylavender/lambysettings/index/view/id/9/');"><span class="face"><img alt="Printed Pleated Tank Dress" src="http://demo.magikthemes.com/media/catalog/product/cache/72/small_image/180x219/9df78eab33525d08d6e5fb8d27136e95/p/3/p3.jpg"></span><span class="face back"><img alt="Printed Pleated Tank Dress" title="Printed Pleated Tank Dress" src="http://demo.magikthemes.com/media/catalog/product/cache/72/thumbnail/180x219/9df78eab33525d08d6e5fb8d27136e95/p/4/p4.jpg">
+                                                <span class="quick-view"><span><i>&nbsp;</i>Quick View</span></span>
+                                            </span></a>
+                                        </div> <!--thumb-wrapper-->
+                                        <div class="actions">
+                                            <span class="add-to-links">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/wishlist/index/add/product/9/form_key/TfkG0156OdNQFaNV/" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a>
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product_compare/add/product/9/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/form_key/TfkG0156OdNQFaNV/" class="link-compare" title="Add to Compare"><span>Add to Compare</span></a>
+                                            </span> <!--add-to-links-->
+                                        </div> <!--actions-->
+                                    </div> <!--product-wrapper-->
+                                    <div class="item-info">
+                                        <div class="info-inner">
+                                            <div class="item-title">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product/view/id/9/s/printed-pleated-tank-dress/" title="Printed Pleated Tank Dress">
+                                                    Printed Pleated Tank Dress             </a>
+                                            </div> <!--item-title-->
+                                            <div class="item-content">
+
+                                                <div class="ratings"><div class="rating-box"><div style="width:0%" class="rating"></div></div></div>
+                                                <div class="item-price">
+
+
+                                                    <div class="price-box">
+                                                        <span class="regular-price" id="product-price-9">
+                                                            <span class="price">$69.00</span>                                    </span>
+
+                                                    </div>
+
+                                                </div>
+                                            </div> <!--item-content-->
+                                        </div> <!--info-inner-->
+                                        <div class="actions">
+                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://demo.magikthemes.com/index.php/lambylavender/checkout/cart/add/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/product/9/form_key/TfkG0156OdNQFaNV/')"><span>Add to Cart</span></button>
+
+                                        </div> <!--actions-->
+                                    </div> <!--item-info-->
+                                </div> <!--item-inner-->
+                            </li> <!--item jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal-->
+
+
+
+
+
+                            <li class="item jcarousel-item jcarousel-item-horizontal jcarousel-item-7 jcarousel-item-7-horizontal" jcarouselindex="7" style="float: left; list-style: none;">
+                                <div class="item-inner">
+                                    <div class="product-wrapper">
+                                        <div class="thumb-wrapper">
+                                            <a class="thumb flip" data-fancybox-type="ajax" onclick="callQuickView('http://demo.magikthemes.com/index.php/lambylavender/lambysettings/index/view/id/11/');"><span class="face"><img alt="Indi Dori Women's Cotton" src="http://demo.magikthemes.com/media/catalog/product/cache/72/small_image/180x219/9df78eab33525d08d6e5fb8d27136e95/p/5/p5.jpg"></span><span class="face back"><img alt="Indi Dori Women's Cotton" title="Indi Dori Women's Cotton" src="http://demo.magikthemes.com/media/catalog/product/cache/72/thumbnail/180x219/9df78eab33525d08d6e5fb8d27136e95/p/6/p6.jpg">
+                                                <span class="quick-view"><span><i>&nbsp;</i>Quick View</span></span>
+                                            </span></a>
+                                        </div> <!--thumb-wrapper-->
+                                        <div class="actions">
+                                            <span class="add-to-links">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/wishlist/index/add/product/11/form_key/TfkG0156OdNQFaNV/" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a>
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product_compare/add/product/11/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/form_key/TfkG0156OdNQFaNV/" class="link-compare" title="Add to Compare"><span>Add to Compare</span></a>
+                                            </span> <!--add-to-links-->
+                                        </div> <!--actions-->
+                                    </div> <!--product-wrapper-->
+                                    <div class="item-info">
+                                        <div class="info-inner">
+                                            <div class="item-title">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product/view/id/11/s/indi-dori-women-s-cotton/" title="Indi Dori Women's Cotton">
+                                                    Indi Dori Women's Cotton             </a>
+                                            </div> <!--item-title-->
+                                            <div class="item-content">
+
+                                                <div class="ratings"><div class="rating-box"><div style="width:0%" class="rating"></div></div></div>
+                                                <div class="item-price">
+
+
+                                                    <div class="price-box">
+                                                        <span class="regular-price" id="product-price-11">
+                                                            <span class="price">$99.00</span>                                    </span>
+
+                                                    </div>
+
+                                                </div>
+                                            </div> <!--item-content-->
+                                        </div> <!--info-inner-->
+                                        <div class="actions">
+                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://demo.magikthemes.com/index.php/lambylavender/checkout/cart/add/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/product/11/form_key/TfkG0156OdNQFaNV/')"><span>Add to Cart</span></button>
+
+                                        </div> <!--actions-->
+                                    </div> <!--item-info-->
+                                </div> <!--item-inner-->
+                            </li> <!--item jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal-->
+
+
+
+                            <li class="item jcarousel-item jcarousel-item-horizontal jcarousel-item-8 jcarousel-item-8-horizontal" jcarouselindex="8" style="float: left; list-style: none;">
+                                <div class="item-inner">
+                                    <div class="product-wrapper">
+                                        <div class="thumb-wrapper">
+                                            <div class="new-label new-top-left"> New </div>                  <a class="thumb flip" data-fancybox-type="ajax" onclick="callQuickView('http://demo.magikthemes.com/index.php/lambylavender/lambysettings/index/view/id/19/');"><span class="face"><img alt="Women's Single T-Shirt" src="http://demo.magikthemes.com/media/catalog/product/cache/72/small_image/180x219/9df78eab33525d08d6e5fb8d27136e95/p/2/p20.jpg"></span><span class="face back"><img alt="Women's Single T-Shirt" title="Women's Single T-Shirt" src="http://demo.magikthemes.com/media/catalog/product/cache/72/thumbnail/180x219/9df78eab33525d08d6e5fb8d27136e95/p/1/p17.jpg">
+                                            <span class="quick-view"><span><i>&nbsp;</i>Quick View</span></span>
+                                        </span></a>
+                                        </div> <!--thumb-wrapper-->
+                                        <div class="actions">
+                                            <span class="add-to-links">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/wishlist/index/add/product/19/form_key/TfkG0156OdNQFaNV/" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a>
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product_compare/add/product/19/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/form_key/TfkG0156OdNQFaNV/" class="link-compare" title="Add to Compare"><span>Add to Compare</span></a>
+                                            </span> <!--add-to-links-->
+                                        </div> <!--actions-->
+                                    </div> <!--product-wrapper-->
+                                    <div class="item-info">
+                                        <div class="info-inner">
+                                            <div class="item-title">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product/view/id/19/s/women-s-single-t-shirt/" title="Women's Single T-Shirt">
+                                                    Women's Single T-Shirt             </a>
+                                            </div> <!--item-title-->
+                                            <div class="item-content">
+
+                                                <div class="ratings"><div class="rating-box"><div style="width:0%" class="rating"></div></div></div>
+                                                <div class="item-price">
+
+
+                                                    <div class="price-box">
+                                                        <span class="regular-price" id="product-price-19">
+                                                            <span class="price">$12.54</span>                                    </span>
+
+                                                    </div>
+
+                                                </div>
+                                            </div> <!--item-content-->
+                                        </div> <!--info-inner-->
+                                        <div class="actions">
+                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://demo.magikthemes.com/index.php/lambylavender/checkout/cart/add/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/product/19/form_key/TfkG0156OdNQFaNV/')"><span>Add to Cart</span></button>
+
+                                        </div> <!--actions-->
+                                    </div> <!--item-info-->
+                                </div> <!--item-inner-->
+                            </li> <!--item jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal-->
+
+
+
+                            <li class="item jcarousel-item jcarousel-item-horizontal jcarousel-item-9 jcarousel-item-9-horizontal" jcarouselindex="9" style="float: left; list-style: none;">
+                                <div class="item-inner">
+                                    <div class="product-wrapper">
+                                        <div class="thumb-wrapper">
+                                            <div class="new-label new-top-left"> New </div>                  <a class="thumb flip" data-fancybox-type="ajax" onclick="callQuickView('http://demo.magikthemes.com/index.php/lambylavender/lambysettings/index/view/id/26/');"><span class="face"><img alt="Women's U Tank Top" src="http://demo.magikthemes.com/media/catalog/product/cache/72/small_image/180x219/9df78eab33525d08d6e5fb8d27136e95/p/2/p27.jpg"></span><span class="face back"><img alt="Women's U Tank Top" title="Women's U Tank Top" src="http://demo.magikthemes.com/media/catalog/product/cache/72/thumbnail/180x219/9df78eab33525d08d6e5fb8d27136e95/p/1/p17.jpg">
+                                            <span class="quick-view"><span><i>&nbsp;</i>Quick View</span></span>
+                                        </span></a>
+                                        </div> <!--thumb-wrapper-->
+                                        <div class="actions">
+                                            <span class="add-to-links">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/wishlist/index/add/product/26/form_key/TfkG0156OdNQFaNV/" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a>
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product_compare/add/product/26/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/form_key/TfkG0156OdNQFaNV/" class="link-compare" title="Add to Compare"><span>Add to Compare</span></a>
+                                            </span> <!--add-to-links-->
+                                        </div> <!--actions-->
+                                    </div> <!--product-wrapper-->
+                                    <div class="item-info">
+                                        <div class="info-inner">
+                                            <div class="item-title">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product/view/id/26/s/women-s-u-tank-top/" title="Women's U Tank Top">
+                                                    Women's U Tank Top             </a>
+                                            </div> <!--item-title-->
+                                            <div class="item-content">
+
+                                                <div class="ratings"><div class="rating-box"><div style="width:0%" class="rating"></div></div></div>
+                                                <div class="item-price">
+
+
+                                                    <div class="price-box">
+                                                        <span class="regular-price" id="product-price-26">
+                                                            <span class="price">$7.38</span>                                    </span>
+
+                                                    </div>
+
+                                                </div>
+                                            </div> <!--item-content-->
+                                        </div> <!--info-inner-->
+                                        <div class="actions">
+                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://demo.magikthemes.com/index.php/lambylavender/checkout/cart/add/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/product/26/form_key/TfkG0156OdNQFaNV/')"><span>Add to Cart</span></button>
+
+                                        </div> <!--actions-->
+                                    </div> <!--item-info-->
+                                </div> <!--item-inner-->
+                            </li> <!--item jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal-->
+
+
+
+                            <li class="item jcarousel-item jcarousel-item-horizontal jcarousel-item-10 jcarousel-item-10-horizontal" jcarouselindex="10" style="float: left; list-style: none;">
+                                <div class="item-inner">
+                                    <div class="product-wrapper">
+                                        <div class="thumb-wrapper">
+                                            <div class="new-label new-top-left"> New </div>                  <a class="thumb flip" data-fancybox-type="ajax" onclick="callQuickView('http://demo.magikthemes.com/index.php/lambylavender/lambysettings/index/view/id/28/');"><span class="face"><img alt="Macroman M-Series Shirt" src="http://demo.magikthemes.com/media/catalog/product/cache/72/small_image/180x219/9df78eab33525d08d6e5fb8d27136e95/p/3/p30.jpg"></span><span class="face back"><img alt="Macroman M-Series Shirt" title="Macroman M-Series Shirt" src="http://demo.magikthemes.com/media/catalog/product/cache/72/thumbnail/180x219/9df78eab33525d08d6e5fb8d27136e95/p/2/p29.jpg">
+                                            <span class="quick-view"><span><i>&nbsp;</i>Quick View</span></span>
+                                        </span></a>
+                                        </div> <!--thumb-wrapper-->
+                                        <div class="actions">
+                                            <span class="add-to-links">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/wishlist/index/add/product/28/form_key/TfkG0156OdNQFaNV/" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a>
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product_compare/add/product/28/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/form_key/TfkG0156OdNQFaNV/" class="link-compare" title="Add to Compare"><span>Add to Compare</span></a>
+                                            </span> <!--add-to-links-->
+                                        </div> <!--actions-->
+                                    </div> <!--product-wrapper-->
+                                    <div class="item-info">
+                                        <div class="info-inner">
+                                            <div class="item-title">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product/view/id/28/s/macroman-m-series-shirt/" title="Macroman M-Series Shirt">
+                                                    Macroman M-Series Shirt             </a>
+                                            </div> <!--item-title-->
+                                            <div class="item-content">
+
+                                                <div class="ratings"><div class="rating-box"><div style="width:0%" class="rating"></div></div></div>
+                                                <div class="item-price">
+
+
+                                                    <div class="price-box">
+                                                        <span class="regular-price" id="product-price-28">
+                                                            <span class="price">$99.00</span>                                    </span>
+
+                                                    </div>
+
+                                                </div>
+                                            </div> <!--item-content-->
+                                        </div> <!--info-inner-->
+                                        <div class="actions">
+                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://demo.magikthemes.com/index.php/lambylavender/checkout/cart/add/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/product/28/form_key/TfkG0156OdNQFaNV/')"><span>Add to Cart</span></button>
+
+                                        </div> <!--actions-->
+                                    </div> <!--item-info-->
+                                </div> <!--item-inner-->
+                            </li> <!--item jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal-->
+
+
+
+                            <li class="item jcarousel-item jcarousel-item-horizontal jcarousel-item-11 jcarousel-item-11-horizontal" jcarouselindex="11" style="float: left; list-style: none;">
+                                <div class="item-inner">
+                                    <div class="product-wrapper">
+                                        <div class="thumb-wrapper">
+                                            <a class="thumb flip" data-fancybox-type="ajax" onclick="callQuickView('http://demo.magikthemes.com/index.php/lambylavender/lambysettings/index/view/id/20/');"><span class="face"><img alt="Sanctuary Clothing Women's Top" src="http://demo.magikthemes.com/media/catalog/product/cache/72/small_image/180x219/9df78eab33525d08d6e5fb8d27136e95/p/2/p20.jpg"></span><span class="face back"><img alt="Sanctuary Clothing Women's Top" title="Sanctuary Clothing Women's Top" src="http://demo.magikthemes.com/media/catalog/product/cache/72/thumbnail/180x219/9df78eab33525d08d6e5fb8d27136e95/p/2/p20.jpg">
+                                                <span class="quick-view"><span><i>&nbsp;</i>Quick View</span></span>
+                                            </span></a>
+                                        </div> <!--thumb-wrapper-->
+                                        <div class="actions">
+                                            <span class="add-to-links">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/wishlist/index/add/product/20/form_key/TfkG0156OdNQFaNV/" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a>
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product_compare/add/product/20/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/form_key/TfkG0156OdNQFaNV/" class="link-compare" title="Add to Compare"><span>Add to Compare</span></a>
+                                            </span> <!--add-to-links-->
+                                        </div> <!--actions-->
+                                    </div> <!--product-wrapper-->
+                                    <div class="item-info">
+                                        <div class="info-inner">
+                                            <div class="item-title">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product/view/id/20/s/sanctuary-clothing-women-s-top/" title="Sanctuary Clothing Women's Top">
+                                                    Sanctuary Clothing Women's Top             </a>
+                                            </div> <!--item-title-->
+                                            <div class="item-content">
+
+                                                <div class="ratings"><div class="rating-box"><div style="width:0%" class="rating"></div></div></div>
+                                                <div class="item-price">
+
+
+                                                    <div class="price-box">
+                                                        <span class="regular-price" id="product-price-20">
+                                                            <span class="price">$129.00</span>                                    </span>
+
+                                                    </div>
+
+                                                </div>
+                                            </div> <!--item-content-->
+                                        </div> <!--info-inner-->
+                                        <div class="actions">
+                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://demo.magikthemes.com/index.php/lambylavender/checkout/cart/add/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/product/20/form_key/TfkG0156OdNQFaNV/')"><span>Add to Cart</span></button>
+
+                                        </div> <!--actions-->
+                                    </div> <!--item-info-->
+                                </div> <!--item-inner-->
+                            </li> <!--item jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal-->
+
+
+
+                            <li class="item jcarousel-item jcarousel-item-horizontal jcarousel-item-12 jcarousel-item-12-horizontal" jcarouselindex="12" style="float: left; list-style: none;">
+                                <div class="item-inner">
+                                    <div class="product-wrapper">
+                                        <div class="thumb-wrapper">
+                                            <a class="thumb flip" data-fancybox-type="ajax" onclick="callQuickView('http://demo.magikthemes.com/index.php/lambylavender/lambysettings/index/view/id/60/');"><span class="face"><img alt="Vivante Gorgeous Cotton" src="http://demo.magikthemes.com/media/catalog/product/cache/72/small_image/180x219/9df78eab33525d08d6e5fb8d27136e95/p/2/p271.jpg"></span><span class="face back"><img alt="Vivante Gorgeous Cotton" title="Vivante Gorgeous Cotton" src="http://demo.magikthemes.com/media/catalog/product/cache/72/thumbnail/180x219/9df78eab33525d08d6e5fb8d27136e95/p/2/p201.jpg">
+                                                <span class="quick-view"><span><i>&nbsp;</i>Quick View</span></span>
+                                            </span></a>
+                                        </div> <!--thumb-wrapper-->
+                                        <div class="actions">
+                                            <span class="add-to-links">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/wishlist/index/add/product/60/form_key/TfkG0156OdNQFaNV/" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a>
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product_compare/add/product/60/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/form_key/TfkG0156OdNQFaNV/" class="link-compare" title="Add to Compare"><span>Add to Compare</span></a>
+                                            </span> <!--add-to-links-->
+                                        </div> <!--actions-->
+                                    </div> <!--product-wrapper-->
+                                    <div class="item-info">
+                                        <div class="info-inner">
+                                            <div class="item-title">
+                                                <a href="http://demo.magikthemes.com/index.php/lambylavender/catalog/product/view/id/60/s/vivante-gorgeous-cotton/" title="Vivante Gorgeous Cotton">
+                                                    Vivante Gorgeous Cotton             </a>
+                                            </div> <!--item-title-->
+                                            <div class="item-content">
+
+                                                <div class="ratings"><div class="rating-box"><div style="width:0%" class="rating"></div></div></div>
+                                                <div class="item-price">
+
+
+                                                    <div class="price-box">
+                                                        <span class="regular-price" id="product-price-60">
+                                                            <span class="price">$99.00</span>                                    </span>
+
+                                                    </div>
+
+                                                </div>
+                                            </div> <!--item-content-->
+                                        </div> <!--info-inner-->
+                                        <div class="actions">
+                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://demo.magikthemes.com/index.php/lambylavender/checkout/cart/add/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/product/60/form_key/TfkG0156OdNQFaNV/')"><span>Add to Cart</span></button>
+
+                                        </div> <!--actions-->
+                                    </div> <!--item-info-->
+                                </div> <!--item-inner-->
+                            </li> <!--item jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal-->
+
+
+
+                        </ul>
+                    </div> <!--jcarousel-clip jcarousel-clip-horizontal-->
+                </div> <!--jcarousel-container jcarousel-container-horizontal-->
+            </div> <!--jcarousel-skin-tango5-->
+
+            <!--Endif !$collection->count() -->
+
+            <!-- chk attribute_code -->
+
+            <script type="text/javascript">
+            jQuery(document).ready(function($) {
+
+            function mycarousel_initCallback(carousel) {
+
+            jQuery('#product_slider_next').bind('click', function() {
+            carousel.next();
+            return false;
+            });
+            jQuery('#product_slider_prev').bind('click', function() {
+            carousel.prev();
+            return false;
+            });
+            };
+
+            jQuery('#product_slider').jcarousel({
+            scroll: 1,
+            initCallback: mycarousel_initCallback,
+            buttonNextHTML: null,
+            buttonPrevHTML: null
+            });
+            });
+            </script>
+
+            <div id="mgkquickview">
+                <div id="magikloading" style="display:none;text-align:center;margin-top:400px;"><img src="http://demo.magikthemes.com/skin/frontend/rwd/lamby-lavender/images/mgkloading.gif" alt="loading">
+                </div></div>
+            <script type="text/javascript">
+            function callQuickView(qurl) {
+            jQuery('#mgkquickview').show();
+            jQuery('#magikloading').show();
+            jQuery.get(qurl, function(data) {
+            jQuery.fancybox(data);
+            jQuery('#magikloading').hide();
+            jQuery('#mgkquickview').hide();
+            });
+            }
+            </script></div></div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">First featurette heading. <span class="text-muted">
+                    It'll blow your mind.</span></h2>
+                <p class="lead">
+                    Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            </div>
+            <div class="col-md-5">
+                <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="500x500" src="@routes.Assets.at("images/zarest/desktop-2-2.jpg")" data-holder-rendered="true" width="500" height="500">
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-5">
+                <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="500x500" src="@routes.Assets.at("images/zarest/68978dd1beb0e26cbd45a718497b3c7c-2-2.jpg")" data-holder-rendered="true" width="500" height="500">
+            </div>
+            <div class="col-md-7">
+                <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">
+                    See for yourself.</span></h2>
+                <p class="lead">
+                    Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+                <p class="lead">
+                    Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            </div>
+            <div class="col-md-5">
+                <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="500x500" src="@routes.Assets.at("images/zarest/football-player-wallpaper-hd-2-2.jpg")" data-holder-rendered="true" width="500" height="500">
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+            <!-- /END THE FEATURETTES -->
+
+
+    </div>
 }

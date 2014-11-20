@@ -17,21 +17,22 @@ body {
   padding: 0px;
   -webkit-font-smoothing: antialised;
   -webkit-user-select: none;
-  padding-top: 90px;
+  padding-top: 85px;
   -webkit-transition: all .5s ease-out;
   -moz-transition: all .5s ease-out;
   -ms-transition: all .5s ease-out;
   -o-transition: all .5s ease-out;
   transition: all .5s ease-out;
-  -webkit-transition-delay: 1s;
-  -moz-transition-delay: 1s;
-  -ms-transition-delay: 1s;
-  -o-transition-delay: 1s;
-  transition-delay: 1s;
+  -webkit-transition-delay: .75s;
+  -moz-transition-delay: .75s;
+  -ms-transition-delay: .75s;
+  -o-transition-delay: .75s;
+  transition-delay: .75s;
 }
 
 main {
-  height: 1000px;
+  height: auto;
+  min-height: 1000px;
 }
 
 .header-top {
@@ -61,17 +62,17 @@ main {
   -ms-transition: all .5s ease-out;
   -o-transition: all .5s ease-out;
   transition: all .5s ease-out;
-  -webkit-transition-delay: 1s;
-  -moz-transition-delay: 1s;
-  -ms-transition-delay: 1s;
-  -o-transition-delay: 1s;
-  transition-delay: 1s;
+  -webkit-transition-delay: .75s;
+  -moz-transition-delay: .75s;
+  -ms-transition-delay: .75s;
+  -o-transition-delay: .75s;
+  transition-delay: .75s;
 }
 
 footer {
   //background-color:@headerBg;
   //color:@zaresetBg;
-  border-top: solid red 1px;
+  //border-top: solid red 1px;
   clear: both;
   text-align: center;
   padding: 5px;
@@ -83,10 +84,16 @@ footer {
       margin: 2%;
       &:hover {
         color: @links;
+        text-decoration: none;
       }
     }
   }
 }
+
+
+
+
+
 
 
 

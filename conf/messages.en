@@ -108,6 +108,20 @@ createCustomer=Create Customer
 createCategory=Create Category
 createProduct=Create Product
 
+#Index.html----------------
+
+accessories=Accessories
+
+#Carousel-------------------
+shopNow=Shop Now
+latestProducts=New Arrivals
+bestSeller=Best Seller
+featuredProducts=Featured Products
+recommended=Recommended
+viewAll=View All
+learnMore=Learn More
+
+
 # Languages
 lang.en=English
 lang.fa=Farsi

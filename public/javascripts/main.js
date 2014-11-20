@@ -13,9 +13,16 @@ $(document).ready(function () {
     $('.dropdown-toggle').click(function () {
         $(this).toggleClass('disabled');
     });
-    $('.dropdown-toggle').hover(function () {
-        $(this).toggleClass('disabled');
-    });
+    $(".dropdown").hover(
+        function() {
+            $('#rootDropdown', this).stop( true, true ).slideDown("fast");
+            $(this).toggleClass('open');
+        },
+        function() {
+            $('#rootDropdown', this).stop( true, true ).slideUp("fast");
+            $(this).toggleClass('open');
+        }
+    );
 
     $('.nav').find('a[href="' + location.pathname + '"]').parents('li').addClass('active');
     var path = location.pathname.substring(1, location.pathname.length);
@@ -68,14 +75,14 @@ $(function () { // document ready
             if (stickyTop < windowTop) {
                 $('.sticky').each(function () {
                     $(this).css({ position: 'fixed', top: top});
-                    $('body').css({paddingTop: 70})
+                    $('body').css({paddingTop: 60})
                     //top = top + 36;
                 });
             }
             else {
                 $('.sticky').each(function () {
                     $(this).css('top', '25');
-                    $('body').css({paddingTop: 95})
+                    $('body').css({paddingTop: 85})
                 });
             }
         });
