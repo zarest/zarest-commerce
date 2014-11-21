@@ -20,9 +20,12 @@ public class Product extends Model {
     @GeneratedValue(strategy = GenerationType.AUTO)
     //@Column(name = "product_id", unique = true, nullable = false)
     public Long id;
+    @Column(name = "sku", unique = true, nullable = false)
     @MaxLength(50)
+    //SKU number from you or the Supplier
     public String sku;
     @MaxLength(50)
+    //The Vendor's Product ID (could be SKU or their own system). (Could be a duplication of SKU above.)
     public String supplierProdId;
     @MaxLength(60)
     public String productName;
@@ -32,7 +35,10 @@ public class Product extends Model {
     public Supplier supplier;
     @ManyToOne
     public Category category;
+    //Quantity that items are shipped per unit from supplier.
+    // E.g. 6/case. Mostly for inventory and ordering purposes. Can be used in arithmetic expressions.
     public Integer quantityPerUnit;
+    //Unit Size - goes with QuantityPerUnit. This is case, each, dozen, etc.
     public String unitSize;
     public BigDecimal unitPrice;
 
@@ -41,7 +47,7 @@ public class Product extends Model {
     // helps when you are showing discounts off MSRP.
     public BigDecimal msrp;
     //can be in different table using sizeId
-    public String availableSize;
+    public String availableSizes;
     //can be in different table using colorId
     public String availableColors;
     public Double discount;

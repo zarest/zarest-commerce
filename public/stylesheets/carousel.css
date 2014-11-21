@@ -7,33 +7,6 @@ body {
     color: #5a5a5a;
 }
 
-
-/* CUSTOMIZE THE NAVBAR
--------------------------------------------------- */
-
-/* Special class on .container surrounding .navbar, used for positioning it into place. */
-.navbar-wrapper {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 20;
-}
-
-/* Flip around the padding for proper display in narrow viewports */
-.navbar-wrapper > .container {
-    padding-right: 0;
-    padding-left: 0;
-}
-.navbar-wrapper .navbar {
-    padding-right: 15px;
-    padding-left: 15px;
-}
-.navbar-wrapper .navbar .container {
-    width: auto;
-}
-
-
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
@@ -145,36 +118,37 @@ html {
 }
 
 /*========== Common Styles ==========*/
-* {
-    margin: 0;
-    padding: 0;
-}
-ul, ol {
-    list-style: none outside none;
-}
+/** {*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+/*}*/
+/*ul, ol {*/
+    /*list-style: none outside none;*/
+/*}*/
 
-label, input, button, select, textarea {
-    font-family: Arial, Helvetica, sans-serif;
-}
+/*label, input, button, select, textarea {*/
+    /*font-family: Arial, Helvetica, sans-serif;*/
+/*}*/
 a {
     color: #282828;
     text-decoration: none;
 }
 a:hover, a:focus {
     color: #333;
+    text-decoration: none;
 }
-h1, h2, h3, h4, h5, h6, .block .block-title, .slide-title {
-    color: #333;
-    font-weight: normal;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-}
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .block .block-title a, .slide-title a {
-    color: #333;
-}
-h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, .block .block-title a:hover, h1 a:hover, h2 a:focus, h3 a:focus, h4 a:focus, h5 a:focus, h6 a:focus, .block .block-title a:focus, .slide-title a:hover, .slide-title a:focus {
-    color: #333;
-}
+/*h1, h2, h3, h4, h5, h6, .block .block-title, .slide-title {*/
+    /*color: #333;*/
+    /*font-weight: normal;*/
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    /*margin: 0;*/
+/*}*/
+/*h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .block .block-title a, .slide-title a {*/
+    /*color: #333;*/
+/*}*/
+/*h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, .block .block-title a:hover, h1 a:hover, h2 a:focus, h3 a:focus, h4 a:focus, h5 a:focus, h6 a:focus, .block .block-title a:focus, .slide-title a:hover, .slide-title a:focus {*/
+    /*color: #333;*/
+/*}*/
 /* Tools ============*/
 .hidden {
     display: block !important;

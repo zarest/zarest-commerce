@@ -104,7 +104,7 @@ create table payment (
 
 create table product (
   id                        bigint not null,
-  sku                       varchar(255),
+  sku                       varchar(255) not null,
   supplier_prod_id          varchar(255),
   product_name              varchar(255),
   product_description       varchar(255),
@@ -114,7 +114,7 @@ create table product (
   unit_size                 varchar(255),
   unit_price                decimal(38),
   msrp                      decimal(38),
-  available_size            varchar(255),
+  available_sizes           varchar(255),
   available_colors          varchar(255),
   discount                  double,
   unit_weight               double,
@@ -126,6 +126,7 @@ create table product (
   current_order             boolean,
   ranking                   integer,
   note                      varchar(255),
+  constraint uq_product_sku unique (sku),
   constraint pk_product primary key (id))
 ;
 
@@ -152,9 +153,10 @@ create table supplier (
   type_goods                varchar(255),
   discount_available        boolean,
   current_order             boolean,
+  customer_id               varchar(255),
   size_url                  varchar(255),
   color_url                 varchar(255),
-  logo                      varchar(255),
+  logo_image                varchar(255),
   ranking                   integer,
   note                      varchar(255),
   constraint pk_supplier primary key (id))

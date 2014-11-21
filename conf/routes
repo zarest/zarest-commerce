@@ -25,11 +25,13 @@ POST        /createImage                      controllers.Administration.upload(
 GET         /createCategory/Image/:id         controllers.Administration.getImage(id:Long)
 GET         /createProduct                    controllers.Administration.createProductPage()
 POST        /createProduct                    controllers.Administration.createProduct()
+GET         /createSupplier                   controllers.Administration.createSupplierPage()
+POST        /createSupplier                   controllers.Administration.createSupplier()
 
 
 # Javascript routing
 GET         /assets/javascripts/routes        controllers.Application.javascriptRoutes()
-GET         /messages.js                        controllers.Application.jsMessages()
+GET         /messages.js                      controllers.Application.jsMessages()
 
 GET         /testJavaScript                   controllers.Administration.getSubCategories(id: Long)
 

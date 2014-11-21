@@ -14,8 +14,21 @@
             <dd><textarea name="description">@form("description").value</textarea></dd>
 
         </dl>
-        @helper.inputFile(form("picture"), 'id -> "picture")
-        <div id="image_view"></div>
+        <div class="fileinput fileinput-new" data-provides="fileinput">
+            <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                <img data-src="holder.js/100%x100%" alt="100%x100%" src="http://placehold.it/200x150" style="height: 100%; width: 100%; display: block;">
+            </div>
+            <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+            <div>
+                <span class="btn btn-default btn-file">
+                    <span class="fileinput-new"><i class="glyphicon glyphicon-picture"></i> @Messages.get("selectImage")</span>
+                    <span class="fileinput-exists"><i class="glyphicon glyphicon-repeat"></i> @Messages.get("change")</span>
+                    <input type="file" name="picture">
+                </span>
+                <a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput"><i class="glyphicon glyphicon-remove"></i> @Messages.get("remove")</a>
+            </div>
+        </div>
+
         @helper.select(form("parentCategory"), helper.options(Category.parentCategoryOptions),
             '_showConstraints -> false, '_label -> Messages.get("categoryLevel", "1"), 'style -> "width: 180px;",
             '_default -> Messages.get("chooseCategory"), 'id -> "level1")

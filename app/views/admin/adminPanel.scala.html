@@ -1,26 +1,33 @@
-@(cats: List[Category])
+@(prods: List[Product])
     @import play.i18n._
     @import admin.mainPanel
     @mainPanel(Secured.getCurrentUser) {
         <h1>@Messages.get("home")</h1>
-        @if(!cats.isEmpty) {
+        @if(!prods.isEmpty) {
             <table data-toggle="table" border="solid">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Active</th>
+                        <th>Category Name</th>
+                        <th>Product ID </th>
+                        <th>MSRP</th>
+                        <th>Supplier</th>
+
 
                     </tr>
                 </thead>
-                @for(cust <- cats) {
+                @for(prod <- prods) {
                     <tr>
                         <td>
-                        @cust.name
+                        @prod.category.parentCategory.name,  @prod.category.name
                         </td>
                         <td>
-
-                            <img src="@routes.Administration.getImage(cust.id)" />
-
+                        @prod.id
+                        </td>
+                        <td>
+                        @prod.msrp
+                        </td>
+                        <td>
+                        @prod.supplier.companyName
                         </td>
 
 

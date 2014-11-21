@@ -1,12 +1,15 @@
 package models;
 
+import play.Logger;
 import play.data.validation.Constraints;
 import play.db.ebean.Model;
 
 import javax.persistence.*;
 import javax.validation.Valid;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by meysamabl on 11/1/14.
@@ -17,12 +20,13 @@ public class Supplier extends Model {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
+    @Constraints.Required(message = "companyName.required")
     public String companyName;
     public String contactFirstName;
     public String contactLastName;
     public String contactTitle;
     @Valid
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "Supplier_address")
     public List<Address> addressList = new ArrayList<>();
     @Constraints.Required(message = "phone.required")
@@ -32,9 +36,10 @@ public class Supplier extends Model {
     @Constraints.Pattern(value = "^\\+(?:[0-9] ?){6,14}[0-9]$",
             message = "fax.validation")
     public String fax;
-    @Constraints.Email
+    @Constraints.Required(message = "email.required")
+    @Constraints.Email(message = "email.validation")
     public String email;
-    @Constraints.Pattern(value = "^[a-zA-Z0-9\\-\\.]+\\.(com|org|net|mil|edu|COM|ORG|NET|MIL|EDU",
+    @Constraints.Pattern(value = "^[a-zA-Z0-9\\-\\.]+\\.(com|org|net|mil|edu|COM|ORG|NET|MIL|EDU)",
             message = "website.validation")
     public String website;
     /*
@@ -56,22 +61,34 @@ public class Supplier extends Model {
      */
     public String typeGoods;
     public boolean discountAvailable;
+    /*
+    Reorder Level - When to Reorder products. Drumbeat E-commerce used UnitsInStock - UnitsonOrder = X
+    If X is > ReorderLevel then "Item is in Stock"
+    If X is <= ReorderLevel then "Item is Out of Stock" This is helpful to display to customers and useful for inventory purposes
+     */
     public boolean currentOrder;
+
+    //Your customer ID with the Supplier.
+    public String customerId;
     /*
     A URL to the Supplier Web Page with sizing info on their products
     (helpful for your customers)
 
      */
+    @Constraints.Pattern(value = "^[a-zA-Z0-9\\-\\.]+\\.(com|org|net|mil|edu|COM|ORG|NET|MIL|EDU)",
+            message = "sizeURL.validation")
     public String sizeURL;
     /*
     A URL to the Supplier Web Page with color info on their
     products (helpful for your customers)
      */
+    @Constraints.Pattern(value = "^[a-zA-Z0-9\\-\\.]+\\.(com|org|net|mil|edu|COM|ORG|NET|MIL|EDU)",
+            message = "colorURL.validation")
     public String colorURL;
     /*
     Link to an Image file of the Supplier's Logo or a URL reference to the image
      */
-    public String logo;
+    public String logoImage;
     /*
     a product ranking used for displaying Supplier specials or showing certain
     items as higher in a sort. Like the individual item ranking,
@@ -81,6 +98,13 @@ public class Supplier extends Model {
     public Integer ranking;
     public String note;
 
-
     public static Finder<Long, Supplier> find = new Finder<Long, Supplier>(Long.class, Supplier.class);
+
+    public static Map<String, String> options() {
+        Map<String, String> options = new LinkedHashMap<>();
+        for (Supplier sup : find.all()) {
+            options.put(sup.id.toString(), sup.companyName);
+        }
+        return options;
+    }
 }

@@ -2,6 +2,7 @@ import com.avaje.ebean.Ebean;
 import controllers.Secured;
 import models.Category;
 import models.Country;
+import models.Supplier;
 import play.Application;
 import play.GlobalSettings;
 import play.Logger;
@@ -52,6 +53,19 @@ public class Global extends GlobalSettings {
             @Override
             public String print(Category category, Locale locale) {
                 return category.id.toString();
+            }
+        });
+
+        Formatters.register(Supplier.class, new Formatters.SimpleFormatter<Supplier>() {
+
+            @Override
+            public Supplier parse(String input, Locale locale) throws ParseException {
+                return Supplier.find.byId(Long.parseLong(input));
+            }
+
+            @Override
+            public String print(Supplier supplier, Locale locale) {
+                return supplier.id.toString();
             }
         });
     }

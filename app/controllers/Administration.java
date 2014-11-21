@@ -1,10 +1,7 @@
 package controllers;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import models.Category;
-import models.Customer;
-import models.Product;
-import models.User;
+import models.*;
 import org.apache.commons.io.FileUtils;
 import play.Logger;
 import play.data.Form;
@@ -37,7 +34,7 @@ public class Administration extends Controller {
     //----------PAGES--------------------//
 
     public static Result adminPage() {
-        return ok(adminPanel.render(Category.findSuperParentCategories()));
+        return ok(adminPanel.render(Product.find.all()));
     }
 
     public static Result createUserPage() {
@@ -53,7 +50,16 @@ public class Administration extends Controller {
     }
 
     public static Result createProductPage() {
-        return ok(createProductPage.render(form(Product.class)));
+        if(Supplier.find.findRowCount() > 0 ) {
+            return ok(createProductPage.render(form(Product.class)));
+        } else {
+            flash("error", Messages.get("error.noSupplier"));
+            return redirect(routes.Administration.adminPage());
+        }
+    }
+
+    public static Result createSupplierPage() {
+        return ok(createSupplierPage.render(form(Supplier.class)));
     }
 
     public static Result getImage(Long id) {
@@ -86,7 +92,7 @@ public class Administration extends Controller {
             String contentType = picture.getContentType();
             File file = picture.getFile();
             try {
-                File newFile = new File("public/images", fileName);
+                File newFile = new File("public/images/upload", fileName);
                 FileUtils.moveFile(file, newFile);
                 play.Logger.debug("File moved");
             } catch (IOException ioe) {
@@ -94,8 +100,9 @@ public class Administration extends Controller {
             }
             play.Logger.debug("File uploaded");
             ObjectNode result = Json.newObject();
-            result.put("src", "images/" + fileName);
-            return ok(result);
+            result.put("src", "/assets/images/upload/" + fileName);
+            Logger.debug("<img src=" + result.get("src") + ">");
+            return ok("<img src=" +  result.get("src") + ">").as("text/html");
         } else {
             play.Logger.debug("File not uploaded");
 
@@ -184,10 +191,21 @@ public class Administration extends Controller {
             return badRequest(createProductPage.render(productForm));
         } else {
             productForm.get().save();
-            flash("success", Messages.get("category.create"));
+            flash("success", Messages.get("product.create"));
             return redirect(routes.Administration.adminPage());
         }
     }
 
 
+    public static Result createSupplier() {
+        Form<Supplier> supplierForm = form(Supplier.class).bindFromRequest();
+        if (supplierForm.hasErrors()) {
+            return badRequest(createSupplierPage.render(supplierForm));
+        } else {
+            Supplier supplier = supplierForm.get();
+            supplier.save();
+            flash("success", Messages.get("supplier.create"));
+            return redirect(routes.Administration.adminPage());
+        }
+    }
 }

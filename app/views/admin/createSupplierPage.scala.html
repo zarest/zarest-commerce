@@ -1,0 +1,96 @@
+@(supplierForm: Form[Supplier])
+@import play.api.i18n
+@import views.html.admin._
+@import views.html.helper._;
+@import views.html.util.signupTemplate
+@import play.i18n._
+@mainPanel(Secured.getCurrentUser) {
+
+    <h1>@Messages.get("createSupplier")</h1>
+    @helper.form(routes.Administration.createSupplier(), 'class -> "clearfix form-inline") {
+        <div class="control-group">
+
+            @inputText(supplierForm("companyName"), '_help -> Messages.get("required"),
+                '_label -> Messages.get("companyName"), 'placeholder -> Messages.get("companyName"), '_class -> "input-small")
+
+            @inputText(supplierForm("contactFirstName"), '_label -> Messages.get("contactFirstName"),
+                'placeholder -> Messages.get("contactFirstName"), '_class -> "input-small")
+
+            @inputText(supplierForm("contactLastName"), '_label -> Messages.get("contactLastName"),
+                'placeholder -> Messages.get("contactLastName"), '_class -> "input-small")
+
+            @inputText(supplierForm("contactTitle"), '_label -> Messages.get("contactTitle"),
+                'placeholder -> Messages.get("contactTitle"), '_class -> "input-small")
+
+            @inputText(supplierForm("phone"), '_help -> Messages.get("required"), '_label -> Messages.get("phone"),
+                'placeholder -> Messages.get("phone"), '_class -> "input-small")
+
+            @inputText(supplierForm("fax"),
+                '_help -> Messages.get("fax.validation"), '_label -> Messages.get("fax"),
+                'placeholder -> Messages.get("fax"), '_class -> "input-small")
+
+            @inputText(supplierForm("email"), '_help -> Messages.get("required"), '_label -> Messages.get("email"),
+                'placeholder -> Messages.get("email"), '_class -> "input-small")
+
+            @inputText(supplierForm("website"),
+                '_help -> Messages.get("website.validation"), '_label -> Messages.get("website"),
+                'placeholder -> Messages.get("website"), '_class -> "input-small")
+
+            @inputText(supplierForm("PaymentMethods"), '_label -> Messages.get("PaymentMethods"),
+                'placeholder -> Messages.get("PaymentMethods"), '_class -> "input-small")
+
+            @inputText(supplierForm("discountTypes"), '_label -> Messages.get("discountTypes"),
+                'placeholder -> Messages.get("discountTypes"), '_class -> "input-small")
+
+            @helper.input(supplierForm("discountRate"), '_label -> Messages.get("discountRate"),
+                'placeholder -> Messages.get("discountRate")) { (id, name, value, args) =>
+                <input type="number" name="@name" id="@id" value="@value" @toHtmlArgs(args)>
+            }
+
+            @inputText(supplierForm("typeGoods"), '_label -> Messages.get("typeGoods"),
+                'placeholder -> Messages.get("typeGoods"), '_class -> "input-small")
+
+            @helper.checkbox(supplierForm("discountAvailable"), '_label -> Messages.get("discountAvailable"))
+
+            @helper.checkbox(supplierForm("currentOrder"), '_label -> Messages.get("currentOrder"))
+
+            @inputText(supplierForm("customerId"), '_label -> Messages.get("customerId"),
+                'placeholder -> Messages.get("customerId"), '_class -> "input-small")
+
+            @inputText(supplierForm("sizeURL"), '_label -> Messages.get("sizeURL"),
+                'placeholder -> Messages.get("sizeURL"), '_class -> "input-small")
+
+            @inputText(supplierForm("colorURL"), '_label -> Messages.get("colorURL"),
+                'placeholder -> Messages.get("colorURL"), '_class -> "input-small")
+
+            @inputText(supplierForm("logoImage"), '_label -> Messages.get("logoImage"),
+                'placeholder -> Messages.get("logoImage"), '_class -> "input-small")
+
+            @helper.input(supplierForm("ranking"), '_label -> Messages.get("ranking"),
+                'placeholder -> Messages.get("ranking")) { (id, name, value, args) =>
+                <input type="number" name="@name" id="@id" value="@value" @toHtmlArgs(args)>
+            }
+
+            @inputText(supplierForm("note"), '_label -> Messages.get("note"),
+                'placeholder -> Messages.get("note"), '_class -> "input-small")
+            <fieldset>
+
+                <legend>@Messages.get("address")</legend>
+                @repeat(supplierForm("addressList"), min = 1) { address =>
+                    @inputText(supplierForm(address.name.toString + ".address1"), '_help -> Messages.get("required"), '_label -> Messages.get("address1"), 'placeholder -> Messages.get("address1"), '_class -> "input-small")
+                    @inputText(supplierForm(address.name.toString + ".address2"), '_label -> Messages.get("address2"), 'placeholder -> Messages.get("address2"))
+                    @inputText(supplierForm(address.name.toString + ".city"), '_help -> Messages.get("required"), '_label -> Messages.get("city"), 'placeholder -> Messages.get("city"))
+                    @inputText(supplierForm(address.name.toString + ".state"), '_help -> Messages.get("required"), '_label -> Messages.get("state"), 'placeholder -> Messages.get("state"))
+                    @inputText(supplierForm(address.name.toString + ".postalCode"), '_help -> Messages.get("required"), '_label -> Messages.get("postalCode"), 'placeholder -> Messages.get("postalCode"))
+                    @select(supplierForm(address.name.toString + ".country"), helper.options(Secured.getListOfCountries), '_showConstraints -> false, '_label -> Messages.get("country"), 'style -> "width: 180px;", '_default -> Messages.get("chooseCountry"))
+
+                }
+
+            </fieldset>
+
+            <div>
+                <input type="submit" value="@Messages.get("submit")">
+            </div>
+        </div>
+    }
+}

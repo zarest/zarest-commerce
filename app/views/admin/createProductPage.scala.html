@@ -1,17 +1,123 @@
-@(form: Form[Product])
+@(productForm: Form[Product])
 
 @import play.i18n._;
+@import views.html.helper._;
 
 @admin.mainPanel(Secured.getCurrentUser) {
     <h1>@Messages.get("createProduct")</h1>
 
-    @helper.form(routes.Administration.upload(), 'enctype -> "multipart/form-data", 'id -> "myForm") {
-        @helper.inputFile(form("picture"), 'id -> "picture")
-        <div>
-            <input type="submit" value="Submit">
-        </div>
-        <div id="image_view">
+    @helper.form(routes.Administration.createProduct(), 'enctype -> "multipart/form-data", 'class -> "clearfix form-inline") {
 
+        @inputText(productForm("sku"), '_help -> Messages.get("required"), '_label -> Messages.get("sku"),
+            'placeholder -> Messages.get("sku"), '_class -> "input-small")
+
+        @inputText(productForm("supplierProdId"), '_help -> Messages.get("required"), '_label -> Messages.get("vendorProductId"),
+            'placeholder -> Messages.get("vendorProductId"), '_class -> "input-small")
+
+        @inputText(productForm("productName"), '_help -> Messages.get("required"), '_label -> Messages.get("productName"),
+            'placeholder -> Messages.get("productName"), '_class -> "input-small")
+
+        @helper.select(productForm("supplier"), helper.options(Supplier.options()),
+            '_showConstraints -> false, '_label -> Messages.get("supplier"), 'style -> "width: 180px;",
+            '_default -> Messages.get("chooseSupplier"))
+
+        @helper.select(productForm("category"), helper.options(Category.parentCategoryOptions),
+            '_showConstraints -> false, '_label -> Messages.get("categoryLevel", "1"), 'style -> "width: 180px;",
+            '_default -> Messages.get("chooseCategory"), 'id -> "level1")
+
+        @helper.select(productForm("category"), helper.options(),
+            '_showConstraints -> false, '_label -> Messages.get("categoryLevel", "2"), 'style -> "width: 180px;",
+            '_default -> Messages.get("chooseCategory"), '_id -> "level2Parent", 'id -> "level2")
+
+        @helper.input(productForm("quantityPerUnit"), '_label -> Messages.get("quantityPerUnit"),
+            'placeholder -> Messages.get("quantityPerUnit")) { (id, name, value, args) =>
+            <input type="number" name="@name" id="@id" value="@value" @toHtmlArgs(args)>
+        }
+
+        @helper.input(productForm("unitSize"), '_label -> Messages.get("unitSize"),
+            'placeholder -> Messages.get("unitSize")) { (id, name, value, args) =>
+            <input type="number" name="@name" id="@id" value="@value" @toHtmlArgs(args)>
+        }
+
+        @helper.input(productForm("unitPrice"), '_help -> Messages.get("required"),
+            '_label -> Messages.get("unitPrice"),'placeholder -> Messages.get("unitPrice")
+        ) { (id, name, value, args) =>
+            <input type="number" name="@name" id="@id" value="@value" @toHtmlArgs(args)>
+        }
+
+        @helper.input(productForm("msrp"), '_label -> Messages.get("msrp"),
+            'placeholder -> Messages.get("msrp")) { (id, name, value, args) =>
+            <input type="number" name="@name" id="@id" value="@value" @toHtmlArgs(args)>
+        }
+
+        @inputText(productForm("availableSizes"), '_help -> Messages.get("required"), '_label -> Messages.get("availableSizes"),
+            'placeholder -> Messages.get("availableSizes"), '_class -> "input-small")
+
+        @inputText(productForm("availableColors"), '_help -> Messages.get("required"), '_label -> Messages.get("availableColors"),
+            'placeholder -> Messages.get("availableColors"), '_class -> "input-small")
+
+        @helper.input(productForm("discount"), '_label -> Messages.get("discount"),
+            'placeholder -> Messages.get("discount")) { (id, name, value, args) =>
+            <input type="number" name="@name" id="@id" value="@value" @toHtmlArgs(args)>
+        }
+
+        @helper.input(productForm("unitWeight"), '_label -> Messages.get("unitWeight"),
+            'placeholder -> Messages.get("unitWeight")) { (id, name, value, args) =>
+            <input type="number" name="@name" id="@id" value="@value" @toHtmlArgs(args)>
+        }
+
+
+        @helper.input(productForm("unitInStock"), '_label -> Messages.get("unitInStock"),
+            'placeholder -> Messages.get("unitInStock")) { (id, name, value, args) =>
+            <input type="number" name="@name" id="@id" value="@value" @toHtmlArgs(args)>
+        }
+
+
+        @helper.input(productForm("unitOnOrder"), '_label -> Messages.get("unitOnOrder"),
+            'placeholder -> Messages.get("unitOnOrder")) { (id, name, value, args) =>
+            <input type="number" name="@name" id="@id" value="@value" @toHtmlArgs(args)>
+        }
+
+        @helper.input(productForm("reorderLevel"), '_label -> Messages.get("reorderLevel"),
+            'placeholder -> Messages.get("reorderLevel")) { (id, name, value, args) =>
+            <input type="number" name="@name" id="@id" value="@value" @toHtmlArgs(args)>
+        }
+
+        @helper.checkbox(productForm("productAvailable"), '_label -> Messages.get("productAvailable"))
+
+        @helper.checkbox(productForm("discountAvailable"), '_label -> Messages.get("discountAvailable"))
+
+        @helper.checkbox(productForm("currentOrder"), '_label -> Messages.get("currentOrder"))
+
+        @helper.input(productForm("ranking"), '_label -> Messages.get("ranking"),
+            'placeholder -> Messages.get("ranking")) { (id, name, value, args) =>
+            <input type="number" name="@name" id="@id" value="@value" @toHtmlArgs(args)>
+        }
+
+        @inputText(productForm("note"), '_label -> Messages.get("note"),
+            'placeholder -> Messages.get("note"), '_class -> "input-small")
+
+        @repeat(productForm("pictures"), min = 4) { picture =>
+            <div class="fileinput fileinput-new" data-provides="fileinput">
+                <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                    <img data-src="holder.js/100%x100%" alt="100%x100%" src="http://placehold.it/200x150" style="height: 100%; width: 100%; display: block;">
+                </div>
+                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+                <div>
+                    <span class="btn btn-default btn-file">
+                        <span class="fileinput-new"><i class="glyphicon glyphicon-picture"></i> @Messages.get("selectImage")</span>
+                        <span class="fileinput-exists"><i class="glyphicon glyphicon-repeat"></i> @Messages.get("change")</span>
+                        <input type="file" name="@picture">
+                    </span>
+                    <a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput"><i class="glyphicon glyphicon-remove"></i> @Messages.get("remove")</a>
+                </div>
+            </div>
+        }
+
+        <div>
+            <input class="btn btn-success" type="submit" value="Submit">
         </div>
     }
+
+
 }

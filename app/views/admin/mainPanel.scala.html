@@ -19,6 +19,8 @@
             <script src="@routes.Assets.at("javascripts/admin.js")"></script>
             <script type="text/javascript" src="@routes.Application.javascriptRoutes()"></script>
             <script type="text/javascript" src="@routes.Application.jsMessages()"></script>
+            <link rel="stylesheet" href="@routes.Assets.at("stylesheets/jasny-bootstrap.min.css")">
+            <script src='@routes.Assets.at("javascripts/jasny-bootstrap.min.js")'></script>
             <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
         </head>
         <body>
@@ -40,7 +42,8 @@
                     <a class="list-group-item" href="@routes.Administration.createUserPage()"><i class="fa fa-user fa-fw"></i> &nbsp; @Messages.get("createUser")</a>
                     <a class="list-group-item" href="@routes.Administration.createCustomerPage()"><i class="fa fa-users fa-fw"></i> &nbsp; @Messages.get("createCustomer")</a>
                     <a class="list-group-item" href="@routes.Administration.createCategoryPage()"><i class="fa fa-folder fa-fw"></i> &nbsp; @Messages.get("createCategory")</a>
-                    <a class="list-group-item" href="@routes.Administration.createProductPage()"><i class="fa fa-shopping-cart fa-fw"></i> &nbsp; @Messages.get("createProduct")</a>
+                    <a class="list-group-item" href="@routes.Administration.createProductPage()"><i class="fa fa-gift fa-fw"></i> &nbsp; @Messages.get("createProduct")</a>
+                    <a class="list-group-item" href="@routes.Administration.createSupplierPage()"><i class=" glyphicon glyphicon-cloud-download fa-fw"></i> &nbsp; @Messages.get("createSupplier")</a>
                 </div>
             </section>
             <main>
@@ -49,6 +52,12 @@
                         <p class="success">
                         @flash.get("success")
                         </p>
+                    } else {
+                        @if(flash.contains("error")) {
+                            <p class="error">
+                            @flash.get("error")
+                            </p>
+                        }
                     }
                     @content
                 </article>

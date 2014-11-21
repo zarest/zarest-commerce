@@ -94,7 +94,6 @@
             </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
 
-        {{ 2+2 }}
         <!-- START THE FEATURETTES -->
 
         @*<hr class="featurette-divider">*@
@@ -1088,42 +1087,46 @@
             <!-- chk attribute_code -->
 
             <script type="text/javascript">
-            jQuery(document).ready(function($) {
+                $(document).ready(function() {
 
-            function mycarousel_initCallback(carousel) {
+                    function mycarousel_initCallback(carousel) {
 
-            jQuery('#product_slider_next').bind('click', function() {
-            carousel.next();
-            return false;
-            });
-            jQuery('#product_slider_prev').bind('click', function() {
-            carousel.prev();
-            return false;
-            });
-            };
+                        $('#product_slider_next').bind('click', function() {
+                            carousel.next();
+                            return false;
+                        });
 
-            jQuery('#product_slider').jcarousel({
-            scroll: 1,
-            initCallback: mycarousel_initCallback,
-            buttonNextHTML: null,
-            buttonPrevHTML: null
-            });
-            });
+                        $('#product_slider_prev').bind('click', function() {
+                            carousel.prev();
+                            return false;
+                        });
+                    };
+
+                    $('#product_slider').jcarousel({
+                        scroll: 1,
+                        initCallback: mycarousel_initCallback,
+                        buttonNextHTML: null,
+                        buttonPrevHTML: null
+                    });
+                });
             </script>
 
             <div id="mgkquickview">
                 <div id="magikloading" style="display:none;text-align:center;margin-top:400px;"><img src="http://demo.magikthemes.com/skin/frontend/rwd/lamby-lavender/images/mgkloading.gif" alt="loading">
                 </div></div>
             <script type="text/javascript">
-            function callQuickView(qurl) {
-            jQuery('#mgkquickview').show();
-            jQuery('#magikloading').show();
-            jQuery.get(qurl, function(data) {
-            jQuery.fancybox(data);
-            jQuery('#magikloading').hide();
-            jQuery('#mgkquickview').hide();
-            });
-            }
+
+                function callQuickView(qurl) {
+
+                    $('#mgkquickview').show();
+                    $('#magikloading').show();
+
+                    $.get(qurl, function(data) {
+                        $.fancybox(data);
+                        $('#magikloading').hide();
+                        $('#mgkquickview').hide();
+                    });
+                }
             </script></div></div>
 
         <hr class="featurette-divider">
