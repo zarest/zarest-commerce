@@ -39,6 +39,8 @@
 
         </dl>
 
+        @inputText(productForm("warrantySpecification"), '_label -> Messages.get("warrantySpecification"),
+            'placeholder -> Messages.get("warrantySpecification"), '_class -> "input-small")
         @inputText(productForm("supplierProdId"), '_label -> Messages.get("vendorProductId"),
             'placeholder -> Messages.get("vendorProductId"), '_class -> "input-small")
 
@@ -114,10 +116,10 @@
 
         @repeat(productForm("pictures"), min = 4) { picture =>
             <div class="fileinput fileinput-new" data-provides="fileinput">
-                <div class="fileinput-new thumbnail" style="width : 200 px ; height : 150 px ;">
-                    <img data-src="holder.js/100%x100%" alt="100%x100%" src="http://placehold.it/200x150" width="200px" height="150px">
+                <div class="fileinput-new thumbnail" style="width : 200px ; height : 150px ;">
+                    <img data-src="holder.js/100%x100%" alt="100%x100%" src="http://placehold.it/200x150" style="height: 100%; width: 100%; display: block;">
                 </div>
-                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width : 200 px ; max-height : 150 px ;"></div>
+                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width : 200px ; max-height : 150px ;"></div>
                 <div>
                     <span class="btn btn-default btn-file">
                         <span class="fileinput-new"><i class="glyphicon glyphicon-picture"></i> @Messages.get("selectImage")</span>

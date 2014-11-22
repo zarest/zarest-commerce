@@ -77,6 +77,7 @@ public class Product extends Model {
     //a product ranking used for displaying item specials
     // or showing certain items as higher in a sort
     public Integer ranking;
+    public String warrantySpecification;
     public String note;
 
 //    public String validate() {

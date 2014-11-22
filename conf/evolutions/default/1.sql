@@ -126,6 +126,7 @@ create table product (
   discount_available        boolean,
   current_order             boolean,
   ranking                   integer,
+  warranty_specification    varchar(255),
   note                      varchar(255),
   constraint uq_product_sku unique (sku),
   constraint pk_product primary key (id))
