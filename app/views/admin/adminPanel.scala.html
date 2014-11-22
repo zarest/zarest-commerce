@@ -18,6 +18,7 @@
                 @for(prod <- prods) {
                     <tr>
                         <td>
+                            @prod.category.name
                         </td>
                         <td>
                         @prod.id
@@ -29,8 +30,8 @@
 
                         </td>
                         <td>
-                            @if(prod.pictures != null && !prod.pictures.isEmpty) {
-                               <img src="@routes.Assets.at(prod.pictures.get(0).filePath)">
+                            @if(prod.images != null && !prod.images.isEmpty) {
+                               <img src="@routes.Assets.at(prod.images.get(0).filePath)">
                             }
 
 

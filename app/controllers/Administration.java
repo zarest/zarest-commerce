@@ -5,6 +5,7 @@ import models.*;
 import org.apache.commons.io.FileUtils;
 import play.Logger;
 import play.data.Form;
+import play.data.validation.ValidationError;
 import play.db.ebean.Transactional;
 import play.i18n.Messages;
 import play.libs.Json;
@@ -21,6 +22,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
 
 import static play.data.Form.form;
 
@@ -153,15 +156,17 @@ public class Administration extends Controller {
 
         Form<Product> productForm = form(Product.class).bindFromRequest();
         if (productForm.hasErrors()) {
+            play.Logger.error(productForm.errorsAsJson().toString());
             return badRequest(createProductPage.render(productForm));
         } else {
             MultipartFormData body = request().body().asMultipartFormData();
             Product product = productForm.get();
             for (int i = 0; i < 4; i++) {
                 FilePart picture = body.getFile("pictures[" + i + "]");
-                play.Logger.debug("File: " + body);
-                if(picture != null) {
+                //play.Logger.debug("File: " + picture);
+                if (picture != null) {
                     if (Image.ImageType.get(picture.getContentType()) == null) {
+                        play.Logger.debug("File: " + picture);
                         return badRequest(createProductPage.render(productForm));
                     }
                     try {
@@ -179,13 +184,22 @@ public class Administration extends Controller {
                         image.pic = newFile;
                         image.filePath = "images/upload/" + fileName;
                         play.Logger.debug("File Path: " + newFile.getPath());
-                        product.pictures.add(image);
+                        product.images.add(image);
                     } catch (IOException ioe) {
                         System.out.println("Problem operating on filesystem");
                     }
 
 
                 }
+            }
+            if (product.images.isEmpty()) {
+                Logger.error("Error: image is empty");
+                productForm.errors().put("image.required",
+                        Arrays.asList(
+                                new ValidationError("image.required",
+                                        Messages.get("image.required"))));
+                Logger.error("Error: " + productForm.errorsAsJson());
+                return badRequest(createProductPage.render(productForm));
             }
             product.save();
             flash("success", Messages.get("product.create"));

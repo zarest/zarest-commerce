@@ -108,6 +108,7 @@ create table product (
   supplier_prod_id          varchar(255),
   product_name              varchar(255),
   product_description       varchar(255),
+  product_details           varchar(255),
   supplier_id               bigint,
   category_id               bigint,
   quantity_per_unit         integer,

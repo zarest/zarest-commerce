@@ -10,6 +10,17 @@
         @if(productForm.hasGlobalErrors) {
             <p class="error">@Messages.get(productForm.globalError.message)</p>
         }
+        @for(error <- productForm("image.required").errors) {
+            <p class="error">@error.message</p>
+        }
+        @helper.select(productForm("category"), helper.options(Category.parentCategoryOptions),
+            '_help -> Messages.get("required"), '_showConstraints -> false, '_label -> Messages.get("categoryLevel", "1"),
+            'style -> "width: 180px;", '_default -> Messages.get("chooseCategory"), 'id -> "level1")
+
+        @helper.select(productForm("category"), helper.options(),
+            '_showConstraints -> false, '_label -> Messages.get("categoryLevel", "2"), 'style -> "width: 180px;",
+            '_default -> Messages.get("chooseCategory"), '_id -> "level2Parent", 'id -> "level2")
+
         @inputText(productForm("productName"), '_help -> Messages.get("required"), '_label -> Messages.get("productName"),
             'placeholder -> Messages.get("productName"), '_class -> "input-small")
 
@@ -17,8 +28,14 @@
             'placeholder -> Messages.get("sku"), '_class -> "input-small")
 
         <dl>
-            <dt><label for="description">@Messages.get("description")</label></dt>
+            <dt><label for="productDescription">@Messages.get("productDescription")</label></dt>
             <dd><textarea name="productDescription">@productForm("productDescription").value</textarea></dd>
+
+        </dl>
+
+        <dl>
+            <dt><label for="productDetails">@Messages.get("productDetails")</label></dt>
+            <dd><textarea name="productDetails">@productForm("productDetails").value</textarea></dd>
 
         </dl>
 
@@ -28,14 +45,6 @@
         @helper.select(productForm("supplier"), helper.options(Supplier.options()),
             '_help -> Messages.get("required"), '_showConstraints -> false, '_label -> Messages.get("supplier"),
             'style -> "width: 180px;", '_default -> Messages.get("chooseSupplier"))
-
-        @helper.select(productForm("category"), helper.options(Category.parentCategoryOptions),
-            '_help -> Messages.get("required"), '_showConstraints -> false, '_label -> Messages.get("categoryLevel", "1"),
-            'style -> "width: 180px;", '_default -> Messages.get("chooseCategory"), 'id -> "level1")
-
-        @helper.select(productForm("category"), helper.options(),
-            '_showConstraints -> false, '_label -> Messages.get("categoryLevel", "2"), 'style -> "width: 180px;",
-            '_default -> Messages.get("chooseCategory"), '_id -> "level2Parent", 'id -> "level2")
 
         @helper.input(productForm("quantityPerUnit"), '_label -> Messages.get("quantityPerUnit"),
             'placeholder -> Messages.get("quantityPerUnit")) { (id, name, value, args) =>
@@ -106,7 +115,7 @@
         @repeat(productForm("pictures"), min = 4) { picture =>
             <div class="fileinput fileinput-new" data-provides="fileinput">
                 <div class="fileinput-new thumbnail" style="width : 200 px ; height : 150 px ;">
-                    <img data-src="holder.js/100%x100%" alt="100%x100%" src="http://placehold.it/200x150" style="height : 100 % ; width : 100 % ; display : block ;">
+                    <img data-src="holder.js/100%x100%" alt="100%x100%" src="http://placehold.it/200x150" width="200px" height="150px">
                 </div>
                 <div class="fileinput-preview fileinput-exists thumbnail" style="max-width : 200 px ; max-height : 150 px ;"></div>
                 <div>

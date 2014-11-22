@@ -2,6 +2,7 @@ package models;
 
 import play.data.validation.Constraints.*;
 import play.db.ebean.Model;
+import play.i18n.Messages;
 
 import javax.persistence.*;
 import javax.validation.Valid;
@@ -34,6 +35,7 @@ public class Product extends Model {
     public String productName;
     @MaxLength(255)
     public String productDescription;
+    public String productDetails;
     @Required
     @ManyToOne
     public Supplier supplier;
@@ -67,10 +69,8 @@ public class Product extends Model {
     public boolean productAvailable;
     public boolean discountAvailable;
     public boolean currentOrder;
-    @Required
-    @Valid
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "product")
-    public List<Image> pictures = new ArrayList<>();
+    public List<Image> images = new ArrayList<>();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
     public Set<OrderDetail> orderDetails = new HashSet<>();
@@ -78,6 +78,13 @@ public class Product extends Model {
     // or showing certain items as higher in a sort
     public Integer ranking;
     public String note;
+
+//    public String validate() {
+//        if (images.isEmpty()) {
+//            return Messages.get("image.required");
+//        }
+//        return null;
+//    }
 
 
     public static Finder<Long, Product> find = new Finder<Long, Product>(Long.class, Product.class);
