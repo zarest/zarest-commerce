@@ -50,7 +50,7 @@ public class Administration extends Controller {
     }
 
     public static Result createProductPage() {
-        if(Supplier.find.findRowCount() > 0 ) {
+        if (Supplier.find.findRowCount() > 0) {
             return ok(createProductPage.render(form(Product.class)));
         } else {
             flash("error", Messages.get("error.noSupplier"));
@@ -75,41 +75,6 @@ public class Administration extends Controller {
         return ok(Json.toJson(Category.subCategoryOptions(id)));
     }
 
-
-    // For Uploading the Pictures ------------------------------------
-    public static Result upload() {
-        MultipartFormData body = request().body().asMultipartFormData();
-
-        FilePart picture = body.getFile("picture");
-        play.Logger.debug("File: " + body);
-        if (picture != null) {
-            String fileName = picture.getFilename();
-            String extension = fileName.substring(fileName.indexOf("."));
-            String uuid = uuid = java.util.UUID.randomUUID().toString();
-            fileName = uuid + extension;
-            play.Logger.debug("Image: " + fileName);
-
-            String contentType = picture.getContentType();
-            File file = picture.getFile();
-            try {
-                File newFile = new File("public/images/upload", fileName);
-                FileUtils.moveFile(file, newFile);
-                play.Logger.debug("File moved");
-            } catch (IOException ioe) {
-                System.out.println("Problem operating on filesystem");
-            }
-            play.Logger.debug("File uploaded");
-            ObjectNode result = Json.newObject();
-            result.put("src", "/assets/images/upload/" + fileName);
-            Logger.debug("<img src=" + result.get("src") + ">");
-            return ok("<img src=" +  result.get("src") + ">").as("text/html");
-        } else {
-            play.Logger.debug("File not uploaded");
-
-            flash("error", "Missing file");
-            return badRequest("Fehler");
-        }
-    }
 
     //-----------FORM SAVE---------------//
 
@@ -190,9 +155,76 @@ public class Administration extends Controller {
         if (productForm.hasErrors()) {
             return badRequest(createProductPage.render(productForm));
         } else {
-            productForm.get().save();
+            MultipartFormData body = request().body().asMultipartFormData();
+            Product product = productForm.get();
+            for (int i = 0; i < 4; i++) {
+                FilePart picture = body.getFile("pictures[" + i + "]");
+                play.Logger.debug("File: " + body);
+                if(picture != null) {
+                    if (Image.ImageType.get(picture.getContentType()) == null) {
+                        return badRequest(createProductPage.render(productForm));
+                    }
+                    try {
+                        String fileName = picture.getFilename();
+                        String extension = fileName.substring(fileName.indexOf("."));
+                        String uuid = uuid = java.util.UUID.randomUUID().toString();
+                        fileName = uuid + extension;
+
+                        File newFile = new File("public/images/upload", fileName);
+                        File file = picture.getFile();
+                        FileUtils.moveFile(file, newFile);
+
+                        play.Logger.debug("File moved");
+                        Image image = new Image();
+                        image.pic = newFile;
+                        image.filePath = "images/upload/" + fileName;
+                        play.Logger.debug("File Path: " + newFile.getPath());
+                        product.pictures.add(image);
+                    } catch (IOException ioe) {
+                        System.out.println("Problem operating on filesystem");
+                    }
+
+
+                }
+            }
+            product.save();
             flash("success", Messages.get("product.create"));
             return redirect(routes.Administration.adminPage());
+        }
+    }
+
+    // For Uploading the Pictures ------------------------------------
+    public static Result upload() {
+        MultipartFormData body = request().body().asMultipartFormData();
+
+        FilePart picture = body.getFile("picture");
+        play.Logger.debug("File: " + body);
+        if (picture != null) {
+            String fileName = picture.getFilename();
+            String extension = fileName.substring(fileName.indexOf("."));
+            String uuid = uuid = java.util.UUID.randomUUID().toString();
+            fileName = uuid + extension;
+            play.Logger.debug("Image: " + fileName);
+
+            String contentType = picture.getContentType();
+            File file = picture.getFile();
+            try {
+                File newFile = new File("public/images/upload", fileName);
+                FileUtils.moveFile(file, newFile);
+                play.Logger.debug("File moved");
+            } catch (IOException ioe) {
+                System.out.println("Problem operating on filesystem");
+            }
+            play.Logger.debug("File uploaded");
+            ObjectNode result = Json.newObject();
+            result.put("src", "/assets/images/upload/" + fileName);
+            Logger.debug("<img src=" + result.get("src") + ">");
+            return ok("<img src=" + result.get("src") + ">").as("text/html");
+        } else {
+            play.Logger.debug("File not uploaded");
+
+            flash("error", "Missing file");
+            return badRequest("Fehler");
         }
     }
 

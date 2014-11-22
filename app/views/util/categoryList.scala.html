@@ -1,7 +1,7 @@
 @(showsubMenu: Boolean = true)
     @import play.i18n.Messages
 
-    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu" id="rootDropdown">
+    <ul class="dropdown-menu multi-level hidden-xs" role="menu" aria-labelledby="dropdownMenu" id="rootDropdown">
     @for(category <- CategoryMenu.getCategories) {
         @if(category.parentCategory == null) {
             @if(category.subCategories == null || category.subCategories.isEmpty) {

@@ -1,9 +1,10 @@
 package models;
 
-import play.data.validation.Constraints.MaxLength;
+import play.data.validation.Constraints.*;
 import play.db.ebean.Model;
 
 import javax.persistence.*;
+import javax.validation.Valid;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -20,19 +21,23 @@ public class Product extends Model {
     @GeneratedValue(strategy = GenerationType.AUTO)
     //@Column(name = "product_id", unique = true, nullable = false)
     public Long id;
+    //SKU number from you or the Supplier
     @Column(name = "sku", unique = true, nullable = false)
     @MaxLength(50)
-    //SKU number from you or the Supplier
+    @Required
     public String sku;
-    @MaxLength(50)
     //The Vendor's Product ID (could be SKU or their own system). (Could be a duplication of SKU above.)
+    @MaxLength(50)
     public String supplierProdId;
+    @Required
     @MaxLength(60)
     public String productName;
     @MaxLength(255)
     public String productDescription;
+    @Required
     @ManyToOne
     public Supplier supplier;
+    @Required
     @ManyToOne
     public Category category;
     //Quantity that items are shipped per unit from supplier.
@@ -40,6 +45,7 @@ public class Product extends Model {
     public Integer quantityPerUnit;
     //Unit Size - goes with QuantityPerUnit. This is case, each, dozen, etc.
     public String unitSize;
+    @Required
     public BigDecimal unitPrice;
 
     //Manufacturer's Suggested Retail Price.
@@ -47,8 +53,10 @@ public class Product extends Model {
     // helps when you are showing discounts off MSRP.
     public BigDecimal msrp;
     //can be in different table using sizeId
+    @Required
     public String availableSizes;
     //can be in different table using colorId
+    @Required
     public String availableColors;
     public Double discount;
     //Item weight for shipping calculation
@@ -59,6 +67,8 @@ public class Product extends Model {
     public boolean productAvailable;
     public boolean discountAvailable;
     public boolean currentOrder;
+    @Required
+    @Valid
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "product")
     public List<Image> pictures = new ArrayList<>();
 

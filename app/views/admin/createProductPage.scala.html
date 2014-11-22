@@ -7,23 +7,31 @@
     <h1>@Messages.get("createProduct")</h1>
 
     @helper.form(routes.Administration.createProduct(), 'enctype -> "multipart/form-data", 'class -> "clearfix form-inline") {
+        @if(productForm.hasGlobalErrors) {
+            <p class="error">@Messages.get(productForm.globalError.message)</p>
+        }
+        @inputText(productForm("productName"), '_help -> Messages.get("required"), '_label -> Messages.get("productName"),
+            'placeholder -> Messages.get("productName"), '_class -> "input-small")
 
         @inputText(productForm("sku"), '_help -> Messages.get("required"), '_label -> Messages.get("sku"),
             'placeholder -> Messages.get("sku"), '_class -> "input-small")
 
-        @inputText(productForm("supplierProdId"), '_help -> Messages.get("required"), '_label -> Messages.get("vendorProductId"),
+        <dl>
+            <dt><label for="description">@Messages.get("description")</label></dt>
+            <dd><textarea name="productDescription">@productForm("productDescription").value</textarea></dd>
+
+        </dl>
+
+        @inputText(productForm("supplierProdId"), '_label -> Messages.get("vendorProductId"),
             'placeholder -> Messages.get("vendorProductId"), '_class -> "input-small")
 
-        @inputText(productForm("productName"), '_help -> Messages.get("required"), '_label -> Messages.get("productName"),
-            'placeholder -> Messages.get("productName"), '_class -> "input-small")
-
         @helper.select(productForm("supplier"), helper.options(Supplier.options()),
-            '_showConstraints -> false, '_label -> Messages.get("supplier"), 'style -> "width: 180px;",
-            '_default -> Messages.get("chooseSupplier"))
+            '_help -> Messages.get("required"), '_showConstraints -> false, '_label -> Messages.get("supplier"),
+            'style -> "width: 180px;", '_default -> Messages.get("chooseSupplier"))
 
         @helper.select(productForm("category"), helper.options(Category.parentCategoryOptions),
-            '_showConstraints -> false, '_label -> Messages.get("categoryLevel", "1"), 'style -> "width: 180px;",
-            '_default -> Messages.get("chooseCategory"), 'id -> "level1")
+            '_help -> Messages.get("required"), '_showConstraints -> false, '_label -> Messages.get("categoryLevel", "1"),
+            'style -> "width: 180px;", '_default -> Messages.get("chooseCategory"), 'id -> "level1")
 
         @helper.select(productForm("category"), helper.options(),
             '_showConstraints -> false, '_label -> Messages.get("categoryLevel", "2"), 'style -> "width: 180px;",
@@ -40,7 +48,7 @@
         }
 
         @helper.input(productForm("unitPrice"), '_help -> Messages.get("required"),
-            '_label -> Messages.get("unitPrice"),'placeholder -> Messages.get("unitPrice")
+            '_label -> Messages.get("unitPrice"), 'placeholder -> Messages.get("unitPrice")
         ) { (id, name, value, args) =>
             <input type="number" name="@name" id="@id" value="@value" @toHtmlArgs(args)>
         }
@@ -66,12 +74,10 @@
             <input type="number" name="@name" id="@id" value="@value" @toHtmlArgs(args)>
         }
 
-
         @helper.input(productForm("unitInStock"), '_label -> Messages.get("unitInStock"),
             'placeholder -> Messages.get("unitInStock")) { (id, name, value, args) =>
             <input type="number" name="@name" id="@id" value="@value" @toHtmlArgs(args)>
         }
-
 
         @helper.input(productForm("unitOnOrder"), '_label -> Messages.get("unitOnOrder"),
             'placeholder -> Messages.get("unitOnOrder")) { (id, name, value, args) =>
@@ -99,15 +105,15 @@
 
         @repeat(productForm("pictures"), min = 4) { picture =>
             <div class="fileinput fileinput-new" data-provides="fileinput">
-                <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                    <img data-src="holder.js/100%x100%" alt="100%x100%" src="http://placehold.it/200x150" style="height: 100%; width: 100%; display: block;">
+                <div class="fileinput-new thumbnail" style="width : 200 px ; height : 150 px ;">
+                    <img data-src="holder.js/100%x100%" alt="100%x100%" src="http://placehold.it/200x150" style="height : 100 % ; width : 100 % ; display : block ;">
                 </div>
-                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width : 200 px ; max-height : 150 px ;"></div>
                 <div>
                     <span class="btn btn-default btn-file">
                         <span class="fileinput-new"><i class="glyphicon glyphicon-picture"></i> @Messages.get("selectImage")</span>
                         <span class="fileinput-exists"><i class="glyphicon glyphicon-repeat"></i> @Messages.get("change")</span>
-                        <input type="file" name="@picture">
+                        <input type="file" name="@picture.name">
                     </span>
                     <a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput"><i class="glyphicon glyphicon-remove"></i> @Messages.get("remove")</a>
                 </div>

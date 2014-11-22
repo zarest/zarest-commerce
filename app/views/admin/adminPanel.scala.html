@@ -11,14 +11,13 @@
                         <th>Product ID </th>
                         <th>MSRP</th>
                         <th>Supplier</th>
-
+                        <th>Image</th>
 
                     </tr>
                 </thead>
                 @for(prod <- prods) {
                     <tr>
                         <td>
-                        @prod.category.parentCategory.name,  @prod.category.name
                         </td>
                         <td>
                         @prod.id
@@ -27,9 +26,15 @@
                         @prod.msrp
                         </td>
                         <td>
-                        @prod.supplier.companyName
-                        </td>
 
+                        </td>
+                        <td>
+                            @if(prod.pictures != null && !prod.pictures.isEmpty) {
+                               <img src="@routes.Assets.at(prod.pictures.get(0).filePath)">
+                            }
+
+
+                        </td>
 
                     </tr>
                 }
