@@ -1,7 +1,9 @@
-@(bodyHeader : String)
+@(bodyHeader : String, parentCategories : List[Category])
 @import play.i18n._
+    @import util.showCategoryGrid
 @main(Messages.get(bodyHeader), Application.getCurrentLang) {
-    @mainContent {
+    @mainContent(Messages.get(bodyHeader)) {
+        @showCategoryGrid(parentCategories)
 
     }
 }

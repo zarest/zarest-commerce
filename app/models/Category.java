@@ -7,6 +7,7 @@ import play.i18n.Messages;
 
 import javax.persistence.*;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.util.*;
 
 @Entity
@@ -23,10 +24,8 @@ public class Category extends Model implements Comparable<Category> {
 
     public String description;
 
-    @Lob
-    @Basic(fetch = FetchType.LAZY)
-    @Column(length = 100000)
-    public byte[] picture;
+    //@NotNull
+    public String imagePath;
 
     public boolean active;
 

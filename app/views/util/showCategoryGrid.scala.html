@@ -1,0 +1,17 @@
+@(categories : List[Category])
+@import play.i18n._
+<div class="row">
+    @for(cat <- categories) {
+        <div class="col-xs-4">
+            <div class="cat-item">
+                <div class="photo">
+                    <img src="@routes.Assets.at("images/parentCategories/u10671-r.png")" class="img-responsive">
+                </div>
+                <div class="cat-name">
+                    <h3>@Messages.get(cat.name)</h3>
+                </div>
+            </div>
+
+        </div>
+    }
+</div>

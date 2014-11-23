@@ -1,5 +1,13 @@
-@(mainContent : Html)
+@(title: String)(mainContent: Html)
 <section class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <ol class="breadcrumb">
+
+    </ol>
+        </div>
+    </div>
+
     <section class="row row-offcanvas">
 
         <section class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
@@ -9,13 +17,10 @@
                 <li><a href="#">Menu 2</a></li>
                 <li><a href="#">Menu 3</a></li>
             </ul>
-        </section><!--/.sidebar-offcanvas-->
+        </section> <!--/.sidebar-offcanvas-->
 
         <section class="col-xs-12 col-sm-9">
 
-            <ol class="breadcrumb">
-
-            </ol>
             <p class="pull-left visible-xs">
                 <button type="button" class="navbar-toggle" id="sideToggle" data-toggle="offcanvas">
                     <span class="sr-only">Toggle navigation</span>
@@ -26,10 +31,10 @@
             </p>
 
             <section>
+                <h3>@title</h3>
                 @mainContent
             </section>
-        </section><!--/.col-xs-12.col-sm-9-->
-
+        </section> <!--/.col-xs-12.col-sm-9-->
 
     </section>
     <div class="clearfix visible-lg"></div>

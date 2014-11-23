@@ -65,14 +65,14 @@ public class Administration extends Controller {
         return ok(createSupplierPage.render(form(Supplier.class)));
     }
 
-    public static Result getImage(Long id) {
-        Category cat = Category.find.byId(id);
-        try {
-            return ok(cat.picture).as("text/image");
-        } catch (Exception f) {
-            return badRequest("Bad File...");
-        }
-    }
+//    public static Result getImage(Long id) {
+//        Category cat = Category.find.byId(id);
+//        try {
+//            return ok(cat.picture).as("text/image");
+//        } catch (Exception f) {
+//            return badRequest("Bad File...");
+//        }
+//    }
 
     public static Result getSubCategories(Long id) {
         return ok(Json.toJson(Category.subCategoryOptions(id)));
@@ -121,23 +121,41 @@ public class Administration extends Controller {
     public static Result createCategory() {
         Form<Category> categoryForm = form(Category.class).bindFromRequest();
         if (categoryForm.hasErrors()) {
+            play.Logger.debug("Error: " + categoryForm.errorsAsJson());
             return badRequest(createCategoryPage.render(categoryForm));
         } else {
             try {
                 Category cat = categoryForm.get();
                 Http.MultipartFormData body = request().body().asMultipartFormData();
                 Http.MultipartFormData.FilePart picture = body.getFile("picture");
+                play.Logger.debug("filepart: " + picture);
                 if (picture != null) {
-                    String fileName = picture.getFilename();
-                    Logger.debug("filename: " + fileName);
-                    String contentType = picture.getContentType();
-                    Logger.debug("contentType: " + contentType);
-                    File file = picture.getFile();
+                    if (Image.ImageType.get(picture.getContentType()) == null) {
+                        play.Logger.debug("File: " + picture);
+                        return badRequest(createCategoryPage.render(categoryForm));
+                    }
+                    File newFile = null;
+                    String path;
+                    if (cat.parentCategory == null) {
+                        path = "public/images/parentCategories";
+                    } else {
+                        path = "public/images/subCategories";
+                    }
+                    try {
+                        newFile = saveImage(picture, path);
+                    } catch (Exception e) {
+                        play.Logger.error("Error on saving Image: " + e.getMessage());
+                        return badRequest(createCategoryPage.render(categoryForm));
+                    }
 
-                    Path path = Paths.get(file.getPath());
-                    Logger.debug("Path: " + file.getPath());
-                    byte[] data = Files.readAllBytes(path);
-                    cat.picture = data;
+                    String filePath = path.substring(7) + "/" + newFile.getName();
+                    play.Logger.debug("File Path: " + filePath);
+                    cat.imagePath = filePath;
+//                    File file = picture.getFile();
+//
+//                    Path path = Paths.get(file.getPath());
+//                    Logger.debug("Path: " + file.getPath());
+//                    byte[] data = Files.readAllBytes(path);
 
                 }
                 cat.save();
@@ -169,27 +187,18 @@ public class Administration extends Controller {
                         play.Logger.debug("File: " + picture);
                         return badRequest(createProductPage.render(productForm));
                     }
+                    File newFile = null;
                     try {
-                        String fileName = picture.getFilename();
-                        String extension = fileName.substring(fileName.indexOf("."));
-                        String uuid = uuid = java.util.UUID.randomUUID().toString();
-                        fileName = uuid + extension;
-
-                        File newFile = new File("public/images/upload", fileName);
-                        File file = picture.getFile();
-                        FileUtils.moveFile(file, newFile);
-
-                        play.Logger.debug("File moved");
-                        Image image = new Image();
-                        image.pic = newFile;
-                        image.filePath = "images/upload/" + fileName;
-                        play.Logger.debug("File Path: " + newFile.getPath());
-                        product.images.add(image);
-                    } catch (IOException ioe) {
-                        System.out.println("Problem operating on filesystem");
+                        newFile = saveImage(picture, "public/images/upload");
+                    } catch (Exception e) {
+                        play.Logger.error("Error on saving Image: " + e.getMessage());
+                        return badRequest(createProductPage.render(productForm));
                     }
-
-
+                    Image image = new Image();
+                    image.pic = newFile;
+                    image.filePath = "images/upload/" + newFile.getName();
+                    play.Logger.debug("File Path: " + newFile.getPath());
+                    product.images.add(image);
                 }
             }
             if (product.images.isEmpty()) {
@@ -204,6 +213,28 @@ public class Administration extends Controller {
             product.save();
             flash("success", Messages.get("product.create"));
             return redirect(routes.Administration.adminPage());
+        }
+    }
+
+    private static File saveImage(FilePart filePart, String filePath) throws Exception {
+        try {
+            String fileName = filePart.getFilename();
+            play.Logger.debug("FileName: " + fileName);
+            String extension = fileName.substring(fileName.indexOf("."));
+            play.Logger.debug("Extention: " + extension);
+            String uuid = uuid = java.util.UUID.randomUUID().toString();
+            fileName = uuid + extension;
+            play.Logger.debug("New FileName: " + fileName);
+
+            File newFile = new File(filePath, fileName);
+            File file = filePart.getFile();
+            FileUtils.moveFile(file, newFile);
+
+            play.Logger.debug("File moved");
+            return newFile;
+        } catch (IOException ioe) {
+            play.Logger.debug("Error : " + ioe.getLocalizedMessage());
+            throw new Exception(ioe);
         }
     }
 

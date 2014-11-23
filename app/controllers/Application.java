@@ -56,7 +56,8 @@ public class Application extends Controller {
     }
 
     public static Result productPage() {
-        return ok(product.render("products"));
+        return ok(product.render("products",
+                Category.findSuperParentCategories()));
     }
 
     public static Result javascriptRoutes() {

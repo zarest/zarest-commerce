@@ -123,6 +123,13 @@ recommended=پیشنهاد شده
 viewAll=مشاهده همه
 learnMore=اطلاعات بیشتر
 
+#product-grid
+quickReview=بررسی سریع
+new=جدید
+addToCompare=اضافه کن برای مقایسه
+addToWishlist=اضافه کن به لیست دلخواه
+addToCart=اضافه به سبد خرید
+
 # Languages --------------------
 lang.en=انگلیسی
 lang.fa=فارسی

@@ -20,7 +20,7 @@ create table category (
   id                        bigint not null,
   name                      varchar(255),
   description               varchar(255),
-  picture                   blob(100000),
+  image_path                varchar(255),
   active                    boolean,
   parent_category_id        bigint,
   constraint pk_category primary key (id))

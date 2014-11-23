@@ -22,7 +22,7 @@ POST        /createCustomer                   controllers.Administration.createC
 GET         /createCategory                   controllers.Administration.createCategoryPage()
 POST        /createCategory                   controllers.Administration.createCategory()
 POST        /createImage                      controllers.Administration.upload()
-GET         /createCategory/Image/:id         controllers.Administration.getImage(id:Long)
+#GET         /createCategory/Image/:id         controllers.Administration.getImage(id:Long)
 GET         /createProduct                    controllers.Administration.createProductPage()
 POST        /createProduct                    controllers.Administration.createProduct()
 GET         /createSupplier                   controllers.Administration.createSupplierPage()

@@ -15,10 +15,12 @@ var zarestApp = angular.module('zarestApp', ['zarestControllers'
 
 var zarestControllers = angular.module('zarestControllers', []);
 
-zarestControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
-    function($scope, Phone) {
-        $scope.phones = Phone.query();
-        $scope.orderProp = 'age';
+zarestControllers.controller('productGrid', ['$scope',
+    function($scope) {
+        $scope.number = 5;
+        $scope.getNumber = function(num) {
+            return new Array(num);
+        }
     }]);
 
 zarestControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',

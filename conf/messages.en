@@ -121,6 +121,13 @@ recommended=Recommended
 viewAll=View All
 learnMore=Learn More
 
+#product-grid
+quickReview=Quick Review
+new=New
+addToCompare=Add to Compare
+addToWishlist=Add to Wishlist
+addToCart=Add To Cart
+
 
 # Languages
 lang.en=English
