@@ -12,6 +12,9 @@ import play.mvc.*;
 
 import views.html.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import static play.data.Form.form;
 
 @With(CategoryMenu.class)
@@ -58,6 +61,24 @@ public class Application extends Controller {
     public static Result productPage() {
         return ok(product.render("products",
                 Category.findSuperParentCategories()));
+    }
+
+    public static Result categoryProduct(String name) {
+        Category cat = Category.findByName(name);
+        if (!cat.subCategories.isEmpty()) {
+            return ok(product.render(cat.name, new ArrayList<>(cat.subCategories)));
+        } else {
+
+            return  cat.parentCategory !=  null ? redirect(cat.parentCategory.name + "/" + cat.name) :
+                    badRequest(product.render(cat.name, new ArrayList<>(cat.subCategories)));
+        }
+
+    }
+
+    public static Result subCategoryProduct(String parentName, String name) {
+        Category cat = Category.findByName(name);
+        return ok(product.render(cat.name, new ArrayList<>(cat.subCategories)));
+
     }
 
     public static Result javascriptRoutes() {

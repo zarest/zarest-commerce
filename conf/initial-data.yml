@@ -21,91 +21,111 @@ categories:
     #1
     - !!models.Category
         name:       clothing
+        imagePath:  images/parentCategories/clothing.png
     #2
     - !!models.Category
         name:       healthAndBeauty
+        imagePath:  images/parentCategories/healthAndBeauty.png
     #3
     - !!models.Category
         name:       electric
+        imagePath:  images/parentCategories/electric.png
     #4
     - !!models.Category
         name:       sport
+        imagePath:  images/parentCategories/sport.png
     #5
     - !!models.Category
         name:       software
+        imagePath:  images/parentCategories/software.png
     #6
     - !!models.Category
         name:       toy
+        imagePath:  images/parentCategories/toy.png
     #7
     - !!models.Category
         name:       carpet
+        imagePath:  images/parentCategories/carpet.png
     #8
     - !!models.Category
         name:       buildingSupplies
+        imagePath:  images/parentCategories/buildingSupplies.png
     #9
     - !!models.Category
         name:       furniture
+        imagePath:  images/parentCategories/furniture.png
     #10
     - !!models.Category
         name:       musicTools
+        imagePath:  images/parentCategories/musicTools.png
     #11
     - !!models.Category
         name:       book
+        imagePath:  images/parentCategories/book.png
     #12
     - !!models.Category
         name:       movieMusicTvSeries
+        imagePath:  images/parentCategories/movieMusicTvSeries.png
 
     #clothing ---------------------------------
     - !!models.Category
-        name:       men
+        name:       clothingMen
+        imagePath:  images/subCategories/menClothing.jpg
         parentCategory:
              !!models.Category
                  id: 1
 
     - !!models.Category
-        name:       women
+        name:       clothingWomen
+        imagePath:  images/subCategories/womenClothing.jpg
         parentCategory:
              !!models.Category
                  id: 1
 
 
     - !!models.Category
-        name:       girls
+        name:       clothingGirls
+        imagePath:  images/subCategories/girlsClothing.jpg
         parentCategory:
              !!models.Category
                   id: 1
 
 
     - !!models.Category
-        name:    boys
+        name:    clothingBoys
+        imagePath:  images/subCategories/boysClothing.jpg
         parentCategory:
              !!models.Category
                   id: 1
 
 
     - !!models.Category
-        name:    babies
+        name:    clothingBabies
+        imagePath:  images/subCategories/babiesClothing.jpg
         parentCategory:
             !!models.Category
                  id: 1
     #clothing ---------------------------------
 
-    #health&Beauty ---------------------------------
+    #healthAndBeauty ---------------------------------
 
     - !!models.Category
-        name:       men
+        name:       healthAndBeautyMen
+        imagePath:  images/subCategories/menHealthAndBeauty.jpg
         parentCategory:
              !!models.Category
                  id: 2
 
     - !!models.Category
-        name:       women
+        name:       healthAndBeautyWomen
+        imagePath:  images/subCategories/womenHealthAndBeauty.jpg
         parentCategory:
              !!models.Category
                  id: 2
 
     - !!models.Category
-        name:    babies
+        name:    healthAndBeautyBabies
+        imagePath:  images/subCategories/babiesHealthAndBeauty.jpg
         parentCategory:
             !!models.Category
                  id: 2
@@ -115,73 +135,84 @@ categories:
     #Electricity ---------------------------------
 
     - !!models.Category
-            name:       phoneAndTablet
+            name:       electricPhoneAndTablet
+            imagePath:  images/subCategories/electricPhoneAndTablet.jpg
             parentCategory:
                  !!models.Category
                      id: 3
 
     - !!models.Category
-        name:       desktopAndLaptop
+        name:       electricDesktopAndLaptop
+        imagePath:  images/subCategories/electricDesktopAndLaptop.jpg
         parentCategory:
              !!models.Category
                  id: 3
 
 
     - !!models.Category
-        name:       tvAndHomeCinema
+        name:       electricTvAndHomeCinema
+        imagePath:  images/subCategories/electricTvAndHomeCinema.jpg
         parentCategory:
              !!models.Category
                   id: 3
 
 
     - !!models.Category
-        name:    filmingAndPhotography
+        name:    electricFilmingAndPhotography
+        imagePath:  images/subCategories/electricFilmingAndPhotography.jpg
         parentCategory:
              !!models.Category
                   id: 3
 
 
     - !!models.Category
-        name:    mouseKeyboardAndHeadset
+        name:    electricMouseKeyboardAndHeadset
+        imagePath:  images/subCategories/electricMouseAndKeyboardAndHeadset.jpg
         parentCategory:
             !!models.Category
                  id: 3
 
     - !!models.Category
-        name:       mp3Player
+        name:       electricMp3Player
+        imagePath:  images/subCategories/electricMp3Player.jpg
         parentCategory:
              !!models.Category
                  id: 3
 
     - !!models.Category
-        name:       carElectricity
+        name:       electricCarElectricity
+        imagePath:  images/subCategories/electricCarElectricity.jpg
         parentCategory:
              !!models.Category
                  id: 3
 
 
     - !!models.Category
-        name:       screenAndProjector
+        name:       electricScreenAndProjector
+        imagePath:  images/subCategories/electricScreenAndProjector.jpg
         parentCategory:
              !!models.Category
                   id: 3
 
 
     - !!models.Category
-        name:    kitchen
+        name:    electricKitchen
+        imagePath:  images/subCategories/electricKitchen.jpg
         parentCategory:
              !!models.Category
                   id: 3
 
 
     - !!models.Category
-        name:    hardAndFlash
+        name:    electricHardAndFlash
+        imagePath:  images/subCategories/electricHardAndFlash.jpg
         parentCategory:
             !!models.Category
                  id: 3
 
     - !!models.Category
-        name:    hardware
+        name:    electricHardware
+        imagePath:  images/subCategories/electricHardware.jpg
         parentCategory:
             !!models.Category
                  id: 3
@@ -190,79 +221,91 @@ categories:
 
     #Sport ------------------------------------
     - !!models.Category
-        name:       bodybuilding
+        name:       sportBodybuilding
+        imagePath:  images/subCategories/sportBodybuilding.jpg
         parentCategory:
              !!models.Category
                  id: 4
 
     - !!models.Category
-        name:       ski
+        name:       sportSki
+        imagePath:  images/subCategories/sportSki.jpg
         parentCategory:
              !!models.Category
                  id: 4
 
 
     - !!models.Category
-        name:       tennis
+        name:       sportTennis
+        imagePath:  images/subCategories/sportTennis.jpg
         parentCategory:
              !!models.Category
                   id: 4
 
 
     - !!models.Category
-        name:    volleyball
+        name:    sportVolleyball
+        imagePath:  images/subCategories/sportVolleyball.jpg
         parentCategory:
              !!models.Category
                   id: 4
 
 
     - !!models.Category
-        name:    basketball
+        name:    sportBasketball
+        imagePath:  images/subCategories/sportBasketball.jpg
         parentCategory:
             !!models.Category
                  id: 4
 
     - !!models.Category
-        name:    football
+        name:    sportFootball
+        imagePath:  images/subCategories/sportFootball.jpg
         parentCategory:
              !!models.Category
                  id: 4
 
     - !!models.Category
-        name:       swim
+        name:       sportSwim
+        imagePath:  images/subCategories/sportSwim.jpg
         parentCategory:
              !!models.Category
                  id: 4
 
 
     - !!models.Category
-        name:      cycle
-        parentCategory:
-             !!models.Category
-                  id: 4
-
-
-    - !!models.Category
-        name:    skateboard
+        name:      sportCycle
+        imagePath:  images/subCategories/sportCycle.jpg
         parentCategory:
              !!models.Category
                   id: 4
 
 
     - !!models.Category
-        name:    badminton
+        name:    sportSkateboard
+        imagePath:  images/subCategories/sportSkateboard.jpg
+        parentCategory:
+             !!models.Category
+                  id: 4
+
+
+    - !!models.Category
+        name:    sportBadminton
+        imagePath:  images/subCategories/sportBadminton.jpg
         parentCategory:
             !!models.Category
                  id: 4
 
     - !!models.Category
-        name:    golf
+        name:    sportGolf
+        imagePath:  images/subCategories/sportGolf.jpg
         parentCategory:
             !!models.Category
                  id: 4
 
     - !!models.Category
-        name:    fish
+        name:    sportFish
+        imagePath:  images/subCategories/sportFish.jpg
         parentCategory:
             !!models.Category
                  id: 4
@@ -272,123 +315,141 @@ categories:
        #Software ---------------------------------
 
     - !!models.Category
-         name:       trade
+         name:       softwareTrade
+         imagePath:  images/subCategories/softwareTrade.jpg
          parentCategory:
               !!models.Category
                   id: 5
 
     - !!models.Category
-         name:       videoAndAudio
+         name:       softwareVideoAndAudio
+         imagePath:  images/subCategories/softwareVideoAndAudio.jpg
          parentCategory:
               !!models.Category
                   id: 5
 
 
     - !!models.Category
-         name:       accounting
+         name:       softwareAccounting
+         imagePath:  images/subCategories/softwareAccounting.jpg
          parentCategory:
               !!models.Category
                    id: 5
 
 
     - !!models.Category
-         name:    interiorDesign
+         name:    softwareInteriorDesign
+         imagePath:  images/subCategories/softwareInteriorDesign.jpg
          parentCategory:
               !!models.Category
                    id: 5
 
 
     - !!models.Category
-         name:    programming
+         name:    softwareProgramming
+         imagePath:  images/subCategories/softwareProgramming.jpg
          parentCategory:
              !!models.Category
                   id: 5
 
     - !!models.Category
-         name:    designAndCreativity
+         name:    softwareDesignAndCreativity
+         imagePath:  images/subCategories/softwareDesignAndCreativity.jpg
          parentCategory:
               !!models.Category
                   id: 5
 
     - !!models.Category
-         name:       security
+         name:       softwareSecurity
+         imagePath:  images/subCategories/softwareSecurity.jpg
          parentCategory:
               !!models.Category
                   id: 5
 
 
     - !!models.Category
-         name:      operatingSystem
+         name:      softwareOperatingSystem
+         imagePath:  images/subCategories/softwareOperatingSystem.jpg
          parentCategory:
               !!models.Category
                    id: 5
 
 
     - !!models.Category
-         name:    educational
+         name:    softwareEducational
+         imagePath:  images/subCategories/softwareEducational.jpg
          parentCategory:
               !!models.Category
                    id: 5
 
     # -----------------------------------
 
-    #Toys------------------------------------
+    #Toy------------------------------------
 
     - !!models.Category
-         name:       dollsForBoys
+         name:       toyDollsForBoys
+         imagePath:  images/subCategories/toyDollsForBoys.jpg
          parentCategory:
               !!models.Category
                   id: 6
 
     - !!models.Category
-         name:       dollsForGirls
+         name:       toyDollsForGirls
+         imagePath:  images/subCategories/toyDollsForGirls.jpg
          parentCategory:
               !!models.Category
                   id: 6
 
 
     - !!models.Category
-         name:       educational
+         name:       toyEducational
+         imagePath:  images/subCategories/toyEducational.jpg
          parentCategory:
               !!models.Category
                    id: 6
 
 
     - !!models.Category
-         name:    paintingSupplies
+         name:    toyPaintingSupplies
+         imagePath:  images/subCategories/toyPaintingSupplies.jpg
          parentCategory:
               !!models.Category
                    id: 6
 
 
     - !!models.Category
-         name:    remoteControlCar
+         name:    toyRemoteControlCar
+         imagePath:  images/subCategories/toyRemoteControlCar.jpg
          parentCategory:
              !!models.Category
                   id: 6
 
     - !!models.Category
-         name:    toysYard
+         name:    toyToysYard
+         imagePath:  images/subCategories/toyToysYard.jpg
          parentCategory:
               !!models.Category
                   id: 6
 
     - !!models.Category
-         name:     lego
+         name:     toyLego
+         imagePath:  images/subCategories/toyLego.jpg
          parentCategory:
               !!models.Category
                   id: 6
 
 
     - !!models.Category
-         name:      babyAndChild
+         name:      toyBabyAndChild
+         imagePath:  images/subCategories/toyBabyAndChild.jpg
          parentCategory:
               !!models.Category
                    id: 6
 
 
     - !!models.Category
-         name:    carsAndMotors
+         name:    toyCarsAndMotors
+         imagePath:  images/subCategories/toyCarsAndMotors.jpg
          parentCategory:
               !!models.Category
                    id: 6
@@ -399,27 +460,31 @@ categories:
     #Carpet-------------------------------
 
     - !!models.Category
-         name:       handmade
+         name:       carpetHandmade
+         imagePath:  images/subCategories/carpetHandmade.jpg
          parentCategory:
               !!models.Category
                   id: 7
 
     - !!models.Category
-         name:       silk
+         name:       carpetSilk
+         imagePath:  images/subCategories/carpetSilk.jpg
          parentCategory:
               !!models.Category
                   id: 7
 
 
     - !!models.Category
-         name:       machineMade
+         name:       carpetMachineMade
+         imagePath:  images/subCategories/carpetMachineMade.jpg
          parentCategory:
               !!models.Category
                    id: 7
 
 
     - !!models.Category
-         name:    tablou
+         name:    carpetTablou
+         imagePath:  images/subCategories/carpetTablou.jpg
          parentCategory:
               !!models.Category
                    id: 7
@@ -433,50 +498,57 @@ categories:
      # Furniture ----------------------------
 
     - !!models.Category
-         name:       kitchen
+         name:       furnitureKitchen
+         imagePath:  images/subCategories/furnitureKitchen.jpg
          parentCategory:
               !!models.Category
                   id: 9
 
     - !!models.Category
-         name:       bedroom
+         name:       furnitureBedroom
+         imagePath:  images/subCategories/furnitureBedroom.jpg
          parentCategory:
               !!models.Category
                   id: 9
 
 
     - !!models.Category
-         name:       babyRoom
+         name:       furnitureBabyRoom
+         imagePath:  images/subCategories/furnitureBabyRoom.jpg
          parentCategory:
               !!models.Category
                    id: 9
 
 
     - !!models.Category
-         name:    livingRoom
+         name:    furnitureLivingRoom
+         imagePath:  images/subCategories/furnitureLivingRoom.jpg
          parentCategory:
               !!models.Category
                    id: 9
 
     #--------------------------------------
 
-    # Music Tools --------------------------
+    # MusicTools --------------------------
     - !!models.Category
-         name:       instruments
+         name:       musicToolsInstruments
+         imagePath:  images/subCategories/musicToolsInstruments.jpg
          parentCategory:
               !!models.Category
                   id: 10
 
 
     - !!models.Category
-         name:       recordingAndProduction
+         name:       musicToolsRecordingAndProduction
+         imagePath:  images/subCategories/musicToolsRecordingAndProduction.jpg
          parentCategory:
               !!models.Category
                    id: 10
 
 
     - !!models.Category
-         name:    stageTools
+         name:    musicToolsStageTools
+         imagePath:  images/subCategories/musicToolsStageTools.jpg
          parentCategory:
               !!models.Category
                    id: 10
@@ -490,21 +562,24 @@ categories:
     # Movie Music Tv Series------------------
 
     - !!models.Category
-             name:       movie
+             name:       movieMusicTvSeriesMovie
+             imagePath:  images/subCategories/movieMusicTvSeriesMovie.jpg
              parentCategory:
                   !!models.Category
                       id: 12
 
 
     - !!models.Category
-         name:       music
+         name:       movieMusicTvSeriesMusic
+         imagePath:  images/subCategories/movieMusicTvSeriesMusic.jpg
          parentCategory:
               !!models.Category
                    id: 12
 
 
     - !!models.Category
-         name:    series
+         name:    movieMusicTvSeriesSeries
+         imagePath:  images/subCategories/movieMusicTvSeriesSeries.jpg
          parentCategory:
               !!models.Category
                    id: 12

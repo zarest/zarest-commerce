@@ -126,9 +126,12 @@ public class Administration extends Controller {
         } else {
             try {
                 Category cat = categoryForm.get();
+                cat.name = cat.parentCategory != null ?
+                        cat.parentCategory.name + cat.name.substring(0, 1).toUpperCase() + cat.name.substring(1) : cat.name;
+                Logger.debug("Category Name: {}", cat.name);
                 Http.MultipartFormData body = request().body().asMultipartFormData();
                 Http.MultipartFormData.FilePart picture = body.getFile("picture");
-                play.Logger.debug("filepart: " + picture);
+                //play.Logger.debug("filepart: " + picture);
                 if (picture != null) {
                     if (Image.ImageType.get(picture.getContentType()) == null) {
                         play.Logger.debug("File: " + picture);
@@ -142,7 +145,7 @@ public class Administration extends Controller {
                         path = "public/images/subCategories";
                     }
                     try {
-                        newFile = saveImage(picture, path);
+                        newFile = saveImage(picture, path, cat.name);
                     } catch (Exception e) {
                         play.Logger.error("Error on saving Image: " + e.getMessage());
                         return badRequest(createCategoryPage.render(categoryForm));
@@ -189,7 +192,7 @@ public class Administration extends Controller {
                     }
                     File newFile = null;
                     try {
-                        newFile = saveImage(picture, "public/images/upload");
+                        newFile = saveImage(picture, "public/images/upload", null);
                     } catch (Exception e) {
                         play.Logger.error("Error on saving Image: " + e.getMessage());
                         return badRequest(createProductPage.render(productForm));
@@ -216,14 +219,19 @@ public class Administration extends Controller {
         }
     }
 
-    private static File saveImage(FilePart filePart, String filePath) throws Exception {
+    private static File saveImage(FilePart filePart, String filePath, String nameOfFile) throws Exception {
         try {
             String fileName = filePart.getFilename();
             play.Logger.debug("FileName: " + fileName);
             String extension = fileName.substring(fileName.indexOf("."));
             play.Logger.debug("Extention: " + extension);
-            String uuid = uuid = java.util.UUID.randomUUID().toString();
-            fileName = uuid + extension;
+            if(nameOfFile != null) {
+                fileName = nameOfFile + extension;
+            } else {
+                String uuid = uuid = java.util.UUID.randomUUID().toString();
+                fileName = uuid + extension;
+            }
+
             play.Logger.debug("New FileName: " + fileName);
 
             File newFile = new File(filePath, fileName);

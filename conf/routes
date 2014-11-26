@@ -7,6 +7,8 @@ GET         /                                 controllers.Application.index()
 POST        /locale                           controllers.Application.changeLocale()
 
 GET         /products                         controllers.Application.productPage()
+GET         /products/:name                     controllers.Application.categoryProduct(name:String)
+GET         /products/:parentName/:name            controllers.Application.subCategoryProduct(parentName: String, name : String)
 GET         /aboutUs                          controllers.Application.aboutUsPage()
 GET         /contactUs                        controllers.Application.contactUs()
 GET         /login                            controllers.Application.login()
@@ -33,7 +35,7 @@ POST        /createSupplier                   controllers.Administration.createS
 GET         /assets/javascripts/routes        controllers.Application.javascriptRoutes()
 GET         /messages.js                      controllers.Application.jsMessages()
 
-GET         /testJavaScript                   controllers.Administration.getSubCategories(id: Long)
+GET         /jsScript                         controllers.Administration.getSubCategories(id: Long)
 
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file                     controllers.Assets.at(path="/public", file)

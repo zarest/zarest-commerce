@@ -33,7 +33,7 @@ body {
 
 main {
   height: auto;
-  min-height: 1000px;
+  min-height: 800px;
 }
 
 .header-top {
@@ -70,6 +70,10 @@ main {
   transition-delay: .75s;
 }
 
+.featurette-divider {
+  margin: 50px 0; /* Space out the Bootstrap <hr> more */
+}
+
 footer {
   //background-color:@headerBg;
   //color:@zaresetBg;
@@ -92,22 +96,48 @@ footer {
 }
 
 //-----------------CATEGORY--------------
-.cat-item {
-  border: 1px solid #E1E1E1;
-  border-radius: 5px;
-  background: #FFF;
+
+.cat-group {
+  padding: 10px 25px;
+
+  .cat-item {
+    border: 1px solid #E1E1E1;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: #FFF;
+
+    .cat-photo {
+      padding: 0 20px;
+    }
+
+    .cat-name {
+      border-top: solid 1px #cccccc;
+      text-align: center;
+      //line-height: 25px;
+      h3 {
+        margin: 0;
+        padding: 10px;
+        font-size: 1.2em;
+        font-weight: bold;
+
+      }
+    }
+
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+        .cat-name {
+          background-color: #cccccc;
+        }
+      }
+    }
+  }
 
 }
 
-.photo {
-  background-image: url("../images/parentCategories/u10671");
-}
-
-.cat-name {
-  border-top: solid 1px #cccccc;
-  text-align: center;
-  line-height: 25px;
-}
 
 
 

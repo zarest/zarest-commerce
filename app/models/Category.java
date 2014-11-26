@@ -1,6 +1,6 @@
 package models;
 
-import org.apache.commons.codec.binary.Base64;
+import com.avaje.ebean.Page;
 import play.data.validation.Constraints.Required;
 import play.db.ebean.Model;
 import play.i18n.Messages;
@@ -11,9 +11,14 @@ import javax.validation.constraints.NotNull;
 import java.util.*;
 
 @Entity
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"name"}))
 public class Category extends Model implements Comparable<Category> {
 
     private static final long serialVersionUID = 1L;
+
+    public Category() {
+    }
+
 
     @Id
     //@GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -46,8 +51,33 @@ public class Category extends Model implements Comparable<Category> {
     public static Finder<Long, Category> find = new Finder<Long, Category>(
             Long.class, Category.class);
 
+
+    /**
+     * Return a page of Category
+     *
+     * @param page     Page to display
+     * @param pageSize Number of Category per page
+     * @param sortBy   Category property used for sorting
+     * @param order    Sort order (either or asc or desc)
+     * @param filter   Filter applied on the name column
+     */
+    public static Page<Category> page(int page, int pageSize, String sortBy, String order, String filter) {
+        return
+                find.where()
+                        .ilike("name", "%" + filter + "%")
+                        .orderBy(sortBy + " " + order)
+                        .fetch("products")
+                        .findPagingList(pageSize)
+                        .setFetchAhead(false)
+                        .getPage(page);
+    }
+
     public static List<Category> findSuperParentCategories() {
         return find.where().eq("parentCategory", null).orderBy().asc("id").findList();
+    }
+
+    public static Category findByName(String name) {
+        return find.where().eq("name", name).findUnique();
     }
 
     public static Map<String, String> parentCategoryOptions() {
@@ -68,6 +98,7 @@ public class Category extends Model implements Comparable<Category> {
         //cat.subCategories.forEach(category -> categories.put(category.id.toString(), Messages.get(category.name)));
         return categories;
     }
+
 
     @Override
     public int compareTo(Category o) {

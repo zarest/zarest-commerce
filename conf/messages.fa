@@ -14,80 +14,86 @@ movieMusicTvSeries=فیلم موسیقی سریال
 
 # Sub-categories --------------------
 # Clothing & healthBeauty ------------
-men=مردانه
-women=زنانه
-girls=دخترانه
-boys=پسرانه
-babies=نوزاد
+clothingMen=مردانه
+clothingWomen=زنانه
+clothingGirls=دخترانه
+clothingBoys=پسرانه
+clothingBabies=نوزاد
+
+healthAndBeautyMen=مردانه
+healthAndBeautyWomen=زنانه
+healthAndBeautyBabies=نوزاد
 
 #Electricity --------------------
-phoneAndTablet=تلفن و تبلت
-desktopAndLaptop=دسکتاپ و لپ تاپ
-tvAndHomeCinema=تلویزیون و سینمای خانگی
-filmingAndPhotography=فیلمبرداری و عکسبرداری
-mouseKeyboardAndHeadset=موس کیبورد و هدست
-mp3Player=پخش MP3
-carElectricity=الکتریکی اتومبیل
-screenAndProjector=صفحه و پروژکتور
-kitchen=آشپزخانه
-hardAndFlash=فلش و هارد
-hardware=سخت افزار
+electricPhoneAndTablet=تلفن و تبلت
+electricDesktopAndLaptop=دسکتاپ و لپ تاپ
+electricTvAndHomeCinema=تلویزیون و سینمای خانگی
+electricFilmingAndPhotography=فیلمبرداری و عکسبرداری
+electricMouseKeyboardAndHeadset=موس کیبورد و هدست
+electricMp3Player=پخش MP3
+electricCarElectricity=الکتریکی اتومبیل
+electricScreenAndProjector=صفحه و پروژکتور
+electricKitchen=آشپزخانه
+electricHardAndFlash=فلش و هارد
+electricHardware=سخت افزار
 
 #Sports---------------------------------
-bodybuilding=بدنسازی
-ski=اسکی
-tennis=تنیس
-volleyball=والیبال
-basketball=بسکتبال
-football=فوتبال
-swim=شنا
-cycle=دوچرخه سواری
-skateboard=اسکیت برد
-badminton=بدمینتون
-golf=گلف
-fish=ماهیگیری
+sportBodybuilding=بدنسازی
+sportSki=اسکی
+sportTennis=تنیس
+sportVolleyball=والیبال
+sportBasketball=بسکتبال
+sportFootball=فوتبال
+sportSwim=شنا
+sportCycle=دوچرخه سواری
+sportSkateboard=اسکیت برد
+sportBadminton=بدمینتون
+sportGolf=گلف
+sportFish=ماهیگیری
 
 #Software-------------------------------
-trade=تجارت
-videoAndAudio=صدا و تصویر
-accounting=حسابداری
-interiorDesign=طراحی داخلی
-programming=برنامه نویسی
-designAndCreativity=طراحی و خلاقیت
-security=امنیت
-operatingSystem=سیستم عامل
-educational=آموزشی
+softwareTrade=تجارت
+softwareVideoAndAudio=صدا و تصویر
+softwareAccounting=حسابداری
+softwareInteriorDesign=طراحی داخلی
+softwareProgramming=برنامه نویسی
+softwareDesignAndCreativity=طراحی و خلاقیت
+softwareSecurity=امنیت
+softwareOperatingSystem=سیستم عامل
+softwareEducational=آموزشی
 
 #Toys----------------------------------
-dollsForBoys=عروسک پسرانه
-dollsForGirls=عروسک دخترانه
-paintingSupplies=لوازم نقاشی
-remoteControlCar=ماشین کنترلی
-toysYard=اسباب بازی حیاط
-lego=لگو
-babyAndChild=نوزاد و کودک
-carsAndMotors=ماشین و موتور
+toyDollsForBoys=عروسک پسرانه
+toyDollsForGirls=عروسک دخترانه
+toyPaintingSupplies=لوازم نقاشی
+toyRemoteControlCar=ماشین کنترلی
+toyToysYard=اسباب بازی حیاط
+toyLego=لگو
+toyBabyAndChild=نوزاد و کودک
+toyCarsAndMotors=ماشین و موتور
+toyEducational=آموزشی
 
 #Carpet ------------------------
-handmade=دستباف
-silk=ابریشم
-machineMade=ماشینی
-tablou=تابلو
+carpetHandmade=دستباف
+carpetSilk=ابریشم
+carpetMachineMade=ماشینی
+carpetTablou=تابلو
 
 #Furniture---------------------
-bedroom=اتاق خواب
-babyRoom=اتاق کودک
-livingRoom=سالن نشیمن
+furnitureBedroom=اتاق خواب
+furnitureBabyRoom=اتاق کودک
+furnitureLivingRoom=سالن نشیمن
+furnitureKitchen=آشپزخانه
 
 #Music Tools------------------------
-instruments=سازها
-recordingAndProduction=ضبط و تهیه
-stageTools=لوازم استیج
+musicToolsInstruments=سازها
+musicToolsRecordingAndProduction=ضبط و تهیه
+musicToolsStageTools=لوازم استیج
 
 #Movie Music Series------------------------
-movie=فیلم
-music=موسیقی
-series=سریال
+movieMusicTvSeriesMovie=فیلم
+movieMusicTvSeriesMusic=موسیقی
+movieMusicTvSeriesSeries=سریال
 
 # website---------------------------------------
 footer=حقوق و محتوای سایت متعلق به فروشگاه اینترنتی زارست میباشد © ١٣٩٣
