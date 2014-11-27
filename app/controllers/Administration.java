@@ -127,7 +127,7 @@ public class Administration extends Controller {
             try {
                 Category cat = categoryForm.get();
                 cat.name = cat.parentCategory != null ?
-                        cat.parentCategory.name + cat.name.substring(0, 1).toUpperCase() + cat.name.substring(1) : cat.name;
+                        cat.parentCategory.name + "_" + cat.name : cat.name;
                 Logger.debug("Category Name: {}", cat.name);
                 Http.MultipartFormData body = request().body().asMultipartFormData();
                 Http.MultipartFormData.FilePart picture = body.getFile("picture");
@@ -225,7 +225,7 @@ public class Administration extends Controller {
             play.Logger.debug("FileName: " + fileName);
             String extension = fileName.substring(fileName.indexOf("."));
             play.Logger.debug("Extention: " + extension);
-            if(nameOfFile != null) {
+            if (nameOfFile != null) {
                 fileName = nameOfFile + extension;
             } else {
                 String uuid = uuid = java.util.UUID.randomUUID().toString();

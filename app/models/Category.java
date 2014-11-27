@@ -1,6 +1,7 @@
 package models;
 
 import com.avaje.ebean.Page;
+import play.Logger;
 import play.data.validation.Constraints.Required;
 import play.db.ebean.Model;
 import play.i18n.Messages;
@@ -12,6 +13,7 @@ import java.util.*;
 
 @Entity
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = {"name"}))
+@SequenceGenerator(name = "category_seq", sequenceName = "category_seq")
 public class Category extends Model implements Comparable<Category> {
 
     private static final long serialVersionUID = 1L;
@@ -21,7 +23,7 @@ public class Category extends Model implements Comparable<Category> {
 
 
     @Id
-    //@GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "category_seq")
     public Long id;
 
     @Required(message = "name.required")
@@ -76,8 +78,34 @@ public class Category extends Model implements Comparable<Category> {
         return find.where().eq("parentCategory", null).orderBy().asc("id").findList();
     }
 
+    public Category getSuperParentCategory() {
+        char charIndex = '_';
+        int index = this.name.indexOf(charIndex);
+        String name = index == -1 ? this.name : this.name.substring(0, index);
+        return this.findByName(name);
+    }
+
+    public List<Category> getParentCategories() {
+        String[] items = this.name.split("_");
+        List<Category> categories = new ArrayList<>();
+        String name = "";
+        for (String item : items) {
+            name += item;
+            Category cat = findByName(name);
+            if (cat != null) {
+                categories.add(cat);
+            }
+            name += "_";
+        }
+        return categories;
+    }
+
+    public String getRoutePath() {
+        return this.name.replace('_', '/');
+    }
+
     public static Category findByName(String name) {
-        return find.where().eq("name", name).findUnique();
+        return name == null ? null : find.where().eq("name", name).findUnique();
     }
 
     public static Map<String, String> parentCategoryOptions() {

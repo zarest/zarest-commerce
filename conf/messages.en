@@ -14,86 +14,149 @@ movieMusicTvSeries=Movie Music Series
 
 # Sub-categories------------------------
 #Clothing & HealthBeauty---------------
-clothingMen=Men
-clothingWomen=Women
-clothingGirls=Girls
-clothingBoys=Boys
-clothingBabies=Babies
+clothing_men=Men
+men=Men
+clothing_women=Women
+women=Women
+clothing_girls=Girls
+girls=Girls
+clothing_boys=Boys
+boys=Boys
+clothing_babies=Babies
+babies=Babies
 
-healthAndBeautyMen=Men
-healthAndBeautyWomen=Women
-healthAndBeautyBabies=Babies
+healthAndBeauty_men=Men
+##men=Men
+healthAndBeauty_women=Women
+##women=Women
+healthAndBeauty_babies=Babies
+##babies=Babies
 
 #Electricity-----------------------------
-electricPhoneAndTablet=Phone & Tablet
-electricDesktopAndLaptop=Desktop & Laptop
-electricTvAndHomeCinema=TV & Home Cinema
-electricFilmingAndPhotography=Filming & photography
-electricMouseKeyboardAndHeadset=Mouse Keyboard & Headset
-electricMp3Player=MP3 Player
-electricCarElectricity=Car Electrical System
-electricScreenAndProjector=Screen & Projector
-electricKitchen=Kitchen
-electricHardAndFlash=Hard Disk & Flash Memory
-electricHardware=Hardware
+electric_phoneAndTablet=Phone & Tablet
+phoneAndTablet=Phone & Tablet
+electric_desktopAndLaptop=Desktop & Laptop
+desktopAndLaptop=Desktop & Laptop
+electric_tvAndHomeCinema=TV & Home Cinema
+tvAndHomeCinema=TV & Home Cinema
+electric_filmingAndPhotography=Filming & photography
+filmingAndPhotography=Filming & photography
+electric_mouseKeyboardAndHeadset=Mouse Keyboard & Headset
+mouseKeyboardAndHeadset=Mouse Keyboard & Headset
+electric_mp3Player=MP3 Player
+mp3Player=MP3 Player
+electric_carElectricity=Car Electrical System
+carElectricity=Car Electrical System
+electric_screenAndProjector=Screen & Projector
+screenAndProjector=Screen & Projector
+electric_kitchen=Kitchen
+kitchen=Kitchen
+electric_hardAndFlash=Hard Disk & Flash Memory
+hardAndFlash=Hard Disk & Flash Memory
+electric_hardware=Hardware
+hardware=Hardware
 
 #Sports---------------------------------
-sportBodybuilding=Bodybuilding
-sportSki=Ski
-sportTennis=Tennis
-sportVolleyball=Volleyball
-sportBasketball=Basketball
-sportFootball=Football
-sportSwim=Swim
-sportCycle=Cycle
-sportSkateboard=Skateboard
-sportBadminton=Badminton
-sportGolf=Golf
-sportFish=Fish
+sport_bodybuilding=Bodybuilding
+bodybuilding=Bodybuilding
+sport_ski=Ski
+ski=Ski
+sport_tennis=Tennis
+tennis=Tennis
+sport_volleyball=Volleyball
+volleyball=Volleyball
+sport_basketball=Basketball
+basketball=Basketball
+sport_football=Football
+football=Football
+sport_swim=Swim
+swim=Swim
+sport_cycle=Cycle
+cycle=Cycle
+sport_skateboard=Skateboard
+skateboard=Skateboard
+sport_badminton=Badminton
+badminton=Badminton
+sport_golf=Golf
+golf=Golf
+sport_fish=Fish
+fish=Fish
 
 #Software-------------------------------
-softwareTrade=Trade
-softwareVideoAndAudio=Video & Audio
-softwareAccounting=Accounting
-softwareInteriorDesign=Interior Design
-softwareProgramming=Programming
-softwareDesignAndCreativity=Design & Creativity
-softwareSecurity=Security
-softwareOperatingSystem=Operating System
-softwareEducational=Educational
+software_trade=Trade
+trade=Trade
+software_videoAndAudio=Video & Audio
+videoAndAudio=Video & Audio
+software_accounting=Accounting
+accounting=Accounting
+software_interiorDesign=Interior Design
+interiorDesign=Interior Design
+software_programming=Programming
+programming=Programming
+software_designAndCreativity=Design & Creativity
+designAndCreativity=Design & Creativity
+software_security=Security
+security=Security
+software_operatingSystem=Operating System
+operatingSystem=Operating System
+software_educational=Educational
+educational=Educational
 
 #Toys -------------------------
-toyDollsForBoys=Dolls for Boys
-toyDollsForGirls=Dolls for Girls
-toyPaintingSupplies=Painting Supplies
-toyRemoteControlCar=Remote Control Car
-toyToysYard=Toys Yard
-toyLego=Lego
-toyBabyAndChild=Baby & Child
-toyCarsAndMotors=Cars & Motors
-toyEducational=Educational
+toy_dollsForBoys=Dolls for Boys
+dollsForBoys=Dolls for Boys
+toy_dollsForGirls=Dolls for Girls
+dollsForGirls=Dolls for Girls
+toy_paintingSupplies=Painting Supplies
+paintingSupplies=Painting Supplies
+toy_remoteControlCar=Remote Control Car
+remoteControlCar=Remote Control Car
+toy_toysYard=Toys Yard
+toysYard=Toys Yard
+toy_lego=Lego
+lego=Lego
+toy_babyAndChild=Baby & Child
+babyAndChild=Baby & Child
+toy_carsAndMotors=Cars & Motors
+carsAndMotors=Cars & Motors
+toy_educational=Educational
+##educational=Educational
 
 #Carpet ------------------------
-carpetHandmade=Handmade
-carpetSilk=Silk
-carpetMachineMade=Machine-Made
-carpetTablou=Tablou
+carpet_handmade=Handmade
+handmade=Handmade
+carpet_silk=Silk
+silk=Silk
+carpet_machineMade=Machine-Made
+machineMade=Machine-Made
+carpet_tablou=Tablou
+tablou=Tablou
 
 #Furniture---------------------
-furnitureBedroom=Bedroom
-furnitureBabyRoom=Baby Room
-furnitureLivingRoom=Living Room
-furnitureKitchen=Kitchen
+furniture_bedroom=Bedroom
+bedroom=Bedroom
+furniture_babyRoom=Baby Room
+babyRoom=Baby Room
+furniture_livingRoom=Living Room
+livingRoom=Living Room
+furniture_kitchen=Kitchen
+##kitchen=Kitchen
 
 #Music Tools------------------------
-musicToolsInstruments=Instruments
-musicToolsRecordingAndProduction=Recording & Production
-musicToolsStageTools=Stage Tools
+musicTools_instruments=Instruments
+instruments=Instruments
+musicTools_recordingAndProduction=Recording & Production
+recordingAndProduction=Recording & Production
+musicTools_stageTools=Stage Tools
+stageTools=Stage Tools
 
 #Movie Music Series------------------------
-movieMusicTvSeriesMovie=Movie
-movieMusicTvSeriesMusic=Music
-movieMusicTvSeriesSeries=TV Series
+movieMusicTvSeries_movie=Movie
+movie=Movie
+movieMusicTvSeries_music=Music
+music=Music
+movieMusicTvSeries_series=TV Series
+series=TV Series
 
 # website---------------------------------------
 footer=©Copyright, All the Contents and rights of this site belnogs to Zarest Ltd.

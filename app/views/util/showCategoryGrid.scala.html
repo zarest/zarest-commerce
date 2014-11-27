@@ -4,7 +4,7 @@
 @for(cat <- categories) {
     <div class="col-sm-6 col-md-4 cat-group">
         <div class="cat-item">
-            <a href="@routes.Application.categoryProduct(cat.name)">
+            <a href="@routes.Application.categoryProduct(cat.getRoutePath)">
                 <div class="cat-photo" >
                     <img src="@routes.Assets.at(cat.imagePath)" class="img-responsive">
 

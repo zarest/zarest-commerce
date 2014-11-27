@@ -64,19 +64,8 @@ public class Application extends Controller {
     }
 
     public static Result categoryProduct(String name) {
-        Category cat = Category.findByName(name);
-        if (!cat.subCategories.isEmpty()) {
-            return ok(product.render(cat.name, new ArrayList<>(cat.subCategories)));
-        } else {
-
-            return  cat.parentCategory !=  null ? redirect(cat.parentCategory.name + "/" + cat.name) :
-                    badRequest(product.render(cat.name, new ArrayList<>(cat.subCategories)));
-        }
-
-    }
-
-    public static Result subCategoryProduct(String parentName, String name) {
-        Category cat = Category.findByName(name);
+        String catName = name.replace('/', '_');
+        Category cat = Category.findByName(catName);
         return ok(product.render(cat.name, new ArrayList<>(cat.subCategories)));
 
     }

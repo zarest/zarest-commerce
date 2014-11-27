@@ -14,86 +14,149 @@ movieMusicTvSeries=فیلم موسیقی سریال
 
 # Sub-categories --------------------
 # Clothing & healthBeauty ------------
-clothingMen=مردانه
-clothingWomen=زنانه
-clothingGirls=دخترانه
-clothingBoys=پسرانه
-clothingBabies=نوزاد
+clothing_men=مردانه
+men=مردانه
+clothing_women=زنانه
+women=زنانه
+clothing_girls=دخترانه
+girls=دخترانه
+clothing_boys=پسرانه
+boys=پسرانه
+clothing_babies=نوزاد
+babies=نوزاد
 
-healthAndBeautyMen=مردانه
-healthAndBeautyWomen=زنانه
-healthAndBeautyBabies=نوزاد
+healthAndBeauty_men=مردانه
+##men=مردانه
+healthAndBeauty_women=زنانه
+##women=زنانه
+healthAndBeauty_babies=نوزاد
+##babies=نوزاد
 
 #Electricity --------------------
-electricPhoneAndTablet=تلفن و تبلت
-electricDesktopAndLaptop=دسکتاپ و لپ تاپ
-electricTvAndHomeCinema=تلویزیون و سینمای خانگی
-electricFilmingAndPhotography=فیلمبرداری و عکسبرداری
-electricMouseKeyboardAndHeadset=موس کیبورد و هدست
-electricMp3Player=پخش MP3
-electricCarElectricity=الکتریکی اتومبیل
-electricScreenAndProjector=صفحه و پروژکتور
-electricKitchen=آشپزخانه
-electricHardAndFlash=فلش و هارد
-electricHardware=سخت افزار
+electric_phoneAndTablet=تلفن و تبلت
+phoneAndTablet=تلفن و تبلت
+electric_desktopAndLaptop=دسکتاپ و لپ تاپ
+desktopAndLaptop=دسکتاپ و لپ تاپ
+electric_tvAndHomeCinema=تلویزیون و سینمای خانگی
+tvAndHomeCinema=تلویزیون و سینمای خانگی
+electric_filmingAndPhotography=فیلمبرداری و عکسبرداری
+filmingAndPhotography=فیلمبرداری و عکسبرداری
+electric_mouseKeyboardAndHeadset=موس کیبورد و هدست
+mouseKeyboardAndHeadset=موس کیبورد و هدست
+electric_mp3Player=پخش MP3
+mp3Player=پخش MP3
+electric_carElectricity=الکتریکی اتومبیل
+carElectricity=الکتریکی اتومبیل
+electric_screenAndProjector=صفحه و پروژکتور
+screenAndProjector=صفحه و پروژکتور
+electric_kitchen=آشپزخانه
+kitchen=آشپزخانه
+electric_hardAndFlash=فلش و هارد
+hardAndFlash=فلش و هارد
+electric_hardware=سخت افزار
+hardware=سخت افزار
 
 #Sports---------------------------------
-sportBodybuilding=بدنسازی
-sportSki=اسکی
-sportTennis=تنیس
-sportVolleyball=والیبال
-sportBasketball=بسکتبال
-sportFootball=فوتبال
-sportSwim=شنا
-sportCycle=دوچرخه سواری
-sportSkateboard=اسکیت برد
-sportBadminton=بدمینتون
-sportGolf=گلف
-sportFish=ماهیگیری
+sport_bodybuilding=بدنسازی
+bodybuilding=بدنسازی
+sport_ski=اسکی
+ski=اسکی
+sport_tennis=تنیس
+tennis=تنیس
+sport_volleyball=والیبال
+volleyball=والیبال
+sport_basketball=بسکتبال
+basketball=بسکتبال
+sport_football=فوتبال
+football=فوتبال
+sport_swim=شنا
+swim=شنا
+sport_cycle=دوچرخه سواری
+cycle=دوچرخه سواری
+sport_skateboard=اسکیت برد
+skateboard=اسکیت برد
+sport_badminton=بدمینتون
+badminton=بدمینتون
+sport_golf=گلف
+golf=گلف
+sport_fish=ماهیگیری
+fish=ماهیگیری
 
 #Software-------------------------------
-softwareTrade=تجارت
-softwareVideoAndAudio=صدا و تصویر
-softwareAccounting=حسابداری
-softwareInteriorDesign=طراحی داخلی
-softwareProgramming=برنامه نویسی
-softwareDesignAndCreativity=طراحی و خلاقیت
-softwareSecurity=امنیت
-softwareOperatingSystem=سیستم عامل
-softwareEducational=آموزشی
+software_trade=تجارت
+trade=تجارت
+software_videoAndAudio=صدا و تصویر
+videoAndAudio=صدا و تصویر
+software_accounting=حسابداری
+accounting=حسابداری
+software_interiorDesign=طراحی داخلی
+interiorDesign=طراحی داخلی
+software_programming=برنامه نویسی
+programming=برنامه نویسی
+software_designAndCreativity=طراحی و خلاقیت
+designAndCreativity=طراحی و خلاقیت
+software_security=امنیت
+security=امنیت
+software_operatingSystem=سیستم عامل
+operatingSystem=سیستم عامل
+software_educational=آموزشی
+educational=آموزشی
 
 #Toys----------------------------------
-toyDollsForBoys=عروسک پسرانه
-toyDollsForGirls=عروسک دخترانه
-toyPaintingSupplies=لوازم نقاشی
-toyRemoteControlCar=ماشین کنترلی
-toyToysYard=اسباب بازی حیاط
-toyLego=لگو
-toyBabyAndChild=نوزاد و کودک
-toyCarsAndMotors=ماشین و موتور
-toyEducational=آموزشی
+toy_dollsForBoys=عروسک پسرانه
+dollsForBoys=عروسک پسرانه
+toy_dollsForGirls=عروسک دخترانه
+dollsForGirls=عروسک دخترانه
+toy_paintingSupplies=لوازم نقاشی
+paintingSupplies=لوازم نقاشی
+toy_remoteControlCar=ماشین کنترلی
+remoteControlCar=ماشین کنترلی
+toy_toysYard=اسباب بازی حیاط
+toysYard=اسباب بازی حیاط
+toy_lego=لگو
+lego=لگو
+toy_babyAndChild=نوزاد و کودک
+babyAndChild=نوزاد و کودک
+toy_carsAndMotors=ماشین و موتور
+carsAndMotors=ماشین و موتور
+toy_educational=آموزشی
+##educational=آموزشی
 
 #Carpet ------------------------
-carpetHandmade=دستباف
-carpetSilk=ابریشم
-carpetMachineMade=ماشینی
-carpetTablou=تابلو
+carpet_handmade=دستباف
+handmade=دستباف
+carpet_silk=ابریشم
+silk=ابریشم
+carpet_machineMade=ماشینی
+machineMade=ماشینی
+carpet_tablou=تابلو
+tablou=تابلو
 
 #Furniture---------------------
-furnitureBedroom=اتاق خواب
-furnitureBabyRoom=اتاق کودک
-furnitureLivingRoom=سالن نشیمن
-furnitureKitchen=آشپزخانه
+furniture_bedroom=اتاق خواب
+bedroom=اتاق خواب
+furniture_babyRoom=اتاق کودک
+babyRoom=اتاق کودک
+furniture_livingRoom=سالن نشیمن
+livingRoom=سالن نشیمن
+furniture_kitchen=آشپزخانه
+##kitchen=آشپزخانه
 
 #Music Tools------------------------
-musicToolsInstruments=سازها
-musicToolsRecordingAndProduction=ضبط و تهیه
-musicToolsStageTools=لوازم استیج
+musicTools_instruments=سازها
+instruments=سازها
+musicTools_recordingAndProduction=ضبط و تهیه
+recordingAndProduction=ضبط و تهیه
+musicTools_stageTools=لوازم استیج
+stageTools=لوازم استیج
 
 #Movie Music Series------------------------
-movieMusicTvSeriesMovie=فیلم
-movieMusicTvSeriesMusic=موسیقی
-movieMusicTvSeriesSeries=سریال
+movieMusicTvSeries_movie=فیلم
+movie=فیلم
+movieMusicTvSeries_music=موسیقی
+music=موسیقی
+movieMusicTvSeries_series=سریال
+series=سریال
 
 # website---------------------------------------
 footer=حقوق و محتوای سایت متعلق به فروشگاه اینترنتی زارست میباشد © ١٣٩٣
@@ -140,7 +203,6 @@ addToCart=اضافه به سبد خرید
 lang.en=انگلیسی
 lang.fa=فارسی
 language=زبان
-
 
 
 #Validations------------------------------
