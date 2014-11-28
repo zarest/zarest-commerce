@@ -23,7 +23,7 @@ create table category (
   image_path                varchar(255),
   active                    boolean,
   parent_category_id        bigint,
-  constraint uq_category_1 unique (name),
+  constraint uq_category_name unique (name),
   constraint pk_category primary key (id))
 ;
 

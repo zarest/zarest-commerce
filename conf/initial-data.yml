@@ -22,56 +22,82 @@ categories:
     - !!models.Category
         name:       clothing
         imagePath:  images/parentCategories/clothing.png
+        active: true
+        id: 1
     #2
     - !!models.Category
         name:       healthAndBeauty
         imagePath:  images/parentCategories/healthAndBeauty.png
+        active: true
+        id: 2
     #3
     - !!models.Category
         name:       electric
         imagePath:  images/parentCategories/electric.png
+        active: true
+        id: 3
     #4
     - !!models.Category
         name:       sport
         imagePath:  images/parentCategories/sport.png
+        active: true
+        id: 4
     #5
     - !!models.Category
         name:       software
         imagePath:  images/parentCategories/software.png
+        active: true
+        id: 5
     #6
     - !!models.Category
         name:       toy
         imagePath:  images/parentCategories/toy.png
+        active: true
+        id: 6
     #7
     - !!models.Category
         name:       carpet
         imagePath:  images/parentCategories/carpet.png
+        active: true
+        id: 7
     #8
     - !!models.Category
         name:       buildingSupplies
         imagePath:  images/parentCategories/buildingSupplies.png
+        active: true
+        id: 8
     #9
     - !!models.Category
         name:       furniture
         imagePath:  images/parentCategories/furniture.png
+        active: true
+        id: 9
     #10
     - !!models.Category
         name:       musicTools
         imagePath:  images/parentCategories/musicTools.png
+        active: true
+        id: 10
     #11
     - !!models.Category
         name:       book
         imagePath:  images/parentCategories/book.png
+        active: true
+        id: 11
     #12
     - !!models.Category
         name:       movieMusicTvSeries
         imagePath:  images/parentCategories/movieMusicTvSeries.png
+        active: true
+        id: 12
 
     #clothing ---------------------------------
     #13
     - !!models.Category
         name:       clothing_men
         imagePath:  images/subCategories/clothingMen.jpg
+        active: true
+        id: 13
         parentCategory:
              !!models.Category
                  id: 1
@@ -79,43 +105,53 @@ categories:
     #13-ClothingMen---------SubCategories
     #14
     - !!models.Category
-            name:       clothing_men_coatAndJacket
-            imagePath:  images/subCategories/clothingMenCoatAndJacket.jpg
-            parentCategory:
-                 !!models.Category
-                     id: 13
+        name:       clothing_men_coatAndJacket
+        imagePath:  images/subCategories/clothingMenCoatAndJacket.jpg
+        active: true
+        id: 14
+        parentCategory:
+             !!models.Category
+                 id: 13
 
     #15
     - !!models.Category
-                name:       clothing_men_sweater
-                imagePath:  images/subCategories/clothingMenSweater.jpg
-                parentCategory:
-                     !!models.Category
-                         id: 13
+        name:       clothing_men_sweater
+        imagePath:  images/subCategories/clothingMenSweater.jpg
+        active: true
+        id: 15
+        parentCategory:
+             !!models.Category
+                 id: 13
 
     #16
     - !!models.Category
-            name:       clothing_men_trousers
-            imagePath:  images/subCategories/clothingMenTrousers.jpg
-            parentCategory:
-                 !!models.Category
-                     id: 13
+        name:       clothing_men_trousers
+        imagePath:  images/subCategories/clothingMenTrousers.jpg
+        active: true
+        id: 16
+        parentCategory:
+             !!models.Category
+                 id: 13
 
     #17
     - !!models.Category
-            name:       clothing_men_tShirt
-            imagePath:  images/subCategories/clothingMenTShirt.jpg
-            parentCategory:
-                 !!models.Category
-                     id: 13
+        name:       clothing_men_tShirt
+        imagePath:  images/subCategories/clothingMenTShirt.jpg
+        active: true
+        id: 17
+        parentCategory:
+             !!models.Category
+                 id: 13
 
     #18
     - !!models.Category
-                name:       clothing_men_shirt
-                imagePath:  images/subCategories/clothingMenShirt.jpg
-                parentCategory:
-                     !!models.Category
-                         id: 13
+        name:       clothing_men_shirt
+        imagePath:  images/subCategories/clothingMenShirt.jpg
+        active: true
+        id: 18
+        parentCategory:
+             !!models.Category
+                 id: 13
 
 
     #13-ClothingMen---------SubCategories END---------------------
@@ -124,6 +160,8 @@ categories:
     - !!models.Category
         name:       clothing_women
         imagePath:  images/subCategories/clothingWomen.jpg
+        active: true
+        id: 19
         parentCategory:
              !!models.Category
                  id: 1
@@ -131,210 +169,258 @@ categories:
     #19-ClothingWomen---------SubCategories
     #20
     - !!models.Category
-          name:       clothing_women_purse
-          imagePath:  images/subCategories/clothingWomenPurse.jpg
-          parentCategory:
-               !!models.Category
-                   id: 19
+        name:       clothing_women_purse
+        imagePath:  images/subCategories/clothingWomenPurse.jpg
+        active: true
+        id: 20
+        parentCategory:
+             !!models.Category
+                 id: 19
 
     #21
     - !!models.Category
-          name:       clothing_women_overcoatAndJacket
-          imagePath:  images/subCategories/clothingWomenOvercoatAndJacket.jpg
-          parentCategory:
-               !!models.Category
-                   id: 19
+        name:       clothing_women_overcoatAndJacket
+        imagePath:  images/subCategories/clothingWomenOvercoatAndJacket.jpg
+        active: true
+        id: 21
+        parentCategory:
+             !!models.Category
+                 id: 19
 
     #22
     - !!models.Category
-          name:       clothing_women_sweater
-          imagePath:  images/subCategories/clothingWomenSweater.jpg
-          parentCategory:
-               !!models.Category
-                   id: 19
+        name:       clothing_women_sweater
+        imagePath:  images/subCategories/clothingWomenSweater.jpg
+        active: true
+        id: 22
+        parentCategory:
+             !!models.Category
+                 id: 19
 
     #23
     - !!models.Category
-          name:       clothing_women_skirtAndNightDress
-          imagePath:  images/subCategories/clothingWomenSkirtAndNightDress.jpg
-          parentCategory:
-               !!models.Category
-                   id: 19
+        name:       clothing_women_skirtAndNightDress
+        imagePath:  images/subCategories/clothingWomenSkirtAndNightDress.jpg
+        active: true
+        id: 23
+        parentCategory:
+             !!models.Category
+                 id: 19
 
     #24
     - !!models.Category
-          name:       clothing_women_shirt
-          imagePath:  images/subCategories/clothingWomenShirt.jpg
-          parentCategory:
-               !!models.Category
-                   id: 19
+        name:       clothing_women_shirt
+        imagePath:  images/subCategories/clothingWomenShirt.jpg
+        active: true
+        id: 24
+        parentCategory:
+             !!models.Category
+                 id: 19
 
     #25
     - !!models.Category
-          name:       clothing_women_scarf
-          imagePath:  images/subCategories/clothingWomenScarf.jpg
-          parentCategory:
-               !!models.Category
-                   id: 19
+        name:       clothing_women_scarf
+        imagePath:  images/subCategories/clothingWomenScarf.jpg
+        active: true
+        id: 25
+        parentCategory:
+             !!models.Category
+                 id: 19
 
     #26
     - !!models.Category
-          name:       clothing_women_tShirtAndTop
-          imagePath:  images/subCategories/clothingWomenTShirtAndTop.jpg
-          parentCategory:
-               !!models.Category
-                   id: 19
+        name:       clothing_women_tShirtAndTop
+        imagePath:  images/subCategories/clothingWomenTShirtAndTop.jpg
+        active: true
+        id: 26
+        parentCategory:
+             !!models.Category
+                 id: 19
 
     #27
     - !!models.Category
-          name:       clothing_women_trousers
-          imagePath:  images/subCategories/clothingWomenTrousers.jpg
-          parentCategory:
-               !!models.Category
-                   id: 19
+        name:       clothing_women_trousers
+        imagePath:  images/subCategories/clothingWomenTrousers.jpg
+        active: true
+        id: 27
+        parentCategory:
+             !!models.Category
+                 id: 19
 
     #19-ClothingWomen---------SubCategories END-----------------
 
-    #40
+    #28
     - !!models.Category
         name:       clothing_girls
         imagePath:  images/subCategories/clothingGirls.jpg
+        active: true
+        id: 28
         parentCategory:
              !!models.Category
                   id: 1
 
-    #40-clothing_girls---------SubCategories
-
-    #21
-    - !!models.Category
-        name:       clothing_girls_jacket
-        imagePath:  images/subCategories/clothingGirlsJacket.jpg
-        parentCategory:
-             !!models.Category
-                  id: 40
-
-    #22
-    - !!models.Category
-        name:       clothing_girls_sweater
-        imagePath:  images/subCategories/clothingGirlsSweater.jpg
-        parentCategory:
-             !!models.Category
-                  id: 40
-
-    #23
-    - !!models.Category
-        name:       clothing_girls_trousers
-        imagePath:  images/subCategories/clothingGirlsTrousers.jpg
-        parentCategory:
-             !!models.Category
-                  id: 40
-
-    #24
-    - !!models.Category
-        name:       clothing_girls_tShirtAndTop
-        imagePath:  images/subCategories/clothingGirlsTShirtAndTop.jpg
-        parentCategory:
-             !!models.Category
-                  id: 40
-
-    #25
-    - !!models.Category
-        name:       clothing_girls_shirt
-        imagePath:  images/subCategories/clothingGirlsShirt.jpg
-        parentCategory:
-             !!models.Category
-                  id: 40
-
-
-    #40-clothing_girls---------SubCategories END-------------------
-
-    #26
-    - !!models.Category
-        name:    clothing_boys
-        imagePath:  images/subCategories/clothingBoys.jpg
-        parentCategory:
-             !!models.Category
-                  id: 1
-
-    #26-clothing_boys---------SubCategories
-
-    #27
-    - !!models.Category
-        name:    clothing_boys_jacket
-        imagePath:  images/subCategories/clothingBoysJacket.jpg
-        parentCategory:
-             !!models.Category
-                  id: 26
-
-    #28
-    - !!models.Category
-        name:    clothing_boys_sweater
-        imagePath:  images/subCategories/clothingBoysSweater.jpg
-        parentCategory:
-             !!models.Category
-                  id: 26
+    #28-clothing_girls---------SubCategories
 
     #29
     - !!models.Category
-        name:    clothing_boys_shirt
-        imagePath:  images/subCategories/clothingBoysShirt.jpg
+        name:       clothing_girls_jacket
+        imagePath:  images/subCategories/clothingGirlsJacket.jpg
+        active: true
+        id: 29
         parentCategory:
              !!models.Category
-                  id: 26
+                  id: 28
 
     #30
     - !!models.Category
-        name:    clothing_boys_tShirt
-        imagePath:  images/subCategories/clothingBoysTShirt.jpg
+        name:       clothing_girls_sweater
+        imagePath:  images/subCategories/clothingGirlsSweater.jpg
+        active: true
+        id: 30
         parentCategory:
              !!models.Category
-                  id: 26
+                  id: 28
 
     #31
     - !!models.Category
-        name:    clothing_boys_trousers
-        imagePath:  images/subCategories/clothingBoysTrousers.jpg
+        name:       clothing_girls_trousers
+        imagePath:  images/subCategories/clothingGirlsTrousers.jpg
+        active: true
+        id: 31
         parentCategory:
              !!models.Category
-                  id: 26
-
-    #26-clothing_boys---------SubCategories-END----------------
+                  id: 28
 
     #32
     - !!models.Category
+        name:       clothing_girls_tShirtAndTop
+        imagePath:  images/subCategories/clothingGirlsTShirtAndTop.jpg
+        active: true
+        id: 32
+        parentCategory:
+             !!models.Category
+                  id: 28
+
+    #33
+    - !!models.Category
+        name:       clothing_girls_shirt
+        imagePath:  images/subCategories/clothingGirlsShirt.jpg
+        active: true
+        id: 33
+        parentCategory:
+             !!models.Category
+                  id: 28
+
+
+    #28-clothing_girls---------SubCategories END-------------------
+
+    #34
+    - !!models.Category
+        name:    clothing_boys
+        imagePath:  images/subCategories/clothingBoys.jpg
+        active: true
+        id: 34
+        parentCategory:
+             !!models.Category
+                  id: 1
+
+    #34-clothing_boys---------SubCategories
+
+    #35
+    - !!models.Category
+        name:    clothing_boys_jacket
+        imagePath:  images/subCategories/clothingBoysJacket.jpg
+        active: true
+        id: 35
+        parentCategory:
+             !!models.Category
+                  id: 34
+
+    #36
+    - !!models.Category
+        name:    clothing_boys_sweater
+        imagePath:  images/subCategories/clothingBoysSweater.jpg
+        active: true
+        id: 36
+        parentCategory:
+             !!models.Category
+                  id: 34
+
+    #37
+    - !!models.Category
+        name:    clothing_boys_shirt
+        imagePath:  images/subCategories/clothingBoysShirt.jpg
+        active: true
+        id: 37
+        parentCategory:
+             !!models.Category
+                  id: 34
+
+    #38
+    - !!models.Category
+        name:    clothing_boys_tShirt
+        imagePath:  images/subCategories/clothingBoysTShirt.jpg
+        active: true
+        id: 38
+        parentCategory:
+             !!models.Category
+                  id: 34
+
+    #39
+    - !!models.Category
+        name:    clothing_boys_trousers
+        imagePath:  images/subCategories/clothingBoysTrousers.jpg
+        active: true
+        id: 39
+        parentCategory:
+             !!models.Category
+                  id: 34
+
+    #34-clothing_boys---------SubCategories-END----------------
+
+    #40
+    - !!models.Category
         name:    clothing_babies
         imagePath:  images/subCategories/clothingBabies.jpg
+        active: true
+        id: 40
         parentCategory:
             !!models.Category
                  id: 1
 
-    #32-clothing_babies---------SubCategories
+    #40-clothing_babies---------SubCategories
 
-    #33
+    #41
     - !!models.Category
         name:    clothing_babies_dress
         imagePath:  images/subCategories/clothingBabiesDress.jpg
+        active: true
+        id: 41
         parentCategory:
             !!models.Category
-                 id: 32
+                 id: 40
 
-    #34
+    #42
     - !!models.Category
         name:    clothing_babies_tools
         imagePath:  images/subCategories/clothingBabiesTools.jpg
+        active: true
+        id: 42
         parentCategory:
             !!models.Category
-                 id: 32
+                 id: 40
 
-    #35
+    #43
     - !!models.Category
         name:    clothing_babies_shoes
         imagePath:  images/subCategories/clothingBabiesShoes.jpg
+        active: true
+        id: 43
         parentCategory:
             !!models.Category
-                 id: 32
+                 id: 40
 
-    #32-clothing_babies---------SubCategories-END----------------
+    #40-clothing_babies---------SubCategories-END----------------
 
     #clothing --------------------------------- END ----------------
 
@@ -343,16 +429,19 @@ categories:
     - !!models.Category
         name:       healthAndBeauty_men
         imagePath:  images/subCategories/healthAndBeautyMen.jpg
+        active: true
+        id: 44
         parentCategory:
              !!models.Category
                  id: 2
 
     #44-healthAndBeauty_men---------SubCategories
-
     #45
     - !!models.Category
         name:       healthAndBeauty_men_colognePerfume
         imagePath:  images/subCategories/healthAndBeautyMenColognePerfume.jpg
+        active: true
+        id: 45
         parentCategory:
              !!models.Category
                  id: 44
@@ -361,6 +450,8 @@ categories:
     - !!models.Category
         name:       healthAndBeauty_men_shaving
         imagePath:  images/subCategories/healthAndBeautyMenShaving.jpg
+        active: true
+        id: 46
         parentCategory:
              !!models.Category
                  id: 44
@@ -369,6 +460,8 @@ categories:
     - !!models.Category
         name:       healthAndBeauty_men_hairAndBodyCare
         imagePath:  images/subCategories/healthAndBeautyMenHairAndBodyCare.jpg
+        active: true
+        id: 47
         parentCategory:
              !!models.Category
                  id: 44
@@ -377,6 +470,8 @@ categories:
     - !!models.Category
         name:       healthAndBeauty_men_lotion
         imagePath:  images/subCategories/healthAndBeautyMenLotion.jpg
+        active: true
+        id: 48
         parentCategory:
              !!models.Category
                  id: 44
@@ -387,6 +482,8 @@ categories:
     - !!models.Category
         name:       healthAndBeauty_women
         imagePath:  images/subCategories/healthAndBeautyWomen.jpg
+        active: true
+        id: 49
         parentCategory:
              !!models.Category
                  id: 2
@@ -397,6 +494,8 @@ categories:
     - !!models.Category
         name:       healthAndBeauty_women_eyeShadow
         imagePath:  images/subCategories/healthAndBeautyWomenEyeShadow.jpg
+        active: true
+        id: 50
         parentCategory:
              !!models.Category
                  id: 49
@@ -405,6 +504,8 @@ categories:
     - !!models.Category
         name:       healthAndBeauty_women_nailPolish
         imagePath:  images/subCategories/healthAndBeautyWomenNailPolish.jpg
+        active: true
+        id: 51
         parentCategory:
              !!models.Category
                  id: 49
@@ -413,6 +514,8 @@ categories:
     - !!models.Category
         name:       healthAndBeauty_women_foundation
         imagePath:  images/subCategories/healthAndBeautyWomenFoundation.jpg
+        active: true
+        id: 52
         parentCategory:
              !!models.Category
                  id: 49
@@ -421,6 +524,8 @@ categories:
     - !!models.Category
         name:       healthAndBeauty_women_eyeliner
         imagePath:  images/subCategories/healthAndBeautyWomenEyeliner.jpg
+        active: true
+        id: 53
         parentCategory:
              !!models.Category
                  id: 49
@@ -429,6 +534,8 @@ categories:
     - !!models.Category
         name:       healthAndBeauty_women_colognePerfume
         imagePath:  images/subCategories/healthAndBeautyWomenColognePerfume.jpg
+        active: true
+        id: 54
         parentCategory:
              !!models.Category
                  id: 49
@@ -437,6 +544,8 @@ categories:
     - !!models.Category
         name:       healthAndBeauty_women_brush
         imagePath:  images/subCategories/healthAndBeautyWomenBrush.jpg
+        active: true
+        id: 55
         parentCategory:
              !!models.Category
                  id: 49
@@ -445,6 +554,8 @@ categories:
     - !!models.Category
         name:       healthAndBeauty_women_eyebrowsMakeup
         imagePath:  images/subCategories/healthAndBeautyWomenEyebrowsMakeup.jpg
+        active: true
+        id: 56
         parentCategory:
              !!models.Category
                  id: 49
@@ -453,6 +564,8 @@ categories:
     - !!models.Category
         name:       healthAndBeauty_women_cheekRouge
         imagePath:  images/subCategories/healthAndBeautyWomenCheekRouge.jpg
+        active: true
+        id: 57
         parentCategory:
              !!models.Category
                  id: 49
@@ -461,6 +574,8 @@ categories:
     - !!models.Category
         name:       healthAndBeauty_women_creamPowder
         imagePath:  images/subCategories/healthAndBeautyWomenCreamPowder.jpg
+        active: true
+        id: 58
         parentCategory:
              !!models.Category
                  id: 49
@@ -469,6 +584,8 @@ categories:
     - !!models.Category
         name:       healthAndBeauty_women_mascara
         imagePath:  images/subCategories/healthAndBeautyWomenMascara.jpg
+        active: true
+        id: 59
         parentCategory:
              !!models.Category
                  id: 49
@@ -477,40 +594,50 @@ categories:
     - !!models.Category
         name:       healthAndBeauty_women_lipstick
         imagePath:  images/subCategories/healthAndBeautyWomenLipstick.jpg
+        active: true
+        id: 60
         parentCategory:
              !!models.Category
                  id: 49
 
-    #65
+    #61
     - !!models.Category
         name:       healthAndBeauty_women_makeupCleanser
         imagePath:  images/subCategories/healthAndBeautyWomenMakeupCleanser.jpg
+        active: true
+        id: 61
         parentCategory:
              !!models.Category
                  id: 49
 
-    #66
+    #62
     - !!models.Category
         name:       healthAndBeauty_women_hairAndBodyCare
         imagePath:  images/subCategories/healthAndBeautyHairAndBodyCare.jpg
+        active: true
+        id: 62
         parentCategory:
              !!models.Category
                  id: 49
 
-    #67
+    #63
     - !!models.Category
         name:       healthAndBeauty_women_eyeCream
         imagePath:  images/subCategories/healthAndBeautyWomenEyeCream.jpg
+        active: true
+        id: 63
         parentCategory:
              !!models.Category
                  id: 49
 
     #49-healthAndBeauty_women---------SubCategories-END----------------
 
-    #68
+    #64
     - !!models.Category
         name:    healthAndBeauty_babies
         imagePath:  images/subCategories/healthAndBeautyBabies.jpg
+        active: true
+        id: 64
         parentCategory:
             !!models.Category
                  id: 2
@@ -518,350 +645,427 @@ categories:
     #health&Beauty ---------------------------------
 
     #Electricity ---------------------------------
-    #69
+    #65
     - !!models.Category
         name:       electric_phoneAndTablet
         imagePath:  images/subCategories/electricPhoneAndTablet.jpg
+        active: true
+        id: 65
         parentCategory:
              !!models.Category
                  id: 3
 
-    #69-electric_phoneAndTablet---------SubCategories
+    #65-electric_phoneAndTablet---------SubCategories
 
-    #70
+    #66
     - !!models.Category
         name:       electric_phoneAndTablet_cellphone
         imagePath:  images/subCategories/electricPhoneAndTabletCellPhone.jpg
+        active: true
+        id: 66
         parentCategory:
              !!models.Category
-                 id: 69
+                 id: 65
 
-    #71
+    #67
     - !!models.Category
         name:       electric_phoneAndTablet_tablet
         imagePath:  images/subCategories/electricPhoneAndTabletTablet.jpg
+        active: true
+        id: 67
         parentCategory:
              !!models.Category
-                 id: 69
+                 id: 65
 
-    #72
+    #68
     - !!models.Category
         name:       electric_phoneAndTablet_smartWatch
         imagePath:  images/subCategories/electricPhoneAndTabletSmartWatch.jpg
+        active: true
+        id: 68
         parentCategory:
              !!models.Category
-                 id: 69
+                 id: 65
 
-    #73
+    #69
     - !!models.Category
         name:       electric_phoneAndTablet_accessories
         imagePath:  images/subCategories/electricPhoneAndTabletAccessories.jpg
+        active: true
+        id: 69
         parentCategory:
              !!models.Category
-                 id: 69
+                 id: 65
 
-    #69-electric_phoneAndTablet---------SubCategories-END---------------------
+    #65-electric_phoneAndTablet---------SubCategories-END---------------------
 
-    #74
+    #70
     - !!models.Category
         name:       electric_desktopAndLaptop
         imagePath:  images/subCategories/electricDesktopAndLaptop.jpg
+        active: true
+        id: 70
         parentCategory:
              !!models.Category
                  id: 3
 
-    #74-electric_desktopAndLaptop---------SubCategories
-    #75
+    #70-electric_desktopAndLaptop---------SubCategories
+    #71
     - !!models.Category
         name:       electric_desktopAndLaptop_desktop
         imagePath:  images/subCategories/electricDesktopAndLaptopDesktop.jpg
+        active: true
+        id: 71
         parentCategory:
              !!models.Category
-                 id: 74
+                 id: 70
 
-    #76
+    #72
     - !!models.Category
         name:       electric_desktopAndLaptop_laptop
         imagePath:  images/subCategories/electricDesktopAndLaptopLaptop.jpg
+        active: true
+        id: 72
         parentCategory:
              !!models.Category
-                 id: 74
+                 id: 70
 
-    #77
+    #73
     - !!models.Category
         name:       electric_desktopAndLaptop_accessories
         imagePath:  images/subCategories/electricDesktopAndLaptopAccessories.jpg
+        active: true
+        id: 73
         parentCategory:
              !!models.Category
-                 id: 74
+                 id: 70
 
-    #74-electric_desktopAndLaptop---------SubCategories-END-------------------
+    #70-electric_desktopAndLaptop---------SubCategories-END-------------------
 
-    #78
+    #74
     - !!models.Category
         name:       electric_tvAndHomeCinema
         imagePath:  images/subCategories/electricTvAndHomeCinema.jpg
+        active: true
+        id: 74
         parentCategory:
              !!models.Category
                   id: 3
 
-    #78-electric_tvAndHomeCinema---------SubCategories
+    #74-electric_tvAndHomeCinema---------SubCategories
 
 
-    #78-electric_tvAndHomeCinema---------SubCategories-END---------------
+    #74-electric_tvAndHomeCinema---------SubCategories-END---------------
 
-    #79
+    #75
     - !!models.Category
         name:    electric_filmingAndPhotography
         imagePath:  images/subCategories/electricFilmingAndPhotography.jpg
+        active: true
+        id: 75
         parentCategory:
              !!models.Category
                   id: 3
 
-    #79-electric_filmingAndPhotography---------SubCategories
-    #80
+    #75-electric_filmingAndPhotography---------SubCategories
+    #76
     - !!models.Category
         name:    electric_filmingAndPhotography_photography
         imagePath:  images/subCategories/electricFilmingAndPhotographyPhotography.jpg
+        active: true
+        id: 76
         parentCategory:
              !!models.Category
-                  id: 79
+                  id: 75
 
-    #81
+    #77
     - !!models.Category
         name:    electric_filmingAndPhotography_filming
         imagePath:  images/subCategories/electricFilmingAndPhotographyFilming.jpg
+        active: true
+        id: 77
         parentCategory:
              !!models.Category
-                  id: 79
+                  id: 75
 
-    #82
+    #78
     - !!models.Category
         name:    electric_filmingAndPhotography_light
         imagePath:  images/subCategories/electricFilmingAndPhotographyLight.jpg
+        active: true
+        id: 78
         parentCategory:
              !!models.Category
-                  id: 79
+                  id: 75
 
-    #83
+    #79
     - !!models.Category
         name:    electric_filmingAndPhotography_lenses
         imagePath:  images/subCategories/electricFilmingAndPhotographyLenses.jpg
+        active: true
+        id: 79
         parentCategory:
              !!models.Category
-                  id: 79
+                  id: 75
 
-    #84
+    #80
     - !!models.Category
         name:    electric_filmingAndPhotography_screen
         imagePath:  images/subCategories/electricFilmingAndPhotographyScreen.jpg
+        active: true
+        id: 80
         parentCategory:
              !!models.Category
-                  id: 79
-
-    #85
-    - !!models.Category
-        name:    electric_filmingAndPhotography_accessories
-        imagePath:  images/subCategories/electricFilmingAndPhotographyAccessories.jpg
-        parentCategory:
-             !!models.Category
-                  id: 79
-
-    #78-electric_filmingAndPhotography---------SubCategories-END---------------
-
-    #98
-    - !!models.Category
-        name:    electric_mouseKeyboardAndHeadset
-        imagePath:  images/subCategories/electricMouseAndKeyboardAndHeadset.jpg
-        parentCategory:
-            !!models.Category
-                 id: 3
-
-    #98-electric_mouseKeyboardAndHeadset---------SubCategories
-    #99
-    - !!models.Category
-        name:    electric_mouseKeyboardAndHeadset_mouse
-        imagePath:  images/subCategories/electricMouseAndKeyboardAndHeadsetMouse.jpg
-        parentCategory:
-            !!models.Category
-                 id: 98
-
-    #100
-    - !!models.Category
-        name:    electric_mouseKeyboardAndHeadset_keyboard
-        imagePath:  images/subCategories/electricMouseAndKeyboardAndHeadsetKeyboard.jpg
-        parentCategory:
-            !!models.Category
-                 id: 98
+                  id: 75
 
     #81
     - !!models.Category
-        name:    electric_mouseKeyboardAndHeadset_pad
-        imagePath:  images/subCategories/electricMouseAndKeyboardAndHeadsetPad.jpg
+        name:    electric_filmingAndPhotography_accessories
+        imagePath:  images/subCategories/electricFilmingAndPhotographyAccessories.jpg
+        active: true
+        id: 81
         parentCategory:
-            !!models.Category
-                 id: 98
+             !!models.Category
+                  id: 75
+
+    #75-electric_filmingAndPhotography---------SubCategories-END---------------
 
     #82
     - !!models.Category
-        name:    electric_mouseKeyboardAndHeadset_headset
-        imagePath:  images/subCategories/electricMouseAndKeyboardAndHeadsetHeadset.jpg
+        name:    electric_mouseKeyboardAndHeadset
+        imagePath:  images/subCategories/electricMouseAndKeyboardAndHeadset.jpg
+        active: true
+        id: 82
         parentCategory:
             !!models.Category
-                 id: 98
+                 id: 3
 
+    #82-electric_mouseKeyboardAndHeadset---------SubCategories
     #83
     - !!models.Category
-        name:    electric_mouseKeyboardAndHeadset_controller
-        imagePath:  images/subCategories/electricMouseAndKeyboardAndHeadsetController.jpg
+        name:    electric_mouseKeyboardAndHeadset_mouse
+        imagePath:  images/subCategories/electricMouseAndKeyboardAndHeadsetMouse.jpg
+        active: true
+        id: 83
         parentCategory:
             !!models.Category
-                 id: 98
-
-    #98-electric_mouseKeyboardAndHeadset---------SubCategories-END---------------
+                 id: 82
 
     #84
     - !!models.Category
-        name:       electric_mp3Player
-        imagePath:  images/subCategories/electricMp3Player.jpg
+        name:    electric_mouseKeyboardAndHeadset_keyboard
+        imagePath:  images/subCategories/electricMouseAndKeyboardAndHeadsetKeyboard.jpg
+        active: true
+        id: 84
         parentCategory:
-             !!models.Category
-                 id: 3
-
-    #84-electric_mp3Player---------SubCategories
-
-    #84-electric_mp3Player---------SubCategories-END---------------
+            !!models.Category
+                 id: 82
 
     #85
     - !!models.Category
-        name:       electric_carElectricity
-        imagePath:  images/subCategories/electricCarElectricity.jpg
+        name:    electric_mouseKeyboardAndHeadset_pad
+        imagePath:  images/subCategories/electricMouseAndKeyboardAndHeadsetPad.jpg
+        active: true
+        id: 85
         parentCategory:
-             !!models.Category
-                 id: 3
-
-    #85-electric_carElectricity---------SubCategories
-
-    #85-electric_carElectricity---------SubCategories-END---------------
+            !!models.Category
+                 id: 82
 
     #86
     - !!models.Category
-        name:       electric_screenAndProjector
-        imagePath:  images/subCategories/electricScreenAndProjector.jpg
+        name:    electric_mouseKeyboardAndHeadset_headset
+        imagePath:  images/subCategories/electricMouseAndKeyboardAndHeadsetHeadset.jpg
+        active: true
+        id: 86
         parentCategory:
-             !!models.Category
-                  id: 3
-
-    #86-electric_screenAndProjector---------SubCategories
+            !!models.Category
+                 id: 82
 
     #87
     - !!models.Category
-        name:       electric_screenAndProjector_screen
-        imagePath:  images/subCategories/electricScreenAndProjectorScreen.jpg
+        name:    electric_mouseKeyboardAndHeadset_controller
+        imagePath:  images/subCategories/electricMouseAndKeyboardAndHeadsetController.jpg
+        active: true
+        id: 87
         parentCategory:
-             !!models.Category
-                  id: 86
+            !!models.Category
+                 id: 82
+
+    #82-electric_mouseKeyboardAndHeadset---------SubCategories-END---------------
 
     #88
     - !!models.Category
-        name:       electric_screenAndProjector_projector
-        imagePath:  images/subCategories/electricScreenAndProjectorProjector.jpg
+        name:       electric_mp3Player
+        imagePath:  images/subCategories/electricMp3Player.jpg
+        active: true
+        id: 88
         parentCategory:
              !!models.Category
-                  id: 86
+                 id: 3
 
-    #86-electric_screenAndProjector---------SubCategories-END---------------
+    #88-electric_mp3Player---------SubCategories
+
+    #88-electric_mp3Player---------SubCategories-END---------------
 
     #89
     - !!models.Category
-        name:    electric_kitchen
-        imagePath:  images/subCategories/electricKitchen.jpg
+        name:       electric_carElectricity
+        imagePath:  images/subCategories/electricCarElectricity.jpg
+        active: true
+        id: 89
+        parentCategory:
+             !!models.Category
+                 id: 3
+
+    #89-electric_carElectricity---------SubCategories
+
+    #89-electric_carElectricity---------SubCategories-END---------------
+
+    #90
+    - !!models.Category
+        name:       electric_screenAndProjector
+        imagePath:  images/subCategories/electricScreenAndProjector.jpg
+        active: true
+        id: 90
         parentCategory:
              !!models.Category
                   id: 3
 
-    #89-electric_kitchen---------SubCategories
-    #90
-    - !!models.Category
-        name:    electric_kitchen_washingMachine
-        imagePath:  images/subCategories/electricKitchenWashingMachine.jpg
-        parentCategory:
-             !!models.Category
-                  id: 89
-
+    #90-electric_screenAndProjector---------SubCategories
     #91
     - !!models.Category
-        name:    electric_kitchen_dishwasher
-        imagePath:  images/subCategories/electricKitchenDishwasher.jpg
+        name:       electric_screenAndProjector_screen
+        imagePath:  images/subCategories/electricScreenAndProjectorScreen.jpg
+        active: true
+        id: 91
         parentCategory:
              !!models.Category
-                  id: 89
+                  id: 90
 
     #92
     - !!models.Category
-        name:    electric_kitchen_microwave
-        imagePath:  images/subCategories/electricKitchenMicrowave.jpg
+        name:       electric_screenAndProjector_projector
+        imagePath:  images/subCategories/electricScreenAndProjectorProjector.jpg
+        active: true
+        id: 92
         parentCategory:
              !!models.Category
-                  id: 89
+                  id: 90
+
+    #90-electric_screenAndProjector---------SubCategories-END---------------
 
     #93
     - !!models.Category
-        name:    electric_kitchen_vaccumCleaner
-        imagePath:  images/subCategories/electricKitchenVaccumCleaner.jpg
+        name:    electric_kitchen
+        imagePath:  images/subCategories/electricKitchen.jpg
+        active: true
+        id: 93
         parentCategory:
              !!models.Category
-                  id: 89
+                  id: 3
 
+    #93-electric_kitchen---------SubCategories
     #94
     - !!models.Category
-        name:    electric_kitchen_fridge
-        imagePath:  images/subCategories/electricKitchenFridge.jpg
+        name:    electric_kitchen_washingMachine
+        imagePath:  images/subCategories/electricKitchenWashingMachine.jpg
+        active: true
+        id: 94
         parentCategory:
              !!models.Category
-                  id: 89
+                  id: 93
 
     #95
     - !!models.Category
-        name:    electric_kitchen_otherAppliances
-        imagePath:  images/subCategories/electricKitchenOtherAppliances.jpg
+        name:    electric_kitchen_dishwasher
+        imagePath:  images/subCategories/electricKitchenDishwasher.jpg
+        active: true
+        id: 95
         parentCategory:
              !!models.Category
-                  id: 89
-
-    #89-electric_kitchen---------SubCategories-END---------------
+                  id: 93
 
     #96
     - !!models.Category
+        name:    electric_kitchen_microwave
+        imagePath:  images/subCategories/electricKitchenMicrowave.jpg
+        active: true
+        id: 96
+        parentCategory:
+             !!models.Category
+                  id: 93
+
+    #97
+    - !!models.Category
+        name:    electric_kitchen_vaccumCleaner
+        imagePath:  images/subCategories/electricKitchenVaccumCleaner.jpg
+        active: true
+        id: 97
+        parentCategory:
+             !!models.Category
+                  id: 93
+
+    #98
+    - !!models.Category
+        name:    electric_kitchen_fridge
+        imagePath:  images/subCategories/electricKitchenFridge.jpg
+        active: true
+        id: 98
+        parentCategory:
+             !!models.Category
+                  id: 93
+
+    #99
+    - !!models.Category
+        name:    electric_kitchen_otherAppliances
+        imagePath:  images/subCategories/electricKitchenOtherAppliances.jpg
+        active: true
+        id: 99
+        parentCategory:
+             !!models.Category
+                  id: 93
+
+    #93-electric_kitchen---------SubCategories-END---------------
+
+    #100
+    - !!models.Category
         name:    electric_hardAndFlash
         imagePath:  images/subCategories/electricHardAndFlash.jpg
+        active: true
+        id: 100
         parentCategory:
             !!models.Category
                  id: 3
 
-    #96-electric_hardAndFlash---------SubCategories
-    #97
+    #100-electric_hardAndFlash---------SubCategories
+    #101
     - !!models.Category
         name:    electric_hardAndFlash_externalHard
         imagePath:  images/subCategories/electricHardAndFlashExternalHard.jpg
+        active: true
+        id: 101
         parentCategory:
             !!models.Category
-                 id: 96
+                 id: 100
 
-    #98
+    #102
     - !!models.Category
         name:    electric_hardAndFlash_flash
         imagePath:  images/subCategories/electricHardAndFlashFlash.jpg
+        active: true
+        id: 102
         parentCategory:
             !!models.Category
-                 id: 96
+                 id: 100
 
-    #96-electric_hardAndFlash---------SubCategories-END---------------
+    #100-electric_hardAndFlash---------SubCategories-END---------------
 
     #103
     - !!models.Category
         name:    electric_hardware
         imagePath:  images/subCategories/electricHardware.jpg
+        active: true
+        id: 103
         parentCategory:
             !!models.Category
                  id: 3
@@ -871,6 +1075,8 @@ categories:
     - !!models.Category
         name:    electric_hardware_monitor
         imagePath:  images/subCategories/electricHardwareMonitor.jpg
+        active: true
+        id: 104
         parentCategory:
             !!models.Category
                  id: 103
@@ -879,6 +1085,8 @@ categories:
     - !!models.Category
         name:    electric_hardware_scanner
         imagePath:  images/subCategories/electricHardwareScanner.jpg
+        active: true
+        id: 105
         parentCategory:
             !!models.Category
                  id: 103
@@ -887,6 +1095,8 @@ categories:
     - !!models.Category
         name:    electric_hardware_printer
         imagePath:  images/subCategories/electricHardwarePrinter.jpg
+        active: true
+        id: 106
         parentCategory:
             !!models.Category
                  id: 103
@@ -895,6 +1105,8 @@ categories:
     - !!models.Category
         name:    electric_hardware_router
         imagePath:  images/subCategories/electricHardwareRouter.jpg
+        active: true
+        id: 107
         parentCategory:
             !!models.Category
                  id: 103
@@ -903,6 +1115,8 @@ categories:
     - !!models.Category
         name:    electric_hardware_case
         imagePath:  images/subCategories/electricHardwareCase.jpg
+        active: true
+        id: 108
         parentCategory:
             !!models.Category
                  id: 103
@@ -911,6 +1125,8 @@ categories:
     - !!models.Category
         name:    electric_hardware_webcam
         imagePath:  images/subCategories/electricHardwareWebcam.jpg
+        active: true
+        id: 109
         parentCategory:
             !!models.Category
                  id: 103
@@ -919,6 +1135,8 @@ categories:
     - !!models.Category
         name:    electric_hardware_cpu
         imagePath:  images/subCategories/electricHardwareCPU.jpg
+        active: true
+        id: 110
         parentCategory:
             !!models.Category
                  id: 103
@@ -927,6 +1145,8 @@ categories:
     - !!models.Category
         name:    electric_hardware_ram
         imagePath:  images/subCategories/electricHardwareRAM.jpg
+        active: true
+        id: 111
         parentCategory:
             !!models.Category
                  id: 103
@@ -935,6 +1155,8 @@ categories:
     - !!models.Category
         name:    electric_hardware_motherboard
         imagePath:  images/subCategories/electricHardwareMotherboard.jpg
+        active: true
+        id: 112
         parentCategory:
             !!models.Category
                  id: 103
@@ -943,6 +1165,8 @@ categories:
     - !!models.Category
         name:    electric_hardware_internalHard
         imagePath:  images/subCategories/electricHardwareInternalHard.jpg
+        active: true
+        id: 113
         parentCategory:
             !!models.Category
                  id: 103
@@ -951,6 +1175,8 @@ categories:
     - !!models.Category
         name:    electric_hardware_graphicCard
         imagePath:  images/subCategories/electricHardwareGraphicCard.jpg
+        active: true
+        id: 114
         parentCategory:
             !!models.Category
                  id: 103
@@ -959,6 +1185,8 @@ categories:
     - !!models.Category
         name:    electric_hardware_soundCard
         imagePath:  images/subCategories/electricHardwareSoundCard.jpg
+        active: true
+        id: 115
         parentCategory:
             !!models.Category
                  id: 103
@@ -967,6 +1195,8 @@ categories:
     - !!models.Category
         name:    electric_hardware_power
         imagePath:  images/subCategories/electricHardwarePower.jpg
+        active: true
+        id: 116
         parentCategory:
             !!models.Category
                  id: 103
@@ -975,107 +1205,133 @@ categories:
     - !!models.Category
         name:    electric_hardware_fan
         imagePath:  images/subCategories/electricHardwareFan.jpg
+        active: true
+        id: 117
         parentCategory:
             !!models.Category
                  id: 103
 
-    #131-electric_hardware---------SubCategories-END---------------
+    #103-electric_hardware---------SubCategories-END---------------
 
     #Electricity -----------------END----------------
 
     #Sport ------------------------------------
-    #24
+    #118
     - !!models.Category
         name:       sport_bodybuilding
         imagePath:  images/subCategories/sportBodybuilding.jpg
+        active: true
+        id: 118
         parentCategory:
              !!models.Category
                  id: 4
 
-    #25
+    #119
     - !!models.Category
         name:       sport_ski
         imagePath:  images/subCategories/sportSki.jpg
+        active: true
+        id: 119
         parentCategory:
              !!models.Category
                  id: 4
 
-    #26
+    #120
     - !!models.Category
         name:       sport_tennis
         imagePath:  images/subCategories/sportTennis.jpg
+        active: true
+        id: 120
         parentCategory:
              !!models.Category
                   id: 4
 
-    #27
+    #121
     - !!models.Category
         name:    sport_volleyball
         imagePath:  images/subCategories/sportVolleyball.jpg
+        active: true
+        id: 121
         parentCategory:
              !!models.Category
                   id: 4
 
-    #28
+    #122
     - !!models.Category
         name:    sport_basketball
         imagePath:  images/subCategories/sportBasketball.jpg
+        active: true
+        id: 122
         parentCategory:
             !!models.Category
                  id: 4
 
-    #29
+    #123
     - !!models.Category
         name:    sport_football
         imagePath:  images/subCategories/sportFootball.jpg
+        active: true
+        id: 123
         parentCategory:
              !!models.Category
                  id: 4
 
-    #30
+    #124
     - !!models.Category
         name:       sport_swim
         imagePath:  images/subCategories/sportSwim.jpg
+        active: true
+        id: 124
         parentCategory:
              !!models.Category
                  id: 4
 
-    #31
+    #125
     - !!models.Category
         name:      sport_cycle
         imagePath:  images/subCategories/sportCycle.jpg
+        active: true
+        id: 125
         parentCategory:
              !!models.Category
                   id: 4
 
-    #32
+    #126
     - !!models.Category
         name:    sport_skateboard
         imagePath:  images/subCategories/sportSkateboard.jpg
+        active: true
+        id: 126
         parentCategory:
              !!models.Category
                   id: 4
 
-    #41
+    #127
     - !!models.Category
         name:    sport_badminton
         imagePath:  images/subCategories/sportBadminton.jpg
+        active: true
+        id: 127
         parentCategory:
             !!models.Category
                  id: 4
 
-    #42
+    #128
     - !!models.Category
         name:    sport_golf
         imagePath:  images/subCategories/sportGolf.jpg
+        active: true
+        id: 128
         parentCategory:
             !!models.Category
                  id: 4
 
-    #43
+    #129
     - !!models.Category
         name:    sport_fish
         imagePath:  images/subCategories/sportFish.jpg
+        active: true
+        id: 129
         parentCategory:
             !!models.Category
                  id: 4
@@ -1083,75 +1339,93 @@ categories:
        #Sport ------------------------------------
 
        #Software ---------------------------------
-    #44
+    #130
     - !!models.Category
          name:       software_trade
          imagePath:  images/subCategories/softwareTrade.jpg
+         active: true
+         id: 130
          parentCategory:
               !!models.Category
                   id: 5
 
-    #45
+    #131
     - !!models.Category
          name:       software_videoAndAudio
          imagePath:  images/subCategories/softwareVideoAndAudio.jpg
+         active: true
+         id: 131
          parentCategory:
               !!models.Category
                   id: 5
 
-    #46
+    #132
     - !!models.Category
          name:       software_accounting
          imagePath:  images/subCategories/softwareAccounting.jpg
+         active: true
+         id: 132
          parentCategory:
               !!models.Category
                    id: 5
 
-    #47
+    #133
     - !!models.Category
          name:    software_interiorDesign
          imagePath:  images/subCategories/softwareInteriorDesign.jpg
+         active: true
+         id: 133
          parentCategory:
               !!models.Category
                    id: 5
 
-    #48
+    #134
     - !!models.Category
          name:    software_programming
          imagePath:  images/subCategories/softwareProgramming.jpg
+         active: true
+         id: 134
          parentCategory:
              !!models.Category
                   id: 5
 
-    #49
+    #135
     - !!models.Category
          name:    software_designAndCreativity
          imagePath:  images/subCategories/softwareDesignAndCreativity.jpg
+         active: true
+         id: 135
          parentCategory:
               !!models.Category
                   id: 5
 
-    #50
+    #136
     - !!models.Category
          name:       software_security
          imagePath:  images/subCategories/softwareSecurity.jpg
+         active: true
+         id: 136
          parentCategory:
               !!models.Category
                   id: 5
 
-    #51
+    #137
     - !!models.Category
          name:      software_operatingSystem
          imagePath:  images/subCategories/softwareOperatingSystem.jpg
+         active: true
+         id: 137
          parentCategory:
               !!models.Category
                    id: 5
 
 
-    #52
+    #138
     - !!models.Category
          name:    software_educational
          imagePath:  images/subCategories/softwareEducational.jpg
+         active: true
+         id: 138
          parentCategory:
               !!models.Category
                    id: 5
@@ -1159,74 +1433,92 @@ categories:
     # -----------------------------------
 
     #Toy------------------------------------
-    #53
+    #139
     - !!models.Category
          name:       toy_dollsForBoys
          imagePath:  images/subCategories/toyDollsForBoys.jpg
+         active: true
+         id: 139
          parentCategory:
               !!models.Category
                   id: 6
 
-    #54
+    #140
     - !!models.Category
          name:       toy_dollsForGirls
          imagePath:  images/subCategories/toyDollsForGirls.jpg
+         active: true
+         id: 140
          parentCategory:
               !!models.Category
                   id: 6
 
-    #55
+    #141
     - !!models.Category
          name:       toy_educational
          imagePath:  images/subCategories/toyEducational.jpg
+         active: true
+         id: 141
          parentCategory:
               !!models.Category
                    id: 6
 
-    #56
+    #142
     - !!models.Category
          name:    toy_paintingSupplies
          imagePath:  images/subCategories/toyPaintingSupplies.jpg
+         active: true
+         id: 142
          parentCategory:
               !!models.Category
                    id: 6
 
-    #57
+    #143
     - !!models.Category
          name:    toy_remoteControlCar
          imagePath:  images/subCategories/toyRemoteControlCar.jpg
+         active: true
+         id: 143
          parentCategory:
              !!models.Category
                   id: 6
 
-    #58
+    #144
     - !!models.Category
          name:    toy_toysYard
          imagePath:  images/subCategories/toyToysYard.jpg
+         active: true
+         id: 144
          parentCategory:
               !!models.Category
                   id: 6
 
-    #59
+    #145
     - !!models.Category
          name:     toy_lego
          imagePath:  images/subCategories/toyLego.jpg
+         active: true
+         id: 145
          parentCategory:
               !!models.Category
                   id: 6
 
-    #60
+    #146
     - !!models.Category
          name:      toy_babyAndChild
          imagePath:  images/subCategories/toyBabyAndChild.jpg
+         active: true
+         id: 146
          parentCategory:
               !!models.Category
                    id: 6
 
-    #65
+    #147
     - !!models.Category
          name:    toy_carsAndMotors
          imagePath:  images/subCategories/toyCarsAndMotors.jpg
+         active: true
+         id: 147
          parentCategory:
               !!models.Category
                    id: 6
@@ -1235,33 +1527,42 @@ categories:
     #-------------------------------------
 
     #Carpet-------------------------------
-
+    #148
     - !!models.Category
          name:       carpet_handmade
          imagePath:  images/subCategories/carpetHandmade.jpg
+         active: true
+         id: 148
          parentCategory:
               !!models.Category
                   id: 7
 
+    #149
     - !!models.Category
          name:       carpet_silk
          imagePath:  images/subCategories/carpetSilk.jpg
+         active: true
+         id: 149
          parentCategory:
               !!models.Category
                   id: 7
 
-
+    #150
     - !!models.Category
          name:       carpet_machineMade
          imagePath:  images/subCategories/carpetMachineMade.jpg
+         active: true
+         id: 150
          parentCategory:
               !!models.Category
                    id: 7
 
-
+    #151
     - !!models.Category
          name:    carpet_tablou
          imagePath:  images/subCategories/carpetTablou.jpg
+         active: true
+         id: 151
          parentCategory:
               !!models.Category
                    id: 7
@@ -1273,33 +1574,42 @@ categories:
      #---------------------------------------
 
      # Furniture ----------------------------
-
+    #152
     - !!models.Category
          name:       furniture_kitchen
          imagePath:  images/subCategories/furnitureKitchen.jpg
+         active: true
+         id: 152
          parentCategory:
               !!models.Category
                   id: 9
 
+    #153
     - !!models.Category
          name:       furniture_bedroom
          imagePath:  images/subCategories/furnitureBedroom.jpg
+         active: true
+         id: 153
          parentCategory:
               !!models.Category
                   id: 9
 
-
+    #154
     - !!models.Category
          name:       furniture_babyRoom
          imagePath:  images/subCategories/furnitureBabyRoom.jpg
+         active: true
+         id: 154
          parentCategory:
               !!models.Category
                    id: 9
 
-
+    #155
     - !!models.Category
          name:    furniture_livingRoom
          imagePath:  images/subCategories/furnitureLivingRoom.jpg
+         active: true
+         id: 155
          parentCategory:
               !!models.Category
                    id: 9
@@ -1307,25 +1617,32 @@ categories:
     #--------------------------------------
 
     # MusicTools --------------------------
+    #156
     - !!models.Category
          name:       musicTools_instruments
          imagePath:  images/subCategories/musicToolsInstruments.jpg
+         active: true
+         id: 156
          parentCategory:
               !!models.Category
                   id: 10
 
-
+    #157
     - !!models.Category
          name:       musicTools_recordingAndProduction
          imagePath:  images/subCategories/musicToolsRecordingAndProduction.jpg
+         active: true
+         id: 157
          parentCategory:
               !!models.Category
                    id: 10
 
-
+    #158
     - !!models.Category
          name:    musicTools_stageTools
          imagePath:  images/subCategories/musicToolsStageTools.jpg
+         active: true
+         id: 158
          parentCategory:
               !!models.Category
                    id: 10
@@ -1337,26 +1654,32 @@ categories:
     # ------------------------------------
 
     # Movie Music Tv Series------------------
-
+    #159
     - !!models.Category
              name:       movieMusicTvSeries_movie
              imagePath:  images/subCategories/movieMusicTvSeriesMovie.jpg
+             active: true
+             id: 159
              parentCategory:
                   !!models.Category
                       id: 12
 
-
+    #160
     - !!models.Category
          name:       movieMusicTvSeries_music
          imagePath:  images/subCategories/movieMusicTvSeriesMusic.jpg
+         active: true
+         id: 160
          parentCategory:
               !!models.Category
                    id: 12
 
-
+    #161
     - !!models.Category
          name:    movieMusicTvSeries_series
          imagePath:  images/subCategories/movieMusicTvSeriesSeries.jpg
+         active: true
+         id: 161
          parentCategory:
               !!models.Category
                    id: 12

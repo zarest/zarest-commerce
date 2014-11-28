@@ -12,8 +12,6 @@ import javax.validation.constraints.NotNull;
 import java.util.*;
 
 @Entity
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"name"}))
-@SequenceGenerator(name = "category_seq", sequenceName = "category_seq")
 public class Category extends Model implements Comparable<Category> {
 
     private static final long serialVersionUID = 1L;
@@ -23,10 +21,10 @@ public class Category extends Model implements Comparable<Category> {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "category_seq")
     public Long id;
 
     @Required(message = "name.required")
+    @Column(unique = true)
     public String name;
 
     public String description;
