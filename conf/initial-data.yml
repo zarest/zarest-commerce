@@ -720,7 +720,7 @@ categories:
 
     #98-electric_mouseKeyboardAndHeadset---------SubCategories-END---------------
 
-    #38
+    #84
     - !!models.Category
         name:       electric_mp3Player
         imagePath:  images/subCategories/electricMp3Player.jpg
@@ -728,7 +728,11 @@ categories:
              !!models.Category
                  id: 3
 
-    #39
+    #84-electric_mp3Player---------SubCategories
+
+    #84-electric_mp3Player---------SubCategories-END---------------
+
+    #85
     - !!models.Category
         name:       electric_carElectricity
         imagePath:  images/subCategories/electricCarElectricity.jpg
@@ -736,7 +740,11 @@ categories:
              !!models.Category
                  id: 3
 
-    #40
+    #85-electric_carElectricity---------SubCategories
+
+    #85-electric_carElectricity---------SubCategories-END---------------
+
+    #86
     - !!models.Category
         name:       electric_screenAndProjector
         imagePath:  images/subCategories/electricScreenAndProjector.jpg
@@ -744,7 +752,27 @@ categories:
              !!models.Category
                   id: 3
 
-    #21
+    #86-electric_screenAndProjector---------SubCategories
+
+    #87
+    - !!models.Category
+        name:       electric_screenAndProjector_screen
+        imagePath:  images/subCategories/electricScreenAndProjectorScreen.jpg
+        parentCategory:
+             !!models.Category
+                  id: 86
+
+    #88
+    - !!models.Category
+        name:       electric_screenAndProjector_projector
+        imagePath:  images/subCategories/electricScreenAndProjectorProjector.jpg
+        parentCategory:
+             !!models.Category
+                  id: 86
+
+    #86-electric_screenAndProjector---------SubCategories-END---------------
+
+    #89
     - !!models.Category
         name:    electric_kitchen
         imagePath:  images/subCategories/electricKitchen.jpg
@@ -752,7 +780,58 @@ categories:
              !!models.Category
                   id: 3
 
-    #22
+    #89-electric_kitchen---------SubCategories
+    #90
+    - !!models.Category
+        name:    electric_kitchen_washingMachine
+        imagePath:  images/subCategories/electricKitchenWashingMachine.jpg
+        parentCategory:
+             !!models.Category
+                  id: 89
+
+    #91
+    - !!models.Category
+        name:    electric_kitchen_dishwasher
+        imagePath:  images/subCategories/electricKitchenDishwasher.jpg
+        parentCategory:
+             !!models.Category
+                  id: 89
+
+    #92
+    - !!models.Category
+        name:    electric_kitchen_microwave
+        imagePath:  images/subCategories/electricKitchenMicrowave.jpg
+        parentCategory:
+             !!models.Category
+                  id: 89
+
+    #93
+    - !!models.Category
+        name:    electric_kitchen_vaccumCleaner
+        imagePath:  images/subCategories/electricKitchenVaccumCleaner.jpg
+        parentCategory:
+             !!models.Category
+                  id: 89
+
+    #94
+    - !!models.Category
+        name:    electric_kitchen_fridge
+        imagePath:  images/subCategories/electricKitchenFridge.jpg
+        parentCategory:
+             !!models.Category
+                  id: 89
+
+    #95
+    - !!models.Category
+        name:    electric_kitchen_otherAppliances
+        imagePath:  images/subCategories/electricKitchenOtherAppliances.jpg
+        parentCategory:
+             !!models.Category
+                  id: 89
+
+    #89-electric_kitchen---------SubCategories-END---------------
+
+    #96
     - !!models.Category
         name:    electric_hardAndFlash
         imagePath:  images/subCategories/electricHardAndFlash.jpg
@@ -760,7 +839,26 @@ categories:
             !!models.Category
                  id: 3
 
-    #23
+    #96-electric_hardAndFlash---------SubCategories
+    #97
+    - !!models.Category
+        name:    electric_hardAndFlash_externalHard
+        imagePath:  images/subCategories/electricHardAndFlashExternalHard.jpg
+        parentCategory:
+            !!models.Category
+                 id: 96
+
+    #98
+    - !!models.Category
+        name:    electric_hardAndFlash_flash
+        imagePath:  images/subCategories/electricHardAndFlashFlash.jpg
+        parentCategory:
+            !!models.Category
+                 id: 96
+
+    #96-electric_hardAndFlash---------SubCategories-END---------------
+
+    #103
     - !!models.Category
         name:    electric_hardware
         imagePath:  images/subCategories/electricHardware.jpg
@@ -768,7 +866,122 @@ categories:
             !!models.Category
                  id: 3
 
-    #Electricity ---------------------------------
+    #103-electric_hardware---------SubCategories
+    #104
+    - !!models.Category
+        name:    electric_hardware_monitor
+        imagePath:  images/subCategories/electricHardwareMonitor.jpg
+        parentCategory:
+            !!models.Category
+                 id: 103
+
+    #105
+    - !!models.Category
+        name:    electric_hardware_scanner
+        imagePath:  images/subCategories/electricHardwareScanner.jpg
+        parentCategory:
+            !!models.Category
+                 id: 103
+
+    #106
+    - !!models.Category
+        name:    electric_hardware_printer
+        imagePath:  images/subCategories/electricHardwarePrinter.jpg
+        parentCategory:
+            !!models.Category
+                 id: 103
+
+    #107
+    - !!models.Category
+        name:    electric_hardware_router
+        imagePath:  images/subCategories/electricHardwareRouter.jpg
+        parentCategory:
+            !!models.Category
+                 id: 103
+
+    #108
+    - !!models.Category
+        name:    electric_hardware_case
+        imagePath:  images/subCategories/electricHardwareCase.jpg
+        parentCategory:
+            !!models.Category
+                 id: 103
+
+    #109
+    - !!models.Category
+        name:    electric_hardware_webcam
+        imagePath:  images/subCategories/electricHardwareWebcam.jpg
+        parentCategory:
+            !!models.Category
+                 id: 103
+
+    #110
+    - !!models.Category
+        name:    electric_hardware_cpu
+        imagePath:  images/subCategories/electricHardwareCPU.jpg
+        parentCategory:
+            !!models.Category
+                 id: 103
+
+    #111
+    - !!models.Category
+        name:    electric_hardware_ram
+        imagePath:  images/subCategories/electricHardwareRAM.jpg
+        parentCategory:
+            !!models.Category
+                 id: 103
+
+    #112
+    - !!models.Category
+        name:    electric_hardware_motherboard
+        imagePath:  images/subCategories/electricHardwareMotherboard.jpg
+        parentCategory:
+            !!models.Category
+                 id: 103
+
+    #113
+    - !!models.Category
+        name:    electric_hardware_internalHard
+        imagePath:  images/subCategories/electricHardwareInternalHard.jpg
+        parentCategory:
+            !!models.Category
+                 id: 103
+
+    #114
+    - !!models.Category
+        name:    electric_hardware_graphicCard
+        imagePath:  images/subCategories/electricHardwareGraphicCard.jpg
+        parentCategory:
+            !!models.Category
+                 id: 103
+
+    #115
+    - !!models.Category
+        name:    electric_hardware_soundCard
+        imagePath:  images/subCategories/electricHardwareSoundCard.jpg
+        parentCategory:
+            !!models.Category
+                 id: 103
+
+    #116
+    - !!models.Category
+        name:    electric_hardware_power
+        imagePath:  images/subCategories/electricHardwarePower.jpg
+        parentCategory:
+            !!models.Category
+                 id: 103
+
+    #117
+    - !!models.Category
+        name:    electric_hardware_fan
+        imagePath:  images/subCategories/electricHardwareFan.jpg
+        parentCategory:
+            !!models.Category
+                 id: 103
+
+    #131-electric_hardware---------SubCategories-END---------------
+
+    #Electricity -----------------END----------------
 
     #Sport ------------------------------------
     #24

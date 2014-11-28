@@ -205,16 +205,83 @@ controller=Controller
 
 electric_mp3Player=MP3 Player
 mp3Player=MP3 Player
+# Electric_mp3Player Sub-cat---------------
+
+# Electric_mp3Player Sub-cat-END--------------
+
 electric_carElectricity=Car Electrical System
 carElectricity=Car Electrical System
+# Electric_carElectricity Sub-cat---------------
+
+# Electric_carElectricity Sub-cat-END--------------
+
 electric_screenAndProjector=Screen & Projector
 screenAndProjector=Screen & Projector
+# Electric_screenAndProjector Sub-cat---------------
+electric_screenAndProjector_screen=Screen
+##screen=Screen
+electric_screenAndProjector_projector=Projector
+projector=Projector
+# Electric_screenAndProjector Sub-cat-END--------------
+
 electric_kitchen=Kitchen
 kitchen=Kitchen
+# Electric_kitchen Sub-cat---------------
+electric_kitchen_washingMachine=Washing Machine
+washingMachine=Washing Machine
+electric_kitchen_dishwasher=Dishwasher
+dishwasher=Dishwasher
+electric_kitchen_microwave=Microwave
+microwave=Microwave
+electric_kitchen_vaccumCleaner=Vaccum Cleaner
+vaccumCleaner=Vaccum Cleaner
+electric_kitchen_fridge=Refrigerator & Freezer
+fridge=Refrigerator & Freezer
+electric_kitchen_otherAppliances=Other Appliances
+otherAppliances=Other Appliances
+# Electric_kitchen Sub-cat-END--------------
+
 electric_hardAndFlash=Hard Disk & Flash Memory
 hardAndFlash=Hard Disk & Flash Memory
+# electric_hardAndFlash Sub-cat---------------
+electric_hardAndFlash_externalHard=External Hard Disk
+externalHard=External Hard Disk
+electric_hardAndFlash_flash=Flash Memory
+flash=Flash Memory
+# electric_hardAndFlash Sub-cat-END--------------
+
 electric_hardware=Hardware
 hardware=Hardware
+# Electric_hardware Sub-cat---------------
+electric_hardware_monitor=Monitor
+monitor=Monitor
+electric_hardware_scanner=Scanner
+scanner=Scanner
+electric_hardware_printer=Printer
+printer=Printer
+electric_hardware_router=Router
+router=Router
+electric_hardware_case=Case
+case=Case
+electric_hardware_webcam=Webcam
+webcam=Webcam
+electric_hardware_cpu=CPU
+cpu=CPU
+electric_hardware_ram=RAM
+ram=RAM
+electric_hardware_motherboard=Motherboard
+motherboard=Motherboard
+electric_hardware_internalHard=Internal Hard Disk
+internalHard=Internal Hard Disk
+electric_hardware_graphicCard=Graphic Card
+graphicCard=Graphic Card
+electric_hardware_soundCard=Sound Card
+soundCard=Sound Card
+electric_hardware_power=Power
+power=Power
+electric_hardware_fan=Fan
+fan=Fan
+# Electric_hardware Sub-cat-END--------------
 
 #Sports---------------------------------
 sport_bodybuilding=Bodybuilding

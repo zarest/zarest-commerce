@@ -202,20 +202,83 @@ controller=کنترلر
 
 electric_mp3Player=پخش MP3
 mp3Player=پخش MP3
-# Electric_mouseKeyboardAndHeadset Sub-cat---------------
+# Electric_mp3Player Sub-cat---------------
 
-# Electric_mouseKeyboardAndHeadset Sub-cat-END--------------
+# Electric_mp3Player Sub-cat-END--------------
 
 electric_carElectricity=الکتریکی اتومبیل
 carElectricity=الکتریکی اتومبیل
+# Electric_carElectricity Sub-cat---------------
+
+# Electric_carElectricity Sub-cat-END--------------
+
 electric_screenAndProjector=صفحه و پروژکتور
 screenAndProjector=صفحه و پروژکتور
+# Electric_screenAndProjector Sub-cat---------------
+electric_screenAndProjector_screen=پرده
+##screen=پرده
+electric_screenAndProjector_projector=پروژکتور
+projector=پروژکتور
+# Electric_screenAndProjector Sub-cat-END--------------
+
 electric_kitchen=آشپزخانه
 kitchen=آشپزخانه
+# Electric_kitchen Sub-cat---------------
+electric_kitchen_washingMachine=ماشین لباسشویی
+washingMachine=ماشین لباسشویی
+electric_kitchen_dishwasher=ماشین ظرفشویی
+dishwasher=ماشین ظرفشویی
+electric_kitchen_microwave=میکرو ویو
+microwave=میکرو ویو
+electric_kitchen_vaccumCleaner=جارو برقی
+vaccumCleaner=جارو برقی
+electric_kitchen_fridge=یخچال و فریزر
+fridge=یخچال و فریزر
+electric_kitchen_otherAppliances=سایر لوازم
+otherAppliances=سایر لوازم
+# Electric_kitchen Sub-cat-END--------------
+
 electric_hardAndFlash=فلش و هارد
 hardAndFlash=فلش و هارد
+# electric_hardAndFlash Sub-cat---------------
+electric_hardAndFlash_externalHard=هارد دیسک خارجی
+externalHard=هارد دیسک خارجی
+electric_hardAndFlash_flash=حافظه فلش
+flash=حافظه فلش
+# electric_hardAndFlash Sub-cat-END--------------
+
 electric_hardware=سخت افزار
 hardware=سخت افزار
+# Electric_hardware Sub-cat---------------
+electric_hardware_monitor=مانیتور
+monitor=مانیتور
+electric_hardware_scanner=اسکنر
+scanner=اسکنر
+electric_hardware_printer=چاپگر
+printer=چاپگر
+electric_hardware_router=روتر
+router=روتر
+electric_hardware_case=کیس
+case=کیس
+electric_hardware_webcam=وب کم
+webcam=وب کم
+electric_hardware_cpu=پردازشگر
+cpu=پردازشگر
+electric_hardware_ram=رم
+ram=رم
+electric_hardware_motherboard=مادربرد
+motherboard=مادربرد
+electric_hardware_internalHard=هارد دیسک داخلی
+internalHard=هارد دیسک داخلی
+electric_hardware_graphicCard=کارت گرافیک
+graphicCard=کارت گرافیک
+electric_hardware_soundCard=کارت صدا
+soundCard=کارت صدا
+electric_hardware_power=پاور
+power=پاور
+electric_hardware_fan=فن
+fan=فن
+# Electric_hardware Sub-cat-END--------------
 
 #Sports---------------------------------
 sport_bodybuilding=بدنسازی
