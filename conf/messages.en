@@ -16,19 +16,127 @@ movieMusicTvSeries=Movie Music Series
 #Clothing & HealthBeauty---------------
 clothing_men=Men
 men=Men
+# Men Sub-cat-------------
+clothing_men_coatAndJacket=Coat & Jacket
+coatAndJacket=Coat & Jacket
+clothing_men_sweater=Sweater
+sweater=Sweater
+clothing_men_trousers=Trousers
+trousers=Trousers
+clothing_men_tShirt=T-shirt
+tShirt=T-shirt
+clothing_men_shirt=Shirt
+shirt=Shirt
+# Men Sub-cat END-------------
+
 clothing_women=Women
 women=Women
+# Women Sub-cat---------------
+clothing_women_purse=Purse
+purse=Purse
+clothing_women_overcoatAndJacket=Overcoat & Jacket
+overcoatAndJacket=Overcoat & Jacket
+clothing_women_sweater=Sweater
+##sweater=Sweater
+clothing_women_skirtAndNightDress=Skirt & Night Dress
+skirtAndNightDress=Skirt & Night Dress
+clothing_women_shirt=Shirt
+##shirt=Shirt
+clothing_women_scarf=Scarf
+scarf=Scarf
+clothing_women_tShirtAndTop=T-shirt & Top
+tShirtAndTop=T-shirt & Top
+clothing_women_trousers=Trousers
+##trousers=Trousers
+# Women Sub-cat END---------------
+
 clothing_girls=Girls
 girls=Girls
+# Girls Sub-cat---------------
+clothing_girls_jacket=Jacket
+jacket=Jacket
+clothing_girls_sweater=Sweater
+##sweater=Sweater
+clothing_girls_trousers=Trousers
+##trousers=Trousers
+clothing_girls_tShirtAndTop=T-shirt & Top
+##tShirtAndTop=T-shirt & Top
+clothing_girls_shirt=Shirt
+##shirt=Shirt
+# Girls Sub-cat END---------------
+
 clothing_boys=Boys
 boys=Boys
+# Boys Sub-cat---------------
+clothing_boys_jacket=Jacket
+##jacket=Jacket
+clothing_boys_sweater=Sweater
+##sweater=Sweater
+clothing_boys_trousers=Trousers
+##trousers=Trousers
+clothing_boys_tShirt=T-shirt
+##tShirt=T-shirt
+clothing_boys_shirt=Shirt
+##shirt=Shirt
+# Boys Sub-cat END---------------
+
 clothing_babies=Babies
 babies=Babies
+# Babies Sub-cat---------------
+clothing_babies_dress=Dress
+dress=Dress
+clothing_babies_tools=Tools
+tools=Tools
+clothing_babies_shoes=Shoes
+shoes=Shoes
+# Babies Sub-cat END---------------
 
 healthAndBeauty_men=Men
 ##men=Men
+# HealthAndBeauty_men Sub-cat---------------
+healthAndBeauty_men_colognePerfume=Cologne Perfume
+##colognePerfume=Cologne Perfume
+healthAndBeauty_men_shaving=Shaving
+shaving=Shaving
+healthAndBeauty_men_hairAndBodyCare=Hair & Body Care
+##hairAndBodyCare=Hair & Body Care
+healthAndBeauty_men_lotion=Lotion
+lotion=Lotion
+# HealthAndBeauty_men Sub-cat-END--------------
+
 healthAndBeauty_women=Women
 ##women=Women
+# HealthAndBeauty_women Sub-cat---------------
+healthAndBeauty_women_eyeShadow=Eye Shadow
+eyeShadow=Eye Shadow
+healthAndBeauty_women_nailPolish=Nail Polish
+nailPolish=Nail Polish
+healthAndBeauty_women_foundation=Foundation
+foundation=Foundation
+healthAndBeauty_women_eyeliner=Eyeliner
+eyeliner=Eyeliner
+healthAndBeauty_women_colognePerfume=Cologne Perfume
+colognePerfume=Cologne Perfume
+healthAndBeauty_women_brush=Brush
+brush=Brush
+healthAndBeauty_women_eyebrowsMakeup=Eyebrows Makeup
+eyebrowsMakeup=Eyebrows Makeup
+healthAndBeauty_women_cheekRouge=Cheek Rouge
+cheekRouge=Cheek Rouge
+healthAndBeauty_women_creamPowder=Cream Powder
+creamPowder=Cream Powder
+healthAndBeauty_women_mascara=Mascara
+mascara=Mascara
+healthAndBeauty_women_lipstick=Lipstick
+lipstick=Lipstick
+healthAndBeauty_women_makeupCleanser=Makeup Cleanser
+makeupCleanser=Makeup Cleanser
+healthAndBeauty_women_hairAndBodyCare=Hair & Body Care
+hairAndBodyCare=Hair & Body Care
+healthAndBeauty_women_eyeCream=Eye Cream
+eyeCream=Eye Cream
+# HealthAndBeauty_women Sub-cat-END--------------
+
 healthAndBeauty_babies=Babies
 ##babies=Babies
 

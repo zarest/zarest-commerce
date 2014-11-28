@@ -77,7 +77,7 @@ categories:
                  id: 1
 
     #13-ClothingMen---------SubCategories
-
+    #14
     - !!models.Category
             name:       clothing_men_coatAndJacket
             imagePath:  images/subCategories/clothingMenCoatAndJacket.jpg
@@ -85,7 +85,7 @@ categories:
                  !!models.Category
                      id: 13
 
-
+    #15
     - !!models.Category
                 name:       clothing_men_sweater
                 imagePath:  images/subCategories/clothingMenSweater.jpg
@@ -93,7 +93,7 @@ categories:
                      !!models.Category
                          id: 13
 
-
+    #16
     - !!models.Category
             name:       clothing_men_trousers
             imagePath:  images/subCategories/clothingMenTrousers.jpg
@@ -101,6 +101,7 @@ categories:
                  !!models.Category
                      id: 13
 
+    #17
     - !!models.Category
             name:       clothing_men_tShirt
             imagePath:  images/subCategories/clothingMenTShirt.jpg
@@ -108,7 +109,7 @@ categories:
                  !!models.Category
                      id: 13
 
-
+    #18
     - !!models.Category
                 name:       clothing_men_shirt
                 imagePath:  images/subCategories/clothingMenShirt.jpg
@@ -117,9 +118,9 @@ categories:
                          id: 13
 
 
+    #13-ClothingMen---------SubCategories END---------------------
 
-    #---------------------------------------
-    #14
+    #19 ClothingWomen---------------------------------------------
     - !!models.Category
         name:       clothing_women
         imagePath:  images/subCategories/clothingWomen.jpg
@@ -127,7 +128,74 @@ categories:
              !!models.Category
                  id: 1
 
-    #15
+    #19-ClothingWomen---------SubCategories
+    #20
+    - !!models.Category
+          name:       clothing_women_purse
+          imagePath:  images/subCategories/clothingWomenPurse.jpg
+          parentCategory:
+               !!models.Category
+                   id: 19
+
+    #21
+    - !!models.Category
+          name:       clothing_women_overcoatAndJacket
+          imagePath:  images/subCategories/clothingWomenOvercoatAndJacket.jpg
+          parentCategory:
+               !!models.Category
+                   id: 19
+
+    #22
+    - !!models.Category
+          name:       clothing_women_sweater
+          imagePath:  images/subCategories/clothingWomenSweater.jpg
+          parentCategory:
+               !!models.Category
+                   id: 19
+
+    #23
+    - !!models.Category
+          name:       clothing_women_skirtAndNightDress
+          imagePath:  images/subCategories/clothingWomenSkirtAndNightDress.jpg
+          parentCategory:
+               !!models.Category
+                   id: 19
+
+    #24
+    - !!models.Category
+          name:       clothing_women_shirt
+          imagePath:  images/subCategories/clothingWomenShirt.jpg
+          parentCategory:
+               !!models.Category
+                   id: 19
+
+    #25
+    - !!models.Category
+          name:       clothing_women_scarf
+          imagePath:  images/subCategories/clothingWomenScarf.jpg
+          parentCategory:
+               !!models.Category
+                   id: 19
+
+    #26
+    - !!models.Category
+          name:       clothing_women_tShirtAndTop
+          imagePath:  images/subCategories/clothingWomenTShirtAndTop.jpg
+          parentCategory:
+               !!models.Category
+                   id: 19
+
+    #27
+    - !!models.Category
+          name:       clothing_women_trousers
+          imagePath:  images/subCategories/clothingWomenTrousers.jpg
+          parentCategory:
+               !!models.Category
+                   id: 19
+
+    #19-ClothingWomen---------SubCategories END-----------------
+
+    #40
     - !!models.Category
         name:       clothing_girls
         imagePath:  images/subCategories/clothingGirls.jpg
@@ -135,7 +203,52 @@ categories:
              !!models.Category
                   id: 1
 
-    #16
+    #40-clothing_girls---------SubCategories
+
+    #21
+    - !!models.Category
+        name:       clothing_girls_jacket
+        imagePath:  images/subCategories/clothingGirlsJacket.jpg
+        parentCategory:
+             !!models.Category
+                  id: 40
+
+    #22
+    - !!models.Category
+        name:       clothing_girls_sweater
+        imagePath:  images/subCategories/clothingGirlsSweater.jpg
+        parentCategory:
+             !!models.Category
+                  id: 40
+
+    #23
+    - !!models.Category
+        name:       clothing_girls_trousers
+        imagePath:  images/subCategories/clothingGirlsTrousers.jpg
+        parentCategory:
+             !!models.Category
+                  id: 40
+
+    #24
+    - !!models.Category
+        name:       clothing_girls_tShirtAndTop
+        imagePath:  images/subCategories/clothingGirlsTShirtAndTop.jpg
+        parentCategory:
+             !!models.Category
+                  id: 40
+
+    #25
+    - !!models.Category
+        name:       clothing_girls_shirt
+        imagePath:  images/subCategories/clothingGirlsShirt.jpg
+        parentCategory:
+             !!models.Category
+                  id: 40
+
+
+    #40-clothing_girls---------SubCategories END-------------------
+
+    #26
     - !!models.Category
         name:    clothing_boys
         imagePath:  images/subCategories/clothingBoys.jpg
@@ -143,17 +256,90 @@ categories:
              !!models.Category
                   id: 1
 
-    #17
+    #26-clothing_boys---------SubCategories
+
+    #27
+    - !!models.Category
+        name:    clothing_boys_jacket
+        imagePath:  images/subCategories/clothingBoysJacket.jpg
+        parentCategory:
+             !!models.Category
+                  id: 26
+
+    #28
+    - !!models.Category
+        name:    clothing_boys_sweater
+        imagePath:  images/subCategories/clothingBoysSweater.jpg
+        parentCategory:
+             !!models.Category
+                  id: 26
+
+    #29
+    - !!models.Category
+        name:    clothing_boys_shirt
+        imagePath:  images/subCategories/clothingBoysShirt.jpg
+        parentCategory:
+             !!models.Category
+                  id: 26
+
+    #30
+    - !!models.Category
+        name:    clothing_boys_tShirt
+        imagePath:  images/subCategories/clothingBoysTShirt.jpg
+        parentCategory:
+             !!models.Category
+                  id: 26
+
+    #31
+    - !!models.Category
+        name:    clothing_boys_trousers
+        imagePath:  images/subCategories/clothingBoysTrousers.jpg
+        parentCategory:
+             !!models.Category
+                  id: 26
+
+    #26-clothing_boys---------SubCategories-END----------------
+
+    #32
     - !!models.Category
         name:    clothing_babies
         imagePath:  images/subCategories/clothingBabies.jpg
         parentCategory:
             !!models.Category
                  id: 1
-    #clothing ---------------------------------
+
+    #32-clothing_babies---------SubCategories
+
+    #33
+    - !!models.Category
+        name:    clothing_babies_dress
+        imagePath:  images/subCategories/clothingBabiesDress.jpg
+        parentCategory:
+            !!models.Category
+                 id: 32
+
+    #34
+    - !!models.Category
+        name:    clothing_babies_tools
+        imagePath:  images/subCategories/clothingBabiesTools.jpg
+        parentCategory:
+            !!models.Category
+                 id: 32
+
+    #35
+    - !!models.Category
+        name:    clothing_babies_shoes
+        imagePath:  images/subCategories/clothingBabiesShoes.jpg
+        parentCategory:
+            !!models.Category
+                 id: 32
+
+    #32-clothing_babies---------SubCategories-END----------------
+
+    #clothing --------------------------------- END ----------------
 
     #healthAndBeauty ---------------------------------
-    #18
+    #44
     - !!models.Category
         name:       healthAndBeauty_men
         imagePath:  images/subCategories/healthAndBeautyMen.jpg
@@ -161,13 +347,165 @@ categories:
              !!models.Category
                  id: 2
 
-    #19
+    #44-healthAndBeauty_men---------SubCategories
+
+    #45
+    - !!models.Category
+        name:       healthAndBeauty_men_colognePerfume
+        imagePath:  images/subCategories/healthAndBeautyMenColognePerfume.jpg
+        parentCategory:
+             !!models.Category
+                 id: 44
+
+    #46
+    - !!models.Category
+        name:       healthAndBeauty_men_shaving
+        imagePath:  images/subCategories/healthAndBeautyMenShaving.jpg
+        parentCategory:
+             !!models.Category
+                 id: 44
+
+    #47
+    - !!models.Category
+        name:       healthAndBeauty_men_hairAndBodyCare
+        imagePath:  images/subCategories/healthAndBeautyMenHairAndBodyCare.jpg
+        parentCategory:
+             !!models.Category
+                 id: 44
+
+    #48
+    - !!models.Category
+        name:       healthAndBeauty_men_lotion
+        imagePath:  images/subCategories/healthAndBeautyMenLotion.jpg
+        parentCategory:
+             !!models.Category
+                 id: 44
+
+    #44-healthAndBeauty_men---------SubCategories-END-----------------
+
+    #49
     - !!models.Category
         name:       healthAndBeauty_women
         imagePath:  images/subCategories/healthAndBeautyWomen.jpg
         parentCategory:
              !!models.Category
                  id: 2
+
+    #49-healthAndBeauty_women---------SubCategories
+
+    #50
+    - !!models.Category
+        name:       healthAndBeauty_women_eyeShadow
+        imagePath:  images/subCategories/healthAndBeautyWomenEyeShadow.jpg
+        parentCategory:
+             !!models.Category
+                 id: 49
+
+    #51
+    - !!models.Category
+        name:       healthAndBeauty_women_nailPolish
+        imagePath:  images/subCategories/healthAndBeautyWomenNailPolish.jpg
+        parentCategory:
+             !!models.Category
+                 id: 49
+
+    #52
+    - !!models.Category
+        name:       healthAndBeauty_women_foundation
+        imagePath:  images/subCategories/healthAndBeautyWomenFoundation.jpg
+        parentCategory:
+             !!models.Category
+                 id: 49
+
+    #53
+    - !!models.Category
+        name:       healthAndBeauty_women_eyeliner
+        imagePath:  images/subCategories/healthAndBeautyWomenEyeliner.jpg
+        parentCategory:
+             !!models.Category
+                 id: 49
+
+    #54
+    - !!models.Category
+        name:       healthAndBeauty_women_colognePerfume
+        imagePath:  images/subCategories/healthAndBeautyWomenColognePerfume.jpg
+        parentCategory:
+             !!models.Category
+                 id: 49
+
+    #55
+    - !!models.Category
+        name:       healthAndBeauty_women_brush
+        imagePath:  images/subCategories/healthAndBeautyWomenBrush.jpg
+        parentCategory:
+             !!models.Category
+                 id: 49
+
+    #56
+    - !!models.Category
+        name:       healthAndBeauty_women_eyebrowsMakeup
+        imagePath:  images/subCategories/healthAndBeautyWomenEyebrowsMakeup.jpg
+        parentCategory:
+             !!models.Category
+                 id: 49
+
+    #57
+    - !!models.Category
+        name:       healthAndBeauty_women_cheekRouge
+        imagePath:  images/subCategories/healthAndBeautyWomenCheekRouge.jpg
+        parentCategory:
+             !!models.Category
+                 id: 49
+
+    #58
+    - !!models.Category
+        name:       healthAndBeauty_women_creamPowder
+        imagePath:  images/subCategories/healthAndBeautyWomenCreamPowder.jpg
+        parentCategory:
+             !!models.Category
+                 id: 49
+
+    #59
+    - !!models.Category
+        name:       healthAndBeauty_women_mascara
+        imagePath:  images/subCategories/healthAndBeautyWomenMascara.jpg
+        parentCategory:
+             !!models.Category
+                 id: 49
+
+    #60
+    - !!models.Category
+        name:       healthAndBeauty_women_lipstick
+        imagePath:  images/subCategories/healthAndBeautyWomenLipstick.jpg
+        parentCategory:
+             !!models.Category
+                 id: 49
+
+    #65
+    - !!models.Category
+        name:       healthAndBeauty_women_makeupCleanser
+        imagePath:  images/subCategories/healthAndBeautyWomenMakeupCleanser.jpg
+        parentCategory:
+             !!models.Category
+                 id: 49
+
+    #66
+    - !!models.Category
+        name:       healthAndBeauty_women_hairAndBodyCare
+        imagePath:  images/subCategories/healthAndBeautyHairAndBodyCare.jpg
+        parentCategory:
+             !!models.Category
+                 id: 49
+
+    #67
+    - !!models.Category
+        name:       healthAndBeauty_women_eyeCream
+        imagePath:  images/subCategories/healthAndBeautyWomenEyeCream.jpg
+        parentCategory:
+             !!models.Category
+                 id: 49
+
+    #49-healthAndBeauty_women---------SubCategories-END----------------
 
     #20
     - !!models.Category

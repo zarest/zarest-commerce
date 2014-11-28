@@ -16,19 +16,127 @@ movieMusicTvSeries=فیلم موسیقی سریال
 # Clothing & healthBeauty ------------
 clothing_men=مردانه
 men=مردانه
+# Men Sub-cat-------------
+clothing_men_coatAndJacket=کت و کاپشن
+coatAndJacket=کت و کاپشن
+clothing_men_sweater=پلوور
+sweater=پلوور
+clothing_men_trousers=شلوار
+trousers=شلوار
+clothing_men_tShirt=تی شرت
+tShirt=تی شرت
+clothing_men_shirt=پیراهن
+shirt=پیراهن
+# Men Sub-cat END-------------
+
 clothing_women=زنانه
 women=زنانه
+# Women Sub-cat---------------
+clothing_women_purse=کیف زنانه
+purse=کیف زنانه
+clothing_women_overcoatAndJacket=مانتو و کاپشن
+overcoatAndJacket=مانتو و کاپشن
+clothing_women_sweater=پلوور
+##sweater=پلوور
+clothing_women_skirtAndNightDress=دامن و لباس شب
+skirtAndNightDress=دامن و لباس شب
+clothing_women_shirt=پیراهن
+##shirt=پیراهن
+clothing_women_scarf=روسری
+scarf=روسری
+clothing_women_tShirtAndTop=تی شرت و تاپ
+tShirtAndTop=تی شرت و تاپ
+clothing_women_trousers=شلوار
+##trousers=شلوار
+# Women Sub-cat END---------------
+
 clothing_girls=دخترانه
 girls=دخترانه
+# Girls Sub-cat---------------
+clothing_girls_jacket=کاپشن
+jacket=کاپشن
+clothing_girls_sweater=پلوور
+##sweater=پلوور
+clothing_girls_trousers=شلوار
+##trousers=شلوار
+clothing_girls_tShirtAndTop=تی شرت و تاپ
+##tShirtAndTop=تی شرت و تاپ
+clothing_girls_shirt=پیراهن
+##shirt=پیراهن
+# Girls Sub-cat END---------------
+
 clothing_boys=پسرانه
 boys=پسرانه
+# Boys Sub-cat---------------
+clothing_boys_jacket=کاپشن
+##jacket=کاپشن
+clothing_boys_sweater=پلوور
+##sweater=پلوور
+clothing_boys_trousers=شلوار
+##trousers=شلوار
+clothing_boys_tShirt=تی شرت
+##tShirt=تی شرت
+clothing_boys_shirt=پیراهن
+##shirt=پیراهن
+# Boys Sub-cat END---------------
+
 clothing_babies=نوزاد
 babies=نوزاد
+# Babies Sub-cat---------------
+clothing_babies_dress=لباس
+dress=لباس
+clothing_babies_tools=لوازم
+tools=لوازم
+clothing_babies_shoes=کفش
+shoes=کفش
+# Babies Sub-cat END---------------
 
 healthAndBeauty_men=مردانه
 ##men=مردانه
+# HealthAndBeauty_men Sub-cat---------------
+healthAndBeauty_men_colognePerfume=ادکلن
+##colognePerfume=ادکلن
+healthAndBeauty_men_shaving=اصلاح
+shaving=اصلاح
+healthAndBeauty_men_hairAndBodyCare=مراقبت مو و بدن
+##hairAndBodyCare=مراقبت مو و بدن
+healthAndBeauty_men_lotion=لوسیون
+lotion=لوسیون
+# HealthAndBeauty_men Sub-cat-END--------------
+
 healthAndBeauty_women=زنانه
 ##women=زنانه
+# HealthAndBeauty_women Sub-cat---------------
+healthAndBeauty_women_eyeShadow=سایه چشم
+eyeShadow=سایه چشم
+healthAndBeauty_women_nailPolish=لاک ناخن
+nailPolish=لاک ناخن
+healthAndBeauty_women_foundation=فونداسیون
+foundation=فونداسیون
+healthAndBeauty_women_eyeliner=خط چشم
+eyeliner=خط چشم
+healthAndBeauty_women_colognePerfume=ادکلن
+colognePerfume=ادکلن
+healthAndBeauty_women_brush=براش
+brush=براش
+healthAndBeauty_women_eyebrowsMakeup=آرایش ابرو
+eyebrowsMakeup=آرایش ابرو
+healthAndBeauty_women_cheekRouge=رژ گونه
+cheekRouge=رژ گونه
+healthAndBeauty_women_creamPowder=کرم پودر
+creamPowder=کرم پودر
+healthAndBeauty_women_mascara=ریمل
+mascara=ریمل
+healthAndBeauty_women_lipstick=رژ لب
+lipstick=رژ لب
+healthAndBeauty_women_makeupCleanser=پاک کننده آرایش
+makeupCleanser=پاک کننده آرایش
+healthAndBeauty_women_hairAndBodyCare=مراقبت مو و بدن
+hairAndBodyCare=مراقبت مو و بدن
+healthAndBeauty_women_eyeCream=کرم دور چشم
+eyeCream=کرم دور چشم
+# HealthAndBeauty_women Sub-cat-END--------------
+
 healthAndBeauty_babies=نوزاد
 ##babies=نوزاد
 

@@ -21,6 +21,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import static play.mvc.Results.notFound;
+
 /**
  * Created by meysamabl on 10/18/14.
  */
@@ -98,7 +100,7 @@ public class Global extends GlobalSettings {
 
     //@Override
     public Action onRequest(final Http.Request request, final Method actionMethod) {
-
+        Logger.info("Request: {}", request.toString());
         if (request.host().equals("fa.meysamabl.com")
                 && (request.cookie("PLAY_LANG") == null || !request.cookie("PLAY_LANG").value().equals("fa"))) {
             return new Action.Simple() {
@@ -124,4 +126,5 @@ public class Global extends GlobalSettings {
         return super.onRequest(request, actionMethod);
 
     }
+
 }

@@ -66,7 +66,8 @@ public class Application extends Controller {
     public static Result categoryProduct(String name) {
         String catName = name.replace('/', '_');
         Category cat = Category.findByName(catName);
-        return ok(product.render(cat.name, new ArrayList<>(cat.subCategories)));
+
+        return cat == null ? notFound("PageNotFound") : ok(product.render(cat.name, new ArrayList<>(cat.subCategories)));
 
     }
 
