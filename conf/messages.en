@@ -143,14 +143,66 @@ healthAndBeauty_babies=Babies
 #Electricity-----------------------------
 electric_phoneAndTablet=Phone & Tablet
 phoneAndTablet=Phone & Tablet
+# Electric_phoneAndTablet Sub-cat---------------
+electric_phoneAndTablet_cellphone=Cellphone
+cellphone=Cellphone
+electric_phoneAndTablet_tablet=Tablet
+tablet=Tablet
+electric_phoneAndTablet_smartWatch=Smart Watch
+smartWatch=Smart Watch
+electric_phoneAndTablet_accessories=Accessories
+##accessories=Accessories
+# Electric_phoneAndTablet Sub-cat-END--------------
+
 electric_desktopAndLaptop=Desktop & Laptop
 desktopAndLaptop=Desktop & Laptop
+# Electric_desktopAndLaptop Sub-cat---------------
+electric_desktopAndLaptop_desktop=Desktop
+desktop=Desktop
+electric_desktopAndLaptop_laptop=Laptop
+laptop=Laptop
+electric_desktopAndLaptop_accessories=Accessories
+##accessories=Accessories
+# Electric_desktopAndLaptop Sub-cat-END--------------
+
 electric_tvAndHomeCinema=TV & Home Cinema
 tvAndHomeCinema=TV & Home Cinema
+# Electric_tvAndHomeCinema Sub-cat---------------
+
+# Electric_tvAndHomeCinema Sub-cat-END--------------
+
 electric_filmingAndPhotography=Filming & photography
 filmingAndPhotography=Filming & photography
+# Electric_filmingAndPhotography Sub-cat---------------
+electric_filmingAndPhotography_photography=Photography
+photography=Photography
+electric_filmingAndPhotography_filming=Filming
+filming=Filming
+electric_filmingAndPhotography_light=Light
+light=Light
+electric_filmingAndPhotography_lenses=Lenses
+lenses=Lenses
+electric_filmingAndPhotography_screen=Screen
+screen=Screen
+electric_filmingAndPhotography_accessories=Accessories
+##accessories=Accessories
+# Electric_filmingAndPhotography Sub-cat-END--------------
+
 electric_mouseKeyboardAndHeadset=Mouse Keyboard & Headset
 mouseKeyboardAndHeadset=Mouse Keyboard & Headset
+# Electric_mouseKeyboardAndHeadset Sub-cat---------------
+electric_mouseKeyboardAndHeadset_mouse=Mouse
+mouse=Mouse
+electric_mouseKeyboardAndHeadset_keyboard=Keyboard
+keyboard=Keyboard
+electric_mouseKeyboardAndHeadset_pad=Pad
+pad=Pad
+electric_mouseKeyboardAndHeadset_headset=Headset
+headset=Headset
+electric_mouseKeyboardAndHeadset_controller=Controller
+controller=Controller
+# Electric_mouseKeyboardAndHeadset Sub-cat-END--------------
+
 electric_mp3Player=MP3 Player
 mp3Player=MP3 Player
 electric_carElectricity=Car Electrical System

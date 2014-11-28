@@ -507,7 +507,7 @@ categories:
 
     #49-healthAndBeauty_women---------SubCategories-END----------------
 
-    #20
+    #68
     - !!models.Category
         name:    healthAndBeauty_babies
         imagePath:  images/subCategories/healthAndBeautyBabies.jpg
@@ -518,15 +518,51 @@ categories:
     #health&Beauty ---------------------------------
 
     #Electricity ---------------------------------
-    #33
+    #69
     - !!models.Category
-            name:       electric_phoneAndTablet
-            imagePath:  images/subCategories/electricPhoneAndTablet.jpg
-            parentCategory:
-                 !!models.Category
-                     id: 3
+        name:       electric_phoneAndTablet
+        imagePath:  images/subCategories/electricPhoneAndTablet.jpg
+        parentCategory:
+             !!models.Category
+                 id: 3
 
-    #34
+    #69-electric_phoneAndTablet---------SubCategories
+
+    #70
+    - !!models.Category
+        name:       electric_phoneAndTablet_cellphone
+        imagePath:  images/subCategories/electricPhoneAndTabletCellPhone.jpg
+        parentCategory:
+             !!models.Category
+                 id: 69
+
+    #71
+    - !!models.Category
+        name:       electric_phoneAndTablet_tablet
+        imagePath:  images/subCategories/electricPhoneAndTabletTablet.jpg
+        parentCategory:
+             !!models.Category
+                 id: 69
+
+    #72
+    - !!models.Category
+        name:       electric_phoneAndTablet_smartWatch
+        imagePath:  images/subCategories/electricPhoneAndTabletSmartWatch.jpg
+        parentCategory:
+             !!models.Category
+                 id: 69
+
+    #73
+    - !!models.Category
+        name:       electric_phoneAndTablet_accessories
+        imagePath:  images/subCategories/electricPhoneAndTabletAccessories.jpg
+        parentCategory:
+             !!models.Category
+                 id: 69
+
+    #69-electric_phoneAndTablet---------SubCategories-END---------------------
+
+    #74
     - !!models.Category
         name:       electric_desktopAndLaptop
         imagePath:  images/subCategories/electricDesktopAndLaptop.jpg
@@ -534,7 +570,34 @@ categories:
              !!models.Category
                  id: 3
 
-    #35
+    #74-electric_desktopAndLaptop---------SubCategories
+    #75
+    - !!models.Category
+        name:       electric_desktopAndLaptop_desktop
+        imagePath:  images/subCategories/electricDesktopAndLaptopDesktop.jpg
+        parentCategory:
+             !!models.Category
+                 id: 74
+
+    #76
+    - !!models.Category
+        name:       electric_desktopAndLaptop_laptop
+        imagePath:  images/subCategories/electricDesktopAndLaptopLaptop.jpg
+        parentCategory:
+             !!models.Category
+                 id: 74
+
+    #77
+    - !!models.Category
+        name:       electric_desktopAndLaptop_accessories
+        imagePath:  images/subCategories/electricDesktopAndLaptopAccessories.jpg
+        parentCategory:
+             !!models.Category
+                 id: 74
+
+    #74-electric_desktopAndLaptop---------SubCategories-END-------------------
+
+    #78
     - !!models.Category
         name:       electric_tvAndHomeCinema
         imagePath:  images/subCategories/electricTvAndHomeCinema.jpg
@@ -542,7 +605,12 @@ categories:
              !!models.Category
                   id: 3
 
-    #36
+    #78-electric_tvAndHomeCinema---------SubCategories
+
+
+    #78-electric_tvAndHomeCinema---------SubCategories-END---------------
+
+    #79
     - !!models.Category
         name:    electric_filmingAndPhotography
         imagePath:  images/subCategories/electricFilmingAndPhotography.jpg
@@ -550,13 +618,107 @@ categories:
              !!models.Category
                   id: 3
 
-    #37
+    #79-electric_filmingAndPhotography---------SubCategories
+    #80
+    - !!models.Category
+        name:    electric_filmingAndPhotography_photography
+        imagePath:  images/subCategories/electricFilmingAndPhotographyPhotography.jpg
+        parentCategory:
+             !!models.Category
+                  id: 79
+
+    #81
+    - !!models.Category
+        name:    electric_filmingAndPhotography_filming
+        imagePath:  images/subCategories/electricFilmingAndPhotographyFilming.jpg
+        parentCategory:
+             !!models.Category
+                  id: 79
+
+    #82
+    - !!models.Category
+        name:    electric_filmingAndPhotography_light
+        imagePath:  images/subCategories/electricFilmingAndPhotographyLight.jpg
+        parentCategory:
+             !!models.Category
+                  id: 79
+
+    #83
+    - !!models.Category
+        name:    electric_filmingAndPhotography_lenses
+        imagePath:  images/subCategories/electricFilmingAndPhotographyLenses.jpg
+        parentCategory:
+             !!models.Category
+                  id: 79
+
+    #84
+    - !!models.Category
+        name:    electric_filmingAndPhotography_screen
+        imagePath:  images/subCategories/electricFilmingAndPhotographyScreen.jpg
+        parentCategory:
+             !!models.Category
+                  id: 79
+
+    #85
+    - !!models.Category
+        name:    electric_filmingAndPhotography_accessories
+        imagePath:  images/subCategories/electricFilmingAndPhotographyAccessories.jpg
+        parentCategory:
+             !!models.Category
+                  id: 79
+
+    #78-electric_filmingAndPhotography---------SubCategories-END---------------
+
+    #98
     - !!models.Category
         name:    electric_mouseKeyboardAndHeadset
         imagePath:  images/subCategories/electricMouseAndKeyboardAndHeadset.jpg
         parentCategory:
             !!models.Category
                  id: 3
+
+    #98-electric_mouseKeyboardAndHeadset---------SubCategories
+    #99
+    - !!models.Category
+        name:    electric_mouseKeyboardAndHeadset_mouse
+        imagePath:  images/subCategories/electricMouseAndKeyboardAndHeadsetMouse.jpg
+        parentCategory:
+            !!models.Category
+                 id: 98
+
+    #100
+    - !!models.Category
+        name:    electric_mouseKeyboardAndHeadset_keyboard
+        imagePath:  images/subCategories/electricMouseAndKeyboardAndHeadsetKeyboard.jpg
+        parentCategory:
+            !!models.Category
+                 id: 98
+
+    #81
+    - !!models.Category
+        name:    electric_mouseKeyboardAndHeadset_pad
+        imagePath:  images/subCategories/electricMouseAndKeyboardAndHeadsetPad.jpg
+        parentCategory:
+            !!models.Category
+                 id: 98
+
+    #82
+    - !!models.Category
+        name:    electric_mouseKeyboardAndHeadset_headset
+        imagePath:  images/subCategories/electricMouseAndKeyboardAndHeadsetHeadset.jpg
+        parentCategory:
+            !!models.Category
+                 id: 98
+
+    #83
+    - !!models.Category
+        name:    electric_mouseKeyboardAndHeadset_controller
+        imagePath:  images/subCategories/electricMouseAndKeyboardAndHeadsetController.jpg
+        parentCategory:
+            !!models.Category
+                 id: 98
+
+    #98-electric_mouseKeyboardAndHeadset---------SubCategories-END---------------
 
     #38
     - !!models.Category

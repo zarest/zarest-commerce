@@ -143,16 +143,69 @@ healthAndBeauty_babies=نوزاد
 #Electricity --------------------
 electric_phoneAndTablet=تلفن و تبلت
 phoneAndTablet=تلفن و تبلت
+# Electric_phoneAndTablet Sub-cat---------------
+electric_phoneAndTablet_cellphone=موبایل
+cellphone=موبایل
+electric_phoneAndTablet_tablet=تبلت
+tablet=تبلت
+electric_phoneAndTablet_smartWatch=ساعت هوشمند
+smartWatch=ساعت هوشمند
+electric_phoneAndTablet_accessories=لوازم جانبی
+##accessories=Accessories
+# Electric_phoneAndTablet Sub-cat-END--------------
+
 electric_desktopAndLaptop=دسکتاپ و لپ تاپ
 desktopAndLaptop=دسکتاپ و لپ تاپ
+# Electric_desktopAndLaptop Sub-cat---------------
+electric_desktopAndLaptop_desktop=دسکتاپ
+desktop=دسکتاپ
+electric_desktopAndLaptop_laptop=لپ تاپ
+laptop=لپ تاپ
+electric_desktopAndLaptop_accessories=لوازم جانبی
+##accessories=لوازم جانبی
+# Electric_desktopAndLaptop Sub-cat-END--------------
+
 electric_tvAndHomeCinema=تلویزیون و سینمای خانگی
 tvAndHomeCinema=تلویزیون و سینمای خانگی
-electric_filmingAndPhotography=فیلمبرداری و عکسبرداری
-filmingAndPhotography=فیلمبرداری و عکسبرداری
+
+electric_filmingAndPhotography=فیلمبرداری و عکاسی
+filmingAndPhotography=فیلمبرداری و عکاسی
+# Electric_filmingAndPhotography Sub-cat---------------
+electric_filmingAndPhotography_photography=عکاسی
+photography=عکاسی
+electric_filmingAndPhotography_filming=فیلمبرداری
+filming=فیلمبرداری
+electric_filmingAndPhotography_light=نور
+light=نور
+electric_filmingAndPhotography_lenses=لنز
+lenses=لنز
+electric_filmingAndPhotography_screen=پرده
+screen=پرده
+electric_filmingAndPhotography_accessories=لوازم جانبی
+##accessories=لوازم جانبی
+# Electric_filmingAndPhotography Sub-cat-END--------------
+
 electric_mouseKeyboardAndHeadset=موس کیبورد و هدست
 mouseKeyboardAndHeadset=موس کیبورد و هدست
+# Electric_mouseKeyboardAndHeadset Sub-cat---------------
+electric_mouseKeyboardAndHeadset_mouse=موس
+mouse=موس
+electric_mouseKeyboardAndHeadset_keyboard=کیبورد
+keyboard=کیبورد
+electric_mouseKeyboardAndHeadset_pad=پد
+pad=پد
+electric_mouseKeyboardAndHeadset_headset=هدست
+headset=هدست
+electric_mouseKeyboardAndHeadset_controller=کنترلر
+controller=کنترلر
+# Electric_mouseKeyboardAndHeadset Sub-cat-END--------------
+
 electric_mp3Player=پخش MP3
 mp3Player=پخش MP3
+# Electric_mouseKeyboardAndHeadset Sub-cat---------------
+
+# Electric_mouseKeyboardAndHeadset Sub-cat-END--------------
+
 electric_carElectricity=الکتریکی اتومبیل
 carElectricity=الکتریکی اتومبیل
 electric_screenAndProjector=صفحه و پروژکتور
