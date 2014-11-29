@@ -9,7 +9,7 @@
                 } else {
                 <li class="dropdown-submenu ">
                 }
-            <a href="#" target="_top" title="@Messages.get(category.name)">@Messages.get(category.name)</a>
+            <a href="@routes.Application.categoryProduct(category.getRoutePath)" target="_top" title="@Messages.get(category.name)">@Messages.get(category.name)</a>
             @if(category.subCategories != null && !category.subCategories.isEmpty && showsubMenu) {
                 <ul class="dropdown-menu">
                 @for(subCate <- category.subCategories) {
@@ -19,12 +19,12 @@
                         <li class="dropdown-submenu ">
                         }
 
-                    <a href="#" target="_top" title="@Messages.get(subCate.name)">@Messages.get(subCate.name)</a>
+                    <a href="@routes.Application.categoryProduct(subCate.getRoutePath)" target="_top" title="@Messages.get(subCate.name)">@Messages.get(subCate.name)</a>
                     @if(subCate.subCategories != null && !subCate.subCategories.isEmpty) {
-                        <ul>
+                        <ul class="dropdown-menu">
                         @for(sub2 <- subCate.subCategories) {
                             <li>
-                                <a href="#" target="_top" title="@Messages.get(sub2.name)">@Messages.get(sub2.name)</a>
+                                <a href="@routes.Application.categoryProduct(sub2.getRoutePath)" target="_top" title="@Messages.get(sub2.name)">@Messages.get(sub2.name)</a>
                             </li>
                         }
                         </ul>
