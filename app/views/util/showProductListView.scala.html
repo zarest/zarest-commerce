@@ -1,0 +1,49 @@
+@(products: List[Product])
+@import play.i18n._
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/productList.css")">
+    <!-- Begin of rows -->
+@for(product <- products) {
+    <div class="row carousel-row">
+        <div class="col-xs-12 col-xs-offset-0 slide-row">
+            <div id="carousel-@{
+                products.indexOf(product) + 1
+            }" class="carousel slide slide-carousel" data-ride="carousel">
+                    <!-- Indicators -->
+                <ol class="carousel-indicators" style="padding: 0;">
+                @for(img <- product.images) {
+                    <li data-target="#carousel-@{
+                        products.indexOf(product) + 1
+                    }" data-slide-to="@product.images.indexOf(img)" class="@{
+                        if(product.images.indexOf(img) == 0) "active"
+                    }"></li>
+                }
+                </ol>
+
+                    <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                @for(img <- product.images) {
+                    <div class="item @{
+                        if(product.images.indexOf(img) == 0) "active"
+                    }">
+                        <img src="@routes.Assets.at(img.filePath)" alt="@img.caption">
+                    </div>
+                }
+                </div>
+            </div>
+            <div class="slide-content">
+                <h4>@product.productName</h4>
+                <p>
+                    @product.productDescription @product.unitPrice
+                </p>
+            </div>
+            <div class="slide-footer">
+                <span class="pull-right buttons">
+                    <a class="btn-cart" href="@routes.Application.categoryProduct(product.getRoutePath)"><i class="fa fa-fw fa-eye"></i> @Messages.get("view")</a>
+                    @*<a class="btn btn-sm btn-primary"><i class="fa fa-fw fa-shopping-cart"></i> @Messages.get("addToCart")</a>*@
+                    <a title="@Messages.get("addToCart")" href="#" class="btn-cart"><i class="fa fa-fw fa-shopping-cart"></i> <span>@Messages.get("addToCart")</span></a>
+                </span>
+            </div>
+        </div>
+    </div>
+}
+

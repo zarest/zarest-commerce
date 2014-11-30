@@ -403,6 +403,8 @@ createUser=Create User
 createCustomer=Create Customer
 createCategory=Create Category
 createProduct=Create Product
+view=View
+
 
 #Index.html----------------
 

@@ -21,6 +21,10 @@
             '_showConstraints -> false, '_label -> Messages.get("categoryLevel", "2"), 'style -> "width: 180px;",
             '_default -> Messages.get("chooseCategory"), '_id -> "level2Parent", 'id -> "level2")
 
+        @helper.select(productForm("category"), helper.options(),
+            '_showConstraints -> false, '_label -> Messages.get("categoryLevel", "3"), 'style -> "width: 180px;",
+            '_default -> Messages.get("chooseCategory"), '_id -> "level3Parent", 'id -> "level3")
+
         @inputText(productForm("productName"), '_help -> Messages.get("required"), '_label -> Messages.get("productName"),
             'placeholder -> Messages.get("productName"), '_class -> "input-small")
 

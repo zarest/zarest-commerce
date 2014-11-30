@@ -1,12 +1,9 @@
-@()
+@(bodyHeader : String, products : List[Product])
+@import views.html.util._
+@import play.i18n._
+@main(Messages.get(bodyHeader), Application.getCurrentLang) {
+    @mainContent(Messages.get(bodyHeader)) {
+        @showProductListView(products)
+    }
 
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12 pull-right">
-            <i class="fa fa-list"></i>
-        </div>
-    </div>
-    <div class="row">
-
-    </div>
-</div>
+}

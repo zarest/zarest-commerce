@@ -10,6 +10,7 @@ GET         /products                         controllers.Application.productPag
 GET         /products/*catName                controllers.Application.categoryProduct(catName)
 GET         /aboutUs                          controllers.Application.aboutUsPage()
 GET         /contactUs                        controllers.Application.contactUs()
+GET         /shoppingCart                     controllers.Application.shoppingCart()
 GET         /login                            controllers.Application.login()
 POST        /login                            controllers.Application.authenticate()
 GET         /logout                           controllers.Application.logout()

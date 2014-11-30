@@ -80,13 +80,16 @@ public class Product extends Model {
     public String warrantySpecification;
     public String note;
 
-//    public String validate() {
+    //    public String validate() {
 //        if (images.isEmpty()) {
 //            return Messages.get("image.required");
 //        }
 //        return null;
 //    }
-
+    public String getRoutePath() {
+        String path = category.name + "_" + this.id;
+        return path.replace('_', '/');
+    }
 
     public static Finder<Long, Product> find = new Finder<Long, Product>(Long.class, Product.class);
 

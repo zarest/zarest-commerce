@@ -2,6 +2,7 @@ package controllers;
 
 import jsmessages.JsMessages;
 import models.Category;
+import models.Product;
 import models.User;
 import play.*;
 import play.data.DynamicForm;
@@ -14,6 +15,7 @@ import views.html.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static play.data.Form.form;
 
@@ -64,11 +66,25 @@ public class Application extends Controller {
     }
 
     public static Result categoryProduct(String name) {
+        List<String> paths = Arrays.asList(name.split("/"));
+        if (isNumeric(paths.get(paths.size() - 1))) {
+            Long id = Long.parseLong(paths.get(paths.size() - 1));
+            Product product = Product.find.byId(1l);
+            return ok(viewProduct.render(product.productName, product));
+        }
         String catName = name.replace('/', '_');
         Category cat = Category.findByName(catName);
+        if (!cat.products.isEmpty()) {
+            return ok(showProducts.render(cat.name, cat.products));
+        } else {
+            return cat == null ? notFound("PageNotFound") :
+                    ok(product.render(cat.name, new ArrayList<>(cat.subCategories)));
 
-        return cat == null ? notFound("PageNotFound") : ok(product.render(cat.name, new ArrayList<>(cat.subCategories)));
+        }
+    }
 
+    private static boolean isNumeric(String str) {
+        return str.matches("-?\\d+(\\.\\d+)?");  //match a number with optional '-' and decimal.
     }
 
     public static Result javascriptRoutes() {
@@ -82,6 +98,10 @@ public class Application extends Controller {
 //                        controllers.routes.javascript.Projects.addGroup()
                 )
         );
+    }
+
+    public static Result shoppingCart() {
+        return ok(shoppingCart.render(Messages.get("shoppingCart"), Product.find.all()));
     }
 
     // -- Authentication

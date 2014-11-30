@@ -51,6 +51,10 @@ $(document).ready(function () {
         $('#sideToggle').parent().removeClass('pull-left').addClass('pull-right');
         $('.row-offcanvas').toggleClass('row-offcanvas-right');
         $('.has-feedback').toggleClass('has-feedback-right');
+        $('.slide-footer' ).toggleClass('right');
+        $('.slide-content').toggleClass('right');
+        $('.slide-carousel').toggleClass('right');
+        $('.buttons').removeClass('pull-right').addClass('pull-left');
 
     } else {
         $('link[href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.2.0-rc2/css/bootstrap-rtl.min.css"]')
@@ -59,6 +63,11 @@ $(document).ready(function () {
         //$('#myNavbar').attr('style', 'padding-left: 100px');
         $('.has-feedback').toggleClass('has-feedback-left');
         $('.row-offcanvas').toggleClass('row-offcanvas-left');
+        $('.slide-footer' ).toggleClass('left');
+        $('.slide-content').toggleClass('left');
+        $('.slide-carousel').toggleClass('left');
+        $('.buttons').removeClass('pull-left').addClass('pull-right');
+
     }
 
 });
