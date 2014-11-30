@@ -401,6 +401,9 @@ createCustomer=ایجاد مشتری
 createCategory=ایجاد کتگوری
 createProduct=ایجاد محصول
 view=بازدید
+list=لیست
+grid=شبکه
+
 
 
 #Index.html----------------

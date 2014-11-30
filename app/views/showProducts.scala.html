@@ -5,10 +5,12 @@
 @main(Messages.get(bodyHeader), Application.getCurrentLang) {
     <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/productList.css")">
     @mainContent(Messages.get(bodyHeader)) {
-        <div class="row toolbar">
-            <div class="col-xs-12 pull-right">
-                <a href="#" class="button btn-cart">@Messages.get("list")</a>
-                <a href="#" class="button btn-cart">@Messages.get("grid")</a>
+        <div class="container-fluid">
+            <div class="row toolbar">
+                <div class="col-xs-5">
+                    <a href="#" class="btn-cart"><i class="fa fa-list fa-lg"></i><span class="hidden-xs">&nbsp; @Messages.get("list")</span></a>
+                    <a href="#" class="btn-cart"><i class="fa fa-th fa-lg"></i><span class="hidden-xs">&nbsp;  @Messages.get("grid")</span></a>
+                </div>
             </div>
         </div>
         @showProductListView(currentPage, currentSortBy, currentOrder, currentFilter)

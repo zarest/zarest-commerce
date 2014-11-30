@@ -404,7 +404,8 @@ createCustomer=Create Customer
 createCategory=Create Category
 createProduct=Create Product
 view=View
-
+list=List
+grid=Grid
 
 #Index.html----------------
 
