@@ -75,7 +75,9 @@ public class Application extends Controller {
         String catName = name.replace('/', '_');
         Category cat = Category.findByName(catName);
         if (!cat.products.isEmpty()) {
-            return ok(showProducts.render(cat.name, cat.products));
+             return ok(showProducts.render(cat.name,
+                     Product.pageForCategory(cat, 0, 10, "productName", "asc", ""),
+                     "productName", "asc", ""));
         } else {
             return cat == null ? notFound("PageNotFound") :
                     ok(product.render(cat.name, new ArrayList<>(cat.subCategories)));

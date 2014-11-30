@@ -1,9 +1,17 @@
-@(bodyHeader : String, products : List[Product])
+@(bodyHeader : String, currentPage: com.avaje.ebean.Page[Product],
+        currentSortBy: String, currentOrder: String, currentFilter: String)
 @import views.html.util._
 @import play.i18n._
 @main(Messages.get(bodyHeader), Application.getCurrentLang) {
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/productList.css")">
     @mainContent(Messages.get(bodyHeader)) {
-        @showProductListView(products)
+        <div class="row toolbar">
+            <div class="col-xs-12 pull-right">
+                <a href="#" class="button btn-cart">@Messages.get("list")</a>
+                <a href="#" class="button btn-cart">@Messages.get("grid")</a>
+            </div>
+        </div>
+        @showProductListView(currentPage, currentSortBy, currentOrder, currentFilter)
     }
 
 }

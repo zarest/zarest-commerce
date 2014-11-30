@@ -1,18 +1,18 @@
-@(products: List[Product])
+@(products: com.avaje.ebean.Page[Product],
+        currentSortBy: String, currentOrder: String, currentFilter: String)
 @import play.i18n._
-<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/productList.css")">
     <!-- Begin of rows -->
-@for(product <- products) {
+@for(product <- products.getList) {
     <div class="row carousel-row">
         <div class="col-xs-12 col-xs-offset-0 slide-row">
             <div id="carousel-@{
-                products.indexOf(product) + 1
+                products.getList.indexOf(product) + 1
             }" class="carousel slide slide-carousel" data-ride="carousel">
                     <!-- Indicators -->
                 <ol class="carousel-indicators" style="padding: 0;">
                 @for(img <- product.images) {
                     <li data-target="#carousel-@{
-                        products.indexOf(product) + 1
+                        products.getList.indexOf(product) + 1
                     }" data-slide-to="@product.images.indexOf(img)" class="@{
                         if(product.images.indexOf(img) == 0) "active"
                     }"></li>

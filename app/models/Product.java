@@ -1,5 +1,6 @@
 package models;
 
+import com.avaje.ebean.Page;
 import play.data.validation.Constraints.*;
 import play.db.ebean.Model;
 import play.i18n.Messages;
@@ -92,6 +93,49 @@ public class Product extends Model {
     }
 
     public static Finder<Long, Product> find = new Finder<Long, Product>(Long.class, Product.class);
+
+    /**
+     * Return a page of product for each category
+     *
+     * @param category products of the category
+     * @param page     Page to display
+     * @param pageSize Number of Product per page
+     * @param sortBy   Product property used for sorting
+     * @param order    Sort order (either or asc or desc)
+     * @param filter   Filter applied on the name column
+     */
+    public static Page<Product> pageForCategory(Category category, int page, int pageSize, String sortBy, String order, String filter) {
+        return
+                find.where()
+                        .eq("category", category)
+                        .ilike("productName", "%" + filter + "%")
+                        .orderBy(sortBy + " " + order)
+//                        .fetch("products")
+                        .findPagingList(pageSize)
+                        .setFetchAhead(false)
+                        .getPage(page);
+    }
+
+    /**
+     * Return a page of Category
+     *
+     * @param page     Page to display
+     * @param pageSize Number of Product per page
+     * @param sortBy   Product property used for sorting
+     * @param order    Sort order (either or asc or desc)
+     * @param filter   Filter applied on the name column
+     */
+    public static Page<Product> page(int page, int pageSize, String sortBy, String order, String filter) {
+        return
+                find.where()
+                        .ilike("productName", "%" + filter + "%")
+                        .orderBy(sortBy + " " + order)
+//                        .fetch("products")
+                        .findPagingList(pageSize)
+                        .setFetchAhead(false)
+                        .getPage(page);
+    }
+
 
 
 }
