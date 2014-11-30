@@ -6,6 +6,13 @@ if (window.console) {
 
 $(document).ready(function () {
 
+    $('#viewOption a').click(function() {
+        $(this).siblings('.active').removeClass('active');
+        if(!$(this).hasClass('active')) {
+            $(this).addClass('active');
+        }
+    });
+
     $('[data-toggle="offcanvas"]').click(function () {
         $('.row-offcanvas').toggleClass('active')
     });
