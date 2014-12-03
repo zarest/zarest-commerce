@@ -100,7 +100,7 @@ public class Global extends GlobalSettings {
 
     //@Override
     public Action onRequest(final Http.Request request, final Method actionMethod) {
-        Logger.info("Request: {}", request.toString());
+        Logger.info("Request: {}", request.path());
         if (request.host().equals("fa.meysamabl.com")
                 && (request.cookie("PLAY_LANG") == null || !request.cookie("PLAY_LANG").value().equals("fa"))) {
             return new Action.Simple() {

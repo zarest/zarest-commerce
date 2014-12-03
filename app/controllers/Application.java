@@ -5,12 +5,15 @@ import models.Category;
 import models.Product;
 import models.User;
 import play.*;
+import play.api.mvc.*;
 import play.data.DynamicForm;
 import play.data.Form;
 import play.i18n.Lang;
 import play.i18n.Messages;
 import play.mvc.*;
 
+import play.mvc.Controller;
+import play.mvc.Result;
 import views.html.*;
 
 import java.util.ArrayList;
@@ -43,7 +46,7 @@ public class Application extends Controller {
         changeLang(locale);
         if (request().hasHeader(REFERER)) {
             String refererURL = request().getHeader(REFERER);
-            //Logger.info("My URL: " + refererURL);
+            Logger.info("My URL: " + refererURL);
             return redirect(refererURL);
         } else {
             //Logger.info("GOING BACK HOME: " + routes.Application.index().absoluteURL(request()));
@@ -65,7 +68,9 @@ public class Application extends Controller {
                 Category.findSuperParentCategories()));
     }
 
-    public static Result categoryProduct(String name) {
+    public static Result categoryProduct(String name, Boolean list) {
+        Logger.debug("Path: {}", name);
+        Logger.debug("list: {}", list);
         List<String> paths = Arrays.asList(name.split("/"));
         if (isNumeric(paths.get(paths.size() - 1))) {
             Long id = Long.parseLong(paths.get(paths.size() - 1));
@@ -74,14 +79,29 @@ public class Application extends Controller {
         }
         String catName = name.replace('/', '_');
         Category cat = Category.findByName(catName);
+        if (cat == null) {
+            return notFound("PageNotFound");
+        }
         if (!cat.products.isEmpty()) {
-             return ok(showProducts.render(cat.name,
-                     Product.pageForCategory(cat, 0, 10, "productName", "asc", ""),
-                     "productName", "asc", ""));
+            return ok(showProducts.render(cat.name,
+                    Product.pageForCategory(cat, 0, 10, "productName", "asc", ""),
+                    "productName", "asc", "", list));
         } else {
-            return cat == null ? notFound("PageNotFound") :
-                    ok(product.render(cat.name, new ArrayList<>(cat.subCategories)));
+            return ok(product.render(cat.name, new ArrayList<>(cat.subCategories)));
 
+        }
+    }
+
+    public static Result listProducts(
+            String name, int page, int pageSize, String sortBy, String order, String filter, Boolean list) {
+        String catName = name.replace('/', '_');
+        Category cat = Category.findByName(catName);
+        if (cat == null) {
+            return notFound("PageNotFound");
+        } else {
+            return ok(showProducts.render(cat.name,
+                    Product.pageForCategory(cat, page, pageSize, sortBy, order, filter),
+                    sortBy, order, filter, list));
         }
     }
 
