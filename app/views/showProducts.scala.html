@@ -9,8 +9,8 @@
         <div class="container-fluid">
             <div class="row toolbar">
                 <div class="col-xs-5" id="viewOption">
-                    <a href="@routes.Application.categoryProduct(request.path.toString().substring(10), true)" class="btn-cart @{if(list) "active"}"><i class="fa fa-list fa-lg"></i><span class="hidden-xs">&nbsp; @Messages.get("list")</span></a>
-                    <a href="@routes.Application.categoryProduct(request.path.toString().substring(10), false)" class="btn-cart @{if(!list) "active"}"><i class="fa fa-th fa-lg"></i><span class="hidden-xs">&nbsp;  @Messages.get("grid")</span></a>
+                    <a href="@routes.Application.categoryProduct(currentPage.getList.get(0).category.getRoutePath, true)" class="btn-cart @{if(list) "active"}"><i class="fa fa-list fa-lg"></i><span class="hidden-xs">&nbsp; @Messages.get("list")</span></a>
+                    <a href="@routes.Application.categoryProduct(currentPage.getList.get(0).category.getRoutePath, false)" class="btn-cart @{if(!list) "active"}"><i class="fa fa-th fa-lg"></i><span class="hidden-xs">&nbsp;  @Messages.get("grid")</span></a>
                 </div>
             </div>
         </div>
