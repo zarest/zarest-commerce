@@ -6,12 +6,19 @@ if (window.console) {
 
 $(document).ready(function () {
 
-//    $('#viewOption a').click(function() {
-//        $(this).siblings('.active').removeClass('active');
-//        if(!$(this).hasClass('active')) {
-//            $(this).addClass('active');
-//        }
-//    });
+    persian={0:'۰',1:'۱',2:'۲',3:'۳',4:'۴',5:'۵',6:'۶',7:'۷',8:'۸',9:'۹'};
+    function traverse(el){
+        if(el.nodeType==3){
+            var list=el.data.match(/[0-9]/g);
+            if(list!=null && list.length!=0){
+                for(var i=0;i<list.length;i++)
+                    el.data=el.data.replace(list[i],persian[list[i]]);
+            }
+        }
+        for(var i=0;i<el.childNodes.length;i++){
+            traverse(el.childNodes[i]);
+        }
+    }
 
     $('[data-toggle="offcanvas"]').click(function () {
         $('.row-offcanvas').toggleClass('active')
@@ -52,6 +59,7 @@ $(document).ready(function () {
     if (lang == "fa") {
         $('link[href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.2.0-rc2/css/bootstrap-rtl.min.css"]')
             .prop("disabled", false);
+        traverse(document.body);
         $('form').removeClass('navbar-right').addClass('navbar-left');
         //$('#myNavbar').attr('style', 'padding-right: 100px');
         $('.dropdown-submenu').toggleClass('rightSub');

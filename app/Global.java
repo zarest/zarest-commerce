@@ -3,6 +3,7 @@ import controllers.Secured;
 import models.Category;
 import models.Country;
 import models.Supplier;
+import models.User;
 import play.Application;
 import play.GlobalSettings;
 import play.Logger;
@@ -75,7 +76,7 @@ public class Global extends GlobalSettings {
     @Override
     @Transactional
     public void onStart(Application app) {
-        if (Category.find.findRowCount() == 0) {
+        if (User.find.findRowCount() == 0) {
 
             @SuppressWarnings("unchecked")
             Map<String, List<Object>> all = (Map<String, List<Object>>) Yaml.load("initial-data.yml");
