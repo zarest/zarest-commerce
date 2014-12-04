@@ -8,16 +8,14 @@ import play.i18n.Messages;
 import javax.persistence.*;
 import javax.validation.Valid;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.text.Collator;
+import java.util.*;
 
 /**
  * Created by meysamabl on 10/18/14.
  */
 @Entity
-public class Product extends Model {
+public class Product extends Model implements Comparable<Product> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -137,5 +135,9 @@ public class Product extends Model {
     }
 
 
+    @Override
+    public int compareTo(Product o) {
+        return Collator.getInstance(new Locale("ar")).compare(Messages.get(this.productName), Messages.get(o.productName));
+    }
 
 }

@@ -10,6 +10,7 @@ import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.*;
+import java.util.logging.MemoryHandler;
 
 @Entity
 public class Category extends Model implements Comparable<Category> {
@@ -128,6 +129,6 @@ public class Category extends Model implements Comparable<Category> {
 
     @Override
     public int compareTo(Category o) {
-        return this.name.compareTo(o.name);
+        return Messages.get(this.name).compareTo(Messages.get(o.name));
     }
 }
