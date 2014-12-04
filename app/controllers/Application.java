@@ -88,7 +88,7 @@ public class Application extends Controller {
                     Product.pageForCategory(cat, page, pageSize, sortBy, order, filter), pageSize,
                     sortBy, order, filter, list));
         } else {
-            return ok(product.render(cat.name, new ArrayList<>(cat.subCategories)));
+            return ok(product.render(cat.name, new ArrayList<>(cat.getSubCategories())));
 
         }
     }

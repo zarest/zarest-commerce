@@ -7,7 +7,7 @@ INSERT INTO category VALUES
 (4,'sport',NULL,'images/parentCategories/sport.png',1,NULL),
 (5,'software',NULL,'images/parentCategories/software.png',1,NULL),
 (6,'toy',NULL,'images/parentCategories/toy.png',1,NULL),
-(7,'carpet',NULL,'images/parentCategories/carpet.png',1,NULL),
+(7,'carpet',NULL,'images/parentCategories/carpet.png',0,NULL),
 (8,'buildingSupplies',NULL,'images/parentCategories/buildingSupplies.png',1,NULL),
 (9,'furniture',NULL,'images/parentCategories/furniture.png',1,NULL),
 (10,'musicTools',NULL,'images/parentCategories/musicTools.png',1,NULL),

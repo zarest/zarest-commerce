@@ -15,12 +15,12 @@ public class CategoryMenu extends Action.Simple {
 
     @Override
     public F.Promise<Result> call(Http.Context ctx) throws Throwable {
-        ctx.args.put("categories", Category.find.orderBy().asc("id").findList());
+        ctx.args.put("categories", Category.findSuperParentCategories());
         return delegate.call(ctx);
     }
 
     @SuppressWarnings("unchecked")
-    public static List<Category> getCategories() {
+    public static List<Category> getParentCategories() {
         return (List<Category>) Http.Context.current().args.get("categories");
     }
 }

@@ -2,27 +2,26 @@
     @import play.i18n.Messages
 
     <ul class="dropdown-menu multi-level hidden-xs" role="menu" aria-labelledby="dropdownMenu" id="rootDropdown">
-    @for(category <- CategoryMenu.getCategories) {
-        @if(category.parentCategory == null) {
-            @if(category.subCategories == null || category.subCategories.isEmpty) {
+    @for(category <- CategoryMenu.getParentCategories) {
+            @if(category.getSubCategories == null || category.getSubCategories.isEmpty) {
                 <li>
                 } else {
                 <li class="dropdown-submenu ">
                 }
             <a href="@routes.Application.categoryProduct(category.getRoutePath)" target="_top" title="@Messages.get(category.name)">@Messages.get(category.name)</a>
-            @if(category.subCategories != null && !category.subCategories.isEmpty && showsubMenu) {
+            @if(category.getSubCategories != null && !category.getSubCategories.isEmpty && showsubMenu) {
                 <ul class="dropdown-menu">
-                @for(subCate <- category.subCategories) {
-                    @if(subCate.subCategories == null || subCate.subCategories.isEmpty) {
+                @for(subCate <- category.getSubCategories) {
+                    @if(subCate.getSubCategories == null || subCate.getSubCategories.isEmpty) {
                         <li>
                         } else {
                         <li class="dropdown-submenu ">
                         }
 
                     <a href="@routes.Application.categoryProduct(subCate.getRoutePath)" target="_top" title="@Messages.get(subCate.name)">@Messages.get(subCate.name)</a>
-                    @if(subCate.subCategories != null && !subCate.subCategories.isEmpty) {
+                    @if(subCate.getSubCategories != null && !subCate.getSubCategories.isEmpty) {
                         <ul class="dropdown-menu">
-                        @for(sub2 <- subCate.subCategories) {
+                        @for(sub2 <- subCate.getSubCategories) {
                             <li>
                                 <a href="@routes.Application.categoryProduct(sub2.getRoutePath)" target="_top" title="@Messages.get(sub2.name)">@Messages.get(sub2.name)</a>
                             </li>
@@ -35,6 +34,5 @@
                 </ul>
             }
         </li>
-        }
     }
     </ul>

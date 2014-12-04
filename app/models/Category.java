@@ -74,7 +74,17 @@ public class Category extends Model implements Comparable<Category> {
     }
 
     public static List<Category> findSuperParentCategories() {
-        return find.where().eq("parentCategory", null).orderBy().asc("id").findList();
+        return find.where().eq("parentCategory", null).eq("active", true).orderBy().asc("id").findList();
+    }
+
+    public List<Category> getSubCategories() {
+        List<Category> categories = new ArrayList<>();
+        for(Category cat : this.subCategories) {
+            if(cat.active) {
+                categories.add(cat);
+            }
+        }
+        return categories;
     }
 
     public Category getSuperParentCategory() {
@@ -119,7 +129,7 @@ public class Category extends Model implements Comparable<Category> {
     public static Map<String, String> subCategoryOptions(Long id) {
         Map<String, String> categories = new LinkedHashMap<>();
         Category cat = Category.find.byId(id);
-        for (Category category : cat.subCategories) {
+        for (Category category : cat.getSubCategories()) {
             categories.put(category.id.toString(), Messages.get(category.name));
         }
         //cat.subCategories.forEach(category -> categories.put(category.id.toString(), Messages.get(category.name)));
