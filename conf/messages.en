@@ -11,6 +11,9 @@ furniture=Furniture
 musicTools=Music Tools
 book=Book
 movieMusicTvSeries=Movie Music Series
+crystal=Crystal
+rhinestones=Rhinestones
+computerGames=Computer Games
 
 # Sub-categories------------------------
 #Clothing & HealthBeauty---------------
@@ -286,32 +289,147 @@ fan=Fan
 #Sports---------------------------------
 sport_bodybuilding=Bodybuilding
 bodybuilding=Bodybuilding
+# sport_bodybuilding Sub-cat---------------
+sport_bodybuilding_clothing=Clothing
+##clothing=Clothing
+sport_bodybuilding_exerciseEquipment=Exercise Equipment
+exerciseEquipment=Exercise Equipment
+sport_bodybuilding_supplementary=Supplementary
+supplementary=Supplementary
+sport_bodybuilding_gymMachine=Gym Machines
+gymMachine=Gym Machines
+# sport_bodybuilding Sub-cat-END--------------
+
 sport_ski=Ski
 ski=Ski
+# sport_ski Sub-cat---------------
+sport_ski_skiEquipment=Ski Equipment
+skiEquipment=Ski Equipment
+sport_ski_clothing=Clothing
+##clothing=Clothing
+sport_ski_accessories=Accessories
+##accessories=Accessories
+# sport_ski Sub-cat-END--------------
+
 sport_tennis=Tennis
 tennis=Tennis
+# sport_tennis Sub-cat---------------
+sport_tennis_racket=Racket
+racket=Racket
+sport_tennis_exerciseEquipment=Exercise Equipment
+##exerciseEquipment=Exercise Equipment
+sport_tennis_clothing=Clothing
+##clothing=Clothing
+sport_tennis_accessories=Accessories
+##accessories=Accessories
+# sport_tennis Sub-cat-END--------------
+
 sport_volleyball=Volleyball
 volleyball=Volleyball
+# sport_volleyball Sub-cat---------------
+sport_volleyball_equipment=Equipment
+equipment=Equipment
+sport_volleyball_clothing=Clothing
+##clothing=Clothing
+# sport_volleyball Sub-cat-END--------------
+
 sport_basketball=Basketball
 basketball=Basketball
+# sport_volleyball Sub-cat---------------
+sport_basketball_clothing=Clothing
+##clothing=Clothing
+sport_basketball_equipment=Equipment
+##equipment=Equipment
+sport_basketball_accessories=Accessories
+##accessories=Accessories
+# sport_volleyball Sub-cat-END--------------
+
 sport_football=Football
 football=Football
+# sport_football Sub-cat---------------
+sport_football_clothing=Clothing
+##clothing=Clothing
+sport_football_exerciseEquipment=Exercise Equipment
+##exerciseEquipment=Exercise Equipment
+sport_football_accessories=Accessories
+##accessories=Accessories
+# sport_football Sub-cat-END--------------
+
 sport_swim=Swim
 swim=Swim
+# sport_swim Sub-cat---------------
+sport_swim_swimsuit=Swimsuit
+swimsuit=Swimsuit
+sport_swim_accessories=Accessories
+##accessories=Accessories
+sport_swim_divingAccessories=Diving Accessories
+divingAccessories=Diving Accessories
+# sport_swim Sub-cat-END--------------
+
 sport_cycle=Cycle
 cycle=Cycle
+# sport_cycle Sub-cat---------------
+sport_cycle_bike=‌Bike
+bike=‌Bike
+sport_cycle_clothing=Clothing
+##clothing=Clothing
+sport_cycle_accessories=Accessories
+##accessories=Accessories
+# sport_cycle Sub-cat-END--------------
+
 sport_skateboard=Skateboard
 skateboard=Skateboard
+# sport_skateboard Sub-cat---------------
+sport_skateboard_clothing=Clothing
+#clothing=Clothing
+sport_skateboard_accessories=Accessories
+##accessories=Accessories
+sport_skateboard_board=Board
+board=Board
+# sport_skateboard Sub-cat-END--------------
+
 sport_badminton=Badminton
 badminton=Badminton
+# sport_badminton Sub-cat---------------
+sport_badminton_racket=Racket
+##racket=Racket
+sport_badminton_exerciseEquipment=Exercise Equipment
+##exerciseEquipment=Exercise Equipment
+sport_badminton_clothing=Clothing
+##clothing=Clothing
+sport_badminton_accessories=Accessories
+##accessories=Accessories
+# sport_badminton Sub-cat-END--------------
+
 sport_golf=Golf
 golf=Golf
+# sport_golf Sub-cat---------------
+sport_golf_clubs=Clubs
+clubs=Clubs
+sport_golf_accessories=Accessories
+##accessories=Accessories
+sport_golf_clothing=Clothing
+##clothing=Clothing
+# sport_golf Sub-cat-END--------------
+
 sport_fish=Fish
 fish=Fish
+# sport_fish Sub-cat---------------
+sport_fish_fishingRod=Fishing Rod
+fishingRod=Fishing Rod
+sport_fish_campingEquipment=Camping Equipment
+campingEquipment=Camping Equipment
+sport_fish_accessories=Accessories
+##accessories=Accessories
+sport_fish_clothing=Clothing
+##clothing=Clothing
+# sport_fish Sub-cat-END--------------
+
 
 #Software-------------------------------
 software_trade=Trade
 trade=Trade
+
 software_videoAndAudio=Video & Audio
 videoAndAudio=Video & Audio
 software_accounting=Accounting
@@ -372,10 +490,41 @@ furniture_kitchen=Kitchen
 #Music Tools------------------------
 musicTools_instruments=Instruments
 instruments=Instruments
+# musicTools_instruments Sub-cat---------------
+musicTools_instruments_guitars=Guitars
+guitars=Guitars
+musicTools_instruments_keyboards=Keyboards
+keyboards=Keyboards
+musicTools_instruments_bassGuitar=Bass Guitar
+bassGuitar=Bass Guitar
+musicTools_instruments_instrumentForChildren=Instrument For Children
+instrumentForChildren=Instrument For Children
+musicTools_instruments_orchestral=Orchestral
+orchestral=Orchestral
+musicTools_instruments_drumsAndPercussion=Drums & Percussion
+drumsAndPercussion=Drums & Percussion
+musicTools_instruments_amplifierAndEffect=Amplifier & Effect
+amplifierAndEffect=Amplifier & Effect
+# musicTools_instruments Sub-cat-END--------------
+
 musicTools_recordingAndProduction=Recording & Production
 recordingAndProduction=Recording & Production
+# musicTools_recordingAndProduction Sub-cat---------------
+musicTools_recordingAndProduction_deejay=D.J
+deejay=D.J
+musicTools_recordingAndProduction_composing=Composing
+composing=Composing
+musicTools_recordingAndProduction_mixing=Mixing
+mixing=Mixing
+musicTools_recordingAndProduction_recording=Recording
+recording=Recording
+# musicTools_recordingAndProduction Sub-cat-END--------------
+
 musicTools_stageTools=Stage Tools
 stageTools=Stage Tools
+# musicTools_stageTools Sub-cat---------------
+
+# musicTools_stageTools Sub-cat-END--------------
 
 #Movie Music Series------------------------
 movieMusicTvSeries_movie=Movie

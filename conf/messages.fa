@@ -11,6 +11,9 @@ furniture=مبلمان و میز
 musicTools=لوازم موسیقی
 book=کتاب
 movieMusicTvSeries=فیلم موسیقی سریال
+crystal=کریستال
+rhinestones=بدلیجات
+computerGames=بازیهای رایانه ای
 
 # Sub-categories --------------------
 # Clothing & healthBeauty ------------
@@ -283,29 +286,140 @@ fan=فن
 #Sports---------------------------------
 sport_bodybuilding=بدنسازی
 bodybuilding=بدنسازی
+# sport_bodybuilding Sub-cat---------------
+sport_bodybuilding_clothing=پوشاک
+##clothing=پوشاک
+sport_bodybuilding_exerciseEquipment=لوازم تمرین
+exerciseEquipment=لوازم تمرین
+sport_bodybuilding_supplementary=مکمل و انرژی
+supplementary=مکمل و انرژی
+sport_bodybuilding_gymMachine=دستگاه
+gymMachine=دستگاه
+# sport_bodybuilding Sub-cat-END--------------
+
 sport_ski=اسکی
 ski=اسکی
+# sport_ski Sub-cat---------------
+sport_ski_skiEquipment=لوازم اسکی
+skiEquipment=لوازم اسکی
+sport_ski_clothing=پوشاک
+##clothing=پوشاک
+sport_ski_accessories=لوازم جانبی
+##accessories=لوازم جانبی
+# sport_ski Sub-cat-END--------------
+
 sport_tennis=تنیس
 tennis=تنیس
+# sport_tennis Sub-cat---------------
+sport_tennis_racket=راکت
+racket=راکت
+sport_tennis_exerciseEquipment=لوازم تمرین
+##exerciseEquipment=لوازم تمرین
+sport_tennis_clothing=پوشاک
+##clothing=پوشاک
+sport_tennis_accessories=لوازم جانبی
+##accessories=لوازم جانبی
+# sport_tennis Sub-cat-END--------------
+
 sport_volleyball=والیبال
 volleyball=والیبال
+# sport_volleyball Sub-cat---------------
+sport_volleyball_equipment=لوازم
+equipment=لوازم
+sport_volleyball_clothing=پوشاک
+##clothing=پوشاک
+# sport_volleyball Sub-cat-END--------------
+
 sport_basketball=بسکتبال
 basketball=بسکتبال
+# sport_volleyball Sub-cat---------------
+sport_basketball_clothing=پوشاک
+##clothing=پوشاک
+sport_basketball_equipment=لوازم
+##equipment=لوازم
+sport_basketball_accessories=لوازم جانبی
+##accessories=لوازم جانبی
+# sport_volleyball Sub-cat-END--------------
+
 sport_football=فوتبال
 football=فوتبال
+# sport_football Sub-cat---------------
+sport_football_clothing=پوشاک
+##clothing=پوشاک
+sport_football_exerciseEquipment=لوازم تمرین
+##exerciseEquipment=لوازم تمرین
+sport_football_accessories=لوازم جانبی
+##accessories=لوازم جانبی
+# sport_football Sub-cat-END--------------
+
 sport_swim=شنا
 swim=شنا
+# sport_swim Sub-cat---------------
+sport_swim_swimsuit=مایو
+swimsuit=مایو
+sport_swim_accessories=لوازم جانبی
+##accessories=لوازم جانبی
+sport_swim_divingAccessories=لوازم غواصی
+divingAccessories=لوازم غواصی
+# sport_swim Sub-cat-END--------------
 sport_cycle=دوچرخه سواری
 cycle=دوچرخه سواری
+# sport_cycle Sub-cat---------------
+sport_cycle_bike=دوچرخه
+bike=دوچرخه
+sport_cycle_clothing=پوشاک
+##clothing=پوشاک
+sport_cycle_accessories=لوازم جانبی
+##accessories=لوازم جانبی
+# sport_cycle Sub-cat-END--------------
+
 sport_skateboard=اسکیت برد
 skateboard=اسکیت برد
+# sport_skateboard Sub-cat---------------
+sport_skateboard_clothing=پوشاک
+#clothing=پوشاک
+sport_skateboard_accessories=لوازم جانبی
+##accessories=لوازم جانبی
+sport_skateboard_board=برد
+board=برد
+# sport_skateboard Sub-cat-END--------------
+
 sport_badminton=بدمینتون
 badminton=بدمینتون
+# sport_badminton Sub-cat---------------
+sport_badminton_racket=راکت
+##racket=راکت
+sport_badminton_exerciseEquipment=لوازم تمرین
+##exerciseEquipment=لوازم تمرین
+sport_badminton_clothing=پوشاک
+##clothing=پوشاک
+sport_badminton_accessories=لوازم جانبی
+##accessories=لوازم جانبی
+# sport_badminton Sub-cat-END--------------
+
 sport_golf=گلف
 golf=گلف
+# sport_golf Sub-cat---------------
+sport_golf_clubs=گلف کلاب
+clubs=گلف کلاب
+sport_golf_accessories=لوازم جانبی
+##accessories=لوازم جانبی
+sport_golf_clothing=پوشاک
+##clothing=پوشاک
+# sport_golf Sub-cat-END--------------
+
 sport_fish=ماهیگیری
 fish=ماهیگیری
-
+# sport_fish Sub-cat---------------
+sport_fish_fishingRod=چوب ماهیگیری
+fishingRod=چوب ماهیگیری
+sport_fish_campingEquipment=وسایل کمپ
+campingEquipment=وسایل کمپ
+sport_fish_accessories=لوازم جانبی
+##accessories=لوازم جانبی
+sport_fish_clothing=پوشاک
+##clothing=پوشاک
+# sport_fish Sub-cat-END--------------
 #Software-------------------------------
 software_trade=تجارت
 trade=تجارت
@@ -369,8 +483,35 @@ furniture_kitchen=آشپزخانه
 #Music Tools------------------------
 musicTools_instruments=سازها
 instruments=سازها
+# musicTools_instruments Sub-cat---------------
+musicTools_instruments_guitars=گیتارها
+guitars=گیتارها
+musicTools_instruments_keyboards=کیبوردها
+keyboards=کیبوردها
+musicTools_instruments_bassGuitar=گیتار بیس
+bassGuitar=گیتار بیس
+musicTools_instruments_instrumentForChildren=ساز کودک
+instrumentForChildren=ساز کودک
+musicTools_instruments_orchestral=ارکسترال
+orchestral=ارکسترال
+musicTools_instruments_drumsAndPercussion=درام و کوبه ای
+drumsAndPercussion=درام و کوبه ای
+musicTools_instruments_amplifierAndEffect=امپ و افکت
+amplifierAndEffect=امپ و افکت
+# musicTools_instruments Sub-cat-END--------------
 musicTools_recordingAndProduction=ضبط و تهیه
 recordingAndProduction=ضبط و تهیه
+# musicTools_recordingAndProduction Sub-cat---------------
+musicTools_recordingAndProduction_deejay=دی جی
+deejay=دی جی
+musicTools_recordingAndProduction_composing=آهنگسازی
+composing=آهنگسازی
+musicTools_recordingAndProduction_mixing=میکسینگ
+mixing=میکسینگ
+musicTools_recordingAndProduction_recording=ضبط
+recording=ضبط
+# musicTools_recordingAndProduction Sub-cat-END--------------
+
 musicTools_stageTools=لوازم استیج
 stageTools=لوازم استیج
 

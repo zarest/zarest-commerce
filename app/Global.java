@@ -83,7 +83,7 @@ public class Global extends GlobalSettings {
             // Insert users first
             Ebean.save(all.get("users"));
             // Add categories
-            Ebean.save(all.get("categories"));
+            //Ebean.save(all.get("categories"));
 
             // Insert projects
 //            Ebean.save(all.get("projects"));

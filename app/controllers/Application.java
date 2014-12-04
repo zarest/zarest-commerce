@@ -68,7 +68,8 @@ public class Application extends Controller {
                 Category.findSuperParentCategories()));
     }
 
-    public static Result categoryProduct(String name, Boolean list) {
+    public static Result categoryProduct(
+            String name, Boolean list, int page, int pageSize, String sortBy, String order, String filter) {
         Logger.debug("Path: {}", name);
         Logger.debug("list: {}", list);
         List<String> paths = Arrays.asList(name.split("/"));
@@ -84,24 +85,11 @@ public class Application extends Controller {
         }
         if (!cat.products.isEmpty()) {
             return ok(showProducts.render(cat.name,
-                    Product.pageForCategory(cat, 0, 10, "productName", "asc", ""),
-                    "productName", "asc", "", list));
+                    Product.pageForCategory(cat, page, pageSize, sortBy, order, filter), pageSize,
+                    sortBy, order, filter, list));
         } else {
             return ok(product.render(cat.name, new ArrayList<>(cat.subCategories)));
 
-        }
-    }
-
-    public static Result listProducts(
-            String name, int page, int pageSize, String sortBy, String order, String filter, Boolean list) {
-        String catName = name.replace('/', '_');
-        Category cat = Category.findByName(catName);
-        if (cat == null) {
-            return notFound("PageNotFound");
-        } else {
-            return ok(showProducts.render(cat.name,
-                    Product.pageForCategory(cat, page, pageSize, sortBy, order, filter),
-                    sortBy, order, filter, list));
         }
     }
 
