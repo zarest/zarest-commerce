@@ -1,11 +1,15 @@
 package controllers;
 
+import com.avaje.ebean.Page;
+import com.avaje.ebean.PagingList;
 import jsmessages.JsMessages;
 import models.Category;
 import models.Product;
 import models.User;
 import play.*;
 import play.api.mvc.*;
+import play.cache.Cache;
+import play.cache.Cached;
 import play.data.DynamicForm;
 import play.data.Form;
 import play.i18n.Lang;
@@ -92,6 +96,41 @@ public class Application extends Controller {
 
         }
     }
+
+    // in cache during 1800 seconds (30 min)
+    @Cached(key = "pagingList", duration = 1800)
+    public static Result index(Category category, int page, int pageSize, String sortBy, String order, String filter) {
+        String uuid = session("uuid");
+        if (uuid == null) {
+            uuid = java.util.UUID.randomUUID().toString();
+            session("uuid", uuid);
+        }
+
+        PagingList<Product> pagingList = null;
+        pagingList = (PagingList<Product>) Cache.get(uuid + "pagingList");
+
+        if (pagingList == null) {
+            // 15 records in each page
+            pagingList = Product.find.where()
+                    .eq("category", category)
+                    .ilike("productName", "%" + filter + "%")
+                    .orderBy(sortBy + " " + order)
+//                        .fetch("products")
+                    .findPagingList(pageSize);
+        }
+
+        // -1 because page starts on 0
+        Page<Product> currentPage = pagingList.getPage(page - 1);
+        // pagineList save in cache with unique uuid from session
+        Cache.set(uuid + "pagingList", pagingList);
+
+        List<Product> products = currentPage.getList();
+        Integer totalPageCount = pagingList.getTotalPageCount();
+
+//        return ok(index.render(products, page, totalPageCount));
+        return ok();
+    }
+
 
     private static boolean isNumeric(String str) {
         return str.matches("-?\\d+(\\.\\d+)?");  //match a number with optional '-' and decimal.

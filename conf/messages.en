@@ -555,6 +555,13 @@ createProduct=Create Product
 view=View
 list=List
 grid=Grid
+next=→
+previous=←
+to= to
+of= of
+sortBy=Sort
+price=Price
+date=Date
 
 #Index.html----------------
 

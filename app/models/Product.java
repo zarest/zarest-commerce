@@ -78,6 +78,8 @@ public class Product extends Model implements Comparable<Product> {
     public Integer ranking;
     public String warrantySpecification;
     public String note;
+    @Temporal(TemporalType.DATE)
+    public Date date = new Date();
 
     //    public String validate() {
 //        if (images.isEmpty()) {

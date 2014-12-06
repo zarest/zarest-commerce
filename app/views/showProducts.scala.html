@@ -1,25 +1,121 @@
-@(bodyHeader: String, currentPage: com.avaje.ebean.Page[Product], pageSize : Int,
-        currentSortBy: String, currentOrder: String, currentFilter: String, list : Boolean)
-@import views.html.util._
-@import play.i18n._
+@(bodyHeader: String, currentPage: com.avaje.ebean.Page[Product], pageSize: Int,
+        currentSortBy: String, currentOrder: String, currentFilter: String, list: Boolean)
+    @import views.html.util._
+    @import play.i18n._
+        @****************************************
+        * Helper generating navigation links *
+        ****************************************@
+    @link(newPage: Int, newSortBy: String) = @{
 
+        var sortBy = currentSortBy
+        var order = currentOrder
 
-@main(Messages.get(bodyHeader), Application.getCurrentLang) {
-    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/productList.css")">
-    @mainContent(Messages.get(bodyHeader)) {
-        <div class="container-fluid">
-            <div class="row toolbar">
-                <div class="col-xs-5" id="viewOption">
-                    <a href="@routes.Application.categoryProduct(request.path.toString().substring(10), true)" class="btn-cart @{if(list) "active"}"><i class="fa fa-list fa-lg"></i><span class="hidden-xs">&nbsp; @Messages.get("list")</span></a>
-                    <a href="@routes.Application.categoryProduct(request.path.toString().substring(10), false)" class="btn-cart @{if(!list) "active"}"><i class="fa fa-th fa-lg"></i><span class="hidden-xs">&nbsp;  @Messages.get("grid")</span></a>
-                </div>
-            </div>
-        </div>
-        @if(list) {
-            @showProductListView(currentPage, currentSortBy, currentOrder, currentFilter)
-        } else {
-            @showProductGridView(currentPage, currentSortBy, currentOrder, currentFilter)
+        if(newSortBy != null) {
+            sortBy = newSortBy
+            if(currentSortBy == newSortBy) {
+                if(currentOrder == "asc") {
+                    order = "desc"
+                } else {
+                    order = "asc"
+                }
+            } else {
+                order = "asc"
+            }
         }
+        //, int page, int pageSize, String sortBy, String order, String filter
+        // Generate the link
+        routes.Application.categoryProduct(request.path.toString().substring(10), list, newPage, pageSize, sortBy, order, currentFilter)
+
     }
 
-}
+    @main(Messages.get(bodyHeader), Application.getCurrentLang) {
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/productList.css")"
+        xmlns="http://www.w3.org/1999/html">
+        @mainContent(Messages.get(bodyHeader)) {
+            <div class="container-fluid">
+                <div class="row toolbar">
+                    <div class="col-xs-2" id="viewOption">
+                        <a href="@routes.Application.categoryProduct(request.path.toString().substring(10), true)" class="btn-cart @{
+                            if(list) "active"
+                        }"><i class="fa fa-list fa-lg"></i></a>
+                        <a href="@routes.Application.categoryProduct(request.path.toString().substring(10), false)" class="btn-cart @{
+                            if(!list) "active"
+                        }"><i class="fa fa-th fa-lg"></i></a>
+                    </div>
+                    <div class="col-xs-4">
+                        <ul class="pagination">
+
+                            @if(currentPage.hasPrev) {
+                                <li class="prev">
+                                    <a href="@link(0, null)">&laquo;</a>
+                                </li>
+                                <li class="prev">
+                                    <a href="@link(currentPage.getPageIndex - 1, null)"> @Messages.get("previous")</a>
+                                </li>
+                            } else {
+                                <li class="prev disabled">
+                                    <a href="@link(0, null)">&laquo;</a>
+                                </li>
+                                <li class="prev disabled">
+                                    <a> @Messages.get("previous")</a>
+                                </li>
+                            }
+                            <li class="current hidden-xs hidden-sm">
+                                <a>@currentPage.getDisplayXtoYofZ(" " + Messages.get("to") + " ", " " + Messages.get("of") + " ")</a>
+                            </li>
+                            @if(currentPage.hasNext) {
+                                <li class="next">
+                                    <a href="@link(currentPage.getPageIndex + 1, null)">@Messages.get("next")</a>
+                                </li>
+                                <li class="next">
+                                    <a href="@link(currentPage.getTotalPageCount - 1, null)">&raquo;</a>
+                                </li>
+                            } else {
+                                <li class="next disabled">
+                                    <a>@Messages.get("next")</a>
+                                </li>
+                                <li class="next disabled">
+                                    <a href="@link(currentPage.getTotalPageCount - 1, null)">&raquo;</a>
+                                </li>
+                            }
+
+                        </ul>
+                    </div>
+                    <div class="col-xs-6">
+                        <form action="" class="form-inline pull-right">
+                            <div class="form-group">
+                                <label for="sortBy">@Messages.get("view") </label>
+                                <select id="sortBy" class="form-control input-sm">
+                                    <option value="12">12</option>
+                                    <option value="24">24</option>
+                                    <option value="48">48</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="sortBy">@Messages.get("sortBy") </label>
+                                <select id="sortBy" class="form-control input-sm">
+                                    <option value="productName">@Messages.get("name")</option>
+                                    <option value="unitPrice">@Messages.get("price")</option>
+                                    <option value="unitPrice">@Messages.get("date")</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <a href="@link(currentPage.getPageIndex, currentSortBy)" class="btn-cart @if(currentOrder == "asc") {
+                                    desc
+                                } else {
+                                    asc
+                                }"></a>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            @if(list) {
+                @showProductListView(currentPage, currentSortBy, currentOrder, currentFilter)
+            } else {
+                @showProductGridView(currentPage, currentSortBy, currentOrder, currentFilter)
+            }
+        }
+
+    }

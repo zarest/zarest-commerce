@@ -129,6 +129,7 @@ create table product (
   ranking                   integer,
   warranty_specification    varchar(255),
   note                      varchar(255),
+  date                      timestamp,
   constraint uq_product_sku unique (sku),
   constraint pk_product primary key (id))
 ;

@@ -544,6 +544,14 @@ createProduct=ایجاد محصول
 view=بازدید
 list=لیست
 grid=شبکه
+next=←
+previous=→
+displaying=نمایش
+to= تا
+of= از
+sortBy=مرتب
+price=قیمت
+date=تاریخ
 
 
 

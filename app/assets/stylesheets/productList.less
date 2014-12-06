@@ -136,9 +136,8 @@ a, a:hover {
   a, a:hover {
     text-decoration: none;
   }
-  .col-xs-5 {
+  .col-xs-2, .col-xs-4, .col-xs-6 {
     padding: 0;
-
   }
   .active {
     background: #967adc;
@@ -146,5 +145,36 @@ a, a:hover {
   }
   .btn-cart {
     text-transform: none;
+    padding: 6px 10px;
+    line-height: 32px;
+  }
+  a.btn-cart {
+    line-height: 32px;
+//    font-size: 16px;
+  }
+  a.asc::before {
+    content: "\25B2";
+  }
+  a.desc:before {
+    content: "\25BC";
+  }
+  .pagination {
+    margin: 0;
+  }
+  .pagination>li>a {
+    padding: 6px 10px;
+  }
+
+  label, input, button, select, textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #333;
+  }
+  form {
+    margin: 0;
+  }
+  .form-group {
+    padding: 0 5px;
   }
 }
+

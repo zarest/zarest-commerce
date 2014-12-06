@@ -7,7 +7,7 @@ GET         /                                 controllers.Application.index()
 POST        /locale                           controllers.Application.changeLocale()
 
 GET         /products                         controllers.Application.productPage()
-GET         /products/*catName                controllers.Application.categoryProduct(catName, list : Boolean ?= true, page : Int ?= 0, pageSize : Int ?= 10, sortBy : String ?= "productName", order : String ?= "asc", filter : String ?= "")
+GET         /products/*catName                controllers.Application.categoryProduct(catName, list : Boolean ?= true, page : Int ?= 0, pageSize : Int ?= 10, sortBy : String ?= "id", order : String ?= "asc", filter : String ?= "")
 GET         /aboutUs                          controllers.Application.aboutUsPage()
 GET         /contactUs                        controllers.Application.contactUs()
 GET         /shoppingCart                     controllers.Application.shoppingCart()
