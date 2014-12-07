@@ -239,7 +239,14 @@ INSERT INTO product VALUES
 (17,'10016','','Product17','','',1,14,NULL,'','122000',NULL,'s,m,l','red,blue, grey',NULL,NULL,NULL,NULL,NULL,1,1,1,NULL,'','','2014-12-06 23:38:52'),
 (18,'10017','','Product18','','',1,14,NULL,'','900000',NULL,'s,m,l','red,blue, grey',NULL,NULL,NULL,NULL,NULL,1,1,1,NULL,'','','2014-12-06 23:38:52'),
 (19,'10018','','Product19','','',1,14,NULL,'','100000',NULL,'s,m,l','red,blue, grey',NULL,NULL,NULL,NULL,NULL,1,1,1,NULL,'','','2014-12-06 23:38:52'),
-(20,'10019','','Product20','','',1,14,NULL,'','500',NULL,'s,m,l','red,blue, grey',NULL,NULL,NULL,NULL,NULL,1,1,1,NULL,'','','2014-12-06 23:38:52');
+(20,'10019','','Product20','','',1,14,NULL,'','500',NULL,'s,m,l','red,blue, grey',NULL,NULL,NULL,NULL,NULL,1,1,1,NULL,'','','2014-12-06 23:38:52'),
+(21,'10020','','Product21','','',1,14,NULL,'','12000',NULL,'s,m,l','red,blue, grey',NULL,NULL,NULL,NULL,NULL,1,1,1,NULL,'','','2014-12-06 23:38:52'),
+(22,'10021','','Product22','','',1,14,NULL,'','13000',NULL,'s,m,l','red,blue, grey',NULL,NULL,NULL,NULL,NULL,1,1,1,NULL,'','','2014-12-06 23:38:52'),
+(23,'10022','','Product23','','',1,14,NULL,'','14000',NULL,'s,m,l','red,blue, grey',NULL,NULL,NULL,NULL,NULL,1,1,1,NULL,'','','2014-12-06 23:38:52'),
+(24,'10023','','Product24','','',1,14,NULL,'','13490',NULL,'s,m,l','red,blue, grey',NULL,NULL,NULL,NULL,NULL,1,1,1,NULL,'','','2014-12-06 23:38:52'),
+(25,'10024','','Product25','','',1,14,NULL,'','1200',NULL,'s,m,l','red,blue, grey',NULL,NULL,NULL,NULL,NULL,1,1,1,NULL,'','','2014-12-06 23:38:52'),
+(26,'10025','','Product26','','',1,14,NULL,'','4430',NULL,'s,m,l','red,blue, grey',NULL,NULL,NULL,NULL,NULL,1,1,1,NULL,'','','2014-12-06 23:38:52'),
+(27,'10026','','Product27','','',1,14,NULL,'','800',NULL,'s,m,l','red,blue, grey',NULL,NULL,NULL,NULL,NULL,1,1,1,NULL,'','','2014-12-06 23:38:52');
 
 INSERT INTO image VALUES
 (1,NULL,'images/upload/34243807-d007-4a23-a9d0-74175764ea23.jpg',1),
@@ -301,7 +308,28 @@ INSERT INTO image VALUES
 (57,NULL,'images/upload/5f0c0aca-10c7-4e2c-b31a-91e49807a615.jpg',19),
 (58,NULL,'images/upload/5f0c0aca-10c7-4e2c-b31a-91e49807a615.jpg',20),
 (59,NULL,'images/upload/5f0c0aca-10c7-4e2c-b31a-91e49807a615.jpg',20),
-(60,NULL,'images/upload/5f0c0aca-10c7-4e2c-b31a-91e49807a615.jpg',20);
+(60,NULL,'images/upload/5f0c0aca-10c7-4e2c-b31a-91e49807a615.jpg',20),
+(61,NULL,'images/upload/34243807-d007-4a23-a9d0-74175764ea23.jpg',21),
+(62,NULL,'images/upload/d97e1789-7c7c-4698-8738-75b580e839e3.jpg',21),
+(63,NULL,'images/upload/5f0c0aca-10c7-4e2c-b31a-91e49807a615.jpg',21),
+(64,NULL,'images/upload/34243807-d007-4a23-a9d0-74175764ea23.jpg',22),
+(65,NULL,'images/upload/d97e1789-7c7c-4698-8738-75b580e839e3.jpg',22),
+(66,NULL,'images/upload/5f0c0aca-10c7-4e2c-b31a-91e49807a615.jpg',22),
+(67,NULL,'images/upload/34243807-d007-4a23-a9d0-74175764ea23.jpg',23),
+(68,NULL,'images/upload/d97e1789-7c7c-4698-8738-75b580e839e3.jpg',23),
+(69,NULL,'images/upload/5f0c0aca-10c7-4e2c-b31a-91e49807a615.jpg',23),
+(70,NULL,'images/upload/34243807-d007-4a23-a9d0-74175764ea23.jpg',24),
+(71,NULL,'images/upload/d97e1789-7c7c-4698-8738-75b580e839e3.jpg',24),
+(72,NULL,'images/upload/5f0c0aca-10c7-4e2c-b31a-91e49807a615.jpg',24),
+(73,NULL,'images/upload/34243807-d007-4a23-a9d0-74175764ea23.jpg',25),
+(74,NULL,'images/upload/d97e1789-7c7c-4698-8738-75b580e839e3.jpg',25),
+(75,NULL,'images/upload/5f0c0aca-10c7-4e2c-b31a-91e49807a615.jpg',25),
+(76,NULL,'images/upload/34243807-d007-4a23-a9d0-74175764ea23.jpg',26),
+(77,NULL,'images/upload/d97e1789-7c7c-4698-8738-75b580e839e3.jpg',26),
+(78,NULL,'images/upload/5f0c0aca-10c7-4e2c-b31a-91e49807a615.jpg',26),
+(79,NULL,'images/upload/34243807-d007-4a23-a9d0-74175764ea23.jpg',27),
+(80,NULL,'images/upload/d97e1789-7c7c-4698-8738-75b580e839e3.jpg',27),
+(81,NULL,'images/upload/5f0c0aca-10c7-4e2c-b31a-91e49807a615.jpg',27);
 
 
 # --- !Downs
