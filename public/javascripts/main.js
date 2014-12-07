@@ -6,6 +6,17 @@ if (window.console) {
 
 $(document).ready(function () {
 
+    $("#pageSize").change(function (e) {
+        e.preventDefault();
+        $(this).closest('form').trigger('submit');
+        return false;
+    });
+    $("#sortBy").change(function (e) {
+        e.preventDefault();
+        $(this).closest('form').trigger('submit');
+        return false;
+    });
+
     persian={0:'۰',1:'۱',2:'۲',3:'۳',4:'۴',5:'۵',6:'۶',7:'۷',8:'۸',9:'۹'};
     function traverse(el){
         if(el.nodeType==3){

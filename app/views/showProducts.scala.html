@@ -82,21 +82,21 @@
                         </ul>
                     </div>
                     <div class="col-xs-6">
-                        <form action="" class="form-inline pull-right">
+                        <form action="@link(0, currentSortBy)" method="GET" class="form-inline pull-right">
                             <div class="form-group">
-                                <label for="sortBy">@Messages.get("view") </label>
-                                <select id="sortBy" class="form-control input-sm">
-                                    <option value="12">12</option>
-                                    <option value="24">24</option>
-                                    <option value="48">48</option>
+                                <label for="pageSize">@Messages.get("view") </label>
+                                <select  name="pageSize" id="pageSize" class="form-control input-sm">
+                                    <option value="12" @{if(pageSize == 12) "selected"}>12</option>
+                                    <option value="24" @{if(pageSize == 24) "selected"}>24</option>
+                                    <option value="48" @{if(pageSize == 48) "selected"}>48</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="sortBy">@Messages.get("sortBy") </label>
-                                <select id="sortBy" class="form-control input-sm">
-                                    <option value="productName">@Messages.get("name")</option>
-                                    <option value="unitPrice">@Messages.get("price")</option>
-                                    <option value="unitPrice">@Messages.get("date")</option>
+                                <select name="sortBy" id="sortBy" class="form-control input-sm">
+                                    <option value="productName" @{if(currentSortBy == "productName") "selected"}>@Messages.get("name")</option>
+                                    <option value="unitPrice" @{if(currentSortBy == "unitPrice") "selected"}>@Messages.get("price")</option>
+                                    <option value="date" @{if(currentSortBy == "date") "selected"}>@Messages.get("date")</option>
                                 </select>
                             </div>
                             <div class="form-group">

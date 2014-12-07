@@ -76,6 +76,7 @@ public class Application extends Controller {
             String name, Boolean list, int page, int pageSize, String sortBy, String order, String filter) {
         Logger.debug("Path: {}", name);
         Logger.debug("list: {}", list);
+        Logger.debug("inside categoryProduct method");
         List<String> paths = Arrays.asList(name.split("/"));
         if (isNumeric(paths.get(paths.size() - 1))) {
             Long id = Long.parseLong(paths.get(paths.size() - 1));
@@ -99,7 +100,8 @@ public class Application extends Controller {
 
     // in cache during 1800 seconds (30 min)
     @Cached(key = "pagingList", duration = 1800)
-    public static Result index(Category category, int page, int pageSize, String sortBy, String order, String filter) {
+    public static Result pagingListProduct(
+            Category category, Boolean list, int page, int pageSize, String sortBy, String order, String filter) {
         String uuid = session("uuid");
         if (uuid == null) {
             uuid = java.util.UUID.randomUUID().toString();
@@ -108,7 +110,7 @@ public class Application extends Controller {
 
         PagingList<Product> pagingList = null;
         pagingList = (PagingList<Product>) Cache.get(uuid + "pagingList");
-
+        Logger.debug("list: {}", list);
         if (pagingList == null) {
             // 15 records in each page
             pagingList = Product.find.where()
@@ -119,8 +121,7 @@ public class Application extends Controller {
                     .findPagingList(pageSize);
         }
 
-        // -1 because page starts on 0
-        Page<Product> currentPage = pagingList.getPage(page - 1);
+        Page<Product> currentPage = pagingList.getPage(page);
         // pagineList save in cache with unique uuid from session
         Cache.set(uuid + "pagingList", pagingList);
 
@@ -128,7 +129,9 @@ public class Application extends Controller {
         Integer totalPageCount = pagingList.getTotalPageCount();
 
 //        return ok(index.render(products, page, totalPageCount));
-        return ok();
+        return ok(showProducts.render(category.name,
+                currentPage, pageSize,
+                sortBy, order, filter, list));
     }
 
 
