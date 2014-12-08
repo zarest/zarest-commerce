@@ -1,6 +1,7 @@
 package models;
 
 import com.avaje.ebean.Page;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import play.Logger;
 import play.data.validation.Constraints.Required;
 import play.db.ebean.Model;
@@ -36,13 +37,16 @@ public class Category extends Model implements Comparable<Category> {
     public boolean active;
 
     @ManyToOne
+    @JsonIgnore
     public Category parentCategory;
 
     @OneToMany(mappedBy = "parentCategory")
+    @JsonIgnore
     public Set<Category> subCategories = new TreeSet<Category>();
 
     @Valid
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    @JsonIgnore
     public List<Product> products = new ArrayList<>();
 
     public Category(String name) {
@@ -87,6 +91,7 @@ public class Category extends Model implements Comparable<Category> {
         return categories;
     }
 
+    @JsonIgnore
     public Category getSuperParentCategory() {
         char charIndex = '_';
         int index = this.name.indexOf(charIndex);
@@ -94,6 +99,7 @@ public class Category extends Model implements Comparable<Category> {
         return this.findByName(name);
     }
 
+    @JsonIgnore
     public List<Category> getParentCategories() {
         String[] items = this.name.split("_");
         List<Category> categories = new ArrayList<>();

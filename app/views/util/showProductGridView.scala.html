@@ -1,3 +1,87 @@
 @(currentPage: com.avaje.ebean.Page[Product],
         currentSortBy: String, currentOrder: String, currentFilter: String)
-@()
+
+@import play.libs.Json
+@import play.i18n._
+    <script lang="text/javascript">
+    zarestApp.controller('products', ['$scope',
+    function($scope) {
+    $scope.products =  @{Html(Json.toJson(currentPage.getList).toString)};
+    $scope.number = 5;
+    $scope.getNumber = function(num) {
+    return new Array(num);
+    }
+    }]);
+
+    </script>
+    <div>
+        <ul ng-controller="products">
+            <li ng-repeat="i in products track by $index">
+                    {{ i.id }}
+            </li>
+        </ul>
+    </div>
+    <div class="item-inner">
+        <div class="product-wrapper">
+            <div class="thumb-wrapper">
+                <div class="new-label new-top-left">
+                @Messages.get("new")
+                </div>
+                <a class="thumb flip" data-fancybox-type="ajax" onclick="callQuickView('http://demo.magikthemes.com/index.php/lambylavender/lambysettings/index/view/id/55/');">
+                    <span class="face">
+                        <img alt="Women's Single T-Shirt" src="@routes.Assets.at("images/upload/testProduct.jpg")">
+                    </span>
+                    <span class="face back">
+                        <img alt="Women's Single T-Shirt" title="Women's Single T-Shirt" src="@routes.Assets.at("images/upload/testProduct.jpg")">
+                        <span class="quick-view"><span><i>&nbsp;</i> @Messages.get("quickReview")</span></span>
+                    </span>
+                </a>
+            </div> <!--thumb-wrapper-->
+            <div class="actions">
+                <span class="add-to-links">
+                    <a href="#" class="link-wishlist" title="@Messages.get("addToWishlist")"><span>@Messages.get("addToWishlist")</span></a>
+                    <a href="#" class="link-compare" title="@Messages.get("addToCompare")"><span>@Messages.get("addToCompare")</span></a>
+                </span> <!--add-to-links-->
+            </div> <!--actions-->
+        </div> <!--product-wrapper-->
+        <div class="item-info">
+            <div class="info-inner">
+                <div class="item-title">
+                    <a href="#" title="Women's Single T-Shirt">
+                    @Messages.get("{{$index}}")
+                    </a>
+                </div> <!--item-title-->
+                <div class="item-content">
+                    <div class="ratings">
+                        <div class="rating-box">
+                            <div class="rating" style="width: 53%"></div>
+                        </div> <!--rating-box-->
+                    </div> <!--ratings-->
+                    <div class="item-price">
+
+
+                        <div class="price-box">
+                            <p class="old-price">
+                                <span class="price-label">Regular Price:</span>
+                                <span itemprop="price" class="price" id="old-price-57">
+                                                                    $99.00                </span>
+                            </p>
+
+                            <p class="special-price">
+                                <span class="price-label">Special Price:</span>
+                                <span class="price" id="product-price-57">
+                                                                    $79.00                </span>
+                            </p>
+
+
+                        </div>
+
+                    </div>
+                </div> <!--item-content-->
+            </div> <!--info-inner-->
+            <div class="actions">
+                <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://demo.magikthemes.com/index.php/lambylavender/checkout/cart/add/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/product/55/form_key/1b9gBPV7riNbZ8JK/')"><span>@Messages.get("addToCart")</span></button>
+
+            </div> <!--actions-->
+        </div> <!--item-info-->
+    </div> <!--item-inner-->

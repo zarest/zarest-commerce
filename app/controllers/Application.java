@@ -14,6 +14,7 @@ import play.data.DynamicForm;
 import play.data.Form;
 import play.i18n.Lang;
 import play.i18n.Messages;
+import play.libs.Json;
 import play.mvc.*;
 
 import play.mvc.Controller;
@@ -154,6 +155,10 @@ public class Application extends Controller {
 
     public static Result shoppingCart() {
         return ok(shoppingCart.render(Messages.get("shoppingCart"), Product.find.all()));
+    }
+
+    public static Result listAllProducts() {
+        return ok(Json.toJson(Product.find.all()));
     }
 
     // -- Authentication

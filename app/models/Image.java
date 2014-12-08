@@ -3,6 +3,7 @@ package models;
 import java.util.*;
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import play.db.ebean.*;
 import play.data.format.*;
 import play.data.validation.*;
@@ -53,6 +54,7 @@ public class Image extends Model {
     public String filePath;
 
     @ManyToOne
+    @JsonIgnore
     public Product product;
 
 
