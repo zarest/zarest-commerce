@@ -35,10 +35,10 @@
             <div class="container-fluid">
                 <div class="row toolbar">
                     <div class="col-xs-2" id="viewOption">
-                        <a href="@routes.Application.categoryProduct(request.path.toString().substring(10), true)" class="btn-cart @{
+                        <a href="@routes.Application.categoryProduct(request.path.toString().substring(10), true, currentPage.getPageIndex, pageSize, currentSortBy, currentOrder, currentFilter)" class="btn-cart @{
                             if(list) "active"
                         }"><i class="fa fa-list fa-lg"></i></a>
-                        <a href="@routes.Application.categoryProduct(request.path.toString().substring(10), false)" class="btn-cart @{
+                        <a href="@routes.Application.categoryProduct(request.path.toString().substring(10), false, currentPage.getPageIndex, pageSize, currentSortBy, currentOrder, currentFilter)" class="btn-cart @{
                             if(!list) "active"
                         }"><i class="fa fa-th fa-lg"></i></a>
                     </div>
@@ -82,7 +82,7 @@
                         </ul>
                     </div>
                     <div class="col-xs-6">
-                        <form action="@link(0, currentSortBy)" method="GET" class="form-inline pull-right">
+                        <form action="@routes.Application.categoryProduct(request.path.toString().substring(10))" method="GET" class="form-inline pull-right">
                             <div class="form-group">
                                 <label for="pageSize">@Messages.get("view") </label>
                                 <select  name="pageSize" id="pageSize" class="form-control input-sm">
@@ -91,6 +91,7 @@
                                     <option value="48" @{if(pageSize == 48) "selected"}>48</option>
                                 </select>
                             </div>
+                            <input type="hidden" name="list" value="@list">
                             <div class="form-group">
                                 <label for="sortBy">@Messages.get("sortBy") </label>
                                 <select name="sortBy" id="sortBy" class="form-control input-sm">
@@ -114,7 +115,7 @@
             @if(list) {
                 @showProductListView(currentPage, currentSortBy, currentOrder, currentFilter)
             } else {
-                @showProductGridView(currentPage, currentSortBy, currentOrder, currentFilter)
+                @showProductGridView(currentPage, currentSortBy, currentOrder, currentFilter,list)
             }
         }
 

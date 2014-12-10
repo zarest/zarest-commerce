@@ -576,6 +576,8 @@ sale=حراج
 addToCompare=اضافه کن برای مقایسه
 addToWishlist=اضافه کن به لیست دلخواه
 addToCart=اضافه به سبد خرید
+specialPrice=قیمت بعد تخفیف
+regularPrice=قیمت معمول
 
 # Languages --------------------
 lang.en=انگلیسی

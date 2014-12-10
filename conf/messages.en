@@ -583,7 +583,8 @@ sale=Sale
 addToCompare=Add to Compare
 addToWishlist=Add to Wishlist
 addToCart=Add To Cart
-
+specialPrice=Special Price
+regularPrice=Regular Price
 
 # Languages
 lang.en=English

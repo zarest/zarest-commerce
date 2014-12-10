@@ -1,6 +1,7 @@
 package models;
 
 import com.avaje.ebean.Page;
+import org.joda.time.DateTime;
 import play.data.validation.Constraints.*;
 import play.db.ebean.Model;
 import play.i18n.Messages;
@@ -75,21 +76,26 @@ public class Product extends Model implements Comparable<Product> {
     public Set<OrderDetail> orderDetails = new HashSet<>();
     //a product ranking used for displaying item specials
     // or showing certain items as higher in a sort
-    public Integer ranking;
+    public Integer ranking = 0;
     public String warrantySpecification;
     public String note;
     @Temporal(TemporalType.DATE)
-    public Date date = new Date();
+    public DateTime date = new DateTime();
 
-    //    public String validate() {
-//        if (images.isEmpty()) {
-//            return Messages.get("image.required");
-//        }
-//        return null;
-//    }
+    public String validate() {
+        if (images.isEmpty()) {
+            return Messages.get("image.required");
+        }
+        return null;
+    }
+
     public String getRoutePath() {
         String path = category.name + "_" + this.id;
         return path.replace('_', '/');
+    }
+
+    public BigDecimal unitPriceAfterDiscount() {
+        return this.unitPrice.multiply(new BigDecimal(this.discount == null ? 1 : this.discount)).setScale(2);
     }
 
     public static Finder<Long, Product> find = new Finder<Long, Product>(Long.class, Product.class);
