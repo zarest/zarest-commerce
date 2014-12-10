@@ -81,7 +81,7 @@ $(document).ready(function () {
         $('.slide-content').toggleClass('right');
         $('.slide-carousel').toggleClass('right');
         $('.buttons').removeClass('pull-right').addClass('pull-left');
-        $('.toolbar form').toggleClass('pull-right');
+        $('.toolbar form').removeClass('pull-right').addClass('pull-left');
 
     } else {
         $('link[href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.2.0-rc2/css/bootstrap-rtl.min.css"]')
@@ -94,6 +94,7 @@ $(document).ready(function () {
         $('.slide-content').toggleClass('left');
         $('.slide-carousel').toggleClass('left');
         $('.buttons').removeClass('pull-left').addClass('pull-right');
+        $('.toolbar form').removeClass('pull-left').addClass('pull-right');
 
     }
 

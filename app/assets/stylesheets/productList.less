@@ -186,11 +186,30 @@ a, a:hover {
 
 .productGridView {
   position: relative;
-
   .item {
+    img {
+      width: 100%;
+    }
     text-align: center;
+    overflow: hidden;
     margin-bottom: 30px;
     .actions {
+      button.button.btn-cart {
+        background: #fff;
+        border: 1px solid #ddd;
+        margin: 10px 8px 0 8px;
+        padding: 9px 10px 9px 10px;
+        color: #333;
+        line-height: 14px;
+        span {
+          font-family: 'Open Sans', sans-serif;
+          font-size: 11px;
+          padding: 0 8px;
+          font-weight: bold;
+          margin-left: 0;
+          text-transform: uppercase
+        }
+      }
       .add-to-links {
         a.link-wishlist {
           left: -142px;
@@ -317,7 +336,6 @@ a, a:hover {
             z-index: 100;
             font-weight: bold;
             letter-spacing: 1px;
-            line-height: normal;
             width: 45px;
             height: 25px;
             line-height: 25px;
@@ -338,7 +356,6 @@ a, a:hover {
             z-index: 100;
             font-weight: bold;
             letter-spacing: 1px;
-            line-height: normal;
             width: 45px;
             height: 25px;
             line-height: 25px;
@@ -362,7 +379,6 @@ a, a:hover {
               margin: auto 0;
               height: 35px;
               overflow: hidden;
-
               span {
                 display: block;
                 position: absolute;
@@ -425,6 +441,7 @@ a, a:hover {
 
         }
         .actions {
+
           .add-to-links {
             padding-left: 2px;
             .separator {
@@ -651,7 +668,6 @@ a, a:hover {
     }
   }
 }
-
 
 /*============ End Banner Sequence CSS ===============*/
 
