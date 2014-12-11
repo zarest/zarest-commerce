@@ -10,7 +10,7 @@
 <div class="dynamic">
     <div class="row productGridView" dir="ltr">
     @for(product <- currentPage.getList) {
-        <div class="col-sm-4 item">
+        <div class="col-sm-4 prodItem">
             <div class="item-inner">
                 <div class="product-wrapper">
                     <div class="thumb-wrapper">
@@ -69,23 +69,25 @@
                                 <div class="price-box">
                                     <p class="old-price">
                                         <span class="price-label">@Messages.get("regularPrice"):</span>
-                                        <span itemprop="price" class="price" id="old-price-57">
+                                        <span itemprop="price" class="price">
                                             $@(product.unitPriceAfterDiscount)
                                         </span>
                                     </p>
 
                                     <p class="special-price">
                                         <span class="price-label">@Messages.get("specialPrice"):</span>
-                                        <span class="price" id="product-price-57">
-                                            $79.00                </span>
+                                        <span class="price">
+                                            $@(product.unitPrice.setScale(2))
+                                        </span>
                                     </p>
 
 
                                 </div>
                             } else {
                                 <div class="price-box">
-                                    <span class="regular-price" id="product-price-2">
-                                        <span class="price">$55.00</span>                                    </span>
+                                    <span class="regular-price">
+                                        <span class="price">$@(product.unitPrice.setScale(2))</span>
+                                    </span>
 
                                 </div>
                             }
@@ -93,7 +95,9 @@
                         </div> <!--item-content-->
                     </div> <!--info-inner-->
                     <div class="actions">
-                        <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation ( 'http://demo.magikthemes.com/index.php/lambylavender/checkout/cart/add/uenc/aHR0cDovL2RlbW8ubWFnaWt0aGVtZXMuY29tL2luZGV4LnBocC9sYW1ieWxhdmVuZGVyLw,,/product/55/form_key/1b9gBPV7riNbZ8JK/' )"><span>@Messages.get("addToCart")</span></button>
+                        <button type="button" title="@Messages.get("addToCart")" class="button btn-cart">
+                            <span>@Messages.get("addToCart")</span>
+                        </button>
 
                     </div> <!--actions-->
                 </div> <!--item-info-->

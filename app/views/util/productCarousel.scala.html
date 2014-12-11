@@ -1,0 +1,123 @@
+@(products: List[Product], size: Int, interval : Int, carouselHref: String)
+@import org.joda.time.DateTime
+@import play.i18n.Messages
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/productGridView.css")">
+    @batchSize = @{
+        if(products.size % size != 0) products.size / size + 1 else products.size / size
+    }
+    @today = @{
+        new DateTime();
+    }
+<div id="@carouselHref" class="carousel slide " data-ride="carousel" data-interval="@interval">
+        <!-- Wrapper for slides -->
+
+
+    <div class="carousel-inner productGridView" >
+    @for(a <- 1 to batchSize) {
+        <div class="item @{
+            if(a == 1) "active"
+        }">
+            <div class="row row-centered">
+            @for(product <- products if (products.indexOf(product) < size * a); if (products.indexOf(product) >= size * (a - 1))) {
+                <div class="col-md-@{12/size} col-centered prodItem">
+                    <div class="item-inner">
+                        <div class="product-wrapper">
+                            <div class="thumb-wrapper">
+                                @if(product.date.compareTo(today.minusDays(7)) >= 0) {
+                                    <div class="new-label new-top-right">
+                                    @Messages.get("new")
+                                    </div>
+                                }
+                                @if(product.discountAvailable) {
+                                    <div class="sale-label new-top-left">
+                                    @Messages.get("sale")
+                                    </div>
+                                }
+                            <a class="thumb flip" data-fancybox-type="ajax">
+                                <span class="face">
+                                    <img alt="@product.images.get(0).caption" src="@routes.Assets.at(product.images.get(0).filePath)">
+                                </span>
+                                <span class="face back">
+                                    @if(product.images.size() > 1) {
+                                        <img alt="@product.images.get(1).caption" title="@product.images.get(1).caption" src="@routes.Assets.at(product.images.get(1).filePath)">
+                                    } else {
+                                        <img alt="@product.images.get(0).caption" src="@routes.Assets.at(product.images.get(0).filePath)">
+                                    }
+                                <span class="quick-view">
+                                    <span><i>&nbsp;</i> @Messages.get("quickReview")</span>
+                                </span>
+                                </span>
+                            </a>
+                            </div> <!--thumb-wrapper-->
+                            <div class="actions">
+                                <span class="add-to-links">
+                                    <a href="#" class="link-wishlist" title="@Messages.get("addToWishlist")">
+                                        <span>@Messages.get("addToWishlist")</span>
+                                    </a>
+                                    <a href="#" class="link-compare" title="@Messages.get("addToCompare")">
+                                        <span>@Messages.get("addToCompare")</span>
+                                    </a>
+                                </span> <!--add-to-links-->
+                            </div> <!--actions-->
+                        </div> <!--product-wrapper-->
+                        <div class="item-info">
+                            <div class="info-inner">
+                                <div class="item-title">
+                                    <a href="#" title="@product.productName">
+                                    @Messages.get(product.productName)
+                                    </a>
+                                </div> <!--item-title-->
+                                <div class="item-content">
+                                    <div class="ratings">
+                                        <div class="rating-box">
+                                            <div class="rating" style="width : 23 %"></div>
+                                        </div> <!--rating-box-->
+                                    </div> <!--ratings-->
+                                    <div class="item-price">
+                                    @if(product.discountAvailable) {
+                                        <div class="price-box">
+                                            <p class="old-price">
+                                                <span class="price-label">@Messages.get("regularPrice"):</span>
+                                                <span itemprop="price" class="price">
+                                                    $@(product.unitPriceAfterDiscount)
+                                                </span>
+                                            </p>
+
+                                            <p class="special-price">
+                                                <span class="price-label">@Messages.get("specialPrice"):</span>
+                                                <span class="price">
+                                                    $@(product.unitPrice.setScale(2))
+                                                </span>
+                                            </p>
+
+
+                                        </div>
+                                    } else {
+                                        <div class="price-box">
+                                            <span class="regular-price">
+                                                <span class="price">$@(product.unitPrice.setScale(2))</span>
+                                            </span>
+
+                                        </div>
+                                    }
+                                    </div>
+                                </div> <!--item-content-->
+                            </div> <!--info-inner-->
+                            <div class="actions">
+                                <button type="button" title="@Messages.get("addToCart")" class="button btn-cart">
+                                    <span>@Messages.get("addToCart")</span>
+                                </button>
+
+                            </div> <!--actions-->
+                        </div> <!--item-info-->
+                    </div> <!--item-inner-->
+                </div>
+            }
+            </div>
+        </div>
+
+
+    }
+
+    </div>
+</div>

@@ -37,7 +37,7 @@ public class Application extends Controller {
     }
 
     public static Result index() {
-        return ok(index.render("home"));
+        return ok(index.render("home", Product.find.findList().subList(13,20), Product.find.findList().subList(0,12)));
     }
 
     public static Lang getCurrentLang() {

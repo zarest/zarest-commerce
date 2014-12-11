@@ -1,6 +1,6 @@
 .productGridView {
   position: relative;
-  .item {
+  .prodItem {
     img {
       width: 100%;
     }
@@ -485,6 +485,107 @@
 
 .dynamic .row .col-sm-4:nth-child(3n+4) {
   clear: both;
+}
+
+.carousel-next {
+  display: block;
+  position: absolute;
+  width: 33px;
+  height: 30px;
+}
+.carousel-prev {
+  display: block;
+  position: absolute;
+  width: 33px;
+  height: 30px;
+}
+.carousel-prev:after {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  content: "\f104";
+  text-transform: none;
+  font-size: 18px;
+  padding: 6px 12px;
+  line-height: 30px;
+}
+.carousel-prev {
+  margin: -36px 0 0 0;
+  right: 35px;
+  background: #f3f3f3;
+  color: #666;
+  transition: color 300ms ease-in-out 0s, background-color 300ms ease-in-out 0s, background-position 300ms ease-in-out 0s;
+}
+.carousel-next {
+  margin: -36px 0 0 0px;
+  right: -2px;
+  background: #f3f3f3;
+  color: #666;
+  transition: color 300ms ease-in-out 0s, background-color 300ms ease-in-out 0s, background-position 300ms ease-in-out 0s;
+}
+.carousel-next:before {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  content: "\f105";
+  text-transform: none;
+  font-size: 18px;
+  padding: 6px 12px;
+  line-height: 30px;
+}
+.carousel-next:hover {
+  background: #967adc;
+  color: #fff;
+}
+.carousel-prev:hover {
+  background: #967adc;
+  color: #fff;
+}
+.product-carousel-header {
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+    &:active {
+      text-decoration: none;
+    }
+    &:link {
+      text-decoration: none;
+    }
+  }
+  position: relative;
+  margin-top: 25px;
+}
+.new_title.center {
+  padding: 0 0 0px 0;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+  margin-right: 80px;
+}
+.new_title {
+  color: #000000;
+  height: 25px;
+  margin: 0 auto 20px;
+  text-align: center;
+  text-transform: none;
+}
+.new_title h2 {
+  color: #000;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 0;
+  padding: 6px 10px 2px 0;
+  position: relative;
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: normal;
+  background-color: #FFFFFF;
 }
 
 
