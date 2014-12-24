@@ -4,7 +4,7 @@
 # --- !Ups
 
 create table address (
-  id                        bigint not null,
+  id                        bigint auto_increment not null,
   address1                  varchar(255),
   address2                  varchar(255),
   city                      varchar(255),
@@ -17,20 +17,20 @@ create table address (
 ;
 
 create table category (
-  id                        bigint not null,
+  id                        bigint auto_increment not null,
   name                      varchar(255),
   description               varchar(255),
   image_path                varchar(255),
-  active                    boolean,
+  active                    tinyint(1) default 0,
   parent_category_id        bigint,
   constraint uq_category_name unique (name),
   constraint pk_category primary key (id))
 ;
 
 create table credit_card (
-  id                        bigint not null,
+  id                        bigint auto_increment not null,
   credit_card_number        varchar(255),
-  exp_date                  timestamp,
+  exp_date                  datetime,
   credit_card_type          varchar(255),
   customer_email            varchar(255),
   constraint pk_credit_card primary key (id))
@@ -41,14 +41,14 @@ create table generic_user (
   email                     varchar(255) not null,
   password                  varchar(255),
   name                      varchar(255),
-  is_admin                  boolean,
+  is_admin                  tinyint(1) default 0,
   phone                     varchar(255),
-  is_shipping_address       boolean,
+  is_shipping_address       tinyint(1) default 0,
   constraint pk_generic_user primary key (email))
 ;
 
 create table image (
-  id                        bigint not null,
+  id                        bigint auto_increment not null,
   caption                   varchar(255),
   file_path                 varchar(255),
   product_id                bigint,
@@ -56,12 +56,12 @@ create table image (
 ;
 
 create table oder_table (
-  id                        bigint not null,
+  id                        bigint auto_increment not null,
   customer_email            varchar(255),
   payment_id                bigint,
-  order_date                timestamp,
-  required_date             timestamp,
-  ship_date                 timestamp,
+  order_date                datetime,
+  required_date             datetime,
+  ship_date                 datetime,
   shipper_id                bigint,
   freight                   decimal(38),
   sales_tax                 decimal(38),
@@ -69,15 +69,15 @@ create table oder_table (
   transact_status           varchar(255),
   err_loc                   varchar(255),
   err_msg                   varchar(255),
-  fulfilled                 boolean,
-  deleted                   boolean,
+  fulfilled                 tinyint(1) default 0,
+  deleted                   tinyint(1) default 0,
   paid                      decimal(38),
-  payment_date              timestamp,
+  payment_date              datetime,
   constraint pk_oder_table primary key (id))
 ;
 
 create table order_details (
-  id                        bigint not null,
+  id                        bigint auto_increment not null,
   order_id                  bigint,
   product_id                bigint,
   price                     decimal(38),
@@ -86,9 +86,9 @@ create table order_details (
   total                     decimal(38),
   size                      varchar(255),
   color                     varchar(255),
-  fulfilled                 boolean,
-  bill_date                 timestamp,
-  ship_date                 timestamp,
+  fulfilled                 tinyint(1) default 0,
+  bill_date                 datetime,
+  ship_date                 datetime,
   shipper_id                bigint,
   frieght                   decimal(38),
   sales_tax                 decimal(38),
@@ -97,14 +97,14 @@ create table order_details (
 ;
 
 create table payment (
-  id                        bigint not null,
+  id                        bigint auto_increment not null,
   payment_type              varchar(255),
-  allowed                   boolean,
+  allowed                   tinyint(1) default 0,
   constraint pk_payment primary key (id))
 ;
 
 create table product (
-  id                        bigint not null,
+  id                        bigint auto_increment not null,
   sku                       varchar(255) not null,
   supplier_prod_id          varchar(255),
   product_name              varchar(255),
@@ -123,26 +123,26 @@ create table product (
   unit_in_stock             smallint,
   unit_on_order             smallint,
   reorder_level             smallint,
-  product_available         boolean,
-  discount_available        boolean,
-  current_order             boolean,
+  product_available         tinyint(1) default 0,
+  discount_available        tinyint(1) default 0,
+  current_order             tinyint(1) default 0,
   ranking                   integer,
   warranty_specification    varchar(255),
   note                      varchar(255),
-  date                      timestamp,
+  date                      datetime,
   constraint uq_product_sku unique (sku),
   constraint pk_product primary key (id))
 ;
 
 create table shipper (
-  id                        bigint not null,
+  id                        bigint auto_increment not null,
   company_name              varchar(255),
   phone                     varchar(255),
   constraint pk_shipper primary key (id))
 ;
 
 create table supplier (
-  id                        bigint not null,
+  id                        bigint auto_increment not null,
   company_name              varchar(255),
   contact_first_name        varchar(255),
   contact_last_name         varchar(255),
@@ -155,8 +155,8 @@ create table supplier (
   discount_types            varchar(255),
   discount_rate             float,
   type_goods                varchar(255),
-  discount_available        boolean,
-  current_order             boolean,
+  discount_available        tinyint(1) default 0,
+  current_order             tinyint(1) default 0,
   customer_id               varchar(255),
   size_url                  varchar(255),
   color_url                 varchar(255),
@@ -178,28 +178,6 @@ create table Supplier_address (
   address_id                     bigint not null,
   constraint pk_Supplier_address primary key (supplier_id, address_id))
 ;
-create sequence address_seq;
-
-create sequence category_seq;
-
-create sequence credit_card_seq;
-
-create sequence generic_user_seq;
-
-create sequence image_seq;
-
-create sequence oder_table_seq;
-
-create sequence order_details_seq;
-
-create sequence payment_seq;
-
-create sequence product_seq;
-
-create sequence shipper_seq;
-
-create sequence supplier_seq;
-
 alter table category add constraint fk_category_parentCategory_1 foreign key (parent_category_id) references category (id) on delete restrict on update restrict;
 create index ix_category_parentCategory_1 on category (parent_category_id);
 alter table credit_card add constraint fk_credit_card_customer_2 foreign key (customer_email) references generic_user (email) on delete restrict on update restrict;
@@ -223,7 +201,7 @@ create index ix_product_category_10 on product (category_id);
 
 
 
-alter table customer_address add constraint fk_customer_address_generic_u_01 foreign key (generic_user_email) references generic_user (email) on delete restrict on update restrict;
+alter table customer_address add constraint fk_customer_address_generic_user_01 foreign key (generic_user_email) references generic_user (email) on delete restrict on update restrict;
 
 alter table customer_address add constraint fk_customer_address_address_02 foreign key (address_id) references address (id) on delete restrict on update restrict;
 
@@ -233,53 +211,31 @@ alter table Supplier_address add constraint fk_Supplier_address_address_02 forei
 
 # --- !Downs
 
-SET REFERENTIAL_INTEGRITY FALSE;
+SET FOREIGN_KEY_CHECKS=0;
 
-drop table if exists address;
+drop table address;
 
-drop table if exists category;
+drop table category;
 
-drop table if exists credit_card;
+drop table credit_card;
 
-drop table if exists generic_user;
+drop table generic_user;
 
-drop table if exists image;
+drop table image;
 
-drop table if exists oder_table;
+drop table oder_table;
 
-drop table if exists order_details;
+drop table order_details;
 
-drop table if exists payment;
+drop table payment;
 
-drop table if exists product;
+drop table product;
 
-drop table if exists shipper;
+drop table shipper;
 
-drop table if exists supplier;
+drop table supplier;
 
-drop table if exists Supplier_address;
+drop table Supplier_address;
 
-SET REFERENTIAL_INTEGRITY TRUE;
-
-drop sequence if exists address_seq;
-
-drop sequence if exists category_seq;
-
-drop sequence if exists credit_card_seq;
-
-drop sequence if exists generic_user_seq;
-
-drop sequence if exists image_seq;
-
-drop sequence if exists oder_table_seq;
-
-drop sequence if exists order_details_seq;
-
-drop sequence if exists payment_seq;
-
-drop sequence if exists product_seq;
-
-drop sequence if exists shipper_seq;
-
-drop sequence if exists supplier_seq;
+SET FOREIGN_KEY_CHECKS=1;
 

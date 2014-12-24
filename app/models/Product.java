@@ -82,12 +82,12 @@ public class Product extends Model implements Comparable<Product> {
     @Temporal(TemporalType.DATE)
     public DateTime date = new DateTime();
 
-    public String validate() {
-        if (images.isEmpty()) {
-            return Messages.get("image.required");
-        }
-        return null;
-    }
+//    public String validate() {
+//        if (images.isEmpty()) {
+//            return Messages.get("image.required");
+//        }
+//        return null;
+//    }
 
     public String getRoutePath() {
         String path = category.name + "_" + this.id;
